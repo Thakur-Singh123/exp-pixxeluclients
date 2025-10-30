@@ -1,6 +1,5 @@
 @extends('admin.layouts.master')
 @section('content')
-
 <div class="container">
     <div class="page-inner">
         <div class="row">
@@ -19,10 +18,11 @@
                             <!-- Step Navigation -->
                             <div class="d-flex flex-wrap justify-content-between mb-4 step-header">
                                 <button type="button" class="btn btn-outline-primary step-btn active" data-step="1">Personal Details</button>
-                                <button type="button" class="btn btn-outline-primary step-btn" data-step="2">Address Details</button>
-                                <button type="button" class="btn btn-outline-primary step-btn" data-step="3">Service Details</button>
-                                <button type="button" class="btn btn-outline-primary step-btn" data-step="4">Dependent Details</button>
-                                <button type="button" class="btn btn-outline-primary step-btn" data-step="5">Bank Details</button>
+                                <button type="button" class="btn btn-outline-primary step-btn" data-step="2">Spouse Details</button>
+                                <button type="button" class="btn btn-outline-primary step-btn" data-step="3">Father Details</button>
+                                <button type="button" class="btn btn-outline-primary step-btn" data-step="4">Mother Details</button>
+                                <button type="button" class="btn btn-outline-primary step-btn" data-step="5">Document Details</button>
+                                <button type="button" class="btn btn-outline-primary step-btn" data-step="6">Dependent Details</button>
                             </div>
 
                             <!-- Step 1: Personal Details -->
@@ -156,6 +156,22 @@
                                     <div class="col-md-12 mb-3">
                                         <label class="form-label">Bank Details</label>
                                         <textarea name="bank_details" rows="3" class="form-control" placeholder="Enter bank name, branch, IFSC, account number, etc."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                                    <!-- Step 6 -->
+                            <div class="step-content d-none" id="step-6">
+                                <h5 class="mb-3 text-primary">Dependent Details</h5>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label>Dependent Name</label>
+                                        <input type="text" name="dependent_name" class="form-control">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label>Relation</label>
+                                        <input type="text" name="relation" class="form-control">
                                     </div>
                                 </div>
                             </div>
