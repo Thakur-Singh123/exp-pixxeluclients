@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <!--<title> Login and Registration Form in HTML & CSS | CodingLab </title>-->
-        <link rel="stylesheet" href="{{ asset('public/admin/assets/css/styles.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/admin/assets/css/style.css') }}">
         <!-- Fontawesome CDN Link -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
