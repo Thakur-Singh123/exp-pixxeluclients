@@ -44,28 +44,11 @@
                                              </th>
                                              <th class="sorting" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 84.5px;">Aadhar No</th>
-                                             <th class="sorting" tabindex="0"
-                                                aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 184.234px;">Category of Ward
+                                                colspan="1" style="width: 84.5px;">Village
                                              </th>
                                              <th class="sorting" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1"
-                                                aria-label="Salary: activate to sort column ascending"
-                                                style="width: 156.312px;">Force Type
-                                             </th>
-                                             <th class="sorting" tabindex="0"
-                                                aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 156.312px;">Unit/Regt/Corps
-                                             </th>
-                                             <th class="sorting" tabindex="0"
-                                                aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 156.312px;">Vill
-                                             </th>
-                                             <th class="sorting" tabindex="0"
-                                                aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 156.312px;">Po
+                                                colspan="1" style="width: 156.312px;">Post Office
                                              </th>
                                              <th class="sorting" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
@@ -77,11 +60,19 @@
                                              </th>
                                              <th class="sorting" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 156.312px;">Pin
+                                                colspan="1" style="width: 156.312px;">State
                                              </th>
                                              <th class="sorting" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 156.312px;">Mob no
+                                                colspan="1" style="width: 156.312px;">Pin Code
+                                             </th>
+                                             <th class="sorting" tabindex="0"
+                                                aria-controls="basic-datatables" rowspan="1"
+                                                colspan="1" style="width: 156.312px;">Mobile Number
+                                             </th>
+                                             <th class="sorting" tabindex="0"
+                                                aria-controls="basic-datatables" rowspan="1"
+                                                colspan="1" style="width: 156.312px;">Regiment / Corps
                                              </th>
                                              <th class="sorting" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
@@ -97,39 +88,15 @@
                                              </th>
                                              <th class="sorting" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 156.312px;">Present PC
+                                                colspan="1" style="width: 156.312px;">Education
                                              </th>
                                              <th class="sorting" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 156.312px;">Pro No
+                                                colspan="1" style="width: 156.312px;">Present Occupation
                                              </th>
                                              <th class="sorting" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 156.312px;">Name of Dependents
-                                             </th>
-                                             <th class="sorting" tabindex="0"
-                                                aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 156.312px;">No of Dependents
-                                             </th>
-                                             <th class="sorting" tabindex="0"
-                                                aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 156.312px;">Relation with ESM
-                                             </th>
-                                             <th class="sorting" tabindex="0"
-                                                aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 156.312px;">Dependent DOB
-                                             </th>
-                                             <th class="sorting" tabindex="0"
-                                                aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 156.312px;">Occupation
-                                             </th>
-                                             <th class="sorting" tabindex="0"
-                                                aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 156.312px;">Aadhar No
-                                             </th>
-                                             <th class="sorting" tabindex="0"
-                                                aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 156.312px;">Bank Detail
+                                                colspan="1" style="width: 156.312px;">Registration On DGR Portal
                                              </th>
                                              <th class="sorting" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
@@ -142,35 +109,32 @@
                                           </tr>
                                        </thead>
                                        <tbody>
-                                          @php $count = 1 @endphp
+                                          <!--Get records-->
                                           @forelse ($all_services as $tada_record)
                                           <tr role="row">
-                                             <td class="sorting_1">{{ $count++ }}.</td>
-                                             <td>{{ $tada_record->army_no }}</td>
+                                             <td>{{ $tada_record->sr_no }}</td>
+                                             <td>
+                                                <a href="{{ url('admin/single-service-detail/' . $tada_record->id) }}">
+                                                   {{ $tada_record->army_no }}
+                                                </a>
+                                             </td>
+
                                              <td>{{ $tada_record->rank }}</td>
                                              <td>{{ $tada_record->name }}</td>
-                                             <td>{{ $tada_record->aadhar_no }}</td>
-                                             <td>{{ $tada_record->category_of_ward }}</td>
-                                             <td>{{ $tada_record->force_type }}</td>
-                                             <td>{{ $tada_record->unit_regt_corps }}</td>
-                                             <td>{{ $tada_record->vill }}</td>
-                                             <td>{{ $tada_record->po }}</td>
+                                             <td>{{ $tada_record->village }}</td>
+                                             <td>{{ $tada_record->post_office }}</td>
                                              <td>{{ $tada_record->tehsil }}</td>
-                                             <td>{{ $tada_record->distt }}</td>
-                                             <td>{{ $tada_record->pin }}</td>
-                                             <td>{{ $tada_record->mob_no }}</td>
+                                             <td>{{ $tada_record->district }}</td>
+                                             <td>{{ $tada_record->state }}</td>
+                                             <td>{{ $tada_record->pin_code }}</td>
+                                             <td>{{ $tada_record->mobile_no }}</td>
+                                             <td>{{ $tada_record->regiment_corps }}</td>
                                              <td>{{ \Carbon\Carbon::parse($tada_record->dob)->format('d M, Y') }}</td>
                                              <td>{{ \Carbon\Carbon::parse($tada_record->doe)->format('d M, Y') }}</td>
                                              <td>{{ \Carbon\Carbon::parse($tada_record->dor)->format('d M, Y') }}</td>
-                                             <td>{{ $tada_record->present_pc }}</td>
-                                             <td>{{ $tada_record->ppo_no }}</td>
-                                             <td>{{ $tada_record->dependent_name }}</td>
-                                             <td>{{ $tada_record->no_of_dependent }}</td>
-                                             <td>{{ $tada_record->relation_with_esm }}</td>
-                                             <td>{{ \Carbon\Carbon::parse($tada_record->dependent_dob)->format('d M, Y') }}</td>
-                                             <td>{{ $tada_record->dependent_occupation }}</td>
-                                             <td>{{ $tada_record->dependent_aadhar }}</td>
-                                             <td>{{ $tada_record->bank_details }}</td>
+                                             <td>{{ $tada_record->education }}</td>
+                                             <td>{{ $tada_record->present_occupation }}</td>
+                                             <td>{{ $tada_record->reg_on_dgr_portal }}</td>
                                              <td>
                                                 <span class="status-badge 
                                                    {{ $tada_record->status == 'Pending' ? 'status-pending' : '' }}

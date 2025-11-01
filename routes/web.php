@@ -20,9 +20,10 @@ Route::group(['middleware' => 'auth'], function() {
         Route::post('admin/submit-change-password/{id}', [App\Http\Controllers\Admin\Profile\ProfileController::class, 'submit_change_password'])->name('admin.submit.change.password');
         Route::get('admin/settings', [App\Http\Controllers\Admin\Profile\ProfileController::class, 'profile']);
         //Services
-        Route::get('admin/services', [App\Http\Controllers\Admin\ServiceController::class, 'all_services']);
-        Route::get('admin/service-create', [App\Http\Controllers\Admin\ServiceController::class, 'add_service']);
-        Route::post('admin/service-submit', [App\Http\Controllers\Admin\ServiceController::class, 'submit_service'])->name('admin.service.submit');
+        Route::get('admin/services', [App\Http\Controllers\Admin\ExServiceManController::class, 'all_services']);
+        Route::get('admin/service-create', [App\Http\Controllers\Admin\ExServiceManController::class, 'add_service']);
+        Route::post('admin/service-submit', [App\Http\Controllers\Admin\ExServiceManController::class, 'submit_service'])->name('admin.service.submit');
+        Route::get('admin/single-service-detail/{id}', [App\Http\Controllers\Admin\ExServiceManController::class, 'single_service']);
     });
     //Customer middleware
     Route::group(['middleware' => 'Customer'], function() { 

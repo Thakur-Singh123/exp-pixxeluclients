@@ -29,29 +29,30 @@
                     <p>Dashboard</p>
                 </a>
                 </li>
-                <li class="nav-item {{ request()->is('admin/services*') || request()->is('admin/service-create') ? 'active' : '' }}">
-                <a data-bs-toggle="collapse" href="#collapseService"
-                    class="{{ request()->is('admin/services*') || request()->is('admin/service-create') ? '' : 'collapsed' }}"
-                    aria-expanded="{{ request()->is('admin/services*') || request()->is('admin/service-create') ? 'true' : 'false' }}">
-                    <i class="fas fa-clipboard-list"></i>
-                    <p>Service Records</p>
-                    <span class="caret"></span>
+                <li class="nav-item {{ request()->is('admin/services*') || request()->is('admin/service-create') || request()->is('admin/single-service-detail*') ? 'active' : '' }}">
+    <a data-bs-toggle="collapse" href="#collapseService"
+        class="{{ request()->is('admin/services*') || request()->is('admin/service-create') || request()->is('admin/single-service-detail*') ? '' : 'collapsed' }}"
+        aria-expanded="{{ request()->is('admin/services*') || request()->is('admin/service-create') || request()->is('admin/single-service-detail*') ? 'true' : 'false' }}">
+        <i class="fas fa-clipboard-list"></i>
+        <p>Service Records</p>
+        <span class="caret"></span>
+    </a>
+    <div class="collapse {{ request()->is('admin/services*') || request()->is('admin/service-create') || request()->is('admin/single-service-detail*') ? 'show' : '' }}" id="collapseService">
+        <ul class="nav nav-collapse">
+            <li class="{{ request()->is('admin/service-create') ? 'active' : '' }}">
+                <a href="{{ url('admin/service-create') }}">
+                    <span class="sub-item">Add Service</span>
                 </a>
-                <div class="collapse {{ request()->is('admin/services*') || request()->is('admin/service-create') ? 'show' : '' }}" id="collapseService">
-                    <ul class="nav nav-collapse">
-                        <li class="{{ request()->is('admin/service-create') ? 'active' : '' }}">
-                            <a href="{{ url('admin/service-create') }}">
-                            <span class="sub-item">Add Service</span>
-                            </a>
-                        </li>
-                        <li class="{{ request()->is('admin/services') || request()->is('admin/service/*/edit') ? 'active' : '' }}">
-                            <a href="{{ url('admin/services') }}">
-                            <span class="sub-item">All Services</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                </li>
+            </li>
+            <li class="{{ request()->is('admin/services') || request()->is('admin/service/*/edit') || request()->is('admin/single-service-detail*') ? 'active' : '' }}">
+                <a href="{{ url('admin/services') }}">
+                    <span class="sub-item">All Services</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</li>
+
                 <!--logout section-->
                 <li class="nav-item">
                     <a href="{{ route('logout') }}" class="nav-link"
