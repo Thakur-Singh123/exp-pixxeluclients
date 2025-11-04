@@ -23,12 +23,12 @@
         <div class="sidebar-content">
             <ul class="nav nav-secondary">
                 <!--dashboard section-->
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                 <a href="#">
                     <i class="fas fa-home"></i>
                     <p>Dashboard</p>
                 </a>
-                </li>
+                </li> -->
                 <li class="nav-item {{ request()->is('admin/services*') || request()->is('admin/service-create') || request()->is('admin/edit-service*') || request()->is('admin/single-service-detail*') ? 'active' : '' }}">
                     <a data-bs-toggle="collapse" href="#collapseService"
                         class="{{ request()->is('admin/services*') || request()->is('admin/service-create') || request()->is('admin/edit-service*') || request()->is('admin/single-service-detail*') ? '' : 'collapsed' }}"
@@ -51,6 +51,20 @@
                             </li>
                         </ul>
                     </div>
+                </li>
+                <!--import data-->
+                <li class="nav-item {{ Request::is('admin/import-create') ? 'active' : '' }}">
+                    <a href="{{ url('admin/import-create') }}">
+                        <i class="fas fa-download"></i>
+                        <p>Import Data</p>
+                    </a>
+                </li>
+                <!--export data-->
+                <li class="nav-item {{ Request::is('admin/export-create') ? 'active' : '' }}">
+                    <a href="{{ url('admin/export-create') }}">
+                        <i class="fas fa-upload"></i>
+                        <p>Export Data</p>
+                    </a>
                 </li>
                 <!--logout section-->
                 <li class="nav-item">

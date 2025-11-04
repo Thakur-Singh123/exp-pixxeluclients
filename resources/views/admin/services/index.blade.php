@@ -21,7 +21,7 @@
                               class="dataTables_wrapper container-fluid dt-bootstrap4">
                               <div class="row">
                                  <div class="col-sm-12">
-                                    <table id="basic-datatables" class="display table table-striped table-hover dataTable" role="grid" aria-describedby="basic-datatables_info">
+                                    <table id="serviceTable" class="display">
                                        <thead>
                                           <tr role="row">
                                              <th class="sorting_asc" tabindex="0"
@@ -148,7 +148,6 @@
                                           @endforelse
                                        </tbody>
                                     </table>
-                                    {{ $all_services->links('pagination::bootstrap-5') }}
                                  </div>
                               </div>
                            </div>

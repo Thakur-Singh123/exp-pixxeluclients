@@ -11,7 +11,7 @@ class ExServiceManController extends Controller
     //Function for all services
     public function all_services() {
         //Get services
-        $all_services = ExServiceMan::OrderBy('ID', 'DESC')->paginate(5);
+        $all_services = ExServiceMan::OrderBy('ID', 'DESC')->get();
         return view('admin.services.index', compact('all_services'));
     }
 
