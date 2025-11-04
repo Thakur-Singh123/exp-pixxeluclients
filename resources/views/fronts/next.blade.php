@@ -14,15 +14,14 @@
          font-family: "Poppins", sans-serif;
          background: #f0f4f9;
       }
-      .tabs {
+      .name-data-bank {
          display: flex;
          justify-content: center;
-         background: #1e3c72;
          padding: 10px;
       }
-      .tab {
+      .name-data-bank-1 {
          color: #fff;
-         background: transparent;
+         background: transparent !important;
          border: none;
          padding: 10px 20px;
          cursor: pointer;
@@ -30,9 +29,10 @@
          font-weight: 600;
          transition: 0.3s;
       }
-      .tab.active {
-         background: #ffcc00;
+      .name-data-bank-1.active {
+         background: #6B8E23 !important;
          color: #000;
+         border: 0 !important;
          border-radius: 8px;
       }
       .content {
@@ -43,6 +43,40 @@
       .content.active {
          display: block;
       }
+      .content.active h2 {
+      text-align: center;
+      font-size: 32px;
+      text-transform: uppercase;
+      text-decoration: underline;
+      }
+      .content.active .dt-layout-cell.dt-layout-full {
+      overflow-x: scroll;
+      white-space: nowrap;
+      }
+      .main-tabs {
+      background: #4B5320;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px;
+      }
+      .content.active .dt-layout-cell.dt-layout-start {
+      margin: 0 !important;
+      }
+      .content.active .dt-layout-cell.dt-layout-end {
+      margin: 0 !important;
+      }
+      .content.active .dt-layout-row {
+      justify-content: left !important;
+      gap: 35px;
+      }
+      div.dt-container {
+      border: 1px solid #000000;
+      padding: 15px 25px;
+      }
+      table.display.dataTable thead {
+      font-size: 18px;
+    }
       table {
          width: 100%;
          border-collapse: collapse;
@@ -54,7 +88,7 @@
          text-align: left;
       }
       th {
-         background: #1e3c72;
+         background: #4B5320;
          color: #fff;
       }
       tr:nth-child(even) {
@@ -127,14 +161,17 @@
       </style>
    </head>
    <body>
-      <div class="tabs">
-         <button class="tab active" data-target="exman">Ex-Man Data Bank</button>
-         <button class="tab" data-target="widow">Widows Data Bank</button>
-         <button class="tab" data-target="veer">Veer Naries Data Bank</button>
-         <a href="{{ route('login') }}" class="tab-link">
+      <div class="main-tabs">
+      <div class="tabs name-data-bank">
+         <button class="main-data-tab active name-data-bank-1" data-target="exman">Ex-Man Data Bank</button>
+         <button class="main-data-tab name-data-bank-1" data-target="widow">Widows Data Bank</button>
+         <button class="main-data-tab name-data-bank-1" data-target="veer">Veer Naries Data Bank</button>
+         
+      </div>
+      <a href="{{ route('login') }}" class="tab-link">
          <i class="fa-solid fa-right-to-bracket"></i> Login
          </a>
-      </div>
+         </div>
       <!--Ex-Man-->
       <div id="exman" class="content active">
          <h2>Data Bank of Ex-Man</h2>
@@ -290,13 +327,13 @@
       <script src="{{ asset('public/admin/assets/vendor/intl-tel-input/js/utils.js') }}"></script>
       <script>
          $(document).ready(function() {
-         $(".tab").on("click", function() {
-         $(".tab").removeClass("active");     
+         $(".main-data-tab").on("click", function() {
+         $(".main-data-tab").removeClass("active");
          $(this).addClass("active");
 
          let target = $(this).data("target");
-         
-         $(".content").removeClass("active"); 
+
+         $(".content").removeClass("active");
          $("#" + target).addClass("active");
          });
          });
@@ -320,7 +357,7 @@
                let modal = $("#detailModal");
                let detailBody = $("#detailBody");
                let detailTitle = $("#detailTitle");
-            
+
                $.ajax({
                   url: "{{ url('single-service-detail') }}/" + id,
                   type: "GET",
@@ -340,11 +377,11 @@
                   }
                });
             });
-            
+
             $(".close-btn").on("click", function() {
                $("#detailModal").hide();
             });
-            
+
             $(window).on("click", function(e) {
                if ($(e.target).is("#detailModal")) $("#detailModal").hide();
             });
