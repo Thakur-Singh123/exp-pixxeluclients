@@ -236,7 +236,7 @@ class ExServiceManController extends Controller
         ]);
         //Check if record created or not
         if ($is_create_record) {
-            return back()->with('success', 'Service created successfully');
+            return redirect()->route('admin.index')->with('success', 'Service created successfully');
         } else {
             return back()->with('unsuccess', 'Oops! Something went wrong');
         }
@@ -403,7 +403,7 @@ class ExServiceManController extends Controller
         ]);
         //Check if service updated or not
         if ($is_update_record) {
-            return back()->with('success', 'Service updated successfully');
+            return redirect()->route('admin.index')->with('success', 'Service updated successfully');
         } else {
             return back()->with('unsuccess', 'Oops! Something went wrong');
         }

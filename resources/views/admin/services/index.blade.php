@@ -27,7 +27,7 @@
                                              <th class="sorting_asc" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
                                                 colspan="1" aria-sort="ascending"
-                                                style="width: 242.688px;">Sr No.
+                                                style="width: 242.688px;">Ser.No
                                              </th>
                                              <th class="sorting_asc" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"

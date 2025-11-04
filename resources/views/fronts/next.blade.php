@@ -147,6 +147,29 @@
                   <th>Rank</th>
                   <th>Name</th>
                   <th>Village</th>
+                  <th>Post Office</th>
+                  <th>Tehsil</th>
+                  <th>District</th>
+                  <th>State</th>
+                  <th>Pin Code</th>
+                  <th>Mobile No</th>
+                  <th>Regiment/Corps</th>
+                  <th>DOB</th>
+                  <th>DOE</th>
+                  <th>DOR</th>
+                  <th>Education</th>
+                  <th>Present Occupation</th>
+                  <th>Bank Account Number</th>
+                  <th>Bank Name</th>
+                  <th>IFSC Code</th>
+                  <th>MICR Code</th>
+                  <th>Aadhar Card Number</th>
+                  <th>Pan Card Numbe</th>
+                  <th>ECHS Card Number</th>
+                  <th>CSD Card Number</th>
+                  <th>Decorator Soldier</th>
+                  <th>Disabled</th>
+                  <th>Registor On DGR Portal</th>
                   <th>Action</th>
                </tr>
             </thead>
@@ -159,6 +182,29 @@
                   <td>{{ $service->rank ?? '-' }}</td>
                   <td>{{ $service->name ?? '-' }}</td>
                   <td>{{ $service->village ?? '-' }}</td>
+                  <td>{{ $service->post_office ?? '-' }}</td>
+                  <td>{{ $service->tehsil ?? '-' }}</td>
+                  <td>{{ $service->district ?? '-' }}</td>
+                  <td>{{ $service->state ?? '-' }}</td>
+                  <td>{{ $service->pin_code ?? '-' }}</td>
+                  <td>{{ $service->mobile_no ?? '-' }}</td>
+                  <td>{{ $service->regiment_corps ?? '-' }}</td>
+                  <td>{{ $service->dob ?? '-' }}</td>
+                  <td>{{ $service->doe ?? '-' }}</td>
+                  <td>{{ $service->dor ?? '-' }}</td>
+                  <td>{{ $service->education ?? '-' }}</td>
+                  <td>{{ $service->present_occupation ?? '-' }}</td>
+                  <td>{{ $service->bank_acc_no ?? '-' }}</td>
+                  <td>{{ $service->bank_name ?? '-' }}</td>
+                  <td>{{ $service->ifsc_code ?? '-' }}</td>
+                  <td>{{ $service->micr_code ?? '-' }}</td>
+                  <td>{{ $service->aadhar_card_no ?? '-' }}</td>
+                  <td>{{ $service->pan_card_no ?? '-' }}</td>
+                  <td>{{ $service->echs_card_no ?? '-' }}</td>
+                  <td>{{ $service->csd_card_no ?? '-' }}</td>
+                  <td>{{ $service->decorator_soldier ?? '-' }}</td>
+                  <td>{{ $service->disabled ?? '-' }}</td>
+                  <td>{{ $service->reg_on_dgr_portal ?? '-' }}</td>
                   <td><i class="fa-solid fa-eye view-icon" data-id="{{ $service->id }}"></i></td>
                </tr>
                @empty
