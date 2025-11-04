@@ -9,6 +9,7 @@
     <link href="{{ asset('public/admin/js/summernote-lite.min.css') }}" rel="stylesheet">
     <!--css files-->
     <!-- FullCalendar CSS -->
+    <link rel="stylesheet" href="{{ asset('public/admin/assets/datatables/css/jquery.dataTables.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/admin/assets/css/custom.css') }}" />
     <link rel="stylesheet" href="{{ asset('public/admin/assets/select2/css/select2.css') }}" />
     <link rel="stylesheet" href="{{ asset('public/admin/assets/select2/css/select2.min.css') }}" />
@@ -183,11 +184,19 @@
     <!-- FullCalendar JS -->
     <script src="{{ asset('public/assets/js/index.global.min.js') }}"></script>
     <script src="{{ asset('public/admin/assets/js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('public/admin/assets/datatables/js/dataTables.min.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $('#serviceTable').DataTable({
+                pageLength: 50,
+                lengthMenu: [10, 25, 50, 100]
+            });
+        });
+    </script>
     <script src="{{ asset('public/admin/assets/js/sweetalert2.all.min.js') }}"></script>
     <!--core js files-->
     <script src="{{ asset('public/admin/assets/js/custom-ajax.js') }}"></script>
     <script src="{{ asset('public/admin/assets/js/custom-script.js') }}"></script>
-    <script src="{{ asset('public/admin/assets/js/core/jquery-3.7.1.min.js') }}"></script>
     <script src="{{ asset('public/admin/assets/js/core/popper.min.js') }}"></script>
     <script src="{{ asset('public/admin/assets/js/core/bootstrap.min.js') }}"></script>
     <script>

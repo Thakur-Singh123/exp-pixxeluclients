@@ -8,7 +8,6 @@
       <link rel="stylesheet" href="{{ asset('public/admin/assets/vendor/intl-tel-input/css/intlTelInput.css') }}">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="{{ asset('public/admin/assets/datatables/css/dataTables.dataTables.min.css') }}">
-      <script src="{{ asset('public/admin/assets/datatables/js/dataTables.min.js') }}"></script>
       <style>
       body {
          margin: 0;
