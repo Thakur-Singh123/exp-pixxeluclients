@@ -80,7 +80,7 @@
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ asset('pubilc/assets/js/chart.js') }}"></script>
 <script>
   // Monthly Visitors
   const barCtx = document.getElementById('chartBar').getContext('2d');
