@@ -13,7 +13,7 @@
                <div class="col-md-12">
                   <div class="card">
                      <div class="card-header d-flex justify-content-between align-items-center">
-                        <h4 class="card-title">All service records</h4>
+                        <h4 class="card-title">All services</h4>
                      </div>
                      <div class="card-body">
                         <div class="table-responsive">
@@ -100,57 +100,43 @@
                                              </th>
                                              <th class="sorting" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 156.312px;">Status
-                                             </th>
-                                             <th class="sorting" tabindex="0"
-                                                aria-controls="basic-datatables" rowspan="1"
                                                 colspan="1" style="width: 156.312px;">Action
                                              </th>
                                           </tr>
                                        </thead>
                                        <tbody>
-                                          <!--Get records-->
-                                          @forelse ($all_services as $tada_record)
+                                          <!--Get service records-->
+                                          @forelse ($all_services as $service)
                                           <tr role="row">
-                                             <td>{{ $tada_record->sr_no }}</td>
+                                             <td>{{ $service->sr_no ?? '-' }}</td>
                                              <td>
-                                                <a href="{{ url('admin/single-service-detail/' . $tada_record->id) }}">
-                                                   {{ $tada_record->army_no }}
+                                                <a href="{{ url('admin/single-service-detail/' . $service->id) }}">
+                                                   {{ $service->army_no ?? '-' }}
                                                 </a>
                                              </td>
 
-                                             <td>{{ $tada_record->rank }}</td>
-                                             <td>{{ $tada_record->name }}</td>
-                                             <td>{{ $tada_record->village }}</td>
-                                             <td>{{ $tada_record->post_office }}</td>
-                                             <td>{{ $tada_record->tehsil }}</td>
-                                             <td>{{ $tada_record->district }}</td>
-                                             <td>{{ $tada_record->state }}</td>
-                                             <td>{{ $tada_record->pin_code }}</td>
-                                             <td>{{ $tada_record->mobile_no }}</td>
-                                             <td>{{ $tada_record->regiment_corps }}</td>
-                                             <td>{{ \Carbon\Carbon::parse($tada_record->dob)->format('d M, Y') }}</td>
-                                             <td>{{ \Carbon\Carbon::parse($tada_record->doe)->format('d M, Y') }}</td>
-                                             <td>{{ \Carbon\Carbon::parse($tada_record->dor)->format('d M, Y') }}</td>
-                                             <td>{{ $tada_record->education }}</td>
-                                             <td>{{ $tada_record->present_occupation }}</td>
-                                             <td>{{ $tada_record->reg_on_dgr_portal }}</td>
-                                             <td>
-                                                <span class="status-badge 
-                                                   {{ $tada_record->status == 'Pending' ? 'status-pending' : '' }}
-                                                   {{ $tada_record->status == 'Reject' ? 'status-suspend' : '' }}
-                                                   {{ $tada_record->status == 'Active' ? 'status-approved' : '' }}">
-                                                      {{ ucfirst($tada_record->status) }}
-                                                </span>
-                                             </td>
+                                             <td>{{ $service->rank ?? '-' }}</td>
+                                             <td>{{ $service->name ?? '-' }}</td>
+                                             <td>{{ $service->village ?? '-' }}</td>
+                                             <td>{{ $service->post_office ?? '-' }}</td>
+                                             <td>{{ $service->tehsil ?? '-' }}</td>
+                                             <td>{{ $service->district ?? '-' }}</td>
+                                             <td>{{ $service->state ?? '-' }}</td>
+                                             <td>{{ $service->pin_code ?? '-' }}</td>
+                                             <td>{{ $service->mobile_no ?? '-' }}</td>
+                                             <td>{{ $service->regiment_corps ?? '-' }}</td>
+                                             <td>{{ \Carbon\Carbon::parse($service->dob)->format('d M, Y') ?? '-' }}</td>
+                                             <td>{{ \Carbon\Carbon::parse($service->doe)->format('d M, Y') ?? '-' }}</td>
+                                             <td>{{ \Carbon\Carbon::parse($service->dor)->format('d M, Y') ?? '-' }}</td>
+                                             <td>{{ $service->education ?? '-' }}</td>
+                                             <td>{{ $service->present_occupation ?? '-' }}</td>
+                                             <td>{{ $service->reg_on_dgr_portal ?? '-' }}</td>
                                              <td>
                                                 <div class="form-button-action">
-                                                   <a href="{{ url('admin/edit-service', $tada_record->id) }}" class="icon-button edit-btn custom-tooltip" data-tooltip="Edit">
+                                                   <a href="{{ url('admin/edit-service', $service->id) }}" class="icon-button edit-btn custom-tooltip" data-tooltip="Edit">
                                                    <i class="fa fa-edit"></i>
                                                    </a>
-                                                   <a href="{{ url('admin/delete-service', $tada_record->id) }}" class="icon-button delete-btn custom-tooltip" data-tooltip="Delete">
-                                                   <i class="fa fa-trash"></i>
-                                                   </a>
+                                                   <a class="icon-button delete-btn custom-tooltip delete_service_record" data-service_id="{{ $service->id }}" data-tooltip="Delete"><i class="fa fa-trash"></i></a>
                            
                                                 </div>
                                              </td>

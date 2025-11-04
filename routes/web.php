@@ -3,9 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('auth/login');
+    return view('fronts/welcome');
 });
-
+//Front
+Route::get('next', [App\Http\Controllers\FrontController::class, 'next']);
+Route::get('single-service-detail/{id}', [App\Http\Controllers\FrontController::class, 'get_service_detail']);
 //Middlewares
 Route::group(['middleware' => 'auth'], function() { 
     //Admin middleware
@@ -24,6 +26,9 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('admin/service-create', [App\Http\Controllers\Admin\ExServiceManController::class, 'add_service']);
         Route::post('admin/service-submit', [App\Http\Controllers\Admin\ExServiceManController::class, 'submit_service'])->name('admin.service.submit');
         Route::get('admin/single-service-detail/{id}', [App\Http\Controllers\Admin\ExServiceManController::class, 'single_service']);
+        Route::get('admin/edit-service/{id}', [App\Http\Controllers\Admin\ExServiceManController::class, 'edit_service']);
+        Route::post('admin/service-update/{id}', [App\Http\Controllers\Admin\ExServiceManController::class, 'update_service'])->name('admin.service.update');
+        Route::get('admin/delete-service-detail', [App\Http\Controllers\Admin\ExServiceManController::class, 'delete_service']);
     });
     //Customer middleware
     Route::group(['middleware' => 'Customer'], function() { 

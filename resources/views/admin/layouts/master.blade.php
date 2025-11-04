@@ -3,13 +3,12 @@
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Ad People</title>
+    <title>ExServiceMan Portal</title>
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
-    <link rel="icon" href="{{ asset('public/admin/images/Ad People Logo.svg') }}" type="image/x-icon" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.css" rel="stylesheet">
+    <link rel="icon" href="{{ asset('public/admin/images/ESP Logo Black.svg') }}" type="image/x-icon" />
+    <link href="{{ asset('public/admin/js/summernote-lite.min.css') }}" rel="stylesheet">
     <!--css files-->
     <!-- FullCalendar CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('public/admin/assets/css/custom.css') }}" />
     <link rel="stylesheet" href="{{ asset('public/admin/assets/select2/css/select2.css') }}" />
     <link rel="stylesheet" href="{{ asset('public/admin/assets/select2/css/select2.min.css') }}" />
@@ -182,9 +181,9 @@
         var base_url = '{{ url('/') }}';
     </script>
     <!-- FullCalendar JS -->
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script src="{{ asset('public/assets/js/index.global.min.js') }}"></script>
+    <script src="{{ asset('public/admin/assets/js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('public/admin/assets/js/sweetalert2.all.min.js') }}"></script>
     <!--core js files-->
     <script src="{{ asset('public/admin/assets/js/custom-ajax.js') }}"></script>
     <script src="{{ asset('public/admin/assets/js/custom-script.js') }}"></script>

@@ -6,8 +6,8 @@
         <!--<title> Login and Registration Form in HTML & CSS | CodingLab </title>-->
         <link rel="stylesheet" href="{{ asset('public/admin/assets/css/style.css') }}">
         <!-- Fontawesome CDN Link -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+        <link rel="stylesheet" href="{{ asset('public/admin/assets/vendor/fontawesome/css/all.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/admin/assets/vendor/intl-tel-input/css/intlTelInput.css') }}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <style>
@@ -188,78 +188,6 @@
             </div>
         </div>
     </body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-    <script>
-        document.getElementById("name").addEventListener("input", function () {
-            this.value = this.value.replace(/[^A-Za-z\s]/g, ""); 
-        });
-    </script>
-    <script>
-        const phoneInputField = document.querySelector("#phone");
-        const phoneInput = window.intlTelInput(phoneInputField, {
-            initialCountry: "in",
-            preferredCountries: ["in", "us", "gb"],
-            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
-        });
-
-        phoneInputField.addEventListener("input", function () {
-            let dialCode = "+" + phoneInput.getSelectedCountryData().dialCode + "  ";
-            if (!this.value.startsWith(dialCode)) {
-                this.value = dialCode + this.value.replace(/[^0-9]/g, "");
-            } else {
-                let afterCode = this.value.slice(dialCode.length).replace(/[^0-9]/g, "");
-                this.value = dialCode + afterCode;
-            }
-        });
-
-        phoneInputField.addEventListener("countrychange", function () {
-            const countryData = phoneInput.getSelectedCountryData();
-            const dialCode = "+" + countryData.dialCode + "  ";
-            this.value = dialCode;
-        });
-
-        const defaultCountry = phoneInput.getSelectedCountryData();
-        phoneInputField.value = "+" + defaultCountry.dialCode + "  ";
-    </script>
-   <script>
-      document.getElementById("signupForm").addEventListener("submit", function(e){
-         e.preventDefault();
-         document.getElementById("submitBtn").style.display = "none";
-         document.querySelector(".loaderss").style.display = "block";
-         setTimeout(function(){
-            e.target.submit();
-         }, 3000);
-      });
-      window.addEventListener("load", function(){
-         let successBox = document.getElementById("successMsg");
-         if(successBox){
-            successBox.style.display = "block";
-         }
-      });
-      window.addEventListener("load", function(){
-         let successBox = document.getElementById("successMsg");
-         if(successBox){
-            setTimeout(function(){
-               successBox.style.display = "none";
-            }, 20000);
-         }
-      });
-   </script>
-   <script>
-      document.querySelectorAll("input").forEach(function(inputField) {
-         inputField.addEventListener("input", function() {
-            let error = this.parentElement.querySelector("small.text-danger");
-   
-            if(!error){
-               let next = this.parentElement.nextElementSibling;
-               if(next && next.tagName === "SMALL" && next.classList.contains("text-danger")){
-                     error = next;
-               }
-            }
-            if(error){
-               error.style.display = "none";
-            }
-         });
-      });
-   </script>
+    <script src="{{ asset('public/admin/assets/vendor/intl-tel-input/js/intlTelInput.min.js') }}"></script>
+    <script src="{{ asset('public/admin/assets/vendor/intl-tel-input/js/utils.js') }}"></script>
 </html>

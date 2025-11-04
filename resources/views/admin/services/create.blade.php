@@ -13,7 +13,7 @@
                <div class="card-body">
                   <form id="captureForm" action="{{ route('admin.service.submit') }}" method="POST" enctype="multipart/form-data">
                      @csrf
-                     <!--Step Navigation-->
+                     <!--Tab-->
                      <div class="d-flex flex-wrap justify-content-between mb-4 step-header">
                         <button type="button" class="btn btn-outline-primary step-btn active" data-step="1">ExServiceMan Details</button>
                         <button type="button" class="btn btn-outline-primary step-btn" data-step="2">Spouse Details</button>
@@ -183,7 +183,7 @@
                               <input type="date" name="spouse_dob" class="form-control" value="{{ old('spouse_dob') }}">
                            </div>
                            <div class="col-md-4 mb-3">
-                              <label class="form-label">Eucation</label>
+                              <label class="form-label">Education</label>
                               <input type="text" name="spouse_education" class="form-control" value="{{ old('spouse_education') }}">
                            </div>
                            <div class="col-md-4 mb-3">
@@ -305,11 +305,32 @@
                               <label class="form-label">MICR Code</label>
                               <input type="text" name="father_micr_code" class="form-control" value="{{ old('father_micr_code') }}">
                            </div>
-                           <div class="col-md-4 mb-3">
-                              <label class="form-label">Choose Photograph</label>
-                              <input type="file" name="father_image" class="form-control" value="{{ old('father_image') }}">
-                           </div>
                         </div>
+                        <!--Photograph section-->
+                        <div class="row">
+                            <div class="col-md-12 mb-3 d-flex align-items-start">
+                                <div class="me-3" style="width:31%;">
+                                    <label>Photograph</label>
+                                    <input type="file" name="father_image" class="form-control upload-input">
+                                </div>
+                                <div class="preview-box"></div>
+                            </div>
+                            <div class="col-md-12 mb-3 d-flex align-items-start">
+                                <div class="me-3" style="width: 31%;">
+                                    <label>Aadhar Card</label>
+                                    <input type="file" name="father_aadhar_image" class="form-control upload-input">
+                                </div>
+                                <div class="preview-box"></div>
+                            </div>
+                            <div class="col-md-12 mb-3 d-flex align-items-start">
+                                <div class="me-3" style="width:31%;">
+                                    <label>PAN Card</label>
+                                    <input type="file" name="father_pan_image" class="form-control upload-input">
+                                </div>
+                                <div class="preview-box"></div>
+                            </div>
+                        </div>
+                        <!--End photograph section-->
                      </div>
                      <!--Mother Details-->
                      <div class="step-content d-none" id="step-4">
@@ -367,11 +388,32 @@
                               <label class="form-label">MICR Code</label>
                               <input type="text" name="mother_micr_code" class="form-control" value="{{ old('mother_micr_code') }}">
                            </div>
-                           <div class="col-md-4 mb-3">
-                              <label class="form-label">Choose Photograph</label>
-                              <input type="file" name="mother_image" class="form-control" value="{{ old('mother_image') }}">
-                           </div>
                         </div>
+                        <!--Photograph section-->
+                        <div class="row">
+                            <div class="col-md-12 mb-3 d-flex align-items-start">
+                                <div class="me-3" style="width:31%;">
+                                    <label>Photograph</label>
+                                    <input type="file" name="mother_image" class="form-control upload-input">
+                                </div>
+                                <div class="preview-box"></div>
+                            </div>
+                            <div class="col-md-12 mb-3 d-flex align-items-start">
+                                <div class="me-3" style="width: 31%;">
+                                    <label>Aadhar Card</label>
+                                    <input type="file" name="mother_aadhar_image" class="form-control upload-input">
+                                </div>
+                                <div class="preview-box"></div>
+                            </div>
+                            <div class="col-md-12 mb-3 d-flex align-items-start">
+                                <div class="me-3" style="width:31%;">
+                                    <label>PAN Card</label>
+                                    <input type="file" name="mother_pan_image" class="form-control upload-input">
+                                </div>
+                                <div class="preview-box"></div>
+                            </div>
+                        </div>
+                        <!--End photograph section-->
                      </div>
                      <!--Widow Details-->
                      <div class="step-content d-none" id="step-5">
@@ -385,11 +427,32 @@
                               <label class="form-label">DOD</label>
                               <input type="date" name="date_of_death" class="form-control" value="{{ old('date_of_death') }}">
                            </div>
-                            <div class="col-md-6 mb-3">
-                              <label class="form-label">Choose Photograph</label>
-                              <input type="file" name="window_image" class="form-control" value="{{ old('window_image') }}">
+                        </div>
+                        <!--Photograph section-->
+                        <div class="row">
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                              <div class="me-3" style="width:31%;">
+                                 <label>Photograph</label>
+                                 <input type="file" name="window_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                              <div class="me-3" style="width: 31%;">
+                                 <label>Aadhar Card</label>
+                                 <input type="file" name="window_aadhar_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                              <div class="me-3" style="width:31%;">
+                                 <label>PAN Card</label>
+                                 <input type="file" name="window_pan_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
                            </div>
                         </div>
+                        <!--End photograph section-->
                      </div>
                      <!--Veer Nari Details-->
                      <div class="step-content d-none" id="step-6">
@@ -401,11 +464,14 @@
                            </div>
                            <div class="col-md-6 mb-3">
                               <label>Expose Year</label>
-                              <input type="date" name="veer_nari_expose_year" class="form-control" value="{{ old('veer_nari_expose_year') }}">
-                           </div>
-                           <div class="col-md-4 mb-3">
-                              <label class="form-label">Choose Photograph</label>
-                              <input type="file" name="veer_nari_image" class="form-control" value="{{ old('veer_nari_image') }}">
+                              <select name="veer_nari_expose_year" class="form-control">
+                                 <option value="" disabled selected>Select Expose Year</option>
+                                 <option value="1962" {{ old('veer_nari_expose_year') == '1962' ? 'selected' : '' }}>1962</option>
+                                 <option value="1965" {{ old('veer_nari_expose_year') == '1965' ? 'selected' : '' }}>1965</option>
+                                 <option value="1971" {{ old('veer_nari_expose_year') == '1971' ? 'selected' : '' }}>1971</option>
+                                 <option value="1975" {{ old('veer_nari_expose_year') == '1975' ? 'selected' : '' }}>1975</option>
+                                 <option value="1999" {{ old('veer_nari_expose_year') == '1999' ? 'selected' : '' }}>1999</option>
+                              </select>
                            </div>
                         </div>
                      </div>
@@ -422,89 +488,89 @@
       </div>
    </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ asset('public/admin/assets/js/jquery-3.6.0.min.js') }}"></script>
 <script>
-    let currentStep = 1;
-    function showStep(step) {
-        $('.step-content').addClass('d-none');
-        $('#step-' + step).removeClass('d-none');
-    
-        $('.step-btn').removeClass('active');
-        $('.step-btn[data-step="' + step + '"]').addClass('active');
-    
-        $('#prevBtn').toggle(step > 1);
-        if (step === $('.step-btn').length) {
-            $('#nextBtn').hide();
-            $('#submitBtn').removeClass('d-none');
-        } else {
-            $('#nextBtn').show();
-            $('#submitBtn').addClass('d-none');
-        }
-    }
+   let currentStep = 1;
+   function showStep(step) {
+      $('.step-content').addClass('d-none');
+      $('#step-' + step).removeClass('d-none');
    
-    $('#nextBtn').on('click', function () {
-        if (currentStep < $('.step-btn').length) {
-            currentStep++;
-            showStep(currentStep);
-        }
-    });
+      $('.step-btn').removeClass('active');
+      $('.step-btn[data-step="' + step + '"]').addClass('active');
    
-    $('#prevBtn').on('click', function () {
-        if (currentStep > 1) {
-            currentStep--;
-            showStep(currentStep);
-        }
-    });
-   
-    $('.step-btn').on('click', function () {
-        currentStep = parseInt($(this).data('step'));
-        showStep(currentStep);
-    });
-   
-    $(document).ready(function () {
-        showStep(currentStep);
-    });
+      $('#prevBtn').toggle(step > 1);
+      if (step === $('.step-btn').length) {
+         $('#nextBtn').hide();
+         $('#submitBtn').removeClass('d-none');
+      } else {
+         $('#nextBtn').show();
+         $('#submitBtn').addClass('d-none');
+      }
+   }
+
+   $('#nextBtn').on('click', function () {
+      if (currentStep < $('.step-btn').length) {
+         currentStep++;
+         showStep(currentStep);
+      }
+   });
+
+   $('#prevBtn').on('click', function () {
+      if (currentStep > 1) {
+         currentStep--;
+         showStep(currentStep);
+      }
+   });
+
+   $('.step-btn').on('click', function () {
+      currentStep = parseInt($(this).data('step'));
+      showStep(currentStep);
+   });
+
+   $(document).ready(function () {
+      showStep(currentStep);
+   });
 </script>
 <script>
-    $(document).ready(function() {
-        $('input[type="file"]').each(function() {
-            let fileInput = $(this);
-            fileInput.on('change', function(e) {
-                const file = e.target.files[0];
-                if (!file) return;
-                fileInput.next('.upload-preview').remove();
-                const previewContainer = $('<div class="upload-preview"></div>');
-                const progress = $('<div class="progress"><div class="progress-bar"></div></div>');
-                const removeBtn = $('<button type="button" class="remove-btn">&times;</button>');
-    
-                fileInput.after(previewContainer);
-                previewContainer.html(progress);
-    
-                let progressVal = 0;
-                const progressInterval = setInterval(() => {
-                    progressVal += 5;
-                    progress.find('.progress-bar').css('width', progressVal + '%');
-                    if (progressVal >= 100) {
-                        clearInterval(progressInterval);
-    
-                        const reader = new FileReader();
-                        reader.onload = function(e) {
-                            previewContainer.html(`
-                                <img src="${e.target.result}" alt="Preview">
-                                <div class="mt-1 small text-muted">${file.name}</div>
-                            `);
-                            previewContainer.append(removeBtn);
-                        };
-                        reader.readAsDataURL(file);
-                    }
-                }, 80); 
-    
-                removeBtn.on('click', function() {
-                    previewContainer.remove();
-                    fileInput.val('');
-                });
-            });
-        });
-    });
+   $(document).ready(function() {
+      $('input[type="file"]').each(function() {
+         let fileInput = $(this);
+         fileInput.on('change', function(e) {
+               const file = e.target.files[0];
+               if (!file) return;
+               fileInput.next('.upload-preview').remove();
+               const previewContainer = $('<div class="upload-preview"></div>');
+               const progress = $('<div class="progress"><div class="progress-bar"></div></div>');
+               const removeBtn = $('<button type="button" class="remove-btn">&times;</button>');
+   
+               fileInput.after(previewContainer);
+               previewContainer.html(progress);
+   
+               let progressVal = 0;
+               const progressInterval = setInterval(() => {
+                  progressVal += 5;
+                  progress.find('.progress-bar').css('width', progressVal + '%');
+                  if (progressVal >= 100) {
+                     clearInterval(progressInterval);
+   
+                     const reader = new FileReader();
+                     reader.onload = function(e) {
+                           previewContainer.html(`
+                              <img src="${e.target.result}" alt="Preview">
+                              <div class="mt-1 small text-muted">${file.name}</div>
+                           `);
+                           previewContainer.append(removeBtn);
+                     };
+                     reader.readAsDataURL(file);
+                  }
+               }, 80); 
+   
+               removeBtn.on('click', function() {
+                  previewContainer.remove();
+                  fileInput.val('');
+               });
+         });
+      });
+   });
 </script>
 @endsection
