@@ -27,7 +27,7 @@
                         <h5 class="step-heading mb-3 fw-bold">ExServiceMan Details</h5>
                         <div class="row">
                             <div class="col-md-4 mb-3">
-                              <label class="form-label">Sr. No*</label>
+                              <label class="form-label">Ser. No*</label>
                               <input type="text" name="sr_no" class="form-control" value="{{ old('sr_no') }}">
                            </div>
                            <div class="col-md-4 mb-3">
@@ -63,12 +63,20 @@
                               <input type="text" name="state" class="form-control" value="{{ old('state') }}">
                            </div>
                            <div class="col-md-4 mb-3">
-                              <label class="form-label">Pin Code</label>
+                              <label class="form-label">Pin Code Number</label>
                               <input type="number" name="pin_code" class="form-control" value="{{ old('pin_code') }}">
                            </div>
                            <div class="col-md-4 mb-3">
                               <label class="form-label">Mobile Number</label>
                               <input type="number" name="mobile_no" class="form-control" value="{{ old('mobile_no') }}">
+                           </div>
+                            <div class="col-md-4 mb-3">
+                              <label class="form-label">Aadhar Card Number</label>
+                              <input type="text" name="aadhar_card_no" class="form-control" value="{{ old('aadhar_card_no') }}">
+                           </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">Pan Card Number</label>
+                              <input type="text" name="pan_card_no" class="form-control" value="{{ old('pan_card_no') }}">
                            </div>
                            <div class="col-md-4 mb-3">
                               <label class="form-label">Regiment / Corps</label>
@@ -91,6 +99,14 @@
                               <input type="text" name="education" class="form-control" value="{{ old('education') }}">
                            </div>
                            <div class="col-md-4 mb-3">
+                              <label class="form-label">ECHS Card Number</label>
+                              <input type="text" name="echs_card_no" class="form-control" value="{{ old('echs_card_no') }}">
+                           </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">CSD Card Number</label>
+                              <input type="text" name="csd_card_no" class="form-control" value="{{ old('csd_card_no') }}">
+                           </div>
+                           <div class="col-md-4 mb-3">
                               <label class="form-label">Present Occupation</label>
                               <input type="text" name="present_occupation" class="form-control" value="{{ old('present_occupation') }}">
                            </div>
@@ -110,22 +126,8 @@
                               <label class="form-label">MICR Code</label>
                               <input type="text" name="micr_code" class="form-control" value="{{ old('micr_code') }}">
                            </div>
-                           <div class="col-md-4 mb-3">
-                              <label class="form-label">ECHS Card Number</label>
-                              <input type="text" name="echs_card_no" class="form-control" value="{{ old('echs_card_no') }}">
-                           </div>
-                           <div class="col-md-4 mb-3">
-                              <label class="form-label">Aadhar Card Number</label>
-                              <input type="text" name="aadhar_card_no" class="form-control" value="{{ old('aadhar_card_no') }}">
-                           </div>
-                           <div class="col-md-4 mb-3">
-                              <label class="form-label">Pan Card Number</label>
-                              <input type="text" name="pan_card_no" class="form-control" value="{{ old('pan_card_no') }}">
-                           </div>
-                           <div class="col-md-4 mb-3">
-                              <label class="form-label">CSD Card Number</label>
-                              <input type="text" name="csd_card_no" class="form-control" value="{{ old('csd_card_no') }}">
-                           </div>
+                   
+                          
                            <div class="col-md-4 mb-3">
                               <label class="form-label">Decorator Soldier</label>
                               <input type="text" name="decorator_soldier" class="form-control" value="{{ old('decorator_soldier') }}">
@@ -187,7 +189,7 @@
                               <input type="text" name="spouse_education" class="form-control" value="{{ old('spouse_education') }}">
                            </div>
                            <div class="col-md-4 mb-3">
-                              <label class="form-label">Mobile</label>
+                              <label class="form-label">Mobile Number</label>
                               <input type="number" name="spouse_mobile" class="form-control" value="{{ old('spouse_mobile') }}">
                            </div>
                            <div class="col-md-4 mb-3">
@@ -211,7 +213,7 @@
                               <input type="text" name="spouse_bank_acc_no" class="form-control" value="{{ old('spouse_bank_acc_no') }}">
                            </div>
                            <div class="col-md-4 mb-3">
-                              <label class="form-label">Bank Number</label>
+                              <label class="form-label">Bank Name</label>
                               <input type="text" name="spouse_bank_name" class="form-control" value="{{ old('spouse_bank_name') }}">
                            </div>
                            <div class="col-md-4 mb-3"> 
@@ -361,7 +363,7 @@
                               <input type="text" name="mother_aadhar_card" class="form-control" value="{{ old('mother_aadhar_card') }}">
                            </div>
                            <div class="col-md-4 mb-3">
-                              <label class="form-label">Pan Card</label>
+                              <label class="form-label">Pan Card Number</label>
                               <input type="text" name="mother_pan_card" class="form-control" value="{{ old('mother_pan_card') }}">
                            </div>
                            <div class="col-md-4 mb-3">
