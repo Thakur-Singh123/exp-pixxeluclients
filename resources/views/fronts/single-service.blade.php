@@ -2,7 +2,6 @@
 .tabs {
     display: flex;
     flex-wrap: wrap;
-    border-bottom: 2px solid #ddd;
     margin-bottom: 20px;
     gap: 10px;
 }
@@ -65,7 +64,6 @@
     font-size: 18px;
     font-weight: 700;
     color: #0d6efd;
-    border-bottom: 2px solid #e5e5e5;
     padding-bottom: 8px;
     margin: 0 0 10px 2px;
 }
