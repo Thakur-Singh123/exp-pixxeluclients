@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ExServiceMan;
+use App\Models\ChildDetail;
 
 class ExServiceManController extends Controller
 {
@@ -236,6 +237,17 @@ class ExServiceManController extends Controller
         ]);
         //Check if record created or not
         if ($is_create_record) {
+ foreach ($request->children_name as $key => $name) {
+    ChildDetail::create([
+        'ex_service_man_id' => $is_create_record->id,
+        'name' => $name,
+        'age' => $request->children_age[$key] ?? null,
+        'gender' => $request->children_gender[$key] ?? null,
+        'education' => $request->children_education[$key] ?? null,
+        'occupation' => $request->children_occupation[$key] ?? null,
+    ]);
+}
+
             return redirect()->route('admin.index')->with('success', 'Service created successfully');
         } else {
             return back()->with('unsuccess', 'Oops! Something went wrong');

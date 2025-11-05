@@ -4,11 +4,8 @@
    <div class="page-inner">
       <div class="row">
          <div class="col-md-12">
-            @if (session('success'))
-            <div class="alert alert-success">
-               {{ session('success') }}
-            </div>
-            @endif
+           <!--success message section-->
+            @include('admin.notification')
             <div class="row">
                <div class="col-md-12">
                   <div class="card">
