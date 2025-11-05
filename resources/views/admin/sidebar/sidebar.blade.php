@@ -60,8 +60,8 @@
                     </a>
                 </li>
                 <!--export data-->
-                <li class="nav-item {{ Request::is('admin/export-create') ? 'active' : '' }}">
-                    <a href="{{ url('admin/export-create') }}">
+                <li class="nav-item {{ Request::is('admin/export-service') ? 'active' : '' }}">
+                    <a href="{{ url('admin/export-service') }}">
                         <i class="fas fa-upload"></i>
                         <p>Export Data</p>
                     </a>

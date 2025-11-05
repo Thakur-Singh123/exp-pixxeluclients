@@ -25,6 +25,7 @@ class User extends Authenticatable
         'city',
         'state',
         'joining_date',
+        'image',
         'user_type',
         'status',
     ];

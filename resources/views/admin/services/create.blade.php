@@ -14,13 +14,14 @@
                   <form id="captureForm" action="{{ route('admin.service.submit') }}" method="POST" enctype="multipart/form-data">
                      @csrf
                      <!--Tab-->
-                     <div class="d-flex flex-wrap justify-content-between mb-4 step-header">
+                     <div class="d-flex flex-wrap gap-3 mb-4 step-header">
                         <button type="button" class="btn btn-outline-primary step-btn active" data-step="1">ExServiceMan Details</button>
                         <button type="button" class="btn btn-outline-primary step-btn" data-step="2">Spouse Details</button>
                         <button type="button" class="btn btn-outline-primary step-btn" data-step="3">Father Details</button>
                         <button type="button" class="btn btn-outline-primary step-btn" data-step="4">Mother Details</button>
-                        <button type="button" class="btn btn-outline-primary step-btn" data-step="5">Widow Details</button>
-                        <button type="button" class="btn btn-outline-primary step-btn" data-step="6">Veer Nari Details</button>
+                        <button type="button" class="btn btn-outline-primary step-btn" data-step="5">Children Details</button>
+                        <button type="button" class="btn btn-outline-primary step-btn" data-step="6">Widow Details</button>
+                        <button type="button" class="btn btn-outline-primary step-btn" data-step="7">Veer Nari Details</button>
                      </div>
                      <!--ExServiceMan Detail-->
                      <div class="step-content" id="step-1">
@@ -417,8 +418,47 @@
                         </div>
                         <!--End photograph section-->
                      </div>
+                     <!--Children details-->
+                     <div class="step-content" id="step-5">
+                        <h5 class="step-heading mb-3 fw-bold">Children Details</h5>
+                        <div class="table-responsive">
+                           <table class="table table-bordered" id="childrenTable">
+                                 <thead class="table-light">
+                                    <tr>
+                                       <th>Child Name</th>
+                                       <th>Age</th>
+                                       <th>Gender</th>
+                                       <th>Education</th>
+                                       <th>Occupation</th>
+                                       <th style="width: 70px;">Action</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <td><input type="text" name="children_name[]" class="form-control" placeholder="Enter name"></td>
+                                       <td><input type="text" name="children_age[]" class="form-control" placeholder="Enter age"></td>
+                                       <td>
+                                          <select name="children_gender[]" class="form-select">
+                                             <option value="">Select</option>
+                                             <option>Male</option>
+                                             <option>Female</option>
+                                             <option>Other</option>
+                                          </select>
+                                       </td>
+                                       <td><input type="text" name="children_education[]" class="form-control" placeholder="Enter education"></td>
+                                       <td><input type="text" name="children_occupation[]" class="form-control" placeholder="Enter occupation"></td>
+                                       <td class="text-center">
+                                          <button type="button" class="btn btn-success btn-sm addChildRow">
+                                             <i class="fas fa-plus"></i>
+                                          </button>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                           </table>
+                        </div>
+                     </div>
                      <!--Widow Details-->
-                     <div class="step-content d-none" id="step-5">
+                     <div class="step-content d-none" id="step-6">
                         <h5 class="step-heading mb-3 fw-bold">Widow Details</h5>
                         <div class="row">
                             <div class="col-md-6 mb-3">
@@ -457,7 +497,7 @@
                         <!--End photograph section-->
                      </div>
                      <!--Veer Nari Details-->
-                     <div class="step-content d-none" id="step-6">
+                     <div class="step-content d-none" id="step-7">
                         <h5 class="step-heading mb-3 fw-bold">Veer Nari Details</h5>
                         <div class="row">
                            <div class="col-md-6 mb-3">
@@ -477,6 +517,7 @@
                            </div>
                         </div>
                      </div>
+                   
                      <!--Navigation Buttons -->
                      <div class="d-flex justify-content-between mt-4">
                         <button type="button" class="btn btn-secondary" id="prevBtn">Prev</button>
@@ -574,5 +615,39 @@
          });
       });
    });
+</script>
+<script>
+$(document).ready(function() {
+    // Add new row
+    $(document).on('click', '.addChildRow', function() {
+        let newRow = `
+            <tr>
+                <td><input type="text" name="children_name[]" class="form-control" placeholder="Enter name"></td>
+                <td><input type="text" name="children_age[]" class="form-control" placeholder="Enter age"></td>
+                <td>
+                    <select name="children_gender[]" class="form-select">
+                        <option value="">Select</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+                </td>
+                <td><input type="text" name="children_education[]" class="form-control" placeholder="Enter education"></td>
+                <td><input type="text" name="children_occupation[]" class="form-control" placeholder="Enter occupation"></td>
+                <td class="text-center">
+                    <button type="button" class="btn btn-danger btn-sm removeChildRow">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        `;
+        $('#childrenTable tbody').append(newRow);
+    });
+
+    // Remove row
+    $(document).on('click', '.removeChildRow', function() {
+        $(this).closest('tr').remove();
+    });
+});
 </script>
 @endsection

@@ -10,11 +10,12 @@
     <!--css files-->
     <!-- FullCalendar CSS -->
     <link rel="stylesheet" href="{{ asset('public/admin/assets/datatables/css/jquery.dataTables.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/admin/assets/datatables/css/dataTables.dataTables.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/admin/assets/css/custom.css') }}" />
     <link rel="stylesheet" href="{{ asset('public/admin/assets/select2/css/select2.css') }}" />
     <link rel="stylesheet" href="{{ asset('public/admin/assets/select2/css/select2.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('public/admin/assets/css/bootstrap.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('public/admin/assets/css/plugins.min.css') }}" />
+    <!-- <link rel="stylesheet" href="{{ asset('public/admin/assets/css/plugins.min.css') }}" /> -->
     <link rel="stylesheet" href="{{ asset('public/admin/assets/css/kaiadmin.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('public/admin/assets/css/fonts.css') }}" />
     <link rel="stylesheet" href="{{ asset('public/admin/assets/css/demo.css') }}" />
@@ -135,7 +136,7 @@
                                                 <div class="u-text">
                                                     <h4>{{ auth()->user()->name }}</h4>
                                                     <p class="text-muted">{{ auth()->user()->email }}</p>
-                                                    <a href="{{ url('mr/profile') }}"
+                                                    <a href="{{ url('admin/profile') }}"
                                                         class="profile-btn btn-xs btn-secondarys btn-sm">View
                                                         Profile</a>
                                                 </div>
@@ -143,12 +144,12 @@
                                         </li>
                                         <li>
                                             <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item {{ Request::is('mr/edit-profile') ? 'active' : '' }}"
-                                                href="{{ url('mr/edit-profile') }}">
+                                            <a class="dropdown-item {{ Request::is('admin/edit-profile') ? 'active' : '' }}"
+                                                href="{{ url('admin/edit-profile') }}">
                                                 Edit Profile
                                             </a>
-                                            <a class="dropdown-item {{ Request::is('mr/change-password') ? 'active' : '' }}"
-                                                href="{{ url('mr/change-password') }}">
+                                            <a class="dropdown-item {{ Request::is('admin/change-password') ? 'active' : '' }}"
+                                                href="{{ url('admin/change-password') }}">
                                                 Update Password
                                             </a>
                                             <a href="{{ route('logout') }}" class="dropdown-item"

@@ -15,12 +15,12 @@ Route::group(['middleware' => 'auth'], function() {
         //Dashboard 
         Route::get('admin/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'dashboard'])->name('admin.dashboard');
         //Profile 
-        Route::get('admin/profile', [App\Http\Controllers\Admin\Profile\ProfileController::class, 'profile']);
-        Route::get('admin/edit-profile', [App\Http\Controllers\Admin\Profile\ProfileController::class, 'edit_profile']);
-        Route::post('admin/update-profile/{id}', [App\Http\Controllers\Admin\Profile\ProfileController::class, 'update_profile'])->name('admin.update.profile');
-        Route::get('admin/change-password', [App\Http\Controllers\Admin\Profile\ProfileController::class, 'change_password']);
-        Route::post('admin/submit-change-password/{id}', [App\Http\Controllers\Admin\Profile\ProfileController::class, 'submit_change_password'])->name('admin.submit.change.password');
-        Route::get('admin/settings', [App\Http\Controllers\Admin\Profile\ProfileController::class, 'profile']);
+        Route::get('admin/profile', [App\Http\Controllers\Admin\ProfileController::class, 'profile']);
+        Route::get('admin/edit-profile', [App\Http\Controllers\Admin\ProfileController::class, 'edit_profile']);
+        Route::post('admin/update-profile/{id}', [App\Http\Controllers\Admin\ProfileController::class, 'update_profile'])->name('admin.update.profile');
+        Route::get('admin/change-password', [App\Http\Controllers\Admin\ProfileController::class, 'change_password']);
+        Route::post('admin/submit-change-password/{id}', [App\Http\Controllers\Admin\ProfileController::class, 'submit_change_password'])->name('admin.submit.change.password');
+        Route::get('admin/settings', [App\Http\Controllers\Admin\ProfileController::class, 'profile']);
         //Services
         Route::get('admin/services', [App\Http\Controllers\Admin\ExServiceManController::class, 'all_services'])->name('admin.index');
         Route::get('admin/service-create', [App\Http\Controllers\Admin\ExServiceManController::class, 'add_service']);
@@ -32,6 +32,8 @@ Route::group(['middleware' => 'auth'], function() {
         //Import data
         Route::get('admin/import-create', [App\Http\Controllers\Admin\ImportController::class, 'add_import']);
         Route::post('admin/import-submit', [App\Http\Controllers\Admin\ImportController::class, 'submi_import'])->name('admin.submit.import');
+        //Export data
+        Route::get('admin/export-service', [App\Http\Controllers\Admin\ExportController::class, 'export_service']);
     });
     //Customer middleware
     Route::group(['middleware' => 'Customer'], function() { 
@@ -41,5 +43,5 @@ Route::group(['middleware' => 'auth'], function() {
 
 });
 
-Auth::routes(['register' => false]);
+Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -55,7 +55,7 @@
     <body>
         <div class="container">
             <input type="checkbox" id="flip" {{ session('openSignup') ? 'checked' : '' }}>
-            <div class="cover">
+            <!-- <div class="cover">
                 <div class="front">
                 <img src="{{ asset('public/admin/images/frontImg.jpg') }}" alt="">
                 <div class="text">
@@ -70,11 +70,11 @@
                     <span class="text-2">Let's get started</span>
                 </div>
                 </div>
-            </div>
+            </div> -->
             <div class="forms">
                 <div class="form-content">
                 <div class="login-form">
-                    <div class="title">Login</div>
+                    <div class="title">Login<em>VSK CELL </em> Portal</div>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="input-boxes">
@@ -105,7 +105,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="signup-form">
+                <!-- <div class="signup-form">
                     <div class="title">Signup</div>
                     <form id="signupForm" method="POST" action="#" enctype="multipart/form-data" autocomplete="off">
                         @csrf
@@ -185,7 +185,7 @@
                     </form>
                 </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </body>
     <script src="{{ asset('public/admin/assets/vendor/intl-tel-input/js/intlTelInput.min.js') }}"></script>
