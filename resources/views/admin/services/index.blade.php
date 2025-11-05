@@ -21,7 +21,7 @@
                               class="dataTables_wrapper container-fluid dt-bootstrap4">
                               <div class="row">
                                  <div class="col-sm-12">
-                                    <table id="basic-datatables" class="display table table-striped table-hover dataTable" role="grid" aria-describedby="basic-datatables_info">
+                                    <table id="serviceTable" class="display">
                                        <thead>
                                           <tr role="row">
                                              <th class="sorting_asc" tabindex="0"
@@ -133,9 +133,9 @@
                                              <td>{{ $service->reg_on_dgr_portal ?? '-' }}</td>
                                              <td>
                                                 <div class="form-button-action">
-                                                   <a href="{{ url('admin/edit-service', $service->id) }}" class="icon-button edit-btn custom-tooltip" data-tooltip="Edit">
+                                                   <!-- <a href="{{ url('admin/edit-service', $service->id) }}" class="icon-button edit-btn custom-tooltip" data-tooltip="Edit">
                                                    <i class="fa fa-edit"></i>
-                                                   </a>
+                                                   </a> -->
                                                    <a class="icon-button delete-btn custom-tooltip delete_service_record" data-service_id="{{ $service->id }}" data-tooltip="Delete"><i class="fa fa-trash"></i></a>
                            
                                                 </div>
@@ -148,7 +148,6 @@
                                           @endforelse
                                        </tbody>
                                     </table>
-                                    {{ $all_services->links('pagination::bootstrap-5') }}
                                  </div>
                               </div>
                            </div>

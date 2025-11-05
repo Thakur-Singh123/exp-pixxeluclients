@@ -29,6 +29,9 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('admin/edit-service/{id}', [App\Http\Controllers\Admin\ExServiceManController::class, 'edit_service']);
         Route::post('admin/service-update/{id}', [App\Http\Controllers\Admin\ExServiceManController::class, 'update_service'])->name('admin.service.update');
         Route::get('admin/delete-service-detail', [App\Http\Controllers\Admin\ExServiceManController::class, 'delete_service']);
+        //Import data
+        Route::get('admin/import-create', [App\Http\Controllers\Admin\ImportController::class, 'add_import']);
+        Route::post('admin/import-submit', [App\Http\Controllers\Admin\ImportController::class, 'submi_import'])->name('admin.submit.import');
     });
     //Customer middleware
     Route::group(['middleware' => 'Customer'], function() { 
