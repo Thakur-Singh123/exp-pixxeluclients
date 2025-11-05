@@ -237,17 +237,18 @@ class ExServiceManController extends Controller
         ]);
         //Check if record created or not
         if ($is_create_record) {
- foreach ($request->children_name as $key => $name) {
-    ChildDetail::create([
-        'ex_service_man_id' => $is_create_record->id,
-        'name' => $name,
-        'age' => $request->children_age[$key] ?? null,
-        'gender' => $request->children_gender[$key] ?? null,
-        'education' => $request->children_education[$key] ?? null,
-        'occupation' => $request->children_occupation[$key] ?? null,
-    ]);
-}
-
+            //Get request input
+            foreach ($request->children_name as $key => $name) {
+                ChildDetail::create([
+                    'ex_service_man_id' => $is_create_record->id,
+                    'army_no' => $is_create_record->army_no,
+                    'name' => $name,
+                    'age' => $request->children_age[$key] ?? null,
+                    'gender' => $request->children_gender[$key] ?? null,
+                    'education' => $request->children_education[$key] ?? null,
+                    'occupation' => $request->children_occupation[$key] ?? null,
+                ]);
+            }
             return redirect()->route('admin.index')->with('success', 'Service created successfully');
         } else {
             return back()->with('unsuccess', 'Oops! Something went wrong');
@@ -257,14 +258,15 @@ class ExServiceManController extends Controller
     //Function for single detail page
     public function single_service($id) {
         //Get single detail
-        $service_detail = ExServiceMan::find($id);
+        $service_detail = ExServiceMan::with('children')->find($id);
+        // echo "<pre>"; print_r($service_detail->toArray());exit;
         return view('admin.services.single-detail', compact('service_detail'));
     }
 
     //Function for edit service
     public function edit_service($id) {
         //Get service detail
-        $service_detail = ExServiceMan::find($id);
+        $service_detail = ExServiceMan::with('children')->find($id);
         return view('admin.services.edit-service', compact('service_detail'));
     }
     
@@ -273,12 +275,12 @@ class ExServiceManController extends Controller
         //Get servide detail
         $service = ExServiceMan::findOrFail($id);
         //Check if serial number already exists (except current record)
-        $exists = ExServiceMan::where('sr_no', $request->sr_no)
-            ->where('id', '!=', $id)
-            ->exists();
-        if ($exists) {
-            return back()->with('unsuccess', 'This Serial No already exists, please try a new Serial No.');
-        }
+        // $exists = ExServiceMan::where('sr_no', $request->sr_no)
+        //     ->where('id', '!=', $id)
+        //     ->exists();
+        // if ($exists) {
+        //     return back()->with('unsuccess', 'This Serial No already exists, please try a new Serial No.');
+        // }
         //Check folder exists or not
         $folder = public_path('uploads/ex-images');
         if (!file_exists($folder)) {
@@ -319,7 +321,6 @@ class ExServiceManController extends Controller
 
         //Update Service
         $is_update_record = $service->update([
-            'sr_no' => $request->sr_no,
             'army_no' => $request->army_no,
             'rank' => $request->rank,
             'name' => $request->name,
@@ -413,6 +414,23 @@ class ExServiceManController extends Controller
             'window_pan_image' => $window_pan,
             'status' => 'Active',
         ]);
+        // Update children
+        if($request->children_name) {
+            //Delete existing children
+            ChildDetail::where('ex_service_man_id', $service->id)->delete();
+            //Create new children
+            foreach ($request->children_name as $key => $name) {
+                ChildDetail::create([
+                    'ex_service_man_id'=> $service->id,
+                    'army_no'=> $service->army_no,
+                    'name' => $name,
+                    'age' => $request->children_age[$key] ?? null,
+                    'gender' => $request->children_gender[$key] ?? null,
+                    'education' => $request->children_education[$key] ?? null,
+                    'occupation' => $request->children_occupation[$key] ?? null,
+                ]);
+            }
+        }
         //Check if service updated or not
         if ($is_update_record) {
             return redirect()->route('admin.index')->with('success', 'Service updated successfully');
