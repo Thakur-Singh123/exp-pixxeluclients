@@ -449,7 +449,7 @@
                                        <td><input type="text" name="children_occupation[]" class="form-control" placeholder="Enter occupation"></td>
                                        <td class="text-center">
                                           <button type="button" class="btn btn-success btn-sm addChildRow">
-                                             <i class="fas fa-plus"></i>
+                                             <i class="fas fa-plus"></i>Add Child
                                           </button>
                                        </td>
                                     </tr>
@@ -517,7 +517,6 @@
                            </div>
                         </div>
                      </div>
-                   
                      <!--Navigation Buttons -->
                      <div class="d-flex justify-content-between mt-4">
                         <button type="button" class="btn btn-secondary" id="prevBtn">Prev</button>
@@ -618,36 +617,35 @@
 </script>
 <script>
 $(document).ready(function() {
-    // Add new row
-    $(document).on('click', '.addChildRow', function() {
-        let newRow = `
-            <tr>
-                <td><input type="text" name="children_name[]" class="form-control" placeholder="Enter name"></td>
-                <td><input type="text" name="children_age[]" class="form-control" placeholder="Enter age"></td>
-                <td>
-                    <select name="children_gender[]" class="form-select">
-                        <option value="">Select</option>
-                        <option>Male</option>
-                        <option>Female</option>
-                        <option>Other</option>
-                    </select>
-                </td>
-                <td><input type="text" name="children_education[]" class="form-control" placeholder="Enter education"></td>
-                <td><input type="text" name="children_occupation[]" class="form-control" placeholder="Enter occupation"></td>
-                <td class="text-center">
-                    <button type="button" class="btn btn-danger btn-sm removeChildRow">
-                        <i class="fas fa-trash"></i>
-                    </button>
-                </td>
-            </tr>
-        `;
-        $('#childrenTable tbody').append(newRow);
-    });
-
-    // Remove row
-    $(document).on('click', '.removeChildRow', function() {
-        $(this).closest('tr').remove();
-    });
+   //Add new row
+   $(document).on('click', '.addChildRow', function() {
+      let newRow = `
+         <tr>
+               <td><input type="text" name="children_name[]" class="form-control" placeholder="Enter name"></td>
+               <td><input type="text" name="children_age[]" class="form-control" placeholder="Enter age"></td>
+               <td>
+                  <select name="children_gender[]" class="form-select">
+                     <option value="">Select</option>
+                     <option>Male</option>
+                     <option>Female</option>
+                     <option>Other</option>
+                  </select>
+               </td>
+               <td><input type="text" name="children_education[]" class="form-control" placeholder="Enter education"></td>
+               <td><input type="text" name="children_occupation[]" class="form-control" placeholder="Enter occupation"></td>
+               <td class="text-center">
+                  <button type="button" class="btn btn-danger btn-sm removeChildRow">
+                     <i class="fas fa-trash"></i>
+                  </button>
+               </td>
+         </tr>
+      `;
+      $('#childrenTable tbody').append(newRow);
+   });
+   //Remove row
+   $(document).on('click', '.removeChildRow', function() {
+      $(this).closest('tr').remove();
+   });
 });
 </script>
 @endsection

@@ -8,5 +8,5 @@ class ChildDetail extends Model
 {
     //Call migration
     protected $table = 'children_details';
-    protected $fillable = ['ex_service_man_id','name','age','gender','education','occupation'];
+    protected $fillable = ['ex_service_man_id','army_no','name','age','gender','education','occupation'];
 }

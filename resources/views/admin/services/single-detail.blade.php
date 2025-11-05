@@ -12,8 +12,9 @@
                   <button type="button" class="btn btn-outline-primary step-btn" data-step="2">Spouse Details</button>
                   <button type="button" class="btn btn-outline-primary step-btn" data-step="3">Father Details</button>
                   <button type="button" class="btn btn-outline-primary step-btn" data-step="4">Mother Details</button>
-                  <button type="button" class="btn btn-outline-primary step-btn" data-step="5">Widow Details</button>
-                  <button type="button" class="btn btn-outline-primary step-btn" data-step="6">Veer Nari Details</button>
+                  <button type="button" class="btn btn-outline-primary step-btn" data-step="5">Children Details</button>
+                  <button type="button" class="btn btn-outline-primary step-btn" data-step="6">Widow Details</button>
+                  <button type="button" class="btn btn-outline-primary step-btn" data-step="7">Veer Nari Details</button>
                </div>
                <!--Ex-ServiceMan Details-->
                <div class="step-content" id="step-1">
@@ -211,8 +212,47 @@
                      </div>
                   </div>
                </div>
-               <!--Widow Details-->
+               <!--Children Details -->
                <div class="step-content d-none" id="step-5">
+                  <h5 class="fw-bold text-primary border-bottom pb-2 mb-3">Children Details</h5>
+                  <div class="table-responsive">
+                     <table class="table table-bordered" id="childrenTable">
+                        <thead class="table-light">
+                           <tr>
+                              <th>Ser. No</th>
+                              <th>Child Name</th>
+                              <th>Age</th>
+                              <th>Gender</th>
+                              <th>Education</th>
+                              <th>Occupation</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           @php $count = 1 @endphp
+                           <!--Check if children exists or not-->
+                           @if(count($service_detail->children) > 0)
+                           <!--Get childrens detail-->
+                           @foreach($service_detail->children as $child)
+                           <tr>
+                              <td >{{ $count++ }}.</td>
+                              <td>{{ $child->name }}</td>
+                              <td>{{ $child->age }}</td>
+                              <td>{{ $child->gender }}</td>
+                              <td>{{ $child->education }}</td>
+                              <td>{{ $child->occupation }}</td>
+                           </tr>
+                           @endforeach
+                           @else
+                              <tr>
+                                 <td colspan="5" class="text-center">No Children Found</td>
+                              </tr>
+                           @endif
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+               <!--Widow Details-->
+               <div class="step-content d-none" id="step-6">
                   <h5 class="fw-bold text-primary border-bottom pb-2 mb-3">Widow Details</h5>
                   <div class="row">
                      <div class="col-md-6 mb-3"><strong>Name:</strong> {{ $service_detail->window_name ?? '-' }}</div>
@@ -246,7 +286,7 @@
                   </div>
                </div>
                <!--Veer Nari Details -->
-               <div class="step-content d-none" id="step-6">
+               <div class="step-content d-none" id="step-7">
                   <h5 class="fw-bold text-primary border-bottom pb-2 mb-3">Veer Nari Details</h5>
                   <div class="row">
                      <div class="col-md-6 mb-3"><strong>Name:</strong> {{ $service_detail->veer_nari_name ?? '-' }}</div>

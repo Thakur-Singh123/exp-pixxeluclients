@@ -130,9 +130,9 @@
                                              <td>{{ $service->reg_on_dgr_portal ?? '-' }}</td>
                                              <td>
                                                 <div class="form-button-action">
-                                                   <!-- <a href="{{ url('admin/edit-service', $service->id) }}" class="icon-button edit-btn custom-tooltip" data-tooltip="Edit">
+                                                   <a href="{{ url('admin/edit-service', $service->id) }}" class="icon-button edit-btn custom-tooltip" data-tooltip="Edit">
                                                    <i class="fa fa-edit"></i>
-                                                   </a> -->
+                                                   </a>
                                                    <a class="icon-button delete-btn custom-tooltip delete_service_record" data-service_id="{{ $service->id }}" data-tooltip="Delete"><i class="fa fa-trash"></i></a>
                            
                                                 </div>
