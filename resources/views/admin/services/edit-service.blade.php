@@ -594,7 +594,7 @@
       </tbody>
       <tfoot>
          <tr>
-            <td colspan="7" class="text-center">
+            <td colspan="7" class="text-end">
                <button type="button" class="btn btn-success btn-sm addChildRow">
                   <i class="fas fa-plus"></i> Add Child
                </button>
