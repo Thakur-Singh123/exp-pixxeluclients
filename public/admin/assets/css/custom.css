@@ -578,16 +578,26 @@ div#basic-datatables_wrapper {
 table#basic-datatables {
     border-collapse: collapse !important;
 }
-body .table-responsive tr th  {
+body .table-responsive tr th {
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 12px 24px !important;
     font-weight: 600;
-    background: #1a2035;
+    background: #4B5320;
     color: #fff;
     font-size: 11px !important;
     white-space: nowrap;
-    border: 1px solid #dfdfdf;
+    border: 0 !important;
+}
+.dt-layout-row.dt-layout-table {
+    overflow-x: scroll;
+}
+span.dt-column-title {
+    font-size: 17px;
+    text-transform: capitalize;
+}
+.dataTable td {
+    font-size: 16px;
 }
 table#basic-datatables td {
     border: 1px solid #dfdfdf !important;

@@ -10,11 +10,12 @@
     <!--css files-->
     <!-- FullCalendar CSS -->
     <link rel="stylesheet" href="{{ asset('public/admin/assets/datatables/css/jquery.dataTables.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/admin/assets/datatables/css/dataTables.dataTables.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/admin/assets/css/custom.css') }}" />
     <link rel="stylesheet" href="{{ asset('public/admin/assets/select2/css/select2.css') }}" />
     <link rel="stylesheet" href="{{ asset('public/admin/assets/select2/css/select2.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('public/admin/assets/css/bootstrap.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('public/admin/assets/css/plugins.min.css') }}" />
+    <!-- <link rel="stylesheet" href="{{ asset('public/admin/assets/css/plugins.min.css') }}" /> -->
     <link rel="stylesheet" href="{{ asset('public/admin/assets/css/kaiadmin.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('public/admin/assets/css/fonts.css') }}" />
     <link rel="stylesheet" href="{{ asset('public/admin/assets/css/demo.css') }}" />
