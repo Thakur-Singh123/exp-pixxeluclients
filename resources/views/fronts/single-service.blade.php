@@ -2,11 +2,10 @@
 .tabs {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 20px;
     gap: 10px;
 }
 .tab {
-    background: #0d6efd;
+    background: transparent;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 8px 20px;
@@ -18,8 +17,8 @@
     background: #e9ecef;
 }
 .tab.active {
-    background: #ffcc00;
-    color: #000;
+    background: #6B8E23;
+    color: #fff;
     border-radius: 8px;
 }
 .modal {
@@ -46,8 +45,8 @@
     position: absolute;
     top: 0px;
     right: 8px;
-    font-size: 30px;
-    color: #ef0707;
+    font-size: 50px;
+    color: #6b8e23;
     cursor: pointer;
 }
 .card {
@@ -59,13 +58,17 @@
 }
 .card-body { 
     padding: 20px; 
+    margin-top: 20px; 
 }
 .card-body h5 {
-    font-size: 18px;
+    font-size: 28px;
+    text-transform: uppercase;
+    text-decoration: underline;
     font-weight: 700;
-    color: #0d6efd;
+    text-align: center;
+    color: #333333;
     padding-bottom: 8px;
-    margin: 0 0 10px 2px;
+    margin: 0 0 20px 0;
 }
 .detail-row {
     display: flex;
@@ -73,16 +76,19 @@
     gap: 10px 25px;
 }
 .detail-item {
-    font-size: 15px;
-    margin-bottom: 10px;
+    font-size: 16px;
+    margin-bottom: 0;
     flex: 1 1 22%;
     min-width: 200px;
+}
+.detail-item strong {
+    font-size: 18px;
 }
 .mt-4.d-flex {
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
-    gap: 25px;
+    justify-content: space-between;
+    gap: 0;
     flex-wrap: wrap;
 }
 .mt-4.d-flex > div {
@@ -90,6 +96,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 33%;
 }
 .mt-4.d-flex strong {
     font-size: 15px;
@@ -97,18 +104,41 @@
     margin-bottom: 8px;
 }
 .mt-4.d-flex img {
-    width: 120px;
-    height: 120px;
+    width: 99%;
+    height: 200px;
     object-fit: cover;
     border-radius: 10px;
-    border: 2px solid #ddd;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    border: 1px solid #ddd;
 }
 .tab-content { 
     display: none; 
 }
 .tab-content.active { 
     display: block; 
+}
+
+.detail-row {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 0;
+}
+
+.detail-item {
+   padding: 10px 12px;
+   border-radius: 6px;
+   border: 1px solid #fff;
+}
+
+/* Row 1,3,5... (#ddd) */
+.detail-item:nth-child(4n-3),
+.detail-item:nth-child(4n-2) {
+   background: #ddd;
+}
+
+/* Row 2,4,6... (#ddd) */
+.detail-item:nth-child(4n-1),
+.detail-item:nth-child(4n) {
+   background: #ddd;
 }
 </style>
 <div class="modal" id="detailModal">

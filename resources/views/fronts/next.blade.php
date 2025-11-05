@@ -159,6 +159,21 @@
          text-decoration: none;
          display: inline-block;
       }
+
+      .loader {
+      width: 45px;
+      height: 45px;
+      border: 5px solid #ccc;
+      border-top: 5px solid #4B5320;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 20px auto;
+      }
+
+      @keyframes spin {
+         0% { transform: rotate(0deg); }
+         100% { transform: rotate(360deg); }
+      }
       </style>
    </head>
    <body>
@@ -319,6 +334,12 @@
          <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h3 id="detailTitle" class="mb-3 text-primary border-bottom pb-2">Person Details</h3>
+
+               <div id="loader" style="text-align:center; display:none;">
+                  <div class="loader"></div>
+                  <p style="margin-top:10px;">Loading details...</p>
+               </div>
+
             <div id="detailBody"></div>
          </div>
       </div>
