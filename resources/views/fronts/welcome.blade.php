@@ -10,7 +10,10 @@
         margin: 0;
         padding: 0;
         font-family: "Poppins", sans-serif;
-        background: #3C4D03;
+        background: url(./public/admin/images/army-skin.avif);
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
         height: 100vh;
         display: flex;
         align-items: center;
@@ -37,7 +40,7 @@
     }
 
     button {
-        background: #6B8E23;
+        background: #373d21;
         color: #ffffff;
         border: none;
         padding: 12px 25px;

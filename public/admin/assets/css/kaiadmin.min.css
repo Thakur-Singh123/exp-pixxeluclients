@@ -1120,6 +1120,8 @@ body {
 .step-header button.btn.btn-outline-primary.step-btn {
     border-color: #dcdcdc;
     color: #000;
+    font-size: 18px;
+    padding: 6px 15px 9px;
 }
 button.btn.btn-outline-primary.step-btn.active {
     background: #6B8E23 !important;
@@ -2858,11 +2860,13 @@ body[data-background-color=dark] .border-top {
 }
 
 .card-title {
-	margin: 0px 10px 10px 0px;
-	color: #2a2f5b;
-	font-size: 18px;
-	font-weight: 600;
-	line-height: 1.6;
+    margin: 0px 10px 10px 0px;
+    color: #2a2f5b;
+    font-size: 29px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: center;
 }
 
 .card-title a,
