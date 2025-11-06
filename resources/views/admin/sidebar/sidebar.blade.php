@@ -6,7 +6,7 @@
             <a href="{{ url('admin/dashboard') }}" class="logo">
                 <img src="{{ asset('public/admin/images/ESP Logo White.svg') }}" alt="navbar brand" class="navbar-brand" height="20" />
             </a>
-            <div class="nav-toggle">
+            <!-- <div class="nav-toggle">
                 <button class="btn btn-toggle toggle-sidebar">
                     <i class="gg-menu-right"></i>
                 </button>
@@ -16,7 +16,7 @@
             </div>
             <button class="topbar-toggler more">
                 <i class="gg-more-vertical-alt"></i>
-            </button>
+            </button> -->
         </div>
     </div>
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
