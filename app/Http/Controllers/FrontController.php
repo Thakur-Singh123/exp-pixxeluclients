@@ -22,7 +22,7 @@ class FrontController extends Controller
     //Function for get single service detail
     public function get_service_detail($id) {
         //Get service detail
-        $service_detail = ExServiceMan::find($id);
+        $service_detail = ExServiceMan::with('children')->find($id);
         //Check if service fond or not
         if (!$service_detail) {
             return response()->json(['status' => false, 'message' => 'Record not found']);
