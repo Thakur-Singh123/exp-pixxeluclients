@@ -2,7 +2,7 @@
 <html lang="en">
    <head>
       <meta charset="UTF-8">
-      <title>Data Banks | VSK CELL Dharamshala</title>
+      <title>Data Banks || VSK CELL Dharamshala</title>
       <meta charset="UTF-8">
       <link rel="stylesheet" href="{{ asset('public/admin/assets/vendor/fontawesome/css/all.min.css') }}">
       <link rel="stylesheet" href="{{ asset('public/admin/assets/vendor/intl-tel-input/css/intlTelInput.css') }}">
@@ -16,7 +16,7 @@
       }
       .name-data-bank {
          display: flex;
-         justify-content: center;
+         justify-content: center; 
          padding: 10px;
       }
       .name-data-bank-1 {
@@ -44,39 +44,39 @@
          display: block;
       }
       .content.active h2 {
-      text-align: center;
-      font-size: 32px;
-      text-transform: uppercase;
-      text-decoration: underline;
+         text-align: center;
+         font-size: 32px;
+         text-transform: uppercase;
+         text-decoration: underline;
       }
       .content.active .dt-layout-cell.dt-layout-full {
-      overflow-x: scroll;
-      white-space: nowrap;
+         overflow-x: scroll;
+         white-space: nowrap;
       }
       .main-tabs {
-      background: #4B5320;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 10px;
+         background: #4B5320;
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         padding: 10px;
       }
       .content.active .dt-layout-cell.dt-layout-start {
-      margin: 0 !important;
+         margin: 0 !important;
       }
       .content.active .dt-layout-cell.dt-layout-end {
-      margin: 0 !important;
+         margin: 0 !important;
       }
       .content.active .dt-layout-row {
-      justify-content: left !important;
-      gap: 35px;
+         justify-content: left !important;
+         gap: 35px;
       }
       div.dt-container {
-      border: 1px solid #000000;
-      padding: 15px 25px;
+         border: 1px solid #000000;
+         padding: 15px 25px;
       }
       table.display.dataTable thead {
-      font-size: 18px;
-    }
+         font-size: 18px;
+      }
       table {
          width: 100%;
          border-collapse: collapse;
@@ -158,38 +158,55 @@
          text-decoration: none;
          display: inline-block;
       }
-
       .loader {
-      width: 45px;
-      height: 45px;
-      border: 5px solid #ccc;
-      border-top: 5px solid #4B5320;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-      margin: 20px auto;
+         width: 100px;
+         height: 100px;
+         border: 6px solid #ccc;
+         border-top: 6px solid #4B5320;
+         border-radius: 50%;
+         animation: spin 0.8s linear infinite;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         z-index: 1001;
       }
-
       @keyframes spin {
-         0% { transform: rotate(0deg); }
-         100% { transform: rotate(360deg); }
+         0% { 
+            transform: translate(-50%, -50%) rotate(0deg); 
+         }
+         100% { 
+            transform: translate(-50%, -50%) rotate(360deg); 
+         }
+      }
+      @keyframes spin {
+         0% { 
+            transform: rotate(0deg);
+         }
+         100% { 
+            transform: rotate(360deg); 
+         }
+      }
+      td.dt-empty {
+         color: red;
+         font-size: 14px;
       }
       </style>
    </head>
    <body>
       <div class="main-tabs">
-      <div class="tabs name-data-bank">
-         <button class="main-data-tab active name-data-bank-1" data-target="exman">Ex-Man Data Bank</button>
-         <button class="main-data-tab name-data-bank-1" data-target="widow">Widows Data Bank</button>
-         <button class="main-data-tab name-data-bank-1" data-target="veer">Veer Naries Data Bank</button>
-         
-      </div>
-      <a href="{{ route('login') }}" class="tab-link">
-         <i class="fa-solid fa-right-to-bracket"></i> Login
-         </a>
+         <div class="tabs name-data-bank">
+            <button class="main-data-tab active name-data-bank-1" data-target="exman">Ex-Serviceman Data Bank</button>
+            <button class="main-data-tab name-data-bank-1" data-target="widow">Widows Data Bank</button>
+            <button class="main-data-tab name-data-bank-1" data-target="veer">Veer Naries Data Bank</button>
          </div>
+         <a href="{{ route('login') }}" class="tab-link">
+            <i class="fa-solid fa-right-to-bracket"></i>Login
+         </a>
+      </div>
       <!--Ex-Man-->
       <div id="exman" class="content active">
-         <h2>Data Bank of Ex-Man</h2>
+         <h2>Data Bank of Ex-Serviceman</h2>
          <table id="exmanTable" class="display">
             <thead>
                <tr>
@@ -226,7 +243,7 @@
             </thead>
             <tbody>
                <!--Get services-->
-               @forelse($all_services as $service)
+               @foreach($all_services as $service)
                <tr data-details>
                   <td>{{ $service->sr_no ?? '-' }}</td>
                   <td>{{ $service->army_no ?? '-' }}</td>
@@ -258,15 +275,11 @@
                   <td>{{ $service->reg_on_dgr_portal ?? '-' }}</td>
                   <td><i class="fa-solid fa-eye view-icon" data-id="{{ $service->id }}"></i></td>
                </tr>
-               @empty
-               <tr>
-                  <td colspan="10" class="text-center">No data bank of Ex-Man found</td>
-               </tr>
-               @endforelse
+               @endforeach
             </tbody>
          </table>
       </div>
-      <!-- Widow -->
+      <!--Widow-->
       <div id="widow" class="content">
          <h2>Data Bank of Widows</h2>
          <table id="widowTable" class="display">
@@ -281,7 +294,7 @@
             </thead>
             <tbody>
                <!--Get windos-->
-               @forelse($all_services as $service)
+               @foreach($all_services as $service)
                <tr data-details>
                   <td>{{ $service->sr_no ?? '-' }}</td>
                   <td>{{ $service->army_no ?? '-' }}</td>
@@ -289,15 +302,11 @@
                   <td>{{ \Carbon\Carbon::parse($service->date_of_death)->format('d M, Y') ?? '-' }}</td>
                   <td><i class="fa-solid fa-eye view-icon" data-id="{{ $service->id }}"></i></td>
                </tr>
-               @empty
-               <tr>
-                  <td colspan="10" class="text-center">No data bank of Widows found</td>
-               </tr>
-               @endforelse
+               @endforeach
             </tbody>
          </table>
       </div>
-      <!-- Veer Naries -->
+      <!--Veer Naries-->
       <div id="veer" class="content">
          <h2>Data Bank of Veer Naries</h2>
          <table id="veerTable" class="display">
@@ -312,7 +321,7 @@
             </thead>
             <tbody>
                <!--Get veer naries-->
-               @forelse($all_services as $service)
+               @foreach($all_services as $service)
                <tr data-details>
                   <td>{{ $service->sr_no ?? '-' }}</td>
                   <td>{{ $service->army_no ?? '-' }}</td>
@@ -320,93 +329,81 @@
                   <td>{{ $service->veer_nari_expose_year ?? '-' }}</td>
                   <td><i class="fa-solid fa-eye view-icon" data-id="{{ $service->id }}"></i></td>
                </tr>
-               @empty
-               <tr>
-                  <td colspan="10" class="text-center">No data bank of Ex-Man found</td>
-               </tr>
-               @endforelse
+               @endforeach
             </tbody>
          </table>
       </div>
       <!--Modal-->
       <div class="modal" id="detailModal">
-         <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h3 id="detailTitle" class="mb-3 text-primary border-bottom pb-2">Person Details</h3>
-
-               <div id="loader" style="text-align:center; display:none;">
-                  <div class="loader"></div>
-                  <p style="margin-top:10px;">Loading details...</p>
-               </div>
-
-            <div id="detailBody"></div>
+         <div id="loader" style="text-align:center; display:none;">
+            <div class="loader"></div>
          </div>
+         <div id="detailBody"></div>
       </div>
       <script src="{{ asset('public/admin/assets/js/jquery-3.6.0.min.js') }}"></script>
       <script src="{{ asset('public/admin/assets/datatables/js/dataTables.min.js') }}"></script>
       <script src="{{ asset('public/admin/assets/vendor/intl-tel-input/js/intlTelInput.min.js') }}"></script>
       <script src="{{ asset('public/admin/assets/vendor/intl-tel-input/js/utils.js') }}"></script>
       <script>
-         $(document).ready(function() {
+      $(document).ready(function() {
          $(".main-data-tab").on("click", function() {
          $(".main-data-tab").removeClass("active");
-         $(this).addClass("active");
-
-         let target = $(this).data("target");
-
-         $(".content").removeClass("active");
-         $("#" + target).addClass("active");
+            $(this).addClass("active");
+            let target = $(this).data("target");
+            
+            $(".content").removeClass("active");
+            $("#" + target).addClass("active");
          });
-         });
+      });
       </script>
       <script>
-         $(document).ready(function () {
-            $('#exmanTable').DataTable({
-               pageLength: 50,
-               lengthMenu: [10, 25, 50, 100]
-            });
-            $('#widowTable').DataTable({
-               pageLength: 50,
-               lengthMenu: [10, 25, 50, 100]
-            });
-            $('#veerTable').DataTable({
-               pageLength: 50,
-               lengthMenu: [10, 25, 50, 100]
-            });
-            $(document).on("click", ".view-icon", function() {
-               let id = $(this).data("id");
-               let modal = $("#detailModal");
-               let detailBody = $("#detailBody");
-               let detailTitle = $("#detailTitle");
-
-               $.ajax({
-                  url: "{{ url('single-service-detail') }}/" + id,
-                  type: "GET",
-                  beforeSend: function() {
-                        detailBody.html("<p style='text-align:center;'>Loading details...</p>");
-                        modal.css("display", "flex");
-                  },
-                  success: function(response) {
-                     if (response.status) {
-                        detailBody.html(response.html);
-                     } else {
-                        detailBody.html("<p class='text-danger text-center'>Record not found!</p>");
-                     }
-                  },
-                  error: function() {
-                     detailBody.html("<p class='text-danger text-center'>Something went wrong!</p>");
-                  }
-               });
-            });
-
-            $(".close-btn").on("click", function() {
-               $("#detailModal").hide();
-            });
-
-            $(window).on("click", function(e) {
-               if ($(e.target).is("#detailModal")) $("#detailModal").hide();
+      $(document).ready(function () {
+         $('#exmanTable').DataTable({
+            pageLength: 50,
+            lengthMenu: [10, 25, 50, 100]
+         });
+         $('#widowTable').DataTable({
+            pageLength: 50,
+            lengthMenu: [10, 25, 50, 100]
+         });
+         $('#veerTable').DataTable({
+            pageLength: 50,
+            lengthMenu: [10, 25, 50, 100]
+         });
+         $(document).on("click", ".view-icon", function() {
+            let id = $(this).data("id");
+            let modal = $("#detailModal");
+            let detailBody = $("#detailBody");
+            let detailTitle = $("#detailTitle");
+            let loader = $("#loader");
+            //Ajax
+            $.ajax({
+               url: "{{ url('single-service-detail') }}/" + id,
+               type: "GET",
+               beforeSend: function() {
+                  detailTitle.hide();
+                  detailBody.hide();
+                  loader.show();
+                  modal.css("display", "flex");
+               },
+               success: function(response) {
+                  loader.hide();
+                  detailTitle.show();
+                  detailBody.show();
+                  //check status
+                  if (response.status) {
+                     detailBody.html(response.html);
+                  } 
+               },
             });
          });
+         $(".close-btn").on("click", function() {
+            $("#detailModal").hide();
+         });
+         $(window).on("click", function(e) {
+            if ($(e.target).is("#detailModal")) $("#detailModal").hide();
+         });
+      });
       </script>
    </body>
 </html>

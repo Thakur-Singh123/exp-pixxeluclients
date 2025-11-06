@@ -537,6 +537,13 @@ img.image-css {
     background: #e8f5e9;
     border-color: #81c784;
 }
+h5.step-heading {
+    font-size: 24px;
+}
+.step-content label {
+    font-size: 17px !important;
+    font-weight: 600;
+}
 .status-badge {
     display: inline-block;
     padding: 5px 8px;
@@ -574,6 +581,10 @@ table#basic-datatables {
 }
 div#basic-datatables_wrapper {
     padding: 0;
+}
+label.form-label {
+    font-size: 18px !important;
+    font-weight: 600;
 }
 table#basic-datatables {
     border-collapse: collapse !important;
@@ -981,7 +992,12 @@ h5.details-heading {
    width: 300px;
    background: #f8f9fa;
    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-   margin: -45px 0px 0px 320px;
+   margin: -46px 0 0 600px;
+}
+/* edit page */
+.form-group label {
+    font-size: 18px !important;
+    font-weight: 600;
 }
 .upload-preview img {
    width: 100%;
@@ -1026,4 +1042,8 @@ h5.details-heading {
    font-size: 18px;
    letter-spacing: 0.5px;
    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+td.dt-empty {
+    color: red;
+    font-size: 14px;
 }

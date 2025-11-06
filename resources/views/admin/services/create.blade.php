@@ -14,8 +14,8 @@
                   <form id="captureForm" action="{{ route('admin.service.submit') }}" method="POST" enctype="multipart/form-data">
                      @csrf
                      <!--Tab-->
-                     <div class="d-flex flex-wrap gap-3 mb-4 step-header">
-                        <button type="button" class="btn btn-outline-primary step-btn active" data-step="1">ExServiceMan Details</button>
+                     <div class="d-flex flex-wrap justify-content-between mb-4 step-header">
+                        <button type="button" class="btn btn-outline-primary step-btn active" data-step="1">Ex-ServiceMan Details</button>
                         <button type="button" class="btn btn-outline-primary step-btn" data-step="2">Spouse Details</button>
                         <button type="button" class="btn btn-outline-primary step-btn" data-step="3">Father Details</button>
                         <button type="button" class="btn btn-outline-primary step-btn" data-step="4">Mother Details</button>
@@ -25,7 +25,7 @@
                      </div>
                      <!--ExServiceMan Detail-->
                      <div class="step-content" id="step-1">
-                        <h5 class="step-heading mb-3 fw-bold">ExServiceMan Details</h5>
+                        <h5 class="step-heading mb-3 fw-bold">Ex-ServiceMan Details</h5>
                         <div class="row">
                             <div class="col-md-4 mb-3">
                               <label class="form-label">Ser. No*</label>

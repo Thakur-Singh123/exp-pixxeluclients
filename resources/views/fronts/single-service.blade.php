@@ -1,145 +1,144 @@
 <style>
-.tabs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-.tab {
-    background: transparent;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 8px 20px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.tab:hover {
-    background: #e9ecef;
-}
-.tab.active {
-    background: #6B8E23;
-    color: #fff;
-    border-radius: 8px;
-}
-.modal {
-    display: flex;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-}
-.modal-content {
-    background: #fff;
-    border-radius: 10px;
-    width: 70%;
-    max-width: 1100px;
-    height: 85%;
-    overflow-y: auto;
-    box-shadow: 0 6px 25px rgba(0,0,0,0.3);
-    padding: 25px 30px;
-    position: relative;
-}
-.close-btn {
-    position: absolute;
-    top: 0px;
-    right: 8px;
-    font-size: 50px;
-    color: #6b8e23;
-    cursor: pointer;
-}
-.card {
-    border: 1px solid #e5e5e5;
-    border-radius: 10px;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    margin-bottom: 25px;
-}
-.card-body { 
-    padding: 20px; 
-    margin-top: 20px; 
-}
-.card-body h5 {
-    font-size: 28px;
-    text-transform: uppercase;
-    text-decoration: underline;
-    font-weight: 700;
-    text-align: center;
-    color: #333333;
-    padding-bottom: 8px;
-    margin: 0 0 20px 0;
-}
-.detail-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 25px;
-}
-.detail-item {
-    font-size: 16px;
-    margin-bottom: 0;
-    flex: 1 1 22%;
-    min-width: 200px;
-}
-.detail-item strong {
-    font-size: 18px;
-}
-.mt-4.d-flex {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 0;
-    flex-wrap: wrap;
-}
-.mt-4.d-flex > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 33%;
-}
-.mt-4.d-flex strong {
-    font-size: 15px;
-    color: #333;
-    margin-bottom: 8px;
-}
-.mt-4.d-flex img {
-    width: 99%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-}
-.tab-content { 
-    display: none; 
-}
-.tab-content.active { 
-    display: block; 
-}
-
-.detail-row {
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   gap: 0;
-}
-
-.detail-item {
-   padding: 10px 12px;
-   border-radius: 6px;
-   border: 1px solid #fff;
-}
-
-/* Row 1,3,5... (#ddd) */
-.detail-item:nth-child(4n-3),
-.detail-item:nth-child(4n-2) {
-   background: #ddd;
-}
-
-/* Row 2,4,6... (#ddd) */
-.detail-item:nth-child(4n-1),
-.detail-item:nth-child(4n) {
-   background: #ddd;
-}
+   .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+   }
+   .tab {
+      background: transparent;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 8px 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+   }
+   .tab:hover {
+      background: #e9ecef;
+   }
+   .tab.active {
+      background: #6B8E23;
+      color: #fff;
+      border-radius: 8px;
+   }
+   .modal {
+      display: flex;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+   }
+   .modal-content {
+      background: #fff;
+      border-radius: 10px;
+      width: 70%;
+      max-width: 1100px;
+      height: 85%;
+      overflow-y: auto;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+      padding: 25px 30px;
+      position: relative;
+   }
+   .close-btn {
+      position: absolute;
+      top: 0px;
+      right: 8px;
+      font-size: 50px;
+      color: #6b8e23;
+      cursor: pointer;
+   }
+   .card {
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin-bottom: 25px;
+   }
+   .card-body { 
+      padding: 20px; 
+      margin-top: 20px; 
+   }
+   .card-body h5 {
+      font-size: 28px;
+      text-transform: uppercase;
+      text-decoration: underline;
+      font-weight: 700;
+      text-align: center;
+      color: #333333;
+      padding-bottom: 8px;
+      margin: 0 0 20px 0;
+   }
+   .detail-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 25px;
+   }
+   .detail-item {
+      font-size: 16px;
+      margin-bottom: 0;
+      flex: 1 1 22%;
+      min-width: 200px;
+   }
+   .detail-item strong {
+      font-size: 18px;
+   }
+   .mt-4.d-flex {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0;
+      flex-wrap: wrap;
+   }
+   .mt-4.d-flex > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 33%;
+   }
+   .mt-4.d-flex strong {
+      font-size: 15px;
+      color: #333;
+      margin-bottom: 8px;
+   }
+   .mt-4.d-flex img {
+      width: 99%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+   }
+   .tab-content { 
+      display: none; 
+   }
+   .tab-content.active { 
+      display: block; 
+   }
+   .detail-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+   }
+   .detail-item {
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1px solid #fff;
+   }
+   .detail-item:nth-child(4n-3),
+   .detail-item:nth-child(4n-2) {
+      background: #ddd;
+   }
+   .detail-item:nth-child(4n-1),
+   .detail-item:nth-child(4n) {
+      background: #ddd;
+   }
+   td.text-center {
+      color: red;
+      padding: 10px 360px;
+      font-size: 12px;
+   }
 </style>
 <div class="modal" id="detailModal">
    <div class="modal-content">
@@ -150,6 +149,7 @@
          <div class="tab" data-tab="spouse">Spouse</div>
          <div class="tab" data-tab="father">Father</div>
          <div class="tab" data-tab="mother">Mother</div>
+         <div class="tab" data-tab="children">Children</div>
          <div class="tab" data-tab="window">Widow</div>
          <div class="tab" data-tab="veera">Veer Nari</div>
       </div>
@@ -192,20 +192,25 @@
                <div>
                   <strong>Photograph:</strong><br>
                   @if($service_detail->image)
-                  <img src="{{ asset('public/uploads/ex-images/'.$service_detail->image) }}" class="img-thumbnail">
-                  @else - @endif
+                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->image) }}" class="img-thumbnail">
+                  @else 
+                     - 
+                  @endif
                </div>
                <div>
                   <strong>Aadhar Card:</strong><br>
                   @if($service_detail->aadhar_image)
-                  <img src="{{ asset('public/uploads/ex-images/'.$service_detail->aadhar_image) }}" class="img-thumbnail">
-                  @else - @endif
+                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->aadhar_image) }}" class="img-thumbnail">
+                  @else 
+                     - 
+                  @endif
                </div>
                <div>
                   <strong>Pan Card:</strong><br>
                   @if($service_detail->pan_image)
-                  <img src="{{ asset('public/uploads/ex-images/'.$service_detail->pan_image) }}" class="img-thumbnail">
-                  @else - @endif
+                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->pan_image) }}" class="img-thumbnail">
+                  @else - 
+                  @endif
                </div>
             </div>
          </div>
@@ -234,20 +239,23 @@
                <div>
                   <strong>Photograph:</strong><br>
                   @if($service_detail->spouse_image)
-                  <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_image) }}" class="img-thumbnail">
-                  @else - @endif
+                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_image) }}" class="img-thumbnail">
+                  @else - 
+                  @endif
                </div>
                <div>
                   <strong>Aadhar Card:</strong><br>
                   @if($service_detail->spouse_aadhar_image)
-                  <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_aadhar_image) }}" class="img-thumbnail">
-                  @else - @endif
+                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_aadhar_image) }}" class="img-thumbnail">
+                  @else - 
+                  @endif
                </div>
                <div>
                   <strong>Pan Card:</strong><br>
                   @if($service_detail->spouse_pan_image)
-                  <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_pan_image) }}" class="img-thumbnail">
-                  @else - @endif
+                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_pan_image) }}" class="img-thumbnail">
+                  @else - 
+                  @endif
                </div>
             </div>
          </div>
@@ -276,20 +284,23 @@
                <div>
                   <strong>Photograph:</strong><br>
                   @if($service_detail->father_image)
-                  <img src="{{ asset('public/uploads/ex-images/'.$service_detail->father_image) }}" class="img-thumbnail">
-                  @else - @endif
+                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->father_image) }}" class="img-thumbnail">
+                  @else - 
+                  @endif
                </div>
                <div>
                   <strong>Aadhar Card:</strong><br>
                   @if($service_detail->father_aadhar_image)
-                  <img src="{{ asset('public/uploads/ex-images/'.$service_detail->father_aadhar_image) }}" class="img-thumbnail">
-                  @else - @endif
+                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->father_aadhar_image) }}" class="img-thumbnail">
+                  @else - 
+                  @endif
                </div>
                <div>
                   <strong>Pan Card:</strong><br>
                   @if($service_detail->father_pan_image)
-                  <img src="{{ asset('public/uploads/ex-images/'.$service_detail->father_pan_image) }}" class="img-thumbnail">
-                  @else - @endif
+                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->father_pan_image) }}" class="img-thumbnail">
+                  @else - 
+                  @endif
                </div>
             </div>
          </div>
@@ -318,25 +329,69 @@
                <div>
                   <strong>Photograph:</strong><br>
                   @if($service_detail->mother_image)
-                  <img src="{{ asset('public/uploads/ex-images/'.$service_detail->mother_image) }}" class="img-thumbnail">
-                  @else - @endif
+                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->mother_image) }}" class="img-thumbnail">
+                  @else - 
+                  @endif
                </div>
                <div>
                   <strong>Aadhar No:</strong><br>
                   @if($service_detail->mother_aadhar_image)
-                  <img src="{{ asset('public/uploads/ex-images/'.$service_detail->mother_aadhar_image) }}" class="img-thumbnail">
-                  @else - @endif
+                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->mother_aadhar_image) }}" class="img-thumbnail">
+                  @else - 
+                  @endif
                </div>
                <div>
                   <strong>Pan Card:</strong><br>
                   @if($service_detail->mother_pan_image)
-                  <img src="{{ asset('public/uploads/ex-images/'.$service_detail->mother_pan_image) }}" class="img-thumbnail">
-                  @else - @endif
+                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->mother_pan_image) }}" class="img-thumbnail">
+                  @else - 
+                  @endif
                </div>
             </div>
          </div>
       </div>
-      <!-- WINDOW-->
+      <!--Children-->
+      <div id="children" class="tab-content">
+         <div class="card-body">
+            <h5>Children Details</h5>
+            <div class="table-responsive">
+               <table class="table table-bordered" id="childrenTable">
+                  <thead class="table-light">
+                     <tr>
+                        <th>Ser. No</th>
+                        <th>Child Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Education</th>
+                        <th>Occupation</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     @php $count = 1 @endphp
+                     <!--Check if children exists or not-->
+                     @if(count($service_detail->children) > 0)
+                     <!--Get childrens detail-->
+                     @foreach($service_detail->children as $child)
+                     <tr>
+                        <td >{{ $count++ }}.</td>
+                        <td>{{ $child->name }}</td>
+                        <td>{{ $child->age }}</td>
+                        <td>{{ $child->gender }}</td>
+                        <td>{{ $child->education }}</td>
+                        <td>{{ $child->occupation }}</td>
+                     </tr>
+                     @endforeach
+                     @else
+                     <tr>
+                        <td colspan="6" class="text-center">No Children Found</td>
+                     </tr>
+                     @endif
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+      <!--WINDOW-->
       <div id="window" class="tab-content">
          <div class="card-body">
             <h5>Widow Details</h5>
@@ -349,20 +404,23 @@
                <div>
                   <strong>Photograph:</strong><br>
                   @if($service_detail->window_image)
-                  <img src="{{ asset('public/uploads/ex-images/'.$service_detail->window_image) }}" class="img-thumbnail">
-                  @else - @endif
+                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->window_image) }}" class="img-thumbnail">
+                  @else - 
+                  @endif
                </div>
                <div>
                   <strong>Aadhar Card:</strong><br>
                   @if($service_detail->window_aadhar_image)
-                  <img src="{{ asset('public/uploads/ex-images/'.$service_detail->window_aadhar_image) }}" class="img-thumbnail">
-                  @else - @endif
+                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->window_aadhar_image) }}" class="img-thumbnail">
+                  @else - 
+                  @endif
                </div>
                <div>
                   <strong>Pan Card:</strong><br>
                   @if($service_detail->window_pan_image)
-                  <img src="{{ asset('public/uploads/ex-images/'.$service_detail->window_pan_image) }}" class="img-thumbnail">
-                  @else - @endif
+                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->window_pan_image) }}" class="img-thumbnail">
+                  @else - 
+                  @endif
                </div>
             </div>
          </div>
@@ -380,12 +438,12 @@
    </div>
 </div>
 <script>
-   document.querySelectorAll('.tab').forEach(tab => {
-       tab.addEventListener('click', () => {
-           document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-           document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-           tab.classList.add('active');
-           document.getElementById(tab.dataset.tab).classList.add('active');
-       });
+document.querySelectorAll('.tab').forEach(tab => {
+   tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.tab).classList.add('active');
    });
+});
 </script>

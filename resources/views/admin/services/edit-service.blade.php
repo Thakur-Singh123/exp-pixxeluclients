@@ -44,6 +44,11 @@
       display: inline-block;
       margin-top: 5px;
    }
+   td.text-center {
+      color: red;
+      padding: 10px 360px;
+      font-size: 12px;
+   }
 </style>
 <div class="container">
    <div class="page-inner">
@@ -61,7 +66,7 @@
                      <!--Step Navigation-->
                      <input type="hidden" name="army_no" value="{{ $service_detail->army_no ?? '' }}">
                      <div class="d-flex flex-wrap justify-content-between mb-4 step-header">
-                        <button type="button" class="btn btn-outline-primary step-btn active" data-step="1">ExServiceMan Details</button>
+                        <button type="button" class="btn btn-outline-primary step-btn active" data-step="1">Ex-ServiceMan Details</button>
                         <button type="button" class="btn btn-outline-primary step-btn" data-step="2">Spouse Details</button>
                         <button type="button" class="btn btn-outline-primary step-btn" data-step="3">Father Details</button>
                         <button type="button" class="btn btn-outline-primary step-btn" data-step="4">Mother Details</button>
@@ -71,7 +76,7 @@
                      </div>
                      <!--ExServiceMan Detail-->
                      <div class="step-content" id="step-1">
-                        <h5 class="step-heading mb-3 fw-bold">ExServiceMan Details</h5>
+                        <h5 class="step-heading mb-3 fw-bold">Ex-ServiceMan Details</h5>
                         <div class="row">
                             <div class="col-md-4 mb-3">
                               <label class="form-label">Ser. No*</label>
@@ -549,60 +554,77 @@
                      <div class="step-content" id="step-5">
                         <h5 class="step-heading mb-3 fw-bold">Children Details</h5>
                        <div class="table-responsive">
-   <table class="table table-bordered" id="childrenTable">
-      <thead class="table-light">
-         <tr>
-            <th>Ser. No</th>
-            <th>Child Name</th>
-            <th>Age</th>
-            <th>Gender</th>
-            <th>Education</th>
-            <th>Occupation</th>
-            <th style="width: 70px;">Action</th>
-         </tr>
-      </thead>
-      <tbody>
-         @php $count = 1 @endphp
-         @if(count($service_detail->children) > 0)
-            @foreach($service_detail->children as $child)
-               <tr>
-                  <td>{{ $count++ }}.</td>
-                  <td><input type="text" name="children_name[]" class="form-control" value="{{ $child->name }}" placeholder="Enter name"></td>
-                  <td><input type="text" name="children_age[]" class="form-control" value="{{ $child->age }}" placeholder="Enter age"></td>
-                  <td>
-                     <select name="children_gender[]" class="form-select">
-                        <option value="">Select</option>
-                        <option value="Male" @if($child->gender == 'Male') selected @endif>Male</option>
-                        <option value="Female" @if($child->gender == 'Female') selected @endif>Female</option>
-                        <option value="Other" @if($child->gender == 'Other') selected @endif>Other</option>
-                     </select>
-                  </td>
-                  <td><input type="text" name="children_education[]" class="form-control" value="{{ $child->education }}" placeholder="Enter education"></td>
-                  <td><input type="text" name="children_occupation[]" class="form-control" value="{{ $child->occupation }}" placeholder="Enter occupation"></td>
-                  <td class="text-center">
-                     <button type="button" class="btn btn-danger btn-sm removeChildRow">
-                        <i class="fas fa-trash"></i>
-                     </button>
-                  </td>
-               </tr>
-            @endforeach
-         @else
-            <tr>
-               <td colspan="7" class="text-center">No Children Found</td>
-            </tr>
-         @endif
-      </tbody>
-      <tfoot>
-         <tr>
-            <td colspan="7" class="text-end">
-               <button type="button" class="btn btn-success btn-sm addChildRow">
-                  <i class="fas fa-plus"></i> Add Child
-               </button>
-            </td>
-         </tr>
-      </tfoot>
-   </table>
-</div>
+                        <table class="table table-bordered" id="childrenTable">
+                           <thead class="table-light">
+                              <tr>
+                                 <th>Ser. No</th>
+                                 <th>Child Name</th>
+                                 <th>Age</th>
+                                 <th>Gender</th>
+                                 <th>Education</th>
+                                 <th>Occupation</th>
+                                 <th style="width: 70px;">Action</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              @php $count = 1 @endphp
+                              @if(count($service_detail->children) > 0)
+                              @foreach($service_detail->children as $child)
+                              <tr>
+                                 <td>{{ $count++ }}.</td>
+                                 <td><input type="text" name="children_name[]" class="form-control" value="{{ $child->name }}" placeholder="Enter name"></td>
+                                 <td><input type="text" name="children_age[]" class="form-control" value="{{ $child->age }}" placeholder="Enter age"></td>
+                                 <td>
+                                    <select name="children_gender[]" class="form-select">
+                                       <option value="">Select</option>
+                                       <option value="Male" @if($child->gender == 'Male') selected @endif>Male</option>
+                                       <option value="Female" @if($child->gender == 'Female') selected @endif>Female</option>
+                                       <option value="Other" @if($child->gender == 'Other') selected @endif>Other</option>
+                                    </select>
+                                 </td>
+                                 <td><input type="text" name="children_education[]" class="form-control" value="{{ $child->education }}" placeholder="Enter education"></td>
+                                 <td><input type="text" name="children_occupation[]" class="form-control" value="{{ $child->occupation }}" placeholder="Enter occupation"></td>
+                                 <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm removeChildRow">
+                                       <i class="fas fa-trash"></i>
+                                    </button>
+                                 </td>
+                              </tr>
+                              @endforeach
+                              @else
+                              <tr>
+                                 <td>1.</td>
+                                 <td><input type="text" name="children_name[]" class="form-control" placeholder="Enter name"></td>
+                                 <td><input type="text" name="children_age[]" class="form-control" placeholder="Enter age"></td>
+                                 <td>
+                                    <select name="children_gender[]" class="form-select">
+                                       <option value="">Select</option>
+                                       <option>Male</option>
+                                       <option>Female</option>
+                                       <option>Other</option>
+                                    </select>
+                                 </td>
+                                 <td><input type="text" name="children_education[]" class="form-control" placeholder="Enter education"></td>
+                                 <td><input type="text" name="children_occupation[]" class="form-control" placeholder="Enter occupation"></td>
+                                 <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm removeChildRow">
+                                       <i class="fas fa-trash"></i>
+                                    </button>
+                                 </td>
+                              </tr>
+                              @endif
+                           </tbody>
+                           <tfoot>
+                              <tr>
+                                 <td colspan="7" class="text-end">
+                                    <button type="button" class="btn btn-success btn-sm addChildRow">
+                                       <i class="fas fa-plus"></i> Add Child
+                                    </button>
+                                 </td>
+                              </tr>
+                           </tfoot>
+                        </table>
+                     </div>
                      </div>
                      <!--Widow Details-->
                      <div class="step-content d-none" id="step-6">
