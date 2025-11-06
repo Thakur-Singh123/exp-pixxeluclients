@@ -994,6 +994,10 @@ h5.details-heading {
    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
    margin: -46px 0 0 600px;
 }
+/* dashboardcard */
+td a {
+    color: #000;
+}
 /* edit page */
 .form-group label {
     font-size: 18px !important;
