@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<!-- Created by CodingLab |www.youtube.com/c/CodingLabYT-->
 <html lang="en" dir="ltr">
     <head>
         <meta charset="UTF-8">
-        <!--<title> Login and Registration Form in HTML & CSS | CodingLab </title>-->
         <link rel="stylesheet" href="{{ asset('public/admin/assets/css/style.css') }}">
-        <!-- Fontawesome CDN Link -->
         <link rel="stylesheet" href="{{ asset('public/admin/assets/vendor/fontawesome/css/all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('public/admin/assets/vendor/intl-tel-input/css/intlTelInput.css') }}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,137 +51,137 @@
     </style>
     <body>
         <div class="container">
-            <input type="checkbox" id="flip" {{ session('openSignup') ? 'checked' : '' }}>
-            <!-- <div class="cover">
-                <div class="front">
-                <img src="{{ asset('public/admin/images/frontImg.jpg') }}" alt="">
-                <div class="text">
-                    <span class="text-1">Every new friend is a <br> new adventure</span>
-                    <span class="text-2">Let's get connected</span>
+        <input type="checkbox" id="flip" {{ session('openSignup') ? 'checked' : '' }}>
+        <!--<div class="cover">
+            <div class="front">
+            <img src="{{ asset('public/admin/images/frontImg.jpg') }}" alt="">
+            <div class="text">
+            <span class="text-1">Every new friend is a <br> new adventure</span>
+            <span class="text-2">Let's get connected</span>
+            </div>
+            </div>
+            <div class="back">
+            <img class="backImg" src="{{ asset('public/admin/images/backImg.jpg') }}" alt="">
+            <div class="text">
+            <span class="text-1">Complete miles of journey <br> with one step</span>
+            <span class="text-2">Let's get started</span>
+            </div>
+            </div>
+        </div>-->
+        <div class="forms">
+        <div class="form-content">
+            <div class="login-form">
+                <div class="title">Login<em>VSK CELL </em> Portal</div>
+                <form method="POST" action="{{ route('login') }}">
+                @csrf
+                <div class="input-boxes">
+                    <div class="input-box">
+                        <i class="fas fa-envelope"></i>
+                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Enter email address">
+                        @error('email')
+                            <small class="text-danger">{{ $message }}</small>
+                        @enderror
+                    </div>
+                    <div class="input-box">
+                        <i class="fas fa-lock"></i>
+                        <input id="password" type="password" class="form-control" name="password" placeholder="Enter password">
+                        @error('password')
+                            <small class="text-danger">{{ $message }}</small>
+                        @enderror
+                    </div>
+                    <!--<div class="text"><a href="#">Forgot password?</a></div>-->
+                    <div class="button input-box">
+                        <input type="submit" value="Sumbit">
+                    </div>
+                    @if (session('error'))
+                    <div class="alert alert-danger" id="successMsg" style="margin-top:30px;">
+                        {{ session('error') }}
+                    </div>
+                    @endif
+                    <!--<div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div> -->
                 </div>
-                </div>
-                <div class="back">
-                <img class="backImg" src="{{ asset('public/admin/images/backImg.jpg') }}" alt="">
-                <div class="text">
-                    <span class="text-1">Complete miles of journey <br> with one step</span>
-                    <span class="text-2">Let's get started</span>
-                </div>
-                </div>
-            </div> -->
-            <div class="forms">
-                <div class="form-content">
-                <div class="login-form">
-                    <div class="title">Login<em>VSK CELL </em> Portal</div>
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-                        <div class="input-boxes">
-                            <div class="input-box">
-                            <i class="fas fa-envelope"></i>
-                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Enter email address">
-                            @error('email')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                            </div>
-                            <div class="input-box">
-                            <i class="fas fa-lock"></i>
-                            <input id="password" type="password" class="form-control" name="password" placeholder="Enter password">
-                                @error('password')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                            </div>
-                            <!--<div class="text"><a href="#">Forgot password?</a></div>-->
-                            <div class="button input-box">
-                            <input type="submit" value="Sumbit">
-                            </div>
-                            @if (session('error'))
-                            <div class="alert alert-danger" id="successMsg" style="margin-top:30px;">
-                                {{ session('error') }}
-                            </div>
-                            @endif
-                            <!--<div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div> -->
-                        </div>
-                    </form>
-                </div>
-                <!-- <div class="signup-form">
-                    <div class="title">Signup</div>
-                    <form id="signupForm" method="POST" action="#" enctype="multipart/form-data" autocomplete="off">
-                        @csrf
-                        <div class="form-row">
-                            <div class="input-box">
-                            <i class="fas fa-user"></i>
-                            <input id="name" type="text" name="name" value="{{ old('name') }}" placeholder="Enter name">
-                            @error('name', 'register')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                            </div>
-                            <div class="input-box">
-                            <i class="fas fa-envelope"></i>
-                            <input id="email" type="email" name="email" value="{{ old('email') }}" placeholder="Enter email" autocomplete="new-email">
-                            @error('email', 'register')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="input-box">
-                            <i class="fas fa-lock"></i>
-                            <input id="password" type="password" name="password" value="{{ old('password') }}" placeholder="Enter password" autocomplete="new-password">
-                            @error('password', 'register')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror                       
-                            </div>
-                            <div class="input-box">
-                            <i class="fas fa-lock"></i>
-                            <input id="password-confirm" type="password" name="password_confirmation" value="{{ old('password_confirmation') }}" placeholder="Confirm password">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="input-box">
-                            <i class="fas fa-phone"></i>
-                            <input id="phone" type="tel" name="phone" value="{{ old('phone') }}" placeholder="Enter phone">
-                            @error('phone', 'register')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                            </div>
-                            <div class="input-box">
-                            <i class="fas fa-city"></i>
-                            <input id="city" type="text" name="city" value="{{ old('city') }}" placeholder="Enter city">
-                            @error('city', 'register')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="input-box">
-                            <i class="fas fa-map"></i>
-                            <input id="state" type="text" name="state" value="{{ old('state') }}" placeholder="Enter state">
-                            @error('state', 'register')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                            </div>
-                            <div class="input-box">
-                            <i class="fas fa-calendar"></i>
-                            <input id="joining_date" type="date" name="joining_date" value="{{ old('joining_date',  now()->format('Y-m-d')) }}" min="{{ now()->format('Y-m-d') }}">
-                            @error('joining_date', 'register')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                            </div>
-                        </div>
-                        <div class="loaderss com_ajax_loader" style="display:none;">
-                            <img src="{{ asset('public/admin/images/200w.gif') }}">
-                        </div>
-                        <div class="button input-box">
-                            <input type="submit" id="submitBtn" value="Submit">
-                        </div>
-                        @if(session('success'))
-                        <div id="successMsg" style="display:none; color: green; margin-top: 30px;">
-                            {{ session('success') }}
-                        </div>
-                        @endif
-                        <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
-                    </form>
-                </div>
-                </div>
+                </form>
+            </div>
+            <!--<div class="signup-form">
+            <div class="title">Signup</div>
+            <form id="signupForm" method="POST" action="#" enctype="multipart/form-data" autocomplete="off">
+            @csrf
+            <div class="form-row">
+            <div class="input-box">
+            <i class="fas fa-user"></i>
+            <input id="name" type="text" name="name" value="{{ old('name') }}" placeholder="Enter name">
+            @error('name', 'register')
+            <small class="text-danger">{{ $message }}</small>
+            @enderror
+            </div>
+            <div class="input-box">
+            <i class="fas fa-envelope"></i>
+            <input id="email" type="email" name="email" value="{{ old('email') }}" placeholder="Enter email" autocomplete="new-email">
+            @error('email', 'register')
+            <small class="text-danger">{{ $message }}</small>
+            @enderror
+            </div>
+            </div>
+            <div class="form-row">
+            <div class="input-box">
+            <i class="fas fa-lock"></i>
+            <input id="password" type="password" name="password" value="{{ old('password') }}" placeholder="Enter password" autocomplete="new-password">
+            @error('password', 'register')
+            <small class="text-danger">{{ $message }}</small>
+            @enderror                       
+            </div>
+            <div class="input-box">
+            <i class="fas fa-lock"></i>
+            <input id="password-confirm" type="password" name="password_confirmation" value="{{ old('password_confirmation') }}" placeholder="Confirm password">
+            </div>
+            </div>
+            <div class="form-row">
+            <div class="input-box">
+            <i class="fas fa-phone"></i>
+            <input id="phone" type="tel" name="phone" value="{{ old('phone') }}" placeholder="Enter phone">
+            @error('phone', 'register')
+            <small class="text-danger">{{ $message }}</small>
+            @enderror
+            </div>
+            <div class="input-box">
+            <i class="fas fa-city"></i>
+            <input id="city" type="text" name="city" value="{{ old('city') }}" placeholder="Enter city">
+            @error('city', 'register')
+            <small class="text-danger">{{ $message }}</small>
+            @enderror
+            </div>
+            </div>
+            <div class="form-row">
+            <div class="input-box">
+            <i class="fas fa-map"></i>
+            <input id="state" type="text" name="state" value="{{ old('state') }}" placeholder="Enter state">
+            @error('state', 'register')
+            <small class="text-danger">{{ $message }}</small>
+            @enderror
+            </div>
+            <div class="input-box">
+            <i class="fas fa-calendar"></i>
+            <input id="joining_date" type="date" name="joining_date" value="{{ old('joining_date',  now()->format('Y-m-d')) }}" min="{{ now()->format('Y-m-d') }}">
+            @error('joining_date', 'register')
+            <small class="text-danger">{{ $message }}</small>
+            @enderror
+            </div>
+            </div>
+            <div class="loaderss com_ajax_loader" style="display:none;">
+            <img src="{{ asset('public/admin/images/200w.gif') }}">
+            </div>
+            <div class="button input-box">
+            <input type="submit" id="submitBtn" value="Submit">
+            </div>
+            @if(session('success'))
+            <div id="successMsg" style="display:none; color: green; margin-top: 30px;">
+            {{ session('success') }}
+            </div>
+            @endif
+            <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+            </form>
+            </div>
+            </div>
             </div> -->
         </div>
     </body>

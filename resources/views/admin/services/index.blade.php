@@ -103,7 +103,7 @@
                                        </thead>
                                        <tbody>
                                           <!--Get service records-->
-                                          @forelse ($all_services as $service)
+                                          @foreach ($all_services as $service)
                                           <tr role="row">
                                              <td>{{ $service->sr_no ?? '-' }}</td>
                                              <td>
@@ -138,11 +138,7 @@
                                                 </div>
                                              </td>
                                           </tr>
-                                          @empty
-                                          <tr>
-                                             <td colspan="10" class="text-center">No service record found</td>
-                                          </tr>
-                                          @endforelse
+                                          @endforeach
                                        </tbody>
                                     </table>
                                  </div>
