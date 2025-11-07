@@ -1051,3 +1051,26 @@ td.dt-empty {
     color: red;
     font-size: 14px;
 }
+/* service css */
+div#step-1 strong {
+    font-size: 18px;
+}
+.services1 {
+    font-size: 16px;
+}
+
+/* single-detail css */
+.img-thumbnail1 {
+    width: 150px !important;
+    height: 150px !important;
+}
+
+img.img-thumbnail {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+}
+.step-content h5 {
+    font-size: 20px;
+    text-align: center;
+}
