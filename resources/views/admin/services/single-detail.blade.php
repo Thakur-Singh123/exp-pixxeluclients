@@ -50,7 +50,7 @@
                      <div class="col-md-4 mb-3 services1"><strong>DGR Portal:</strong> {{ $service_detail->reg_on_dgr_portal ?? '-' }}</div>
                   </div>
                   <!-- Images -->
-                  <div class="row mt-4">
+                  <div class="mt-4 services001">
                      <div class="col-md-4 services2">
                         <strong>Photograph:</strong><br><br>
                         @if($service_detail->image)
@@ -75,24 +75,24 @@
                            - 
                         @endif
                      </div>
-                     <div class="col-md-4">
-                        <strong>Joint Photograph:</strong><br>
+                     <div class="col-md-4 services2">
+                        <strong>Joint Photograph:</strong><br><br>
                         @if($service_detail->joint_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->joint_image) }}" class="img-thumbnail shadow-sm" width="80">
                         @else 
                            - 
                         @endif
                      </div>
-                     <div class="col-md-4">
-                        <strong>Discharge Book:</strong><br>
+                     <div class="col-md-4 services2">
+                        <strong>Discharge Book:</strong><br><br>
                         @if($service_detail->discharge_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->discharge_image) }}" class="img-thumbnail shadow-sm" width="80">
                         @else 
                            - 
                         @endif
                      </div>
-                     <div class="col-md-4">
-                        <strong>PPO:</strong><br>
+                     <div class="col-md-4 services2">
+                        <strong>PPO:</strong><br><br>
                         @if($service_detail->ppo_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->ppo_image) }}" class="img-thumbnail shadow-sm" width="80">
                         @else 
