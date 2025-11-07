@@ -1094,7 +1094,7 @@ body {
 .sidebar[data-background-color=white] .nav.nav-secondary>.nav-item a:focus i,
 .sidebar[data-background-color=white] .nav.nav-secondary>.nav-item a:hover i,
 .sidebar[data-background-color=white] .nav.nav-secondary>.nav-item a[data-toggle=collapse][aria-expanded=true] i {
-	color: #6861ce !important
+	color: #8d9498 !important
 }
 
 .sidebar .nav.nav-secondary>.nav-item a[data-toggle=collapse][aria-expanded=true]:before,
