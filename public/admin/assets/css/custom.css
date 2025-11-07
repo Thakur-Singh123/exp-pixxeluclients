@@ -1073,6 +1073,8 @@ img.img-thumbnail {
 .step-content h5 {
     font-size: 20px;
     text-align: center;
+    color: #000 !important;
+    text-decoration: underline;
 }
 /* side bar css */
 .sidebar-content li.nav-item p {
@@ -1080,4 +1082,20 @@ img.img-thumbnail {
 }
 .sidebar-content li.nav-item div#collapseService ul li a span {
     font-size: 15px;
+}
+/* single-service-detail css */
+.services2 {
+    text-align: center;
+}
+
+.services2 strong {
+    position: relative;
+}
+
+.services2 strong:before {
+    content: '⬇';
+    position: absolute;
+    top: 18px;
+    width: 100%;
+    margin: 0 auto;
 }
