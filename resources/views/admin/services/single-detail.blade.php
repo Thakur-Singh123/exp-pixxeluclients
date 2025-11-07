@@ -51,24 +51,24 @@
                   </div>
                   <!-- Images -->
                   <div class="row mt-4">
-                     <div class="col-md-4">
-                        <strong>Photograph:</strong><br>
+                     <div class="col-md-4 services2">
+                        <strong>Photograph:</strong><br><br>
                         @if($service_detail->image)
                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->image) }}" class="img-thumbnail shadow-sm img-thumbnail1" width="80">
                         @else 
                            - 
                         @endif
                      </div>
-                     <div class="col-md-4">
-                        <strong>Aadhar Card:</strong><br>
+                     <div class="col-md-4 services2">
+                        <strong>Aadhar Card:</strong><br><br>
                         @if($service_detail->aadhar_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->aadhar_image) }}" class="img-thumbnail shadow-sm" width="80">
                         @else
                            - 
                         @endif
                      </div>
-                     <div class="col-md-4">
-                        <strong>Pan Card:</strong><br>
+                     <div class="col-md-4 services2">
+                        <strong>Pan Card:</strong><br><br>
                         @if($service_detail->pan_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->pan_image) }}" class="img-thumbnail shadow-sm" width="80">
                         @else 
