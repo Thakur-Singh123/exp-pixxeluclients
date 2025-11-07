@@ -1099,3 +1099,15 @@ img.img-thumbnail {
     width: 100%;
     margin: 0 auto;
 }
+.services001 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.services2 {
+    width: 100% !important;
+}
