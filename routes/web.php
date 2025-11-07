@@ -41,7 +41,6 @@ Route::group(['middleware' => 'auth'], function() {
         //Dashboard
         Route::get('customer/dashboard', [App\Http\Controllers\Customer\DashboardController::class, 'dashboard']); 
     });
-
 });
 
 Auth::routes();

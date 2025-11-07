@@ -15,13 +15,13 @@
                      @csrf
                      <!--Tab-->
                      <div class="d-flex flex-wrap gap-3 mb-4 step-header">
-                        <button type="button" class="btn btn-outline-primary step-btn active" data-step="1">Ex-ServiceMan Details</button>
-                        <button type="button" class="btn btn-outline-primary step-btn" data-step="2">Spouse Details</button>
-                        <button type="button" class="btn btn-outline-primary step-btn" data-step="3">Father Details</button>
-                        <button type="button" class="btn btn-outline-primary step-btn" data-step="4">Mother Details</button>
-                        <button type="button" class="btn btn-outline-primary step-btn" data-step="5">Children Details</button>
-                        <button type="button" class="btn btn-outline-primary step-btn" data-step="6">Widow Details</button>
-                        <button type="button" class="btn btn-outline-primary step-btn" data-step="7">Veer Nari Details</button>
+                        <button type="button" class="btn btn-outline-primary step-btn active" data-step="1">Ex-ServiceMan</button>
+                        <button type="button" class="btn btn-outline-primary step-btn" data-step="2">Spouse</button>
+                        <button type="button" class="btn btn-outline-primary step-btn" data-step="3">Father</button>
+                        <button type="button" class="btn btn-outline-primary step-btn" data-step="4">Mother</button>
+                        <button type="button" class="btn btn-outline-primary step-btn" data-step="5">Children</button>
+                        <button type="button" class="btn btn-outline-primary step-btn" data-step="6">Widow</button>
+                        <button type="button" class="btn btn-outline-primary step-btn" data-step="7">Veer Nari</button>
                      </div>
                      <!--ExServiceMan Detail-->
                      <div class="step-content" id="step-1">

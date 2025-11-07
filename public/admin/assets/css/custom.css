@@ -539,6 +539,7 @@ img.image-css {
 }
 h5.step-heading {
     font-size: 24px;
+    text-transform: uppercase;
 }
 .step-content label {
     font-size: 17px !important;
@@ -1075,6 +1076,10 @@ img.img-thumbnail {
     text-align: center;
     color: #000 !important;
     text-decoration: underline;
+    text-transform: uppercase;
+}
+.step-content h5:hover {
+    color: #000 !important;
 }
 /* side bar css */
 .sidebar-content li.nav-item p {
@@ -1098,4 +1103,16 @@ img.img-thumbnail {
     top: 18px;
     width: 100%;
     margin: 0 auto;
+}
+.services001 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.services2 {
+    width: 100% !important;
 }

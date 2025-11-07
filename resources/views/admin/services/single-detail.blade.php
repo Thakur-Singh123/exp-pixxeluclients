@@ -8,17 +8,17 @@
                <h5 class="step-heading mb-3 fw-bold">Service Details</h5>
                <!--tab-->
                <div class="d-flex flex-wrap gap-3 mb-4 step-header">
-                  <button type="button" class="btn btn-outline-primary step-btn active" data-step="1">Ex-ServiceMan Details</button>
-                  <button type="button" class="btn btn-outline-primary step-btn" data-step="2">Spouse Details</button>
-                  <button type="button" class="btn btn-outline-primary step-btn" data-step="3">Father Details</button>
-                  <button type="button" class="btn btn-outline-primary step-btn" data-step="4">Mother Details</button>
-                  <button type="button" class="btn btn-outline-primary step-btn" data-step="5">Children Details</button>
-                  <button type="button" class="btn btn-outline-primary step-btn" data-step="6">Widow Details</button>
-                  <button type="button" class="btn btn-outline-primary step-btn" data-step="7">Veer Nari Details</button>
+                  <button type="button" class="btn btn-outline-primary step-btn active" data-step="1">Ex-ServiceMan</button>
+                  <button type="button" class="btn btn-outline-primary step-btn" data-step="2">Spouse</button>
+                  <button type="button" class="btn btn-outline-primary step-btn" data-step="3">Father</button>
+                  <button type="button" class="btn btn-outline-primary step-btn" data-step="4">Mother</button>
+                  <button type="button" class="btn btn-outline-primary step-btn" data-step="5">Children</button>
+                  <button type="button" class="btn btn-outline-primary step-btn" data-step="6">Widow</button>
+                  <button type="button" class="btn btn-outline-primary step-btn" data-step="7">Veer Nari</button>
                </div>
                <!--Ex-ServiceMan Details-->  
                <div class="step-content" id="step-1">
-                  <h5 class="fw-bold text-primary border-bottom pb-2 mb-3">Ex-ServiceMan Details</h5>
+                  <h5 class="fw-bold text-primary border-bottom pb-2 mb-3">Ex-Serviceman Details</h5>
                   <div class="row">
                      <div class="col-md-4 mb-3 services1"><strong>Sr. No:</strong> {{ $service_detail->sr_no ?? '-' }}</div>
                      <div class="col-md-4 mb-3 services1"><strong>Army No:</strong> {{ $service_detail->army_no ?? '-' }}</div>
@@ -50,7 +50,7 @@
                      <div class="col-md-4 mb-3 services1"><strong>DGR Portal:</strong> {{ $service_detail->reg_on_dgr_portal ?? '-' }}</div>
                   </div>
                   <!-- Images -->
-                  <div class="row mt-4">
+                  <div class="mt-4 services001">
                      <div class="col-md-4 services2">
                         <strong>Photograph:</strong><br><br>
                         @if($service_detail->image)
@@ -75,24 +75,24 @@
                            - 
                         @endif
                      </div>
-                     <div class="col-md-4">
-                        <strong>Joint Photograph:</strong><br>
+                     <div class="col-md-4 services2">
+                        <strong>Joint Photograph:</strong><br><br>
                         @if($service_detail->joint_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->joint_image) }}" class="img-thumbnail shadow-sm" width="80">
                         @else 
                            - 
                         @endif
                      </div>
-                     <div class="col-md-4">
-                        <strong>Discharge Book:</strong><br>
+                     <div class="col-md-4 services2">
+                        <strong>Discharge Book:</strong><br><br>
                         @if($service_detail->discharge_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->discharge_image) }}" class="img-thumbnail shadow-sm" width="80">
                         @else 
                            - 
                         @endif
                      </div>
-                     <div class="col-md-4">
-                        <strong>PPO:</strong><br>
+                     <div class="col-md-4 services2">
+                        <strong>PPO:</strong><br><br>
                         @if($service_detail->ppo_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->ppo_image) }}" class="img-thumbnail shadow-sm" width="80">
                         @else 
