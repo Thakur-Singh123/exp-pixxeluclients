@@ -1076,6 +1076,7 @@ img.img-thumbnail {
     text-align: center;
     color: #000 !important;
     text-decoration: underline;
+    text-transform: uppercase;
 }
 .step-content h5:hover {
     color: #000 !important;
