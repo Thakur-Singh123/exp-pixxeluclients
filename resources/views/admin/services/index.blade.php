@@ -107,7 +107,7 @@
                                           <tr role="row">
                                              <td>{{ $service->sr_no ?? '-' }}</td>
                                              <td>
-                                                <a href="{{ url('admin/single-service-detail/' . $service->id) }}">
+                                                <a href="{{ url('admin/single-service-detail/' . $service->id) }}" style="color: #6B8E23;">
                                                    {{ $service->army_no ?? '-' }}
                                                 </a>
                                              </td>

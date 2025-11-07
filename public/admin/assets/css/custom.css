@@ -1074,3 +1074,10 @@ img.img-thumbnail {
     font-size: 20px;
     text-align: center;
 }
+/* side bar css */
+.sidebar-content li.nav-item p {
+    font-size: 16px !important;
+}
+.sidebar-content li.nav-item div#collapseService ul li a span {
+    font-size: 15px;
+}

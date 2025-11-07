@@ -474,10 +474,13 @@ class ExServiceManController extends Controller
     public function delete_service(Request $request) {
         //Get ajax id
         $service_id  = $request->service_id;
-        //Delete serive record
-        $is_delete_service = ExServiceMan::where('id', $service_id)->delete();
+        //Get servide detail
+        $service = ExServiceMan::find($service_id);
         //Check if service deleted or not
-        if ($is_delete_service) {
+        if ($service) {
+            ChildDetail::where('ex_service_man_id', $service->sr_no)->delete();
+            //Delete record
+            $service->delete();
             return back()->with('success', 'Service delete successfully.');
         } else {
             return back()->with('unsuccess', 'Oops! something went wrong');
