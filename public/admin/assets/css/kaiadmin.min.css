@@ -1430,12 +1430,12 @@ button.btn.btn-outline-primary.step-btn.active {
 }
 
 .logo-header .logo .navbar-brand {
-	padding-top: 0;
-	padding-bottom: 0;
-	margin-right: 0;
-	width: 210px;
-	height: 50px;
-	margin: 10px 0px 0px -20px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-right: 0;
+    width: 210px;
+    height: 60px;
+    margin: 10px 0px 0px -14px;
 }
 
 .logo-header .nav-toggle {
@@ -4267,7 +4267,7 @@ label {
 
 .form-control {
 	font-size: 1rem;
-	border-color: #ebedf2;
+	border-color: #ddd;
 	padding: .6rem 1rem;
 	height: inherit !important;
 	border-width: 2px
