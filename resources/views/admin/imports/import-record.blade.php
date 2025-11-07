@@ -4,16 +4,12 @@
 body {
     background-color: #f5f7f9;
 }
-
-/* Center align the whole card vertically */
 .container {
     min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-/* CARD DESIGN */
 .card {
     width: 100%;
     max-width: 700px;
@@ -36,8 +32,6 @@ body {
     padding: 50px 40px;
     min-height: 350px;
 }
-
-/* UPLOAD BOX */
 .file-upload-wrapper {
     position: relative;
     text-align: center;
@@ -71,8 +65,6 @@ body {
 .file-upload-wrapper.active i.fa-cloud-upload-alt {
     transform: scale(1.1);
 }
-
-/* PROGRESS BAR */
 .progress-bar-container {
     width: 80%;
     margin: 20px auto;
@@ -88,8 +80,6 @@ body {
     background: linear-gradient(90deg, #28a745, #6B8E23);
     transition: width 0.1s ease;
 }
-
-/* FILE NAME DISPLAY */
 .file-name-display {
     font-size: 15px;
     font-weight: 500;
@@ -103,8 +93,6 @@ body {
     vertical-align: middle;
     margin-right: 8px;
 }
-
-/* REMOVE BUTTON */
 .remove-btn {
     position: absolute;
     top: 150px;
@@ -123,10 +111,6 @@ body {
     transition: background 0.3s ease;
     display: none;
 }
-.remove-btn:hover {
-    background: #c82333;
-}
-
 .btn-custom {
     display: inline-flex;
     align-items: center;
@@ -143,8 +127,6 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: none !important;
 }
-
-/* Confirm Button */
 .btn-confirm {
     background: linear-gradient(135deg, #28a745, #6B8E23);
 }
@@ -155,16 +137,12 @@ body {
     color: #fff !important;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-
-
-/* RESPONSIVE */
 @media (max-width: 768px) {
     .card-body {
         padding: 30px 20px;
     }
 }
 </style>
-
 <div class="container">
     <div class="page-inner w-100">
         <div class="row justify-content-center">
@@ -173,103 +151,88 @@ body {
                 <div class="card">
                     <div class="card-header text-center">
                         <h4 class="card-title mb-0">
-                            <i class="fas fa-file-import me-2"></i> Import Data
+                            Import Data
                         </h4>
                     </div>
                     <div class="card-body text-center">
                         <form id="captureForm" action="{{ route('admin.submit.import') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            
                             <div class="file-upload-wrapper mt-3">
                                 <i class="fas fa-cloud-upload-alt"></i>
                                 <label for="fileUpload" class="file-upload-input">
                                     Click here to choose Excel/CSV file
                                 </label>
                                 <input type="file" id="fileUpload" name="image" class="d-none" accept=".xlsx,.xls,.csv">
-
-                                <!-- Progress bar -->
                                 <div class="progress-bar-container">
                                     <div class="progress-bar-fill"></div>
                                 </div>
-
                                 <div class="file-name-display"></div>
                                 <button type="button" class="remove-btn">&times;</button>
                                 @error('image')
                                     <small class="text-danger d-block mt-2">{{ $message }}</small>
                                 @enderror
                             </div>
-
                             <div class="text-center mt-4">
-                            <button type="submit" class="btn-custom btn-confirm">Submit</button>
-
+                                <button type="submit" class="btn-custom btn-confirm">Submit</button>
                             </div>
                         </form>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-{{-- jQuery --}}
 <script src="{{ asset('public/admin/assets/js/jquery-3.6.0.min.js') }}"></script>
 <script>
-$(document).ready(function() {
-    const fileInput = $('#fileUpload');
-    const uploadWrapper = $('.file-upload-wrapper');
-    const fileNameDisplay = $('.file-name-display');
-    const removeBtn = $('.remove-btn');
-    const progressBar = $('.progress-bar-container');
-    const progressFill = $('.progress-bar-fill');
-
-    fileInput.on('change', function(e) {
-        const file = e.target.files[0];
-        const allowedTypes = [
-            'application/vnd.ms-excel',
-            'text/csv',
-            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-        ];
-
-        if (!file) return;
-
-        if (!allowedTypes.includes(file.type)) {
-            fileNameDisplay
-                .html('<span class="text-danger">Invalid file type! Please upload Excel or CSV file.</span>')
-                .fadeIn();
+    $(document).ready(function() {
+        const fileInput = $('#fileUpload');
+        const uploadWrapper = $('.file-upload-wrapper');
+        const fileNameDisplay = $('.file-name-display');
+        const removeBtn = $('.remove-btn');
+        const progressBar = $('.progress-bar-container');
+        const progressFill = $('.progress-bar-fill');
+        fileInput.on('change', function(e) {
+            const file = e.target.files[0];
+            const allowedTypes = [
+                'application/vnd.ms-excel',
+                'text/csv',
+                'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+            ];
+            if (!file) return;
+            if (!allowedTypes.includes(file.type)) {
+                fileNameDisplay
+                    .html('<span class="text-danger">Invalid file type! Please upload Excel or CSV file.</span>')
+                    .fadeIn();
+                fileInput.val('');
+                uploadWrapper.removeClass('active');
+                removeBtn.hide();
+                return;
+            }
+            uploadWrapper.addClass('active');
+            progressBar.show();
+            progressFill.css('width', '0%');
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 2;
+                progressFill.css('width', progress + '%');
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        progressBar.fadeOut(300);
+                        fileNameDisplay
+                            .html('<i class="fas fa-file-excel"></i> ' + file.name)
+                            .fadeIn();
+                        removeBtn.fadeIn();
+                    }, 300);
+                }
+            }, 30);
+        });
+        removeBtn.on('click', function() {
             fileInput.val('');
             uploadWrapper.removeClass('active');
-            removeBtn.hide();
-            return;
-        }
-
-        uploadWrapper.addClass('active');
-        progressBar.show();
-        progressFill.css('width', '0%');
-        let progress = 0;
-
-        const interval = setInterval(() => {
-            progress += 2;
-            progressFill.css('width', progress + '%');
-            if (progress >= 100) {
-                clearInterval(interval);
-                setTimeout(() => {
-                    progressBar.fadeOut(300);
-                    fileNameDisplay
-                        .html('<i class="fas fa-file-excel"></i> ' + file.name)
-                        .fadeIn();
-                    removeBtn.fadeIn();
-                }, 300);
-            }
-        }, 30);
+            fileNameDisplay.fadeOut();
+            removeBtn.fadeOut();
+        });
     });
-
-    removeBtn.on('click', function() {
-        fileInput.val('');
-        uploadWrapper.removeClass('active');
-        fileNameDisplay.fadeOut();
-        removeBtn.fadeOut();
-    });
-});
 </script>
 @endsection

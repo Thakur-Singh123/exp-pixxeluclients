@@ -3,8 +3,8 @@
     <div class="sidebar-logo">
         <!--header section-->
         <div class="logo-header" data-background-color="dark">
-            <a href="{{ url('admin/dashboard') }}" class="logo">
-                <img src="{{ asset('public/admin/images/ESP Logo White.svg') }}" alt="navbar brand" class="navbar-brand" height="20" />
+            <a href="{{ url('admin/services') }}" class="logo">
+                <img src="{{ asset('public/admin/images/Logo 03.svg') }}" alt="navbar brand" class="navbar-brand" height="20" />
             </a>
             <!-- <div class="nav-toggle">
                 <button class="btn btn-toggle toggle-sidebar">
@@ -14,7 +14,7 @@
                     <i class="gg-menu-left"></i>
                 </button>
             </div>
-            <button class="topbar-toggler more">
+            <button class="topbar-toggler more"> 
                 <i class="gg-more-vertical-alt"></i>
             </button> -->
         </div>

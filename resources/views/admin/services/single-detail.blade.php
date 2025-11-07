@@ -75,6 +75,30 @@
                            - 
                         @endif
                      </div>
+                     <div class="col-md-4">
+                        <strong>Joint Photograph:</strong><br>
+                        @if($service_detail->joint_image)
+                           <img src="{{ asset('public/uploads/ex-images/'.$service_detail->joint_image) }}" class="img-thumbnail shadow-sm" width="80">
+                        @else 
+                           - 
+                        @endif
+                     </div>
+                     <div class="col-md-4">
+                        <strong>Discharge Book:</strong><br>
+                        @if($service_detail->discharge_image)
+                           <img src="{{ asset('public/uploads/ex-images/'.$service_detail->discharge_image) }}" class="img-thumbnail shadow-sm" width="80">
+                        @else 
+                           - 
+                        @endif
+                     </div>
+                     <div class="col-md-4">
+                        <strong>PPO:</strong><br>
+                        @if($service_detail->ppo_image)
+                           <img src="{{ asset('public/uploads/ex-images/'.$service_detail->ppo_image) }}" class="img-thumbnail shadow-sm" width="80">
+                        @else 
+                           - 
+                        @endif
+                     </div>
                   </div>
                </div>
                <!--Spouse Details-->
