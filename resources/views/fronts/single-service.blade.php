@@ -99,14 +99,14 @@
       width: 33%;
    }
    .mt-4.d-flex strong {
-      font-size: 15px;
+      font-size: 18px;
       color: #333;
       margin-bottom: 8px;
    }
    .mt-4.d-flex img {
       width: 99%;
       height: 200px;
-      object-fit: cover;
+      object-fit: cover; 
       border-radius: 10px;
       border: 1px solid #ddd;
    }
