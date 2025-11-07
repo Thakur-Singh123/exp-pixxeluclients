@@ -33,7 +33,8 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('admin/import-create', [App\Http\Controllers\Admin\ImportController::class, 'add_import']);
         Route::post('admin/import-submit', [App\Http\Controllers\Admin\ImportController::class, 'submi_import'])->name('admin.submit.import');
         //Export data
-        Route::get('admin/export-service', [App\Http\Controllers\Admin\ExportController::class, 'export_service']);
+        Route::get('admin/export-service', [App\Http\Controllers\Admin\ExportController::class, 'export_page']);
+        Route::get('admin/download-service', [App\Http\Controllers\Admin\ExportController::class, 'export_service'])->name('export.download');
     });
     //Customer middleware
     Route::group(['middleware' => 'Customer'], function() { 

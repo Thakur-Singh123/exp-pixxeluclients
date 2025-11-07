@@ -54,10 +54,6 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'phone' => 'required',
-            'city' => 'required|string',
-            'state' => 'required|string',
-            'joining_date' => 'required|string',
         ]);
     }
 
@@ -73,35 +69,6 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'phone' => $data['phone'],
-            'city' => $data['city'],
-            'state' => $data['state'],
-            'joining_date' => $data['joining_date'],
-            'status' => 'Pending',
         ]);
-    }
-
-     //Function for register after created account
-    protected function registered(Request $request, $user) {
-        //logout user after registration 
-        $this->guard()->logout();
-        //Redirect back with success message
-        return redirect()->route('login')
-            ->with('success', 'Your account has been created successfully. Please go to the login page to sign in.')
-            ->with('openSignup', true);
-    }
-
-    //Function for validation eror
-    public function register(Request $request) {
-        try {
-            $this->validator($request->all())->validate();
-        } catch (ValidationException $e) {
-            return redirect()->back()
-                ->withErrors($e->validator, 'register')
-                ->withInput()
-                ->with('openSignup', true); 
-        }
-        $user = $this->create($request->all());
-        return $this->registered($request, $user);
     }
 }
