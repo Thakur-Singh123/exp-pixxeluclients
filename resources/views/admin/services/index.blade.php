@@ -111,7 +111,6 @@
                                                    {{ $service->army_no ?? '-' }}
                                                 </a>
                                              </td>
-
                                              <td>{{ $service->rank ?? '-' }}</td>
                                              <td>{{ $service->name ?? '-' }}</td>
                                              <td>{{ $service->village ?? '-' }}</td>

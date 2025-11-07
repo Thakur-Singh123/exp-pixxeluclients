@@ -55,6 +55,27 @@ class ExServiceManController extends Controller
             $person_pan = time() . '_person_pan_image.' . $file->getClientOriginalExtension();
             $file->move($folder, $person_pan);
         }
+        //joint image
+        $person_joint = "";
+        if ($request->hasFile('joint_image')) {
+            $file = $request->file('joint_image');
+            $person_joint = time() . '_person_joint_image.' . $file->getClientOriginalExtension();
+            $file->move($folder, $person_joint);
+        }
+        //person discharge image
+        $person_discharge = "";
+        if ($request->hasFile('discharge_image')) {
+            $file = $request->file('discharge_image');
+            $person_discharge = time() . '_person_discharge_image.' . $file->getClientOriginalExtension();
+            $file->move($folder, $person_discharge);
+        }
+        //person ppp mage
+        $person_ppo = "";
+        if ($request->hasFile('ppo_image')) {
+            $file = $request->file('ppo_image');
+            $person_ppo = time() . '_person_ppo_image.' . $file->getClientOriginalExtension();
+            $file->move($folder, $person_ppo);
+        }
         //spouse image
         $spouse_image = "";
         if ($request->hasFile('spouse_image')) {
@@ -221,6 +242,10 @@ class ExServiceManController extends Controller
             'image' => $image,
             'aadhar_image' => $person_aadhar,
             'pan_image' => $person_pan,
+            'joint_image' => $person_joint,
+            'discharge_image' => $person_discharge,
+            'ppo_image' => $person_ppo,
+
             'spouse_image' => $spouse_image,
             'spouse_aadhar_image' => $spouse_aadhar,
             'spouse_pan_image' => $spouse_pan,
@@ -240,7 +265,7 @@ class ExServiceManController extends Controller
             //Get request input
             foreach ($request->children_name as $key => $name) {
                 ChildDetail::create([
-                    'ex_service_man_id' => $is_create_record->id,
+                    'ex_service_man_id' => $is_create_record->sr_no,
                     'army_no' => $is_create_record->army_no,
                     'name' => $name,
                     'age' => $request->children_age[$key] ?? null,
@@ -302,6 +327,9 @@ class ExServiceManController extends Controller
         $image = handleImage($request, 'image', $service->image, 'person', $folder);
         $person_aadhar = handleImage($request, 'aadhar_image', $service->aadhar_image, 'person_aadhar_image', $folder);
         $person_pan = handleImage($request, 'pan_image', $service->pan_image, 'person_pan_image', $folder);
+        $person_joint = handleImage($request, 'joint_image', $service->joint_image, 'person_joint_image', $folder);
+        $person_discharge = handleImage($request, 'discharge_image', $service->discharge_image, 'person_discharge_image', $folder);
+        $person_ppo = handleImage($request, 'ppo_image', $service->ppo_image, 'person_ppo_image', $folder);
 
         $spouse_image = handleImage($request, 'spouse_image', $service->spouse_image, 'spouse', $folder);
         $spouse_aadhar = handleImage($request, 'spouse_aadhar_image', $service->spouse_aadhar_image, 'spouse_aadhar_image', $folder);
@@ -400,6 +428,9 @@ class ExServiceManController extends Controller
             'image' => $image,
             'aadhar_image' => $person_aadhar,
             'pan_image' => $person_pan,
+            'joint_image' => $person_joint,
+            'discharge_image' => $person_discharge,
+            'ppo_image' => $person_ppo,
             'spouse_image' => $spouse_image,
             'spouse_aadhar_image' => $spouse_aadhar,
             'spouse_pan_image' => $spouse_pan,
@@ -417,11 +448,11 @@ class ExServiceManController extends Controller
         // Update children
         if($request->children_name) {
             //Delete existing children
-            ChildDetail::where('ex_service_man_id', $service->id)->delete();
+            ChildDetail::where('ex_service_man_id', $service->sr_no)->delete();
             //Create new children
             foreach ($request->children_name as $key => $name) {
                 ChildDetail::create([
-                    'ex_service_man_id'=> $service->id,
+                    'ex_service_man_id'=> $service->sr_no,
                     'army_no'=> $service->army_no,
                     'name' => $name,
                     'age' => $request->children_age[$key] ?? null,

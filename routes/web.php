@@ -6,7 +6,7 @@ Route::get('/', function () {
     return view('fronts/welcome');
 });
 //Front
-Route::get('data-bank-details-of-vsk-cell-dharamshala', [App\Http\Controllers\FrontController::class, 'next']);
+Route::get('data-bank-details', [App\Http\Controllers\FrontController::class, 'next']);
 Route::get('single-service-detail/{id}', [App\Http\Controllers\FrontController::class, 'get_service_detail']);
 //Middlewares
 Route::group(['middleware' => 'auth'], function() { 

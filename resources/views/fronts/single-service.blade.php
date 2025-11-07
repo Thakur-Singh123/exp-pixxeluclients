@@ -99,14 +99,14 @@
       width: 33%;
    }
    .mt-4.d-flex strong {
-      font-size: 15px;
+      font-size: 18px;
       color: #333;
       margin-bottom: 8px;
    }
    .mt-4.d-flex img {
       width: 99%;
       height: 200px;
-      object-fit: cover;
+      object-fit: cover; 
       border-radius: 10px;
       border: 1px solid #ddd;
    }
@@ -209,6 +209,27 @@
                   <strong>Pan Card:</strong><br>
                   @if($service_detail->pan_image)
                      <img src="{{ asset('public/uploads/ex-images/'.$service_detail->pan_image) }}" class="img-thumbnail">
+                  @else - 
+                  @endif
+               </div>
+               <div>
+                  <strong>Joint Photograph:</strong><br>
+                  @if($service_detail->joint_image)
+                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->joint_image) }}" class="img-thumbnail">
+                  @else - 
+                  @endif
+               </div>
+               <div>
+                  <strong>Discharge Book:</strong><br>
+                  @if($service_detail->discharge_image)
+                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->discharge_image) }}" class="img-thumbnail">
+                  @else - 
+                  @endif
+               </div>
+               <div>
+                  <strong>PPO:</strong><br>
+                  @if($service_detail->ppo_image)
+                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->ppo_image) }}" class="img-thumbnail">
                   @else - 
                   @endif
                </div>

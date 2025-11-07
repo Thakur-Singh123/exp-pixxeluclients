@@ -65,7 +65,7 @@
                      @csrf
                      <!--Step Navigation-->
                      <input type="hidden" name="army_no" value="{{ $service_detail->army_no ?? '' }}">
-                     <div class="d-flex flex-wrap justify-content-between mb-4 step-header">
+                     <div class="d-flex flex-wrap gap-3 mb-4 step-header">
                         <button type="button" class="btn btn-outline-primary step-btn active" data-step="1">Ex-ServiceMan Details</button>
                         <button type="button" class="btn btn-outline-primary step-btn" data-step="2">Spouse Details</button>
                         <button type="button" class="btn btn-outline-primary step-btn" data-step="3">Father Details</button>
@@ -230,6 +230,48 @@
                                  <label class="preview-label">Uploaded PAN Card</label>
                                  @if ($service_detail->pan_image)
                                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->pan_image) }}" class="preview-img">
+                                 @else
+                                    <span class="no-image-text">No image found</span>
+                                 @endif
+                              </div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
+                              <div class="upload-field">
+                                 <label>Joint Photograph</label>
+                                 <input type="file" name="joint_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box">
+                                 <label class="preview-label">Uploaded Joint Photograph</label>
+                                 @if ($service_detail->joint_image)
+                                    <img src="{{ asset('public/uploads/ex-images/'.$service_detail->joint_image) }}" class="preview-img">
+                                 @else
+                                    <span class="no-image-text">No image found</span>
+                                 @endif
+                              </div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
+                              <div class="upload-field">
+                                 <label>Discharge Book</label>
+                                 <input type="file" name="discharge_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box">
+                                 <label class="preview-label">Uploaded Discharge Book</label>
+                                 @if ($service_detail->discharge_image)
+                                    <img src="{{ asset('public/uploads/ex-images/'.$service_detail->discharge_image) }}" class="preview-img">
+                                 @else
+                                    <span class="no-image-text">No image found</span>
+                                 @endif
+                              </div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
+                              <div class="upload-field">
+                                 <label>PPO</label>
+                                 <input type="file" name="ppo_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box">
+                                 <label class="preview-label">Uploaded PPO</label>
+                                 @if ($service_detail->ppo_image)
+                                    <img src="{{ asset('public/uploads/ex-images/'.$service_detail->ppo_image) }}" class="preview-img">
                                  @else
                                     <span class="no-image-text">No image found</span>
                                  @endif

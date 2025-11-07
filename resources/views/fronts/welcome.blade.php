@@ -68,7 +68,7 @@
             VSK CELL<br>
             STN Headquarters Dharamshala, CANTT
         </h1>
-        <button onclick="window.location.href='{{ url('data-bank-details-of-vsk-cell-dharamshala') }}'">Next</button>
+        <button onclick="window.location.href='{{ url('data-bank-details') }}'">Next</button>
     </div>
 </body>
 </html>

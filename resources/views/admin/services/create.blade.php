@@ -14,7 +14,7 @@
                   <form id="captureForm" action="{{ route('admin.service.submit') }}" method="POST" enctype="multipart/form-data">
                      @csrf
                      <!--Tab-->
-                     <div class="d-flex flex-wrap justify-content-between mb-4 step-header">
+                     <div class="d-flex flex-wrap gap-3 mb-4 step-header">
                         <button type="button" class="btn btn-outline-primary step-btn active" data-step="1">Ex-ServiceMan Details</button>
                         <button type="button" class="btn btn-outline-primary step-btn" data-step="2">Spouse Details</button>
                         <button type="button" class="btn btn-outline-primary step-btn" data-step="3">Father Details</button>
@@ -163,6 +163,29 @@
                                 <div class="me-3" style="width:31%;">
                                     <label>PAN Card</label>
                                     <input type="file" name="pan_image" class="form-control upload-input">
+                                </div>
+                                <div class="preview-box"></div>
+                            </div>
+                             <div class="col-md-12 mb-3 d-flex align-items-start">
+                                <div class="me-3" style="width:31%;">
+                                    <label>Joint Photograph</label>
+                                    <input type="file" name="joint_image" class="form-control upload-input">
+                                </div>
+                                <div class="preview-box"></div>
+                            </div>
+
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                                <div class="me-3" style="width:31%;">
+                                    <label>Discharge Book</label>
+                                    <input type="file" name="discharge_image" class="form-control upload-input">
+                                </div>
+                                <div class="preview-box"></div>
+                            </div>
+
+                              <div class="col-md-12 mb-3 d-flex align-items-start">
+                                <div class="me-3" style="width:31%;">
+                                    <label>PPO</label>
+                                    <input type="file" name="ppo_image" class="form-control upload-input">
                                 </div>
                                 <div class="preview-box"></div>
                             </div>
