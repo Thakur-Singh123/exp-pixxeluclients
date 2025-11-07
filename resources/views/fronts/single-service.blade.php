@@ -212,6 +212,27 @@
                   @else - 
                   @endif
                </div>
+               <div>
+                  <strong>Joint Photograph:</strong><br>
+                  @if($service_detail->joint_image)
+                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->joint_image) }}" class="img-thumbnail">
+                  @else - 
+                  @endif
+               </div>
+               <div>
+                  <strong>Discharge Book:</strong><br>
+                  @if($service_detail->discharge_image)
+                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->discharge_image) }}" class="img-thumbnail">
+                  @else - 
+                  @endif
+               </div>
+               <div>
+                  <strong>PPO:</strong><br>
+                  @if($service_detail->ppo_image)
+                     <img src="{{ asset('public/uploads/ex-images/'.$service_detail->ppo_image) }}" class="img-thumbnail">
+                  @else - 
+                  @endif
+               </div>
             </div>
          </div>
       </div>

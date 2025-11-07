@@ -54,14 +54,14 @@
                 </li>
                 <!--import data-->
                 <li class="nav-item {{ Request::is('admin/import-create') ? 'active' : '' }}">
-                    <a href="{{ url('admin/import-create') }}">
+                    <a href="#">
                         <i class="fas fa-download"></i>
                         <p>Import Data</p>
                     </a>
                 </li>
                 <!--export data-->
                 <li class="nav-item {{ Request::is('admin/export-service') ? 'active' : '' }}">
-                    <a href="{{ url('admin/export-service') }}">
+                    <a href="#">
                         <i class="fas fa-upload"></i>
                         <p>Export Data</p>
                     </a>

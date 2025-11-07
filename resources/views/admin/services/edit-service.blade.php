@@ -235,6 +235,48 @@
                                  @endif
                               </div>
                            </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
+                              <div class="upload-field">
+                                 <label>Joint Photograph</label>
+                                 <input type="file" name="joint_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box">
+                                 <label class="preview-label">Uploaded Joint Photograph</label>
+                                 @if ($service_detail->joint_image)
+                                    <img src="{{ asset('public/uploads/ex-images/'.$service_detail->joint_image) }}" class="preview-img">
+                                 @else
+                                    <span class="no-image-text">No image found</span>
+                                 @endif
+                              </div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
+                              <div class="upload-field">
+                                 <label>Discharge Book</label>
+                                 <input type="file" name="discharge_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box">
+                                 <label class="preview-label">Uploaded Discharge Book</label>
+                                 @if ($service_detail->discharge_image)
+                                    <img src="{{ asset('public/uploads/ex-images/'.$service_detail->discharge_image) }}" class="preview-img">
+                                 @else
+                                    <span class="no-image-text">No image found</span>
+                                 @endif
+                              </div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
+                              <div class="upload-field">
+                                 <label>PPO</label>
+                                 <input type="file" name="ppo_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box">
+                                 <label class="preview-label">Uploaded PPO</label>
+                                 @if ($service_detail->ppo_image)
+                                    <img src="{{ asset('public/uploads/ex-images/'.$service_detail->ppo_image) }}" class="preview-img">
+                                 @else
+                                    <span class="no-image-text">No image found</span>
+                                 @endif
+                              </div>
+                           </div>
                         </div>
                         <!--end photograph section-->
                      </div>
