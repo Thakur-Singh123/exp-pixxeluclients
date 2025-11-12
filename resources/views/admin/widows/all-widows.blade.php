@@ -57,7 +57,7 @@
                                              </td>
                                              <td>{{ $service->rank ?? '-' }}</td>
                                              <td>{{ $service->window_name ?? '-' }}</td>
-                                             <td>{{ $service->date_of_death ?? '-' }}</td>
+                                             <td>{{ \Carbon\Carbon::parse($service->date_of_death)->format('d M, Y') ?? '-' }}</td>
                                           </tr>
                                           @endforeach
                                        </tbody>
