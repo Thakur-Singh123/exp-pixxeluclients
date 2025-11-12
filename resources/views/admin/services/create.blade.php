@@ -8,7 +8,7 @@
             @include('admin.notification')
             <div class="card shadow-sm">
                <div class="card-header text-white">
-                  <h4 class="card-title mb-0">Add service</h4>
+                  <h4 class="card-title mb-0">Add Ex-Serviceman</h4>
                </div>
                <div class="card-body">
                   <form id="captureForm" action="{{ route('admin.service.submit') }}" method="POST" enctype="multipart/form-data">

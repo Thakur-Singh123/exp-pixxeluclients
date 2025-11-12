@@ -34,23 +34,37 @@
                         class="{{ request()->is('admin/services*') || request()->is('admin/service-create') || request()->is('admin/edit-service*') || request()->is('admin/single-service-detail*') ? '' : 'collapsed' }}"
                         aria-expanded="{{ request()->is('admin/services*') || request()->is('admin/service-create') || request()->is('admin/edit-service*') || request()->is('admin/single-service-detail*') ? 'true' : 'false' }}">
                         <i class="fas fa-clipboard-list"></i>
-                        <p>Service Records</p>
+                        <p>Ex-Servicemans</p>
                         <span class="caret"></span>
                     </a>
                     <div class="collapse {{ request()->is('admin/services*') || request()->is('admin/service-create') || request()->is('admin/edit-service*') || request()->is('admin/single-service-detail*') ? 'show' : '' }}" id="collapseService">
                         <ul class="nav nav-collapse">
                             <li class="{{ request()->is('admin/service-create') ? 'active' : '' }}">
                                 <a href="{{ url('admin/service-create') }}">
-                                    <span class="sub-item">Add Service</span>
+                                    <span class="sub-item">Add Ex-Serviceman</span>
                                 </a>
                             </li>
                             <li class="{{ request()->is('admin/services') || request()->is('admin/edit-service*') || request()->is('admin/single-service-detail*') ? 'active' : '' }}">
                                 <a href="{{ url('admin/services') }}">
-                                    <span class="sub-item">All Services</span>
+                                    <span class="sub-item">All Ex-Servicemans</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
+                </li>
+                <!--Widows data -->
+                <li class="nav-item {{ Request::is('admin/widows') || Request::is('admin/single-widow-detail/*') ? 'active' : '' }}">
+                    <a href="{{ url('admin/widows') }}">
+                        <i class="fas fa-ribbon"></i>
+                        <p>Widows</p>
+                    </a>
+                </li>
+               <!--Widows data-->
+                <li class="nav-item {{ Request::is('admin/veer-naries') || Request::is('admin/single-veer-nari-detail/*') ? 'active' : '' }}">
+                    <a href="{{ url('admin/veer-naries') }}">
+                         <i class="fas fa-medal"></i>
+                        <p>Veer Naries</p>
+                    </a>
                 </li>
                 <!--import data-->
                 <li class="nav-item {{ Request::is('admin/import-create') ? 'active' : '' }}">

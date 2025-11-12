@@ -58,7 +58,7 @@
             @include('admin.notification')
             <div class="card shadow-sm">
                <div class="card-header text-white">
-                  <h4 class="card-title mb-0">Edit service</h4>
+                  <h4 class="card-title mb-0">Edit Ex-Serviceman</h4>
                </div>
                <div class="card-body">
                   <form id="captureForm" action="{{ route('admin.service.update', $service_detail->id) }}" method="POST" enctype="multipart/form-data">

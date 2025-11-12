@@ -1074,12 +1074,12 @@ img.img-thumbnail {
 .step-content h5 {
     font-size: 20px;
     text-align: center;
-    color: #000 !important;
+    color: #ffffff !important;
     text-decoration: underline;
     text-transform: uppercase;
 }
 .step-content h5:hover {
-    color: #000 !important;
+    color: #ffffff !important;
 }
 /* side bar css */
 .sidebar-content li.nav-item p {
