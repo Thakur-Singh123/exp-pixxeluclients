@@ -5,19 +5,52 @@
       <div class="row">
          <div class="col-md-12">
             <div class="card shadow-sm p-4">
-               <h5 class="step-heading mb-3 fw-bold">Ex-Serviceman Details</h5>
+               <h5 class="step-heading mb-3 fw-bold">Widow Details</h5>
                <!--tab-->
                <div class="d-flex flex-wrap gap-3 mb-4 step-header">
-                  <button type="button" class="btn btn-outline-primary step-btn active" data-step="1">Ex-ServiceMan</button>
-                  <button type="button" class="btn btn-outline-primary step-btn" data-step="2">Spouse</button>
-                  <button type="button" class="btn btn-outline-primary step-btn" data-step="3">Father</button>
-                  <button type="button" class="btn btn-outline-primary step-btn" data-step="4">Mother</button>
-                  <button type="button" class="btn btn-outline-primary step-btn" data-step="5">Children</button>
-                  <!-- <button type="button" class="btn btn-outline-primary step-btn" data-step="6">Widow</button>
-                  <button type="button" class="btn btn-outline-primary step-btn" data-step="7">Veer Nari</button> -->
+                  <button type="button" class="btn btn-outline-primary step-btn active" data-step="1">Widow</button>
+                  <button type="button" class="btn btn-outline-primary step-btn" data-step="2">Ex-ServiceMan</button>
+                  <button type="button" class="btn btn-outline-primary step-btn" data-step="3">Spouse</button>
+                  <button type="button" class="btn btn-outline-primary step-btn" data-step="4">Father</button>
+                  <button type="button" class="btn btn-outline-primary step-btn" data-step="5">Mother</button>
+                  <button type="button" class="btn btn-outline-primary step-btn" data-step="6">Children</button>
+               </div>
+               <!--Widow Details-->
+               <div class="step-content d-none" id="step-1">
+                  <h5 class="fw-bold text-primary border-bottom pb-2 mb-3">Widow Details</h5>
+                  <div class="row">
+                     <div class="col-md-6 mb-3"><strong>Name:</strong> {{ $service_detail->window_name ?? '-' }}</div>
+                     <div class="col-md-6 mb-3"><strong>Date of Death:</strong> {{ \Carbon\Carbon::parse($service_detail->date_of_death)->format('d M, Y') ?? '-' }}</div>
+                  </div>
+                  <div class="row mt-4">
+                     <div class="col-md-4">
+                        <strong>Photograph:</strong><br>
+                        @if($service_detail->window_image)
+                           <img src="{{ asset('public/uploads/ex-images/'.$service_detail->window_image) }}" class="img-thumbnail shadow-sm" width="80">
+                        @else 
+                           - 
+                        @endif
+                     </div>
+                     <div class="col-md-4">
+                        <strong>Aadhar Card:</strong><br>
+                        @if($service_detail->window_aadhar_image)
+                           <img src="{{ asset('public/uploads/ex-images/'.$service_detail->window_aadhar_image) }}" class="img-thumbnail shadow-sm" width="80">
+                        @else 
+                           - 
+                        @endif
+                     </div>
+                     <div class="col-md-4">
+                        <strong>Pan Card:</strong><br>
+                        @if($service_detail->window_pan_image)
+                           <img src="{{ asset('public/uploads/ex-images/'.$service_detail->window_pan_image) }}" class="img-thumbnail shadow-sm" width="80">
+                        @else 
+                           - 
+                        @endif
+                     </div>
+                  </div>
                </div>
                <!--Ex-ServiceMan Details-->  
-               <div class="step-content" id="step-1">
+               <div class="step-content" id="step-2">
                   <h5 class="fw-bold text-primary border-bottom pb-2 mb-3">Ex-Serviceman Details</h5>
                   <div class="row">
                      <div class="col-md-4 mb-3 services1"><strong>Sr. No:</strong> {{ $service_detail->sr_no ?? '-' }}</div>
@@ -102,7 +135,7 @@
                   </div>
                </div>
                <!--Spouse Details-->
-               <div class="step-content d-none" id="step-2">
+               <div class="step-content d-none" id="step-3">
                   <h5 class="fw-bold text-primary border-bottom pb-2 mb-3">Spouse Details</h5>
                   <div class="row">
                      <div class="col-md-4 mb-3"><strong>Name:</strong> {{ $service_detail->spouse_name ?? '-' }}</div>
@@ -147,7 +180,7 @@
                   </div>
                </div>
                <!--Father Details-->
-               <div class="step-content d-none" id="step-3">
+               <div class="step-content d-none" id="step-4">
                   <h5 class="fw-bold text-primary border-bottom pb-2 mb-3">Father Details</h5>
                   <div class="row">
                      <div class="col-md-4 mb-3"><strong>Name:</strong> {{ $service_detail->father_name ?? '-' }}</div>
@@ -192,7 +225,7 @@
                   </div>
                </div>
                <!--Mother Details-->
-               <div class="step-content d-none" id="step-4">
+               <div class="step-content d-none" id="step-5">
                   <h5 class="fw-bold text-primary border-bottom pb-2 mb-3">Mother Details</h5>
                   <div class="row">
                      <div class="col-md-4 mb-3"><strong>Name:</strong> {{ $service_detail->mother_name ?? '-' }}</div>
@@ -237,7 +270,7 @@
                   </div>
                </div>
                <!--Children Details -->
-               <div class="step-content d-none" id="step-5">
+               <div class="step-content d-none" id="step-6">
                   <h5 class="fw-bold text-primary border-bottom pb-2 mb-3">Children Details</h5>
                   <div class="table-responsive">
                      <table class="table table-bordered" id="childrenTable">
@@ -275,48 +308,6 @@
                      </table>
                   </div>
                </div>
-               <!--Widow Details-->
-               <!-- <div class="step-content d-none" id="step-6">
-                  <h5 class="fw-bold text-primary border-bottom pb-2 mb-3">Widow Details</h5>
-                  <div class="row">
-                     <div class="col-md-6 mb-3"><strong>Name:</strong> {{ $service_detail->window_name ?? '-' }}</div>
-                     <div class="col-md-6 mb-3"><strong>Date of Death:</strong> {{ \Carbon\Carbon::parse($service_detail->date_of_death)->format('d M, Y') ?? '-' }}</div>
-                  </div>
-                  <div class="row mt-4">
-                     <div class="col-md-4">
-                        <strong>Photograph:</strong><br>
-                        @if($service_detail->window_image)
-                           <img src="{{ asset('public/uploads/ex-images/'.$service_detail->window_image) }}" class="img-thumbnail shadow-sm" width="80">
-                        @else 
-                           - 
-                        @endif
-                     </div>
-                     <div class="col-md-4">
-                        <strong>Aadhar Card:</strong><br>
-                        @if($service_detail->window_aadhar_image)
-                           <img src="{{ asset('public/uploads/ex-images/'.$service_detail->window_aadhar_image) }}" class="img-thumbnail shadow-sm" width="80">
-                        @else 
-                           - 
-                        @endif
-                     </div>
-                     <div class="col-md-4">
-                        <strong>Pan Card:</strong><br>
-                        @if($service_detail->window_pan_image)
-                           <img src="{{ asset('public/uploads/ex-images/'.$service_detail->window_pan_image) }}" class="img-thumbnail shadow-sm" width="80">
-                        @else 
-                           - 
-                        @endif
-                     </div>
-                  </div>
-               </div> -->
-               <!--Veer Nari Details -->
-               <!-- <div class="step-content d-none" id="step-7">
-                  <h5 class="fw-bold text-primary border-bottom pb-2 mb-3">Veer Nari Details</h5>
-                  <div class="row">
-                     <div class="col-md-6 mb-3"><strong>Name:</strong> {{ $service_detail->veer_nari_name ?? '-' }}</div>
-                     <div class="col-md-6 mb-3"><strong>Expose Year:</strong> {{ $service_detail->veer_nari_expose_year ?? '-'}}</div>
-                  </div>
-               </div> -->
             </div>
          </div>
       </div>

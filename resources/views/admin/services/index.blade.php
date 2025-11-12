@@ -10,7 +10,7 @@
                <div class="col-md-12">
                   <div class="card">
                      <div class="card-header d-flex justify-content-between align-items-center">
-                        <h4 class="card-title">All services</h4>
+                        <h4 class="card-title">All Ex-Serviceman</h4>
                      </div>
                      <div class="card-body">
                         <div class="table-responsive">

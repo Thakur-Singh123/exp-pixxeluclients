@@ -29,6 +29,12 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('admin/edit-service/{id}', [App\Http\Controllers\Admin\ExServiceManController::class, 'edit_service']);
         Route::post('admin/service-update/{id}', [App\Http\Controllers\Admin\ExServiceManController::class, 'update_service'])->name('admin.service.update');
         Route::get('admin/delete-service-detail', [App\Http\Controllers\Admin\ExServiceManController::class, 'delete_service']);
+        //Widows
+        Route::get('admin/widows', [App\Http\Controllers\Admin\ExServiceManController::class, 'all_widows']);
+        Route::get('admin/single-widow-detail/{id}', [App\Http\Controllers\Admin\ExServiceManController::class, 'single_widow']);
+        //Veer Naries
+        Route::get('admin/veer-naries', [App\Http\Controllers\Admin\ExServiceManController::class, 'all_veer_naries']);
+        Route::get('admin/single-veer-nari-detail/{id}', [App\Http\Controllers\Admin\ExServiceManController::class, 'single_veer_nari']);
         //Import data
         Route::get('admin/import-create', [App\Http\Controllers\Admin\ImportController::class, 'add_import']);
         Route::post('admin/import-submit', [App\Http\Controllers\Admin\ImportController::class, 'submi_import'])->name('admin.submit.import');

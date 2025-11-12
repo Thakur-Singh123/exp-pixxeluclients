@@ -288,6 +288,34 @@ class ExServiceManController extends Controller
         return view('admin.services.single-detail', compact('service_detail'));
     }
 
+    //Function for all widows
+    public function all_widows() {
+        //Get services
+        $all_services = ExServiceMan::OrderBy('ID', 'DESC')->get();
+        return view('admin.widows.all-widows', compact('all_services'));
+    }
+
+    //Function for single widow detail page
+    public function single_widow($id) {
+        //Get single detail
+        $service_detail = ExServiceMan::with('children')->find($id);
+        return view('admin.widows.single-widow-detail', compact('service_detail'));
+    }
+
+    //Function for all veer naries
+    public function all_veer_naries() {
+        //Get services
+        $all_services = ExServiceMan::OrderBy('ID', 'DESC')->get();
+        return view('admin.veer-naries.all-veer-naries', compact('all_services'));
+    }
+
+    //Function for single veer naries detail page
+    public function single_veer_nari($id) {
+        //Get single detail
+        $service_detail = ExServiceMan::with('children')->find($id);
+        return view('admin.veer-naries.single-veer-nari', compact('service_detail'));
+    }
+
     //Function for edit service
     public function edit_service($id) {
         //Get service detail
@@ -486,4 +514,6 @@ class ExServiceManController extends Controller
             return back()->with('unsuccess', 'Oops! something went wrong');
         }
     }
+
+
 }
