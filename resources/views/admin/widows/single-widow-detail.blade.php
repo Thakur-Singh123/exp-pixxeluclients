@@ -308,8 +308,7 @@
                      </table>
                   </div>
                </div>
-<<<<<<< HEAD
-=======
+
                <!--Widow Details-->
                <div class="step-content d-none" id="step-6">
                   <h5 class="fw-bold text-primary border-bottom pb-2 mb-3">Widow Details</h5>
@@ -344,7 +343,7 @@
                      </div>
                   </div>
                </div>
->>>>>>> 84340dff5206a4ef3ad6d1a7af577e125c514e30
+
             </div>
          </div>
       </div>
