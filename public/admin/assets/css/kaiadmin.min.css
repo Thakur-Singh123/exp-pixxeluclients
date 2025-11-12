@@ -1125,6 +1125,7 @@ body {
 }
 button.btn.btn-outline-primary.step-btn.active {
     background: #6B8E23 !important;
+    color: #aadd2e;
 }
 .step-header button.btn.btn-outline-primary.step-btn:hover {
     background: #89a54f;
