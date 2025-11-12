@@ -112,39 +112,39 @@
                <div class="step-content d-none" id="step-3">
                   <h5 class="fw-bold text-primary border-bottom pb-2 mb-3">Spouse Details</h5>
                   <div class="row">
-                     <div class="col-md-4 mb-3"><strong>Name:</strong> {{ $service_detail->spouse_name ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>Address:</strong> {{ $service_detail->spouse_address ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>DOB:</strong> {{ \Carbon\Carbon::parse($service_detail->spouse_dob)->format('d M, Y') ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>Education:</strong> {{ $service_detail->spouse_education ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>Mobile No:</strong> {{ $service_detail->spouse_mobile ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>Aadhar No:</strong> {{ $service_detail->spouse_aadhar_card ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>PAN No:</strong> {{ $service_detail->spouse_pan_card ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>ECHS No:</strong> {{ $service_detail->spouse_echs_card ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>CSD No:</strong> {{ $service_detail->spouse_csd_card ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>Bank Account No:</strong> {{ $service_detail->spouse_bank_acc_no ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>Bank Name:</strong> {{ $service_detail->spouse_bank_name ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>IFSC Code:</strong> {{ $service_detail->spouse_ifsc_code ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>MICR Code:</strong> {{ $service_detail->spouse_micr_code ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Name:</strong> {{ $service_detail->spouse_name ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Address:</strong> {{ $service_detail->spouse_address ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>DOB:</strong> {{ \Carbon\Carbon::parse($service_detail->spouse_dob)->format('d M, Y') ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Education:</strong> {{ $service_detail->spouse_education ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Mobile No:</strong> {{ $service_detail->spouse_mobile ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Aadhar No:</strong> {{ $service_detail->spouse_aadhar_card ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>PAN No:</strong> {{ $service_detail->spouse_pan_card ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>ECHS No:</strong> {{ $service_detail->spouse_echs_card ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>CSD No:</strong> {{ $service_detail->spouse_csd_card ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Bank Account No:</strong> {{ $service_detail->spouse_bank_acc_no ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Bank Name:</strong> {{ $service_detail->spouse_bank_name ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>IFSC Code:</strong> {{ $service_detail->spouse_ifsc_code ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>MICR Code:</strong> {{ $service_detail->spouse_micr_code ?? '-' }}</div>
                   </div>
-                  <div class="row mt-4">
-                     <div class="col-md-4">
-                        <strong>Photograph:</strong><br>
+                  <div class="services001 mt-4">
+                     <div class="col-md-4 services2">
+                        <strong>Photograph:</strong><br><br>
                         @if($service_detail->spouse_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_image) }}" class="img-thumbnail shadow-sm" width="80">
                         @else 
                            - 
                         @endif
                      </div>
-                     <div class="col-md-4">
-                        <strong>Aadhar Card:</strong><br>
+                     <div class="col-md-4 services2">
+                        <strong>Aadhar Card:</strong><br><br>
                         @if($service_detail->spouse_aadhar_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_aadhar_image) }}" class="img-thumbnail shadow-sm" width="80">
                         @else 
                            - 
                         @endif
                      </div>
-                     <div class="col-md-4">
-                        <strong>Pan Card:</strong><br>
+                     <div class="col-md-4 services2">
+                        <strong>Pan Card:</strong><br><br>
                         @if($service_detail->spouse_pan_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_pan_image) }}" class="img-thumbnail shadow-sm" width="80">
                         @else 
@@ -157,22 +157,22 @@
                <div class="step-content d-none" id="step-4">
                   <h5 class="fw-bold text-primary border-bottom pb-2 mb-3">Father Details</h5>
                   <div class="row">
-                     <div class="col-md-4 mb-3"><strong>Name:</strong> {{ $service_detail->father_name ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>Address:</strong> {{ $service_detail->father_address ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>DOB:</strong> {{ \Carbon\Carbon::parse($service_detail->father_dob)->format('d M, Y') ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>Education:</strong> {{ $service_detail->father_education ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>Mobile No:</strong> {{ $service_detail->father_mobile ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>Aadhar No:</strong> {{ $service_detail->father_aadhar_card ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>PAN No:</strong> {{ $service_detail->father_pan_card ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>ECHS No:</strong> {{ $service_detail->father_echs_card ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>CSD No:</strong> {{ $service_detail->father_csd_card ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>Bank Account No:</strong> {{ $service_detail->father_bank_acc_no ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>Bank Name:</strong> {{ $service_detail->father_bank_name ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>IFSC Code:</strong> {{ $service_detail->father_ifsc_code ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>MICR Code:</strong> {{ $service_detail->father_micr_code ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Name:</strong> {{ $service_detail->father_name ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Address:</strong> {{ $service_detail->father_address ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>DOB:</strong> {{ \Carbon\Carbon::parse($service_detail->father_dob)->format('d M, Y') ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Education:</strong> {{ $service_detail->father_education ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Mobile No:</strong> {{ $service_detail->father_mobile ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Aadhar No:</strong> {{ $service_detail->father_aadhar_card ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>PAN No:</strong> {{ $service_detail->father_pan_card ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>ECHS No:</strong> {{ $service_detail->father_echs_card ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>CSD No:</strong> {{ $service_detail->father_csd_card ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Bank Account No:</strong> {{ $service_detail->father_bank_acc_no ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Bank Name:</strong> {{ $service_detail->father_bank_name ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>IFSC Code:</strong> {{ $service_detail->father_ifsc_code ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>MICR Code:</strong> {{ $service_detail->father_micr_code ?? '-' }}</div>
                   </div>
-                  <div class="row mt-4">
-                     <div class="col-md-4">
+                  <div class="services001 mt-4">
+                     <div class="col-md-4 services2">
                         <strong>Photograph:</strong><br>
                         @if($service_detail->father_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->father_image) }}" class="img-thumbnail shadow-sm" width="80">
@@ -180,7 +180,7 @@
                            - 
                         @endif
                      </div>
-                     <div class="col-md-4">
+                     <div class="col-md-4 services2">
                         <strong>Aadhar Card:</strong><br>
                         @if($service_detail->father_aadhar_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->father_aadhar_image) }}" class="img-thumbnail shadow-sm" width="80">
@@ -188,7 +188,7 @@
                            - 
                         @endif
                      </div>
-                     <div class="col-md-4">
+                     <div class="col-md-4 services2">
                         <strong>Pan Card:</strong><br>
                         @if($service_detail->father_pan_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->father_pan_image) }}" class="img-thumbnail shadow-sm" width="80">
@@ -202,22 +202,22 @@
                <div class="step-content d-none" id="step-5">
                   <h5 class="fw-bold text-primary border-bottom pb-2 mb-3">Mother Details</h5>
                   <div class="row">
-                     <div class="col-md-4 mb-3"><strong>Name:</strong> {{ $service_detail->mother_name ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>Address:</strong> {{ $service_detail->mother_address ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>DOB:</strong> {{ \Carbon\Carbon::parse($service_detail->mother_dob)->format('d M, Y') ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>Education:</strong> {{ $service_detail->mother_education ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>Mobile No:</strong> {{ $service_detail->mother_mobile ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>Aadhar No:</strong> {{ $service_detail->mother_aadhar_card ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>PAN No:</strong> {{ $service_detail->mother_pan_card ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>ECHS No:</strong> {{ $service_detail->mother_echs_card ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>CSD No:</strong> {{ $service_detail->mother_csd_card ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>Bank Account No:</strong> {{ $service_detail->mother_bank_acc_no ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>Bank Name:</strong> {{ $service_detail->mother_bank_name ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>IFSC Code:</strong> {{ $service_detail->mother_ifsc_code ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>MICR Code:</strong> {{ $service_detail->mother_micr_code ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Name:</strong> {{ $service_detail->mother_name ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Address:</strong> {{ $service_detail->mother_address ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>DOB:</strong> {{ \Carbon\Carbon::parse($service_detail->mother_dob)->format('d M, Y') ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Education:</strong> {{ $service_detail->mother_education ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Mobile No:</strong> {{ $service_detail->mother_mobile ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Aadhar No:</strong> {{ $service_detail->mother_aadhar_card ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>PAN No:</strong> {{ $service_detail->mother_pan_card ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>ECHS No:</strong> {{ $service_detail->mother_echs_card ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>CSD No:</strong> {{ $service_detail->mother_csd_card ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Bank Account No:</strong> {{ $service_detail->mother_bank_acc_no ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Bank Name:</strong> {{ $service_detail->mother_bank_name ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>IFSC Code:</strong> {{ $service_detail->mother_ifsc_code ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>MICR Code:</strong> {{ $service_detail->mother_micr_code ?? '-' }}</div>
                   </div>
-                  <div class="row mt-4">
-                     <div class="col-md-4">
+                  <div class="services001 mt-4">
+                     <div class="col-md-4 services2">
                         <strong>Photograph:</strong><br>
                         @if($service_detail->mother_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->mother_image) }}" class="img-thumbnail shadow-sm" width="80">
@@ -225,7 +225,7 @@
                            - 
                         @endif
                      </div>
-                     <div class="col-md-4">
+                     <div class="col-md-4 services2">
                         <strong>Aadhar Card:</strong><br>
                         @if($service_detail->mother_aadhar_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->mother_aadhar_image) }}" class="img-thumbnail shadow-sm" width="80">
@@ -233,7 +233,7 @@
                            - 
                         @endif
                      </div>
-                     <div class="col-md-4">
+                     <div class="col-md-4 services2">
                         <strong>Pan Card:</strong><br>
                         @if($service_detail->mother_pan_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->mother_pan_image) }}" class="img-thumbnail shadow-sm" width="80">
@@ -282,7 +282,16 @@
                      </table>
                   </div>
                </div>
-            </div>
+
+               <!--Veer Nari Details -->
+               <div class="step-content d-none" id="step-6">
+                  <h5 class="fw-bold text-primary border-bottom pb-2 mb-3">Veer Nari Details</h5>
+                  <div class="row">
+                     <div class="col-md-6 mb-3 services1"><strong>Name:</strong> {{ $service_detail->veer_nari_name ?? '-' }}</div>
+                     <div class="col-md-6 mb-3 services1"><strong>Expose Year:</strong> {{ $service_detail->veer_nari_expose_year ?? '-'}}</div>
+                  </div>
+               </div>
+             </div>
          </div>
       </div>
    </div>
