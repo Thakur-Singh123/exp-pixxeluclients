@@ -1078,6 +1078,9 @@ img.img-thumbnail {
     text-decoration: underline;
     text-transform: uppercase;
 }
+.services1 strong {
+    font-size: 18px;
+}
 .step-content h5:hover {
     color: #ffffff !important;
 }
@@ -1115,4 +1118,5 @@ img.img-thumbnail {
 
 .services2 {
     width: 100% !important;
+    font-size: 18px;
 }
