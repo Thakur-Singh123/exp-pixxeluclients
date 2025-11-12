@@ -32,6 +32,8 @@ Route::group(['middleware' => 'auth'], function() {
         //Widows
         Route::get('admin/widows', [App\Http\Controllers\Admin\ExServiceManController::class, 'all_widows']);
         Route::get('admin/single-widow-detail/{id}', [App\Http\Controllers\Admin\ExServiceManController::class, 'single_widow']);
+        Route::get('admin/edit-widow/{id}', [App\Http\Controllers\Admin\WidowController::class, 'edit_widow']);
+        Route::get('admin/update-widow/{id}', [App\Http\Controllers\Admin\WidowController::class, 'update_widow'])->name('admin.update.widow');
         //Veer Naries
         Route::get('admin/veer-naries', [App\Http\Controllers\Admin\ExServiceManController::class, 'all_veer_naries']);
         Route::get('admin/single-veer-nari-detail/{id}', [App\Http\Controllers\Admin\ExServiceManController::class, 'single_veer_nari']);

@@ -52,20 +52,22 @@
                         </ul>
                     </div>
                 </li>
-                <!--Widows data -->
-                <li class="nav-item {{ Request::is('admin/widows') || Request::is('admin/single-widow-detail/*') ? 'active' : '' }}">
+               <!-- Widows data -->
+                <li class="nav-item {{ Request::is('admin/widows') || Request::is('admin/single-widow-detail/*') || Request::is('admin/edit-widow/*') ? 'active' : '' }}">
                     <a href="{{ url('admin/widows') }}">
                         <i class="fas fa-ribbon"></i>
                         <p>Widows</p>
                     </a>
                 </li>
-               <!--Widows data-->
-                <li class="nav-item {{ Request::is('admin/veer-naries') || Request::is('admin/single-veer-nari-detail/*') ? 'active' : '' }}">
+
+                <!-- Veer Naries data -->
+                <li class="nav-item {{ Request::is('admin/veer-naries') || Request::is('admin/single-veer-nari-detail/*') || Request::is('admin/edit-veer-nari/*') ? 'active' : '' }}">
                     <a href="{{ url('admin/veer-naries') }}">
-                         <i class="fas fa-medal"></i>
+                        <i class="fas fa-medal"></i>
                         <p>Veer Naries</p>
                     </a>
                 </li>
+
                 <!--import data-->
                 <li class="nav-item {{ Request::is('admin/import-create') ? 'active' : '' }}">
                     <a href="{{ url('admin/import-create') }}">
