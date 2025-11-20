@@ -52,14 +52,30 @@
                         </ul>
                     </div>
                 </li>
-               <!-- Widows data -->
-                <li class="nav-item {{ Request::is('admin/widows') || Request::is('admin/single-widow-detail/*') || Request::is('admin/edit-widow/*') ? 'active' : '' }}">
-                    <a href="{{ url('admin/widows') }}">
+               <!--Widows data -->
+               <li class="nav-item {{ request()->is('admin/widows*') || request()->is('admin/widow-create') || request()->is('admin/edit-widow/*') || request()->is('admin/single-widow-detail/*') ? 'active' : '' }}">
+                    <a data-bs-toggle="collapse" href="#collapWidows"
+                        class="{{ request()->is('admin/widows*') || request()->is('admin/widow-create') || request()->is('admin/edit-widow/*') || request()->is('admin/single-widow-detail/*') ? '' : 'collapsed' }}"
+                        aria-expanded="{{ request()->is('admin/widows*') || request()->is('admin/widow-create') || request()->is('admin/edit-widow/*') || request()->is('admin/single-widow-detail/*') ? 'true' : 'false' }}">
                         <i class="fas fa-ribbon"></i>
                         <p>Widows</p>
+                        <span class="caret"></span>
                     </a>
+                    <div class="collapse {{ request()->is('admin/widows*') || request()->is('admin/widow-create') || request()->is('admin/edit-widow/*') || request()->is('admin/single-widow-detail/*') ? 'show' : '' }}" id="collapWidows">
+                        <ul class="nav nav-collapse">
+                            <li class="{{ request()->is('admin/widow-create') ? 'active' : '' }}">
+                                <a href="{{ url('admin/widow-create') }}">
+                                    <span class="sub-item">Add Widow</span>
+                                </a>
+                            </li>
+                            <li class="{{ request()->is('admin/widows') || request()->is('admin/edit-widow/*') || request()->is('admin/single-widow-detail/*') ? 'active' : '' }}">
+                                <a href="{{ url('admin/widows') }}">
+                                    <span class="sub-item">All Widows</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
-
                 <!-- Veer Naries data -->
                 <li class="nav-item {{ Request::is('admin/veer-naries') || Request::is('admin/single-veer-nari-detail/*') || Request::is('admin/edit-veer-nari/*') ? 'active' : '' }}">
                     <a href="{{ url('admin/veer-naries') }}">

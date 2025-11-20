@@ -1,55 +1,5 @@
 @extends('admin.layouts.master')
 @section('content')
-<style>
-   .upload-section {
-      margin-top: 15px;   
-   }
-   .upload-row {
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px dashed #ccc;
-      padding-bottom: 10px;
-   }
-   .upload-field {
-      width: 32%;
-   }
-   .preview-box {
-      width: 31%;
-      display: flex;
-      flex-direction: column; 
-      align-items: flex-start;
-      justify-content: flex-start;
-      gap: 6px;
-      padding-top: 4px;
-   }
-   .preview-label {
-      font-weight: 600;
-      color: #222;
-      font-size: 0.9rem;
-      margin-bottom: 2px;
-   }
-   .preview-img {
-      width: 300px;
-      height: 180px;
-      border-radius: 6px;
-      object-fit: cover;
-      border: 2px solid #ddd;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
-   }
-   .no-image-text {
-      color: red;
-      font-weight: 600;
-      font-size: 0.9rem;
-      display: inline-block;
-      margin-top: 5px;
-   }
-   td.text-center {
-      color: red;
-      padding: 10px 360px;
-      font-size: 12px;
-   }
-</style>
 <div class="container">
    <div class="page-inner">
       <div class="row">
@@ -57,10 +7,10 @@
             @include('admin.notification')
             <div class="card shadow-sm">
                <div class="card-header text-white">
-                  <h4 class="card-title mb-0">Edit Widow</h4>
+                  <h4 class="card-title mb-0">Add Widow</h4>
                </div>
                <div class="card-body">
-                  <form action="{{ route('admin.update.widow', $widow_detail->id) }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('admin.submit.widow') }}" method="POST" enctype="multipart/form-data">
                      @csrf
                      <div class="row">
                         <div class="col-md-4 mb-3">
@@ -68,7 +18,7 @@
                            <select name="army_no" class="form-control">
                               <option value="">-- Select Army No --</option>
                               @foreach ($army_numbers as $number)
-                              <option value="{{ $number->army_no }}" @if($widow_detail->army_no = $number->army_no) selected @endif>
+                              <option value="{{ $number->army_no }}">
                                  {{ $number->army_no }}
                               </option>
                               @endforeach
@@ -79,67 +29,46 @@
                         </div>
                         <div class="col-md-4 mb-3">
                            <label class="form-label">Name *</label>
-                           <input type="text" name="window_name" class="form-control" value="{{ old('window_name', $widow_detail->window_name) }}">
+                           <input type="text" name="window_name" class="form-control" value="{{ old('window_name') }}">
                            @error('window_name')
                               <small class="text-danger">{{ $message }}</small>
                            @enderror
                         </div>
                         <div class="col-md-4 mb-3">
                            <label class="form-label">DOD (Date of Death) *</label>
-                           <input type="date" name="date_of_death" class="form-control" value="{{ old('date_of_death', $widow_detail->date_of_death) }}">
+                           <input type="date" name="date_of_death" class="form-control" value="{{ old('date_of_death') }}">
                            @error('date_of_death')
                               <small class="text-danger">{{ $message }}</small>
                            @enderror
                         </div>
                      </div>
                      <!--Photograph section-->
-                     <div class="row upload-section">
-                        <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
-                           <div class="upload-field">
+                     <div class="row">
+                        <div class="col-md-12 mb-3 d-flex align-items-start">
+                           <div class="me-3" style="width:31%;">
                               <label>Photograph</label>
                               <input type="file" name="window_image" class="form-control upload-input">
                            </div>
-                           <div class="preview-box">
-                              <label class="preview-label">Uploaded Photograph</label>
-                              @if ($widow_detail->window_image)
-                                 <img src="{{ asset('public/uploads/ex-images/'.$widow_detail->window_image) }}" class="preview-img">
-                              @else 
-                                 <span class="no-image-text">No image found</span>
-                              @endif
-                           </div>
+                           <div class="preview-box"></div>
                         </div>
-                        <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
-                           <div class="upload-field">
+                        <div class="col-md-12 mb-3 d-flex align-items-start">
+                           <div class="me-3" style="width: 31%;">
                               <label>Aadhar Card</label>
                               <input type="file" name="window_aadhar_image" class="form-control upload-input">
                            </div>
-                           <div class="preview-box">
-                              <label class="preview-label">Uploaded Aadhar Card</label>
-                              @if ($widow_detail->window_aadhar_image)
-                                 <img src="{{ asset('public/uploads/ex-images/'.$widow_detail->window_aadhar_image) }}" class="preview-img">
-                              @else
-                                 <span class="no-image-text">No image found</span>
-                              @endif
-                           </div>
+                           <div class="preview-box"></div>
                         </div>
-                        <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
-                           <div class="upload-field">
+                        <div class="col-md-12 mb-3 d-flex align-items-start">
+                           <div class="me-3" style="width:31%;">
                               <label>PAN Card</label>
                               <input type="file" name="window_pan_image" class="form-control upload-input">
                            </div>
-                           <div class="preview-box">
-                              <label class="preview-label">Uploaded PAN Card</label>
-                              @if ($widow_detail->window_pan_image)
-                                 <img src="{{ asset('public/uploads/ex-images/'.$widow_detail->window_pan_image) }}" class="preview-img">
-                              @else
-                                 <span class="no-image-text">No image found</span>
-                              @endif
-                           </div>
+                           <div class="preview-box"></div>
                         </div>
                      </div>
-                     <!--end photograph section-->
+                     <!--End photograph section-->
                      <div class="form-submit-left">
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                      </div>
                   </form>
                </div>
