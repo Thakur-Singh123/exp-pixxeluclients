@@ -29,14 +29,20 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('admin/edit-service/{id}', [App\Http\Controllers\Admin\ExServiceManController::class, 'edit_service']);
         Route::post('admin/service-update/{id}', [App\Http\Controllers\Admin\ExServiceManController::class, 'update_service'])->name('admin.service.update');
         Route::get('admin/delete-service-detail', [App\Http\Controllers\Admin\ExServiceManController::class, 'delete_service']);
+      
         //Widows
-        Route::get('admin/widows', [App\Http\Controllers\Admin\ExServiceManController::class, 'all_widows']);
-        Route::get('admin/single-widow-detail/{id}', [App\Http\Controllers\Admin\ExServiceManController::class, 'single_widow']);
+        Route::get('admin/widows', [App\Http\Controllers\Admin\WidowController::class, 'all_widows'])->name('widow.index');;
+        Route::get('admin/widow-create', [App\Http\Controllers\Admin\WidowController::class, 'add_widow']);
+        Route::post('admin/widow-submit', [App\Http\Controllers\Admin\WidowController::class, 'submit_widow'])->name('admin.submit.widow');
+        Route::get('admin/single-widow-detail/{id}', [App\Http\Controllers\Admin\WidowController::class, 'single_widow']);
         Route::get('admin/edit-widow/{id}', [App\Http\Controllers\Admin\WidowController::class, 'edit_widow']);
-        Route::get('admin/update-widow/{id}', [App\Http\Controllers\Admin\WidowController::class, 'update_widow'])->name('admin.update.widow');
+        Route::post('admin/update-widow/{id}', [App\Http\Controllers\Admin\WidowController::class, 'update_widow'])->name('admin.update.widow');
+        Route::get('admin/delete-widow', [App\Http\Controllers\Admin\WidowController::class, 'destroy']);
+        
         //Veer Naries
         Route::get('admin/veer-naries', [App\Http\Controllers\Admin\ExServiceManController::class, 'all_veer_naries']);
         Route::get('admin/single-veer-nari-detail/{id}', [App\Http\Controllers\Admin\ExServiceManController::class, 'single_veer_nari']);
+        
         //Import data
         Route::get('admin/import-create', [App\Http\Controllers\Admin\ImportController::class, 'add_import']);
         Route::post('admin/import-submit', [App\Http\Controllers\Admin\ImportController::class, 'submi_import'])->name('admin.submit.import');

@@ -9,8 +9,8 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="card">
-                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h4 class="card-title">All Widows</h4>
+                     <div class="card-header text-white">
+                        <h4 class="card-title mb-0">All Widows</h4>
                      </div>
                      <div class="card-body">
                         <div class="table-responsive">
@@ -24,16 +24,12 @@
                                              <th class="sorting_asc" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
                                                 colspan="1" aria-sort="ascending"
-                                                style="width: 242.688px;">Ser.No
+                                                style="width: 242.688px;">Sr.No
                                              </th>
                                              <th class="sorting_asc" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
                                                 colspan="1" aria-sort="ascending"
                                                 style="width: 242.688px;">Army No
-                                             </th>
-                                             <th class="sorting" tabindex="0"
-                                                aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 366.578px;">Rank
                                              </th>
                                              <th class="sorting" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
@@ -43,21 +39,33 @@
                                                 aria-controls="basic-datatables" rowspan="1"
                                                 colspan="1" style="width: 84.5px;">Date Of Death
                                              </th>
+                                             <th class="sorting" tabindex="0"
+                                                aria-controls="basic-datatables" rowspan="1"
+                                                colspan="1" style="width: 156.312px;">Action
+                                             </th>
                                           </tr>
                                        </thead>
                                        <tbody>
-                                          <!--Get service records-->
-                                          @foreach ($all_services as $service)
+                                          <!--Get widows records-->
+                                          @php $count = 1; @endphp
+                                          @foreach ($all_widows as $widow)
                                           <tr role="row">
-                                             <td>{{ $service->sr_no ?? '-' }}</td>
+                                             <td>{{ $count ++ }}.</td>
                                              <td>
-                                                <a href="{{ url('admin/single-widow-detail/' . $service->id) }}" style="color: #6B8E23;">
-                                                   {{ $service->army_no ?? '-' }}
+                                                <a href="{{ url('admin/single-widow-detail/' . $widow->id) }}" style="color: #6B8E23;">
+                                                   {{ $widow->serviceman_detail->army_no ?? '-' }}
                                                 </a>
                                              </td>
-                                             <td>{{ $service->rank ?? '-' }}</td>
-                                             <td>{{ $service->window_name ?? '-' }}</td>
-                                             <td>{{ \Carbon\Carbon::parse($service->date_of_death)->format('d M, Y') ?? '-' }}</td>
+                                             <td>{{ $widow->window_name ?? '-' }}</td>
+                                             <td>{{ \Carbon\Carbon::parse($widow->date_of_death)->format('d M, Y') ?? '-' }}</td>
+                                             <td>
+                                                <div class="form-button-action">
+                                                   <a href="{{ url('admin/edit-widow', $widow->id) }}" class="icon-button edit-btn custom-tooltip" data-tooltip="Edit">
+                                                      <i class="fa fa-edit"></i>
+                                                   </a>
+                                                   <a class="icon-button delete-btn custom-tooltip delete_widow_record" data-widow_id="{{ $widow->id }}" data-tooltip="Delete"><i class="fa fa-trash"></i></a>
+                                                </div>
+                                             </td>
                                           </tr>
                                           @endforeach
                                        </tbody>

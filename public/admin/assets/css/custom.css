@@ -984,16 +984,16 @@ h5.details-heading {
 }
 
 .upload-preview {
-   position: relative;
-   display: inline-block;
-   border: 1px solid #ddd;
-   border-radius: 6px;
-   padding: 6px;
-   text-align: center;
-   width: 300px;
-   background: #f8f9fa;
-   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-   margin: -46px 0 0 600px;
+    position: relative;
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 6px;
+    text-align: center;
+    width: 300px;
+    background: #f8f9fa;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin: -40px 0 0px 320px;
 }
 /* dashboardcard */
 td a {
@@ -1119,4 +1119,16 @@ img.img-thumbnail {
 .services2 {
     width: 100% !important;
     font-size: 18px;
+}
+
+.form-submit-left {
+    display: flex;
+    justify-content: flex-start !important;
+    margin: 0px 0px 0px 30px;
+}
+
+.form-submit-left .btn {
+    padding: 8px 20px;
+    font-size: 15px;
+    border-radius: 8px;
 }
