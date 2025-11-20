@@ -1120,3 +1120,10 @@ img.img-thumbnail {
     width: 100% !important;
     font-size: 18px;
 }
+h1 {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
