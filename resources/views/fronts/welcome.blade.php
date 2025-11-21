@@ -202,13 +202,7 @@ a#download { margin-left:auto; color:#007bff; text-decoration:none; }
                         <marquee class="news-scroll h-200" behavior="scroll" scrollamount="3" direction="up"
                             onmouseover="this.stop();" onmouseout="this.start();">
                             <ul>
-                                <li><label class="newslabel">*&nbsp;&nbsp;&nbsp;</label>
-                                    <a target="_blank" href="https://sparsh.defencepension.gov.in/?page=home">SPARSH
-                                        Login</a>
-                                </li>
-                                <li><label class="newslabel">*&nbsp;&nbsp;&nbsp;</label>
-                                    <a target="_blank" href="https://indianarmyveterans.gov.in/VSK/login">VSK Login</a>
-                                </li>
+                                
                                 <li><label class="newslabel">*&nbsp;&nbsp;&nbsp;</label>
                                     <input type="hidden" id="list3" name="" value="5" wfd-id="id40"> <a
                                         class="preview_pdf"> Discontinuation of Annual Renewal of CSD Smart Cards</a>
