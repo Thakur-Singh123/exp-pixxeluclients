@@ -29,7 +29,6 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('admin/edit-service/{id}', [App\Http\Controllers\Admin\ExServiceManController::class, 'edit_service']);
         Route::post('admin/service-update/{id}', [App\Http\Controllers\Admin\ExServiceManController::class, 'update_service'])->name('admin.service.update');
         Route::get('admin/delete-service-detail', [App\Http\Controllers\Admin\ExServiceManController::class, 'delete_service']);
-      
         //Widows
         Route::get('admin/widows', [App\Http\Controllers\Admin\WidowController::class, 'all_widows'])->name('widow.index');;
         Route::get('admin/widow-create', [App\Http\Controllers\Admin\WidowController::class, 'add_widow']);
@@ -38,11 +37,22 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('admin/edit-widow/{id}', [App\Http\Controllers\Admin\WidowController::class, 'edit_widow']);
         Route::post('admin/update-widow/{id}', [App\Http\Controllers\Admin\WidowController::class, 'update_widow'])->name('admin.update.widow');
         Route::get('admin/delete-widow', [App\Http\Controllers\Admin\WidowController::class, 'destroy']);
-        
         //Veer Naries
-        Route::get('admin/veer-naries', [App\Http\Controllers\Admin\ExServiceManController::class, 'all_veer_naries']);
-        Route::get('admin/single-veer-nari-detail/{id}', [App\Http\Controllers\Admin\ExServiceManController::class, 'single_veer_nari']);
-        
+        Route::get('admin/veer-naries', [App\Http\Controllers\Admin\VeerNariController::class, 'all_veer_naries'])->name('veer.index');
+        Route::get('admin/veer-nari-create', [App\Http\Controllers\Admin\VeerNariController::class, 'add_veer_nari']);
+        Route::post('admin/submit-veer-nari', [App\Http\Controllers\Admin\VeerNariController::class, 'submit_veer_nari'])->name('admin.submit.vnari');
+        Route::get('admin/edit-veer-nari/{id}', [App\Http\Controllers\Admin\VeerNariController::class, 'edit_veer_nari']);
+        Route::get('admin/single-veer-nari-detail/{id}', [App\Http\Controllers\Admin\VeerNariController::class, 'single_veer_nari']);
+        Route::post('admin/update-veer-nari/{id}', [App\Http\Controllers\Admin\VeerNariController::class, 'update_veer_nari'])->name('admin.update.vnari');
+        Route::get('admin/delete-veer-nari', [App\Http\Controllers\Admin\VeerNariController::class, 'destroy']);
+        //News
+        Route::get('admin/news', [App\Http\Controllers\Admin\NewsController::class, 'all_news'])->name('admin.news');
+        Route::get('admin/news-create', [App\Http\Controllers\Admin\NewsController::class, 'add_news']);
+        Route::post('admin/submit-news', [App\Http\Controllers\Admin\NewsController::class, 'submit_news'])->name('admin.submit.news');
+        Route::get('admin/edit-news/{id}', [App\Http\Controllers\Admin\NewsController::class, 'edit_news']);
+        Route::get('admin/single-news-detail/{id}', [App\Http\Controllers\Admin\NewsController::class, 'single_news']);
+        Route::post('admin/update-news/{id}', [App\Http\Controllers\Admin\NewsController::class, 'update_news'])->name('admin.update.news');
+        Route::get('admin/delete-news', [App\Http\Controllers\Admin\NewsController::class, 'destroy']);
         //Import data
         Route::get('admin/import-create', [App\Http\Controllers\Admin\ImportController::class, 'add_import']);
         Route::post('admin/import-submit', [App\Http\Controllers\Admin\ImportController::class, 'submi_import'])->name('admin.submit.import');

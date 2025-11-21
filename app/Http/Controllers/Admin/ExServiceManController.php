@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ExServiceMan;
 use App\Models\ChildDetail;
+use App\Models\Widow;
+use App\Models\VeerNari;
 
 class ExServiceManController extends Controller
 {
@@ -354,7 +356,12 @@ class ExServiceManController extends Controller
         $service = ExServiceMan::find($service_id);
         //Check if service deleted or not
         if ($service) {
-            ChildDetail::where('ex_service_man_id', $service->sr_no)->delete();
+            //Child delete
+            ChildDetail::where('ex_service_man_id', $service->army_no)->delete();
+            //Window delete
+            Widow::where('ex_service_man_id', $service->army_no)->delete();
+            //Veer nari delete
+            VeerNari::where('ex_service_man_id', $service->army_no)->delete();
             //Delete record
             $service->delete();
             return back()->with('success', 'Service delete successfully.');

@@ -542,7 +542,7 @@ h5.step-heading {
     text-transform: uppercase;
 }
 .step-content label {
-    font-size: 17px !important;
+    font-size: 14px !important;
     font-weight: 600;
 }
 .status-badge {
@@ -584,7 +584,7 @@ div#basic-datatables_wrapper {
     padding: 0;
 }
 label.form-label {
-    font-size: 18px !important;
+    font-size: 14px !important;
     font-weight: 600;
 }
 table#basic-datatables {
@@ -1001,7 +1001,7 @@ td a {
 }
 /* edit page */
 .form-group label {
-    font-size: 18px !important;
+    font-size: 14px !important;
     font-weight: 600;
 }
 .upload-preview img {
@@ -1054,7 +1054,7 @@ td.dt-empty {
 }
 /* service css */
 div#step-1 strong {
-    font-size: 18px;
+    font-size: 14px;
 }
 .services1 {
     font-size: 16px;
@@ -1079,7 +1079,7 @@ img.img-thumbnail {
     text-transform: uppercase;
 }
 .services1 strong {
-    font-size: 18px;
+    font-size: 14px;
 }
 .step-content h5:hover {
     color: #ffffff !important;
@@ -1120,7 +1120,6 @@ img.img-thumbnail {
     width: 100% !important;
     font-size: 18px;
 }
-<<<<<<< HEAD
 
 .form-submit-left {
     display: flex;
@@ -1133,7 +1132,6 @@ img.img-thumbnail {
     font-size: 15px;
     border-radius: 8px;
 }
-=======
 h1 {
     font-size: 1.8rem;
     line-height: 1.5;
@@ -1141,4 +1139,4 @@ h1 {
     text-transform: uppercase;
 }
 
->>>>>>> c39267a88a317dd4060906354a352571636a3b89
+

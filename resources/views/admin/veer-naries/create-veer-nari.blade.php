@@ -7,21 +7,21 @@
             @include('admin.notification')
             <div class="card shadow-sm">
                <div class="card-header text-white">
-                  <h4 class="card-title mb-0">Add Widow</h4>
+                  <h4 class="card-title mb-0">Add Veer Nari</h4>
                </div>
                <div class="card-body">
-                  <form action="{{ route('admin.submit.widow') }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('admin.submit.vnari') }}" method="POST" enctype="multipart/form-data">
                      @csrf
                      <div class="row">
                         <div class="col-md-4 mb-3">
                            <label class="form-label">Select Army No *</label>
                            <select name="army_no" class="form-control">
                               <option value="">-- Select Army No --</option>
-                              @foreach ($army_numbers as $number)
-                              <option value="{{ $number->army_no }}" {{ old('army_no') == $number->army_no ? 'selected' : '' }}>
-                                 {{ $number->army_no }}
-                              </option>
-                              @endforeach
+                                 @foreach ($army_numbers as $number)
+                                 <option value="{{ $number->army_no }}" {{ old('army_no') == $number->army_no ? 'selected' : '' }}>
+                                    {{ $number->army_no }}
+                                 </option>
+                                 @endforeach
                            </select>
                            @error('army_no')
                               <small class="text-danger">{{ $message }}</small>
@@ -29,16 +29,23 @@
                         </div>
                         <div class="col-md-4 mb-3">
                            <label class="form-label">Name *</label>
-                           <input type="text" name="window_name" class="form-control" value="{{ old('window_name') }}" placeholder="Enter name">
-                           @error('window_name')
-                              <small class="text-danger">{{ $message }}</small>
+                           <input type="text" name="veer_nari_name" class="form-control" value="{{ old('veer_nari_name') }}" placeholder="Enter name">
+                           @error('veer_nari_name')
+                           <small class="text-danger">{{ $message }}</small>
                            @enderror
                         </div>
                         <div class="col-md-4 mb-3">
-                           <label class="form-label">Date of Death *</label>
-                           <input type="date" name="date_of_death" class="form-control" value="{{ old('date_of_death') }}">
-                           @error('date_of_death')
-                              <small class="text-danger">{{ $message }}</small>
+                           <label class="form-label">Expose Year *</label>
+                           <select name="veer_nari_expose_year" class="form-control">
+                              <option value=""  disabled selected>-- Select Year --</option>
+                              <option value="1962">1962</option>
+                              <option value="1965">1965</option>
+                              <option value="1971">1971</option>
+                              <option value="1975">1975</option>
+                              <option value="1999">1999</option>
+                           </select>
+                           @error('veer_nari_expose_year')
+                           <small class="text-danger">{{ $message }}</small>
                            @enderror
                         </div>
                      </div>
@@ -47,21 +54,21 @@
                         <div class="col-md-12 mb-3 d-flex align-items-start">
                            <div class="me-3" style="width:31%;">
                               <label>Photograph</label>
-                              <input type="file" name="window_image" class="form-control upload-input">
+                              <input type="file" name="veer_image" class="form-control upload-input">
                            </div>
                            <div class="preview-box"></div>
                         </div>
                         <div class="col-md-12 mb-3 d-flex align-items-start">
                            <div class="me-3" style="width: 31%;">
                               <label>Aadhar Card</label>
-                              <input type="file" name="window_aadhar_image" class="form-control upload-input">
+                              <input type="file" name="veer_aadhar_image" class="form-control upload-input">
                            </div>
                            <div class="preview-box"></div>
                         </div>
                         <div class="col-md-12 mb-3 d-flex align-items-start">
                            <div class="me-3" style="width:31%;">
                               <label>PAN Card</label>
-                              <input type="file" name="window_pan_image" class="form-control upload-input">
+                              <input type="file" name="veer_pan_image" class="form-control upload-input">
                            </div>
                            <div class="preview-box"></div>
                         </div>

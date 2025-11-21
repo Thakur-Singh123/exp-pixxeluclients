@@ -1,54 +1,54 @@
 @extends('admin.layouts.master')
 @section('content')
 <style>
-   .upload-section {
-      margin-top: 15px;   
-   }
-   .upload-row {
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px dashed #ccc;
-      padding-bottom: 10px;
-   }
-   .upload-field {
-      width: 32%;
-   }
-   .preview-box {
-      width: 31%;
-      display: flex;
-      flex-direction: column; 
-      align-items: flex-start;
-      justify-content: flex-start;
-      gap: 6px;
-      padding-top: 4px;
-   }
-   .preview-label {
-      font-weight: 600;
-      color: #222;
-      font-size: 0.9rem;
-      margin-bottom: 2px;
-   }
-   .preview-img {
-      width: 300px;
-      height: 180px;
-      border-radius: 6px;
-      object-fit: cover;
-      border: 2px solid #ddd;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
-   }
-   .no-image-text {
-      color: red;
-      font-weight: 600;
-      font-size: 0.9rem;
-      display: inline-block;
-      margin-top: 5px;
-   }
-   td.text-center {
-      color: red;
-      padding: 10px 360px;
-      font-size: 12px;
-   }
+    .upload-section {
+        margin-top: 15px;   
+    }
+    .upload-row {
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px dashed #ccc;
+        padding-bottom: 10px;
+    }
+    .upload-field {
+        width: 32%;
+    }
+    .preview-box {
+        width: 31%;
+        display: flex;
+        flex-direction: column; 
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 6px;
+        padding-top: 4px;
+    }
+    .preview-label {
+        font-weight: 600;
+        color: #222;
+        font-size: 0.9rem;
+        margin-bottom: 2px;
+    }
+    .preview-img {
+        width: 300px;
+        height: 180px;
+        border-radius: 6px;
+        object-fit: cover;
+        border: 2px solid #ddd;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease;
+    }
+    .no-image-text {
+        color: red;
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: inline-block;
+        margin-top: 5px;
+    }
+    td.text-center {
+        color: red;
+        padding: 10px 360px;
+        font-size: 12px;
+    }
 </style>
 <div class="container">
    <div class="page-inner">
@@ -57,21 +57,21 @@
             @include('admin.notification')
             <div class="card shadow-sm">
                <div class="card-header text-white">
-                  <h4 class="card-title mb-0">Edit Widow</h4>
+                  <h4 class="card-title mb-0">Edit Veer Nari</h4>
                </div>
                <div class="card-body">
-                  <form action="{{ route('admin.update.widow', $widow_detail->id) }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('admin.update.vnari', $veer_nari_detail->id) }}" method="POST" enctype="multipart/form-data">
                      @csrf
                      <div class="row">
                         <div class="col-md-4 mb-3">
                            <label class="form-label">Select Army No *</label>
                            <select name="army_no" class="form-control">
                               <option value="">-- Select Army No --</option>
-                              @foreach ($army_numbers as $number)
-                              <option value="{{ $number->army_no }}" @if($widow_detail->army_no = $number->army_no) selected @endif>
-                                 {{ $number->army_no }}
-                              </option>
-                              @endforeach
+                                 @foreach ($army_numbers as $number)
+                                 <option value="{{ $number->army_no }}" {{ old('army_no', $veer_nari_detail->ex_service_man_id) == $number->army_no ? 'selected' : '' }}>
+                                    {{ $number->army_no }}
+                                 </option>
+                                 @endforeach
                            </select>
                            @error('army_no')
                               <small class="text-danger">{{ $message }}</small>
@@ -79,16 +79,23 @@
                         </div>
                         <div class="col-md-4 mb-3">
                            <label class="form-label">Name *</label>
-                           <input type="text" name="window_name" class="form-control" value="{{ old('window_name', $widow_detail->window_name) }}" placeholder="Enter name">
-                           @error('window_name')
-                              <small class="text-danger">{{ $message }}</small>
+                           <input type="text" name="veer_nari_name" class="form-control" value="{{ old('veer_nari_name', $veer_nari_detail->veer_nari_name) }}" placeholder="Enter name">
+                                @error('veer_nari_name')
+                           <small class="text-danger">{{ $message }}</small>
                            @enderror
                         </div>
                         <div class="col-md-4 mb-3">
-                           <label class="form-label">Date of Death *</label>
-                           <input type="date" name="date_of_death" class="form-control" value="{{ old('date_of_death', $widow_detail->date_of_death) }}">
-                           @error('date_of_death')
-                              <small class="text-danger">{{ $message }}</small>
+                           <label class="form-label">Expose Year *</label>
+                           <select name="veer_nari_expose_year" class="form-control">
+                              <option value="" disabled selected>-- Select Year --</option>
+                              <option value="1962" @if($veer_nari_detail->veer_nari_expose_year == '1962') selected @endif>1962</option>
+                              <option value="1965" @if($veer_nari_detail->veer_nari_expose_year == '1965') selected @endif>1965</option>
+                              <option value="1971" @if($veer_nari_detail->veer_nari_expose_year == '1971') selected @endif>1971</option>
+                              <option value="1975" @if($veer_nari_detail->veer_nari_expose_year == '1975') selected @endif>1975</option>
+                              <option value="1999" @if($veer_nari_detail->veer_nari_expose_year == '1999') selected @endif>1999</option>
+                           </select>
+                           @error('veer_nari_expose_year')
+                           <small class="text-danger">{{ $message }}</small>
                            @enderror
                         </div>
                      </div>
@@ -97,12 +104,12 @@
                         <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
                            <div class="upload-field">
                               <label>Photograph</label>
-                              <input type="file" name="window_image" class="form-control upload-input">
+                              <input type="file" name="veer_image" class="form-control upload-input">
                            </div>
                            <div class="preview-box">
                               <label class="preview-label">Uploaded Photograph</label>
-                              @if ($widow_detail->window_image)
-                                 <img src="{{ asset('public/uploads/ex-images/'.$widow_detail->window_image) }}" class="preview-img">
+                              @if ($veer_nari_detail->veer_image)
+                                 <img src="{{ asset('public/uploads/ex-images/'.$veer_nari_detail->veer_image) }}" class="preview-img">
                               @else 
                                  <span class="no-image-text">No image found</span>
                               @endif
@@ -111,12 +118,12 @@
                         <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
                            <div class="upload-field">
                               <label>Aadhar Card</label>
-                              <input type="file" name="window_aadhar_image" class="form-control upload-input">
+                              <input type="file" name="veer_aadhar_image" class="form-control upload-input">
                            </div>
                            <div class="preview-box">
                               <label class="preview-label">Uploaded Aadhar Card</label>
-                              @if ($widow_detail->window_aadhar_image)
-                                 <img src="{{ asset('public/uploads/ex-images/'.$widow_detail->window_aadhar_image) }}" class="preview-img">
+                              @if ($veer_nari_detail->veer_aadhar_image)
+                                 <img src="{{ asset('public/uploads/ex-images/'.$veer_nari_detail->veer_aadhar_image) }}" class="preview-img">
                               @else
                                  <span class="no-image-text">No image found</span>
                               @endif
@@ -125,12 +132,12 @@
                         <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
                            <div class="upload-field">
                               <label>PAN Card</label>
-                              <input type="file" name="window_pan_image" class="form-control upload-input">
+                              <input type="file" name="veer_pan_image" class="form-control upload-input">
                            </div>
                            <div class="preview-box">
                               <label class="preview-label">Uploaded PAN Card</label>
-                              @if ($widow_detail->window_pan_image)
-                                 <img src="{{ asset('public/uploads/ex-images/'.$widow_detail->window_pan_image) }}" class="preview-img">
+                              @if ($veer_nari_detail->veer_pan_image)
+                                 <img src="{{ asset('public/uploads/ex-images/'.$veer_nari_detail->veer_pan_image) }}" class="preview-img">
                               @else
                                  <span class="no-image-text">No image found</span>
                               @endif

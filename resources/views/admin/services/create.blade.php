@@ -25,39 +25,39 @@
                         <div class="row">
                            <div class="col-md-4 mb-3">
                               <label class="form-label">Army No *</label>
-                              <input type="text" name="army_no" class="form-control" value="{{ old('army_no') }}">
+                              <input type="text" name="army_no" class="form-control" value="{{ old('army_no') }}" placeholder="Enter army no">
                            </div>
                            <div class="col-md-4 mb-3">
                               <label class="form-label">Rank *</label>
-                              <input type="text" name="rank" class="form-control" value="{{ old('rank') }}">
+                              <input type="text" name="rank" class="form-control" value="{{ old('rank') }}" placeholder="Enter rank">
                            </div>
                            <div class="col-md-4 mb-3">
                               <label class="form-label">Name</label>
-                              <input type="text" name="name" class="form-control" value="{{ old('name') }}">
+                              <input type="text" name="name" class="form-control" value="{{ old('name') }}" placeholder="Enter name">
                            </div>
                            <div class="col-md-4 mb-3">
-                              <label class="form-label">DOB</label>
+                              <label class="form-label">Date of Birth</label>
                               <input type="date" name="dob" class="form-control" value="{{ old('dob') }}">
                            </div>
                            <div class="col-md-4 mb-3">
-                              <label class="form-label">DOE</label>
+                              <label class="form-label">Date of Enrollment</label>
                               <input type="date" name="doe" class="form-control" value="{{ old('doe') }}">
                            </div>
                            <div class="col-md-4 mb-3">
-                              <label class="form-label">DOR</label>
+                              <label class="form-label">Date of Retirement</label>
                               <input type="date" name="dor" class="form-control" value="{{ old('dor') }}">
                            </div>
                           <div class="col-md-4 mb-3">
                            <label class="form-label">ECHS Card Number</label>
-                           <input type="text" name="echs_card_no" class="form-control" value="{{ old('echs_card_no') }}">
+                           <input type="text" name="echs_card_no" class="form-control" value="{{ old('echs_card_no') }}" placeholder="Enter echs card numer">
                         </div>
                         <div class="col-md-4 mb-3">
                            <label class="form-label">CSD Card Number</label>
-                           <input type="text" name="csd_card_no" class="form-control" value="{{ old('csd_card_no') }}">
+                           <input type="text" name="csd_card_no" class="form-control" value="{{ old('csd_card_no') }}" placeholder="Enter csd card numer">
                         </div>
                         <div class="col-md-4 mb-3">
                            <label class="form-label">Regiment / Corps</label>
-                           <input type="text" name="regiment_corps" class="form-control" value="{{ old('regiment_corps') }}">
+                           <input type="text" name="regiment_corps" class="form-control" value="{{ old('regiment_corps') }}" placeholder="Enter regiment / corps">
                         </div>
 
                         </div>
@@ -115,55 +115,55 @@
                      <div class="row">
                         <div class="col-md-4 mb-3">
                            <label class="form-label">Village</label>
-                           <input type="text" name="village" class="form-control" value="{{ old('village') }}">
+                           <input type="text" name="village" class="form-control" value="{{ old('village') }}" placeholder="Enter village">
                         </div>
                         <div class="col-md-4 mb-3">
                            <label class="form-label">Post Office</label>
-                           <input type="text" name="post_office" class="form-control" value="{{ old('post_office') }}">
+                           <input type="text" name="post_office" class="form-control" value="{{ old('post_office') }}" placeholder="Enter post office">
                         </div>
                         <div class="col-md-4 mb-3">
                            <label class="form-label">Tehsil</label>
-                           <input type="text" name="tehsil" class="form-control" value="{{ old('tehsil') }}">
+                           <input type="text" name="tehsil" class="form-control" value="{{ old('tehsil') }}" placeholder="Enter tehsil">
                         </div>
                         <div class="col-md-4 mb-3">
                            <label class="form-label">District</label>
-                           <input type="text" name="district" class="form-control" value="{{ old('district') }}">
+                           <input type="text" name="district" class="form-control" value="{{ old('district') }}" placeholder="Enter district">
                         </div>
                         <div class="col-md-4 mb-3">
                            <label class="form-label">State</label>
-                           <input type="text" name="state" class="form-control" value="{{ old('state') }}">
+                           <input type="text" name="state" class="form-control" value="{{ old('state') }}" placeholder="Enter state">
                         </div>
                         <div class="col-md-4 mb-3">
                            <label class="form-label">Pin Code Number</label>
-                           <input type="number" name="pin_code" class="form-control" value="{{ old('pin_code') }}">
+                           <input type="number" name="pin_code" class="form-control" value="{{ old('pin_code') }}" placeholder="Enter pin code">
                         </div>
                         <div class="col-md-4 mb-3">
                            <label class="form-label">Mobile Number</label>
-                           <input type="number" name="mobile_no" class="form-control" value="{{ old('mobile_no') }}">
+                           <input type="number" name="mobile_no" class="form-control" value="{{ old('mobile_no') }}" placeholder="Enter mobile number">
                         </div>
                         <div class="col-md-4 mb-3">
                            <label class="form-label">Aadhar Card Number</label>
-                           <input type="text" name="aadhar_card_no" class="form-control" value="{{ old('aadhar_card_no') }}">
+                           <input type="text" name="aadhar_card_no" class="form-control" value="{{ old('aadhar_card_no') }}" placeholder="Enter aadhar card number">
                         </div>
                         <div class="col-md-4 mb-3">
                            <label class="form-label">Pan Card Number</label>
-                           <input type="text" name="pan_card_no" class="form-control" value="{{ old('pan_card_no') }}">
+                           <input type="text" name="pan_card_no" class="form-control" value="{{ old('pan_card_no') }}" placeholder="Enter pan card number">
                         </div>
                         <div class="col-md-4 mb-3">
                            <label class="form-label">Bank Account Number</label>
-                           <input type="text" name="bank_acc_no" class="form-control" value="{{ old('bank_acc_no') }}">
+                           <input type="text" name="bank_acc_no" class="form-control" value="{{ old('bank_acc_no') }}" placeholder="Enter bank account number">
                         </div>
                         <div class="col-md-4 mb-3">
                            <label class="form-label">Bank Name</label>
-                           <input type="text" name="bank_name" class="form-control" value="{{ old('bank_name') }}">
+                           <input type="text" name="bank_name" class="form-control" value="{{ old('bank_name') }}" placeholder="Enter bank name">
                         </div>
                         <div class="col-md-4 mb-3">
                            <label class="form-label">IFSC Code</label>
-                           <input type="text" name="ifsc_code" class="form-control" value="{{ old('ifsc_code') }}">
+                           <input type="text" name="ifsc_code" class="form-control" value="{{ old('ifsc_code') }}" placeholder="Enter ifsc code">
                         </div>
                         <div class="col-md-4 mb-3">
                            <label class="form-label">MICR Code</label>
-                           <input type="text" name="micr_code" class="form-control" value="{{ old('micr_code') }}">
+                           <input type="text" name="micr_code" class="form-control" value="{{ old('micr_code') }}" placeholder="Enter micr code">
                         </div>
                      </div>
                   </div>
@@ -173,51 +173,51 @@
                         <div class="row">
                            <div class="col-md-4 mb-3">
                               <label class="form-label">Name</label>
-                              <input type="text" name="spouse_name" class="form-control" value="{{ old('spouse_name') }}">
+                              <input type="text" name="spouse_name" class="form-control" value="{{ old('spouse_name') }}" placeholder="Enter name">
                            </div>
                             <div class="col-md-4 mb-3">
                               <label class="form-label">Address</label>
-                              <input type="text" name="spouse_address" class="form-control" value="{{ old('spouse_address') }}">
+                              <input type="text" name="spouse_address" class="form-control" value="{{ old('spouse_address') }}" placeholder="Enter address">
                            </div>
                            <div class="col-md-4 mb-3">
-                              <label class="form-label">DOB</label>
+                              <label class="form-label">Date of Birth</label>
                               <input type="date" name="spouse_dob" class="form-control" value="{{ old('spouse_dob') }}">
                            </div>
                            <div class="col-md-4 mb-3">
                               <label class="form-label">Mobile Number</label>
-                              <input type="number" name="spouse_mobile" class="form-control" value="{{ old('spouse_mobile') }}">
+                              <input type="number" name="spouse_mobile" class="form-control" value="{{ old('spouse_mobile') }}" placeholder="Enter mobile number">
                            </div>
                            <div class="col-md-4 mb-3">
                               <label class="form-label">Aadhar Card Number</label>
-                              <input type="text" name="spouse_aadhar_card" class="form-control" value="{{ old('spouse_aadhar_card') }}">
+                              <input type="text" name="spouse_aadhar_card" class="form-control" value="{{ old('spouse_aadhar_card') }}" placeholder="Enter aadhar card number">
                            </div>
                            <div class="col-md-4 mb-3">
                               <label class="form-label">Pan Card Number</label>
-                              <input type="text" name="spouse_pan_card" class="form-control" value="{{ old('spouse_pan_card') }}">
+                              <input type="text" name="spouse_pan_card" class="form-control" value="{{ old('spouse_pan_card') }}" placeholder="Enter pan card number">
                            </div>
                            <div class="col-md-4 mb-3">
                               <label class="form-label">ECHS Card Number</label>
-                              <input type="text" name="spouse_echs_card" class="form-control" value="{{ old('spouse_echs_card') }}">
+                              <input type="text" name="spouse_echs_card" class="form-control" value="{{ old('spouse_echs_card') }}" placeholder="Enter echs card number">
                            </div>
                            <div class="col-md-4 mb-3">
                               <label class="form-label">CSD Card Number</label>
-                              <input type="text" name="spouse_csd_card" class="form-control" value="{{ old('spouse_csd_card') }}">
+                              <input type="text" name="spouse_csd_card" class="form-control" value="{{ old('spouse_csd_card') }}" placeholder="Enter csd card number">
                            </div>
                            <div class="col-md-4 mb-3">
                               <label class="form-label">Bank Account Number</label>
-                              <input type="text" name="spouse_bank_acc_no" class="form-control" value="{{ old('spouse_bank_acc_no') }}">
+                              <input type="text" name="spouse_bank_acc_no" class="form-control" value="{{ old('spouse_bank_acc_no') }}" placeholder="Enter bank account number">
                            </div>
                            <div class="col-md-4 mb-3">
                               <label class="form-label">Bank Name</label>
-                              <input type="text" name="spouse_bank_name" class="form-control" value="{{ old('spouse_bank_name') }}">
+                              <input type="text" name="spouse_bank_name" class="form-control" value="{{ old('spouse_bank_name') }}" placeholder="Enter bank name">
                            </div>
                            <div class="col-md-4 mb-3"> 
                               <label class="form-label">IFSC Code</label>
-                              <input type="text" name="spouse_ifsc_code" class="form-control" value="{{ old('spouse_ifsc_code') }}">
+                              <input type="text" name="spouse_ifsc_code" class="form-control" value="{{ old('spouse_ifsc_code') }}" placeholder="Enter ifsc code">
                            </div>
                            <div class="col-md-4 mb-3"> 
                               <label class="form-label">MICR Code</label>
-                              <input type="text" name="spouse_micr_code" class="form-control" value="{{ old('spouse_micr_code') }}">
+                              <input type="text" name="spouse_micr_code" class="form-control" value="{{ old('spouse_micr_code') }}" placeholder="Enter micr code">
                            </div>
                         </div>
                         <!--Photograph section-->
@@ -259,18 +259,18 @@
                         </thead>
                         <tbody>
                            <tr>
-                              <td><input type="text" name="children_name[]" class="form-control"></td>
-                              <td><input type="text" name="children_age[]" class="form-control"></td>
+                              <td><input type="text" name="children_name[]" class="form-control" placeholder="Enter children name"></td>
+                              <td><input type="text" name="children_age[]" class="form-control" placeholder="Enter age"></td>
                               <td>
                                  <select name="children_gender[]" class="form-select">
-                                    <option value="">Select</option>
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                    <option>Other</option>
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
                                  </select>
                               </td>
-                              <td><input type="text" name="children_education[]" class="form-control"></td>
-                              <td><input type="text" name="children_occupation[]" class="form-control"></td>
+                              <td><input type="text" name="children_education[]" class="form-control" placeholder="Enter education"></td>
+                              <td><input type="text" name="children_occupation[]" class="form-control" placeholder="Enter occupation"></td>
                               <td class="text-center">
                                  <button type="button" class="btn btn-success btn-sm addChildRow">
                                  <i class="fas fa-plus"></i> Add
@@ -385,14 +385,14 @@ $(document).ready(function() {
    $(document).on('click', '.addChildRow', function() {
       let newRow = `
          <tr>
-               <td><input type="text" name="children_name[]" class="form-control" placeholder="Enter name"></td>
+               <td><input type="text" name="children_name[]" class="form-control" placeholder="Enter children name"></td>
                <td><input type="text" name="children_age[]" class="form-control" placeholder="Enter age"></td>
                <td>
                   <select name="children_gender[]" class="form-select">
-                     <option value="">Select</option>
-                     <option>Male</option>
-                     <option>Female</option>
-                     <option>Other</option>
+                     <option value="" selected disabled>Select</option>
+                     <option value="Male">Male</option>
+                     <option value="Female">Female</option>
+                     <option value"Other">Other</option>
                   </select>
                </td>
                <td><input type="text" name="children_education[]" class="form-control" placeholder="Enter education"></td>
