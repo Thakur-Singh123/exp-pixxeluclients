@@ -1120,6 +1120,7 @@ img.img-thumbnail {
     width: 100% !important;
     font-size: 18px;
 }
+<<<<<<< HEAD
 
 .form-submit-left {
     display: flex;
@@ -1132,3 +1133,12 @@ img.img-thumbnail {
     font-size: 15px;
     border-radius: 8px;
 }
+=======
+h1 {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+>>>>>>> c39267a88a317dd4060906354a352571636a3b89
