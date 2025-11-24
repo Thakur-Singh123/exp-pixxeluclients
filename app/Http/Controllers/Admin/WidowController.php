@@ -68,7 +68,7 @@ class WidowController extends Controller
             'window_image' => $window_image,
             'window_aadhar_image' => $window_aadhar,
             'window_pan_image' => $window_pan,
-            'status' => 'Pending',
+            'status' => 'Active',
         ]);
         //Check if record created or not
         if ($is_create_widow) {
@@ -135,9 +135,8 @@ class WidowController extends Controller
     //Function for single widow detail page
     public function single_widow($id) {
         //Get single detail
-        $service_detail = Widow::with('serviceman_detail','children')->find($id);
-        echo "<pre>"; print_r($service_detail->toArray());exit;
-        return view('admin.widows.single-widow-detail', compact('service_detail'));
+        $widow_detail = Widow::with('serviceman_detail','children')->find($id);
+        return view('admin.widows.single-widow-detail', compact('widow_detail'));
     }
 
     //Function for delete window

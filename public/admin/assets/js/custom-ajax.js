@@ -80,5 +80,85 @@ $(document).ready(function() {
             }
         });
     });
+    //Delete veer nari record
+    $('body').on('click', '.delete_veer_nari_record', function(event) {
+        event.preventDefault();
+        //Get data attribute
+        var veer_nari_id = $(this).data('veer_nari_id');    
+        //Delete through sweet alert
+        Swal.fire({
+            title: "Are you sure?",
+            text: "Once deleted, this veer nari record cannot be recovered!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                //Call ajax
+                $.ajax({
+                    type: 'GET',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url: base_url+'/admin/delete-veer-nari',  
+                    data: { 
+                        veer_nari_id: veer_nari_id 
+                    },
+                    //Show success message
+                    success: function(response) {
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Veer nari deleted successfully.",
+                            icon: "success"
+                        }).then(() => {
+                            location.reload();
+                        });
+                    },
+                });
+            }
+        });
+    });
+    //Delete news record
+    $('body').on('click', '.delete_news_record', function(event) {
+        event.preventDefault();
+        //Get data attribute
+        var news_id = $(this).data('news_id');    
+        //Delete through sweet alert
+        Swal.fire({
+            title: "Are you sure?",
+            text: "Once deleted, this news record cannot be recovered!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                //Call ajax
+                $.ajax({
+                    type: 'GET',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url: base_url+'/admin/delete-news',  
+                    data: { 
+                        news_id: news_id 
+                    },
+                    //Show success message
+                    success: function(response) {
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "News deleted successfully.",
+                            icon: "success"
+                        }).then(() => {
+                            location.reload();
+                        });
+                    },
+                });
+            }
+        });
+    });
 });
 

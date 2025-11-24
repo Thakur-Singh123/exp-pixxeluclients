@@ -4,7 +4,7 @@
    <div class="page-inner">
       <div class="row">
          <div class="col-md-12">
-           <!--success message section-->
+            <!--success message section-->
             @include('admin.notification')
             <div class="row">
                <div class="col-md-12">
@@ -63,7 +63,9 @@
                                                    <a href="{{ url('admin/edit-widow', $widow->id) }}" class="icon-button edit-btn custom-tooltip" data-tooltip="Edit">
                                                       <i class="fa fa-edit"></i>
                                                    </a>
-                                                   <a class="icon-button delete-btn custom-tooltip delete_widow_record" data-widow_id="{{ $widow->id }}" data-tooltip="Delete"><i class="fa fa-trash"></i></a>
+                                                   <a class="icon-button delete-btn custom-tooltip delete_widow_record" data-widow_id="{{ $widow->id }}" data-tooltip="Delete">
+                                                      <i class="fa fa-trash"></i>
+                                                   </a>
                                                 </div>
                                              </td>
                                           </tr>

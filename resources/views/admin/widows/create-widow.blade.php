@@ -18,7 +18,7 @@
                            <select name="army_no" class="form-control">
                               <option value="">-- Select Army No --</option>
                               @foreach ($army_numbers as $number)
-                              <option value="{{ $number->army_no }}">
+                              <option value="{{ $number->army_no }}" {{ old('army_no') == $number->army_no ? 'selected' : '' }}>
                                  {{ $number->army_no }}
                               </option>
                               @endforeach
@@ -29,13 +29,13 @@
                         </div>
                         <div class="col-md-4 mb-3">
                            <label class="form-label">Name *</label>
-                           <input type="text" name="window_name" class="form-control" value="{{ old('window_name') }}">
+                           <input type="text" name="window_name" class="form-control" value="{{ old('window_name') }}" placeholder="Enter name">
                            @error('window_name')
                               <small class="text-danger">{{ $message }}</small>
                            @enderror
                         </div>
                         <div class="col-md-4 mb-3">
-                           <label class="form-label">DOD (Date of Death) *</label>
+                           <label class="form-label">Date of Death *</label>
                            <input type="date" name="date_of_death" class="form-control" value="{{ old('date_of_death') }}">
                            @error('date_of_death')
                               <small class="text-danger">{{ $message }}</small>
@@ -83,39 +83,35 @@
       $('input[type="file"]').each(function() {
          let fileInput = $(this);
          fileInput.on('change', function(e) {
-               const file = e.target.files[0];
-               if (!file) return;
-               fileInput.next('.upload-preview').remove();
-               const previewContainer = $('<div class="upload-preview"></div>');
-               const progress = $('<div class="progress"><div class="progress-bar"></div></div>');
-               const removeBtn = $('<button type="button" class="remove-btn">&times;</button>');
-   
-               fileInput.after(previewContainer);
-               previewContainer.html(progress);
-   
-               let progressVal = 0;
-               const progressInterval = setInterval(() => {
-                  progressVal += 5;
-                  progress.find('.progress-bar').css('width', progressVal + '%');
-                  if (progressVal >= 100) {
-                     clearInterval(progressInterval);
-   
-                     const reader = new FileReader();
-                     reader.onload = function(e) {
-                           previewContainer.html(`
-                              <img src="${e.target.result}" alt="Preview">
-                              <div class="mt-1 small text-muted">${file.name}</div>
-                           `);
-                           previewContainer.append(removeBtn);
-                     };
-                     reader.readAsDataURL(file);
-                  }
-               }, 80); 
-   
-               removeBtn.on('click', function() {
-                  previewContainer.remove();
-                  fileInput.val('');
-               });
+            const file = e.target.files[0];
+            if (!file) return;
+            fileInput.next('.upload-preview').remove();
+            const previewContainer = $('<div class="upload-preview"></div>');
+            const progress = $('<div class="progress"><div class="progress-bar"></div></div>');
+            const removeBtn = $('<button type="button" class="remove-btn">&times;</button>');
+            fileInput.after(previewContainer);
+            previewContainer.html(progress);
+            let progressVal = 0;
+            const progressInterval = setInterval(() => {
+               progressVal += 5;
+               progress.find('.progress-bar').css('width', progressVal + '%');
+               if (progressVal >= 100) {
+                  clearInterval(progressInterval);
+                  const reader = new FileReader();
+                  reader.onload = function(e) {
+                        previewContainer.html(`
+                           <img src="${e.target.result}" alt="Preview">
+                           <div class="mt-1 small text-muted">${file.name}</div>
+                        `);
+                        previewContainer.append(removeBtn);
+                  };
+                  reader.readAsDataURL(file);
+               }
+            }, 80); 
+            removeBtn.on('click', function() {
+               previewContainer.remove();
+               fileInput.val('');
+            });
          });
       });
    });
