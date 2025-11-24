@@ -17,21 +17,25 @@
                            <label class="form-label">Select Army No *</label>
                            <select name="army_no" class="form-control">
                               <option value="">-- Select Army No --</option>
-                                 @foreach ($army_numbers as $number)
-                                 <option value="{{ $number->army_no }}" {{ old('army_no') == $number->army_no ? 'selected' : '' }}>
-                                    {{ $number->army_no }}
-                                 </option>
-                                 @endforeach
+                              @foreach ($army_numbers as $number)
+                              <option value="{{ $number->army_no }}" {{ old('army_no') == $number->army_no ? 'selected' : '' }}>
+                                 {{ $number->army_no }}
+                              </option>
+                              @endforeach
                            </select>
                            @error('army_no')
-                              <small class="text-danger">{{ $message }}</small>
+                              <small class="text-danger">
+                                 {{ $message }}
+                              </small>
                            @enderror
                         </div>
                         <div class="col-md-4 mb-3">
                            <label class="form-label">Name *</label>
                            <input type="text" name="veer_nari_name" class="form-control" value="{{ old('veer_nari_name') }}" placeholder="Enter name">
                            @error('veer_nari_name')
-                           <small class="text-danger">{{ $message }}</small>
+                              <small class="text-danger">
+                                 {{ $message }}
+                              </small>
                            @enderror
                         </div>
                         <div class="col-md-4 mb-3">
@@ -45,7 +49,9 @@
                               <option value="1999">1999</option>
                            </select>
                            @error('veer_nari_expose_year')
-                           <small class="text-danger">{{ $message }}</small>
+                              <small class="text-danger">
+                                 {{ $message }}
+                              </small>
                            @enderror
                         </div>
                      </div>
@@ -90,39 +96,38 @@
       $('input[type="file"]').each(function() {
          let fileInput = $(this);
          fileInput.on('change', function(e) {
-               const file = e.target.files[0];
-               if (!file) return;
-               fileInput.next('.upload-preview').remove();
-               const previewContainer = $('<div class="upload-preview"></div>');
-               const progress = $('<div class="progress"><div class="progress-bar"></div></div>');
-               const removeBtn = $('<button type="button" class="remove-btn">&times;</button>');
-   
-               fileInput.after(previewContainer);
-               previewContainer.html(progress);
-   
-               let progressVal = 0;
-               const progressInterval = setInterval(() => {
-                  progressVal += 5;
-                  progress.find('.progress-bar').css('width', progressVal + '%');
-                  if (progressVal >= 100) {
-                     clearInterval(progressInterval);
-   
-                     const reader = new FileReader();
-                     reader.onload = function(e) {
-                           previewContainer.html(`
-                              <img src="${e.target.result}" alt="Preview">
-                              <div class="mt-1 small text-muted">${file.name}</div>
-                           `);
-                           previewContainer.append(removeBtn);
-                     };
-                     reader.readAsDataURL(file);
-                  }
-               }, 80); 
-   
-               removeBtn.on('click', function() {
-                  previewContainer.remove();
-                  fileInput.val('');
-               });
+            const file = e.target.files[0];
+            if (!file) return;
+            fileInput.next('.upload-preview').remove();
+            const previewContainer = $('<div class="upload-preview"></div>');
+            const progress = $('<div class="progress"><div class="progress-bar"></div></div>');
+            const removeBtn = $('<button type="button" class="remove-btn">&times;</button>');
+
+            fileInput.after(previewContainer);
+            previewContainer.html(progress);
+
+            let progressVal = 0;
+            const progressInterval = setInterval(() => {
+               progressVal += 5;
+               progress.find('.progress-bar').css('width', progressVal + '%');
+               if (progressVal >= 100) {
+                  clearInterval(progressInterval);
+
+                  const reader = new FileReader();
+                  reader.onload = function(e) {
+                        previewContainer.html(`
+                           <img src="${e.target.result}" alt="Preview">
+                           <div class="mt-1 small text-muted">${file.name}</div>
+                        `);
+                        previewContainer.append(removeBtn);
+                  };
+                  reader.readAsDataURL(file);
+               }
+            }, 80); 
+            removeBtn.on('click', function() {
+               previewContainer.remove();
+               fileInput.val('');
+            });
          });
       });
    });

@@ -4,7 +4,7 @@
    <div class="page-inner">
       <div class="row">
          <div class="col-md-12">
-           <!--success message section-->
+            <!--success message section-->
             @include('admin.notification')
             <div class="row">
                <div class="col-md-12">
@@ -53,15 +53,15 @@
                                              <td>{{ $count ++ }}.</td>
                                              <td>
                                                 <a href="{{ url('admin/single-veer-nari-detail/' . $nari->id) }}" style="color: #6B8E23;">
-                                                   {{ $nari->serviceman_detail->army_no ?? '-' }}
+                                                {{ $nari->serviceman_detail->army_no ?? '-' }}
                                                 </a>
-                                             </td> 
+                                             </td>
                                              <td>{{ $nari->veer_nari_name ?? '-' }}</td>
                                              <td>{{ $nari->veer_nari_expose_year ?? '-' }}</td>
                                              <td>
                                                 <div class="form-button-action">
                                                    <a href="{{ url('admin/edit-veer-nari', $nari->id) }}" class="icon-button edit-btn custom-tooltip" data-tooltip="Edit">
-                                                      <i class="fa fa-edit"></i>
+                                                   <i class="fa fa-edit"></i>
                                                    </a>
                                                    <a class="icon-button delete-btn custom-tooltip delete_veer_nari_record" data-veer_nari_id="{{ $nari->id }}" data-tooltip="Delete"><i class="fa fa-trash"></i></a>
                                                 </div>

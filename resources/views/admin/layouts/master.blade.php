@@ -3,12 +3,12 @@
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>ExServiceMan Portal</title>
+    <title>VSK Cell Portal</title>
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
     <link rel="icon" href="{{ asset('public/admin/images/ESP Logo Black.svg') }}" type="image/x-icon" />
     <link href="{{ asset('public/admin/js/summernote-lite.min.css') }}" rel="stylesheet">
     <!--css files-->
-    <!-- FullCalendar CSS -->
+    <!--FullCalendar CSS-->
     <link rel="stylesheet" href="{{ asset('public/admin/assets/datatables/css/jquery.dataTables.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/admin/assets/datatables/css/dataTables.dataTables.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/admin/assets/css/custom.css') }}" />
@@ -138,7 +138,8 @@
                                                     <p class="text-muted">{{ auth()->user()->email }}</p>
                                                     <a href="{{ url('admin/profile') }}"
                                                         class="profile-btn btn-xs btn-secondarys btn-sm">View
-                                                        Profile</a>
+                                                        Profile
+                                                    </a>
                                                 </div>
                                             </div>
                                         </li>
@@ -172,9 +173,9 @@
             <footer class="footer">
                 <div class="container-fluid d-flex justify-content-between">
                     <!--<div class="copyright">
-                     ©2025 Food Machine. All rights reserved<i class="fa fa-heart heart text-danger"></i> by
+                    ©2025 Food Machine. All rights reserved<i class="fa fa-heart heart text-danger"></i> by
                      <a href="{{ url('/') }}">Food-Machine.com</a>
-                  </div>-->
+                    </div>-->
                 </div>
             </footer>
         </div>

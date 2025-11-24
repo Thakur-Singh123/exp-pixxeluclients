@@ -2,12 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('fronts/welcome');
-});
+// Route::get('/', function () {
+//     return view('fronts/welcome');
+// });
 //Front
+Route::get('/', [App\Http\Controllers\FrontController::class, 'welcome']);
 Route::get('data-bank-details', [App\Http\Controllers\FrontController::class, 'next']);
-Route::get('single-service-detail/{id}', [App\Http\Controllers\FrontController::class, 'get_service_detail']);
+Route::get('single-service-detail/{id}', [App\Http\Controllers\FrontController::class, 'service_detail']);
+Route::get('single-window-detail/{id}', [App\Http\Controllers\FrontController::class, 'window_detail']);
+Route::get('single-veer-nari-detail/{id}', [App\Http\Controllers\FrontController::class, 'veer_nari_detail']);
 //Middlewares
 Route::group(['middleware' => 'auth'], function() { 
     //Admin middleware

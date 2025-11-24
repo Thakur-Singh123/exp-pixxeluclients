@@ -1,54 +1,54 @@
 @extends('admin.layouts.master')
 @section('content')
 <style>
-    .upload-section {
-        margin-top: 15px;   
-    }
-    .upload-row {
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px dashed #ccc;
-        padding-bottom: 10px;
-    }
-    .upload-field {
-        width: 32%;
-    }
-    .preview-box {
-        width: 31%;
-        display: flex;
-        flex-direction: column; 
-        align-items: flex-start;
-        justify-content: flex-start;
-        gap: 6px;
-        padding-top: 4px;
-    }
-    .preview-label {
-        font-weight: 600;
-        color: #222;
-        font-size: 0.9rem;
-        margin-bottom: 2px;
-    }
-    .preview-img {
-        width: 300px;
-        height: 180px;
-        border-radius: 6px;
-        object-fit: cover;
-        border: 2px solid #ddd;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-        transition: transform 0.3s ease;
-    }
-    .no-image-text {
-        color: red;
-        font-weight: 600;
-        font-size: 0.9rem;
-        display: inline-block;
-        margin-top: 5px;
-    }
-    td.text-center {
-        color: red;
-        padding: 10px 360px;
-        font-size: 12px;
-    }
+   .upload-section {
+      margin-top: 15px;   
+   }
+   .upload-row {
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px dashed #ccc;
+      padding-bottom: 10px;
+   }
+   .upload-field {
+      width: 32%;
+   }
+   .preview-box {
+      width: 31%;
+      display: flex;
+      flex-direction: column; 
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 6px;
+      padding-top: 4px;
+   }
+   .preview-label {
+      font-weight: 600;
+      color: #222;
+      font-size: 0.9rem;
+      margin-bottom: 2px;
+   }
+   .preview-img {
+      width: 300px;
+      height: 180px;
+      border-radius: 6px;
+      object-fit: cover;
+      border: 2px solid #ddd;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+   }
+   .no-image-text {
+      color: red;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin-top: 5px;
+   }
+   td.text-center {
+      color: red;
+      padding: 10px 360px;
+      font-size: 12px;
+   }
 </style>
 <div class="container">
    <div class="page-inner">
@@ -67,21 +67,25 @@
                            <label class="form-label">Select Army No *</label>
                            <select name="army_no" class="form-control">
                               <option value="">-- Select Army No --</option>
-                                 @foreach ($army_numbers as $number)
-                                 <option value="{{ $number->army_no }}" {{ old('army_no', $veer_nari_detail->ex_service_man_id) == $number->army_no ? 'selected' : '' }}>
-                                    {{ $number->army_no }}
-                                 </option>
-                                 @endforeach
+                              @foreach ($army_numbers as $number)
+                              <option value="{{ $number->army_no }}" {{ old('army_no', $veer_nari_detail->ex_service_man_id) == $number->army_no ? 'selected' : '' }}>
+                                 {{ $number->army_no }}
+                              </option>
+                              @endforeach
                            </select>
                            @error('army_no')
-                              <small class="text-danger">{{ $message }}</small>
+                              <small class="text-danger">
+                                 {{ $message }}
+                              </small>
                            @enderror
                         </div>
                         <div class="col-md-4 mb-3">
                            <label class="form-label">Name *</label>
                            <input type="text" name="veer_nari_name" class="form-control" value="{{ old('veer_nari_name', $veer_nari_detail->veer_nari_name) }}" placeholder="Enter name">
-                                @error('veer_nari_name')
-                           <small class="text-danger">{{ $message }}</small>
+                           @error('veer_nari_name')
+                              <small class="text-danger">
+                                 {{ $message }}
+                              </small>
                            @enderror
                         </div>
                         <div class="col-md-4 mb-3">
@@ -95,7 +99,9 @@
                               <option value="1999" @if($veer_nari_detail->veer_nari_expose_year == '1999') selected @endif>1999</option>
                            </select>
                            @error('veer_nari_expose_year')
-                           <small class="text-danger">{{ $message }}</small>
+                              <small class="text-danger">
+                                 {{ $message }}
+                              </small>
                            @enderror
                         </div>
                      </div>
@@ -161,39 +167,37 @@
       $('input[type="file"]').each(function() {
          let fileInput = $(this);
          fileInput.on('change', function(e) {
-               const file = e.target.files[0];
-               if (!file) return;
-               fileInput.next('.upload-preview').remove();
-               const previewContainer = $('<div class="upload-preview"></div>');
-               const progress = $('<div class="progress"><div class="progress-bar"></div></div>');
-               const removeBtn = $('<button type="button" class="remove-btn">&times;</button>');
-   
-               fileInput.after(previewContainer);
-               previewContainer.html(progress);
-   
-               let progressVal = 0;
-               const progressInterval = setInterval(() => {
-                  progressVal += 5;
-                  progress.find('.progress-bar').css('width', progressVal + '%');
-                  if (progressVal >= 100) {
-                     clearInterval(progressInterval);
-   
-                     const reader = new FileReader();
-                     reader.onload = function(e) {
-                           previewContainer.html(`
-                              <img src="${e.target.result}" alt="Preview">
-                              <div class="mt-1 small text-muted">${file.name}</div>
-                           `);
-                           previewContainer.append(removeBtn);
-                     };
-                     reader.readAsDataURL(file);
-                  }
-               }, 80); 
-   
-               removeBtn.on('click', function() {
-                  previewContainer.remove();
-                  fileInput.val('');
-               });
+            const file = e.target.files[0];
+            if (!file) return;
+            fileInput.next('.upload-preview').remove();
+            const previewContainer = $('<div class="upload-preview"></div>');
+            const progress = $('<div class="progress"><div class="progress-bar"></div></div>');
+            const removeBtn = $('<button type="button" class="remove-btn">&times;</button>');
+
+            fileInput.after(previewContainer);
+            previewContainer.html(progress);
+
+            let progressVal = 0;
+            const progressInterval = setInterval(() => {
+               progressVal += 5;
+               progress.find('.progress-bar').css('width', progressVal + '%');
+               if (progressVal >= 100) {
+                  clearInterval(progressInterval);
+                  const reader = new FileReader();
+                  reader.onload = function(e) {
+                     previewContainer.html(`
+                        <img src="${e.target.result}" alt="Preview">
+                        <div class="mt-1 small text-muted">${file.name}</div>
+                     `);
+                     previewContainer.append(removeBtn);
+                  };
+                  reader.readAsDataURL(file);
+               }
+            }, 80); 
+            removeBtn.on('click', function() {
+               previewContainer.remove();
+               fileInput.val('');
+            });
          });
       });
    });

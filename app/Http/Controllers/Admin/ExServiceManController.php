@@ -203,22 +203,7 @@ class ExServiceManController extends Controller
     public function single_service($id) {
         //Get single detail
         $service_detail = ExServiceMan::with('children')->find($id);
-        // echo "<pre>"; print_r($service_detail->toArray());exit;
         return view('admin.services.single-detail', compact('service_detail'));
-    }
-
-    //Function for all veer naries
-    public function all_veer_naries() {
-        //Get services
-        $all_services = ExServiceMan::OrderBy('ID', 'DESC')->get();
-        return view('admin.veer-naries.all-veer-naries', compact('all_services'));
-    }
-
-    //Function for single veer naries detail page
-    public function single_veer_nari($id) {
-        //Get single detail
-        $service_detail = ExServiceMan::with('children')->find($id);
-        return view('admin.veer-naries.single-veer-nari', compact('service_detail'));
     }
 
     //Function for edit service
@@ -303,12 +288,6 @@ class ExServiceManController extends Controller
             'spouse_bank_name' => $request->spouse_bank_name,
             'spouse_ifsc_code' => $request->spouse_ifsc_code,
             'spouse_micr_code' => $request->spouse_micr_code,
-            //widow
-            'window_name' => $request->window_name,
-            'date_of_death' => $request->date_of_death,
-            //veer nari
-            'veer_nari_name' => $request->veer_nari_name,
-            'veer_nari_expose_year' => $request->veer_nari_expose_year,
             //images
             'image' => $image,
             'aadhar_image' => $person_aadhar,
@@ -319,9 +298,6 @@ class ExServiceManController extends Controller
             'spouse_image' => $spouse_image,
             'spouse_aadhar_image' => $spouse_aadhar,
             'spouse_pan_image' => $spouse_pan,
-            'window_image' => $window_image,
-            'window_aadhar_image' => $window_aadhar,
-            'window_pan_image' => $window_pan,
             'status' => 'Active',
         ]);
         // Update children

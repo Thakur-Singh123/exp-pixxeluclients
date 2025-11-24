@@ -154,39 +154,37 @@
       $('input[type="file"]').each(function() {
          let fileInput = $(this);
          fileInput.on('change', function(e) {
-               const file = e.target.files[0];
-               if (!file) return;
-               fileInput.next('.upload-preview').remove();
-               const previewContainer = $('<div class="upload-preview"></div>');
-               const progress = $('<div class="progress"><div class="progress-bar"></div></div>');
-               const removeBtn = $('<button type="button" class="remove-btn">&times;</button>');
-   
-               fileInput.after(previewContainer);
-               previewContainer.html(progress);
-   
-               let progressVal = 0;
-               const progressInterval = setInterval(() => {
-                  progressVal += 5;
-                  progress.find('.progress-bar').css('width', progressVal + '%');
-                  if (progressVal >= 100) {
-                     clearInterval(progressInterval);
-   
-                     const reader = new FileReader();
-                     reader.onload = function(e) {
-                           previewContainer.html(`
-                              <img src="${e.target.result}" alt="Preview">
-                              <div class="mt-1 small text-muted">${file.name}</div>
-                           `);
-                           previewContainer.append(removeBtn);
-                     };
-                     reader.readAsDataURL(file);
-                  }
-               }, 80); 
-   
-               removeBtn.on('click', function() {
-                  previewContainer.remove();
-                  fileInput.val('');
-               });
+            const file = e.target.files[0];
+            if (!file) return;
+            fileInput.next('.upload-preview').remove();
+            const previewContainer = $('<div class="upload-preview"></div>');
+            const progress = $('<div class="progress"><div class="progress-bar"></div></div>');
+            const removeBtn = $('<button type="button" class="remove-btn">&times;</button>');
+
+            fileInput.after(previewContainer);
+            previewContainer.html(progress);
+
+            let progressVal = 0;
+            const progressInterval = setInterval(() => {
+               progressVal += 5;
+               progress.find('.progress-bar').css('width', progressVal + '%');
+               if (progressVal >= 100) {
+                  clearInterval(progressInterval);
+                  const reader = new FileReader();
+                  reader.onload = function(e) {
+                     previewContainer.html(`
+                        <img src="${e.target.result}" alt="Preview">
+                        <div class="mt-1 small text-muted">${file.name}</div>
+                     `);
+                     previewContainer.append(removeBtn);
+                  };
+                  reader.readAsDataURL(file);
+               }
+            }, 80); 
+            removeBtn.on('click', function() {
+               previewContainer.remove();
+               fileInput.val('');
+            });
          });
       });
    });

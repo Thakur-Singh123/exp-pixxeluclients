@@ -47,126 +47,124 @@
                               <label class="form-label">Date of Retirement</label>
                               <input type="date" name="dor" class="form-control" value="{{ old('dor') }}">
                            </div>
-                          <div class="col-md-4 mb-3">
-                           <label class="form-label">ECHS Card Number</label>
-                           <input type="text" name="echs_card_no" class="form-control" value="{{ old('echs_card_no') }}" placeholder="Enter echs card numer">
-                        </div>
-                        <div class="col-md-4 mb-3">
-                           <label class="form-label">CSD Card Number</label>
-                           <input type="text" name="csd_card_no" class="form-control" value="{{ old('csd_card_no') }}" placeholder="Enter csd card numer">
-                        </div>
-                        <div class="col-md-4 mb-3">
-                           <label class="form-label">Regiment / Corps</label>
-                           <input type="text" name="regiment_corps" class="form-control" value="{{ old('regiment_corps') }}" placeholder="Enter regiment / corps">
-                        </div>
-
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">ECHS Card Number</label>
+                              <input type="text" name="echs_card_no" class="form-control" value="{{ old('echs_card_no') }}" placeholder="Enter echs card numer">
+                           </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">CSD Card Number</label>
+                              <input type="text" name="csd_card_no" class="form-control" value="{{ old('csd_card_no') }}" placeholder="Enter csd card numer">
+                           </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">Regiment / Corps</label>
+                              <input type="text" name="regiment_corps" class="form-control" value="{{ old('regiment_corps') }}" placeholder="Enter regiment / corps">
+                           </div>
                         </div>
                         <!--Photograph section-->
                         <div class="row">
-                            <div class="col-md-12 mb-3 d-flex align-items-start">
-                                <div class="me-3" style="width:31%;">
-                                    <label>Photograph</label>
-                                    <input type="file" name="image" class="form-control upload-input">
-                                </div>
-                                <div class="preview-box"></div>
-                            </div>
-                            <div class="col-md-12 mb-3 d-flex align-items-start">
-                                <div class="me-3" style="width: 31%;">
-                                    <label>Aadhar Card</label>
-                                    <input type="file" name="aadhar_image" class="form-control upload-input">
-                                </div>
-                                <div class="preview-box"></div>
-                            </div>
-                            <div class="col-md-12 mb-3 d-flex align-items-start">
-                                <div class="me-3" style="width:31%;">
-                                    <label>PAN Card</label>
-                                    <input type="file" name="pan_image" class="form-control upload-input">
-                                </div>
-                                <div class="preview-box"></div>
-                            </div>
-                             <div class="col-md-12 mb-3 d-flex align-items-start">
-                                <div class="me-3" style="width:31%;">
-                                    <label>Joint Photograph</label>
-                                    <input type="file" name="joint_image" class="form-control upload-input">
-                                </div>
-                                <div class="preview-box"></div>
-                            </div>
-
                            <div class="col-md-12 mb-3 d-flex align-items-start">
-                                <div class="me-3" style="width:31%;">
-                                    <label>Discharge Book</label>
-                                    <input type="file" name="discharge_image" class="form-control upload-input">
-                                </div>
-                                <div class="preview-box"></div>
-                            </div>
-                              <div class="col-md-12 mb-3 d-flex align-items-start">
-                                <div class="me-3" style="width:31%;">
-                                    <label>PPO</label>
-                                    <input type="file" name="ppo_image" class="form-control upload-input">
-                                </div>
-                                <div class="preview-box"></div>
-                            </div>
+                              <div class="me-3" style="width:31%;">
+                                 <label>Photograph</label>
+                                 <input type="file" name="image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                              <div class="me-3" style="width: 31%;">
+                                 <label>Aadhar Card</label>
+                                 <input type="file" name="aadhar_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                              <div class="me-3" style="width:31%;">
+                                 <label>PAN Card</label>
+                                 <input type="file" name="pan_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                              <div class="me-3" style="width:31%;">
+                                 <label>Joint Photograph</label>
+                                 <input type="file" name="joint_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                              <div class="me-3" style="width:31%;">
+                                 <label>Discharge Book</label>
+                                 <input type="file" name="discharge_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                              <div class="me-3" style="width:31%;">
+                                 <label>PPO</label>
+                                 <input type="file" name="ppo_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
+                           </div>
                         </div>
                         <!--End photograph section-->
                      </div>
-                  <!--Address Details-->
-                  <div class="step-content d-none" id="step-2">
-                     <h5 class="step-heading mb-3 fw-bold">Address Details</h5>
-                     <div class="row">
-                        <div class="col-md-4 mb-3">
-                           <label class="form-label">Village</label>
-                           <input type="text" name="village" class="form-control" value="{{ old('village') }}" placeholder="Enter village">
-                        </div>
-                        <div class="col-md-4 mb-3">
-                           <label class="form-label">Post Office</label>
-                           <input type="text" name="post_office" class="form-control" value="{{ old('post_office') }}" placeholder="Enter post office">
-                        </div>
-                        <div class="col-md-4 mb-3">
-                           <label class="form-label">Tehsil</label>
-                           <input type="text" name="tehsil" class="form-control" value="{{ old('tehsil') }}" placeholder="Enter tehsil">
-                        </div>
-                        <div class="col-md-4 mb-3">
-                           <label class="form-label">District</label>
-                           <input type="text" name="district" class="form-control" value="{{ old('district') }}" placeholder="Enter district">
-                        </div>
-                        <div class="col-md-4 mb-3">
-                           <label class="form-label">State</label>
-                           <input type="text" name="state" class="form-control" value="{{ old('state') }}" placeholder="Enter state">
-                        </div>
-                        <div class="col-md-4 mb-3">
-                           <label class="form-label">Pin Code Number</label>
-                           <input type="number" name="pin_code" class="form-control" value="{{ old('pin_code') }}" placeholder="Enter pin code">
-                        </div>
-                        <div class="col-md-4 mb-3">
-                           <label class="form-label">Mobile Number</label>
-                           <input type="number" name="mobile_no" class="form-control" value="{{ old('mobile_no') }}" placeholder="Enter mobile number">
-                        </div>
-                        <div class="col-md-4 mb-3">
-                           <label class="form-label">Aadhar Card Number</label>
-                           <input type="text" name="aadhar_card_no" class="form-control" value="{{ old('aadhar_card_no') }}" placeholder="Enter aadhar card number">
-                        </div>
-                        <div class="col-md-4 mb-3">
-                           <label class="form-label">Pan Card Number</label>
-                           <input type="text" name="pan_card_no" class="form-control" value="{{ old('pan_card_no') }}" placeholder="Enter pan card number">
-                        </div>
-                        <div class="col-md-4 mb-3">
-                           <label class="form-label">Bank Account Number</label>
-                           <input type="text" name="bank_acc_no" class="form-control" value="{{ old('bank_acc_no') }}" placeholder="Enter bank account number">
-                        </div>
-                        <div class="col-md-4 mb-3">
-                           <label class="form-label">Bank Name</label>
-                           <input type="text" name="bank_name" class="form-control" value="{{ old('bank_name') }}" placeholder="Enter bank name">
-                        </div>
-                        <div class="col-md-4 mb-3">
-                           <label class="form-label">IFSC Code</label>
-                           <input type="text" name="ifsc_code" class="form-control" value="{{ old('ifsc_code') }}" placeholder="Enter ifsc code">
-                        </div>
-                        <div class="col-md-4 mb-3">
-                           <label class="form-label">MICR Code</label>
-                           <input type="text" name="micr_code" class="form-control" value="{{ old('micr_code') }}" placeholder="Enter micr code">
+                     <!--Address Details-->
+                     <div class="step-content d-none" id="step-2">
+                        <h5 class="step-heading mb-3 fw-bold">Address Details</h5>
+                        <div class="row">
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">Village</label>
+                              <input type="text" name="village" class="form-control" value="{{ old('village') }}" placeholder="Enter village">
+                           </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">Post Office</label>
+                              <input type="text" name="post_office" class="form-control" value="{{ old('post_office') }}" placeholder="Enter post office">
+                           </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">Tehsil</label>
+                              <input type="text" name="tehsil" class="form-control" value="{{ old('tehsil') }}" placeholder="Enter tehsil">
+                           </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">District</label>
+                              <input type="text" name="district" class="form-control" value="{{ old('district') }}" placeholder="Enter district">
+                           </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">State</label>
+                              <input type="text" name="state" class="form-control" value="{{ old('state') }}" placeholder="Enter state">
+                           </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">Pin Code Number</label>
+                              <input type="number" name="pin_code" class="form-control" value="{{ old('pin_code') }}" placeholder="Enter pin code">
+                           </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">Mobile Number</label>
+                              <input type="number" name="mobile_no" class="form-control" value="{{ old('mobile_no') }}" placeholder="Enter mobile number">
+                           </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">Aadhar Card Number</label>
+                              <input type="text" name="aadhar_card_no" class="form-control" value="{{ old('aadhar_card_no') }}" placeholder="Enter aadhar card number">
+                           </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">Pan Card Number</label>
+                              <input type="text" name="pan_card_no" class="form-control" value="{{ old('pan_card_no') }}" placeholder="Enter pan card number">
+                           </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">Bank Account Number</label>
+                              <input type="text" name="bank_acc_no" class="form-control" value="{{ old('bank_acc_no') }}" placeholder="Enter bank account number">
+                           </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">Bank Name</label>
+                              <input type="text" name="bank_name" class="form-control" value="{{ old('bank_name') }}" placeholder="Enter bank name">
+                           </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">IFSC Code</label>
+                              <input type="text" name="ifsc_code" class="form-control" value="{{ old('ifsc_code') }}" placeholder="Enter ifsc code">
+                           </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">MICR Code</label>
+                              <input type="text" name="micr_code" class="form-control" value="{{ old('micr_code') }}" placeholder="Enter micr code">
+                           </div>
                         </div>
                      </div>
-                  </div>
                      <!--Spouse Details-->
                      <div class="step-content d-none" id="step-3">
                         <h5 class="step-heading mb-3 fw-bold">Spouse Details</h5>
@@ -175,7 +173,7 @@
                               <label class="form-label">Name</label>
                               <input type="text" name="spouse_name" class="form-control" value="{{ old('spouse_name') }}" placeholder="Enter name">
                            </div>
-                            <div class="col-md-4 mb-3">
+                           <div class="col-md-4 mb-3">
                               <label class="form-label">Address</label>
                               <input type="text" name="spouse_address" class="form-control" value="{{ old('spouse_address') }}" placeholder="Enter address">
                            </div>
@@ -222,65 +220,63 @@
                         </div>
                         <!--Photograph section-->
                         <div class="row">
-                            <div class="col-md-12 mb-3 d-flex align-items-start">
-                                <div class="me-3" style="width:31%;">
-                                    <label>Photograph</label>
-                                    <input type="file" name="spouse_image" class="form-control upload-input">
-                                </div>
-                                <div class="preview-box"></div>
-                            </div>
-                            <div class="col-md-12 mb-3 d-flex align-items-start">
-                                <div class="me-3" style="width: 31%;">
-                                    <label>Aadhar Card</label>
-                                    <input type="file" name="spouse_aadhar_image" class="form-control upload-input">
-                                </div>
-                                <div class="preview-box"></div>
-                            </div>
-                            <div class="col-md-12 mb-3 d-flex align-items-start">
-                                <div class="me-3" style="width:31%;">
-                                    <label>PAN Card</label>
-                                    <input type="file" name="spouse_pan_image" class="form-control upload-input">
-                                </div>
-                                <div class="preview-box"></div>
-                            </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                              <div class="me-3" style="width:31%;">
+                                 <label>Photograph</label>
+                                 <input type="file" name="spouse_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                              <div class="me-3" style="width: 31%;">
+                                 <label>Aadhar Card</label>
+                                 <input type="file" name="spouse_aadhar_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                              <div class="me-3" style="width:31%;">
+                                 <label>PAN Card</label>
+                                 <input type="file" name="spouse_pan_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
+                           </div>
                         </div>
                         <!--End photograph section-->
-
-                         <table class="table table-bordered" id="childrenTable">
-                        <thead class="table-light">
-                           <tr>
-                              <th>Child Name</th>
-                              <th>Age</th>
-                              <th>Gender</th>
-                              <th>Education</th>
-                              <th>Occupation</th>
-                              <th style="width: 70px;">Action</th>
-                           </tr>
-                        </thead>
-                        <tbody>
-                           <tr>
-                              <td><input type="text" name="children_name[]" class="form-control" placeholder="Enter children name"></td>
-                              <td><input type="text" name="children_age[]" class="form-control" placeholder="Enter age"></td>
-                              <td>
-                                 <select name="children_gender[]" class="form-select">
-                                    <option value="" disabled selected>Select</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                    <option value="Other">Other</option>
-                                 </select>
-                              </td>
-                              <td><input type="text" name="children_education[]" class="form-control" placeholder="Enter education"></td>
-                              <td><input type="text" name="children_occupation[]" class="form-control" placeholder="Enter occupation"></td>
-                              <td class="text-center">
-                                 <button type="button" class="btn btn-success btn-sm addChildRow">
-                                 <i class="fas fa-plus"></i> Add
-                                 </button>
-                              </td>
-                           </tr>
-                        </tbody>
-                     </table>
+                        <table class="table table-bordered" id="childrenTable">
+                           <thead class="table-light">
+                              <tr>
+                                 <th>Child Name</th>
+                                 <th>Age</th>
+                                 <th>Gender</th>
+                                 <th>Education</th>
+                                 <th>Occupation</th>
+                                 <th style="width: 70px;">Action</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td><input type="text" name="children_name[]" class="form-control" placeholder="Enter children name"></td>
+                                 <td><input type="text" name="children_age[]" class="form-control" placeholder="Enter age"></td>
+                                 <td>
+                                    <select name="children_gender[]" class="form-select">
+                                       <option value="" disabled selected>Select</option>
+                                       <option value="Male">Male</option>
+                                       <option value="Female">Female</option>
+                                       <option value="Other">Other</option>
+                                    </select>
+                                 </td>
+                                 <td><input type="text" name="children_education[]" class="form-control" placeholder="Enter education"></td>
+                                 <td><input type="text" name="children_occupation[]" class="form-control" placeholder="Enter occupation"></td>
+                                 <td class="text-center">
+                                    <button type="button" class="btn btn-success btn-sm addChildRow">
+                                    <i class="fas fa-plus"></i> Add
+                                    </button>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
                      </div>
-                     
                      <!--Navigation Buttons -->
                      <div class="d-flex justify-content-between mt-4">
                         <button type="button" class="btn btn-secondary" id="prevBtn">Prev</button>
@@ -313,26 +309,26 @@
          $('#submitBtn').addClass('d-none');
       }
    }
-
+   
    $('#nextBtn').on('click', function () {
       if (currentStep < $('.step-btn').length) {
          currentStep++;
          showStep(currentStep);
       }
    });
-
+   
    $('#prevBtn').on('click', function () {
       if (currentStep > 1) {
          currentStep--;
          showStep(currentStep);
       }
    });
-
+   
    $('.step-btn').on('click', function () {
       currentStep = parseInt($(this).data('step'));
       showStep(currentStep);
    });
-
+   
    $(document).ready(function () {
       showStep(currentStep);
    });
@@ -342,49 +338,48 @@
       $('input[type="file"]').each(function() {
          let fileInput = $(this);
          fileInput.on('change', function(e) {
-               const file = e.target.files[0];
-               if (!file) return;
-               fileInput.next('.upload-preview').remove();
-               const previewContainer = $('<div class="upload-preview"></div>');
-               const progress = $('<div class="progress"><div class="progress-bar"></div></div>');
-               const removeBtn = $('<button type="button" class="remove-btn">&times;</button>');
-   
-               fileInput.after(previewContainer);
-               previewContainer.html(progress);
-   
-               let progressVal = 0;
-               const progressInterval = setInterval(() => {
-                  progressVal += 5;
-                  progress.find('.progress-bar').css('width', progressVal + '%');
-                  if (progressVal >= 100) {
-                     clearInterval(progressInterval);
-   
-                     const reader = new FileReader();
-                     reader.onload = function(e) {
-                           previewContainer.html(`
-                              <img src="${e.target.result}" alt="Preview">
-                              <div class="mt-1 small text-muted">${file.name}</div>
-                           `);
-                           previewContainer.append(removeBtn);
-                     };
-                     reader.readAsDataURL(file);
-                  }
-               }, 80); 
-   
-               removeBtn.on('click', function() {
-                  previewContainer.remove();
-                  fileInput.val('');
-               });
+            const file = e.target.files[0];
+            if (!file) return;
+            fileInput.next('.upload-preview').remove();
+            const previewContainer = $('<div class="upload-preview"></div>');
+            const progress = $('<div class="progress"><div class="progress-bar"></div></div>');
+            const removeBtn = $('<button type="button" class="remove-btn">&times;</button>');
+
+            fileInput.after(previewContainer);
+            previewContainer.html(progress);
+
+            let progressVal = 0;
+            const progressInterval = setInterval(() => {
+               progressVal += 5;
+               progress.find('.progress-bar').css('width', progressVal + '%');
+               if (progressVal >= 100) {
+                  clearInterval(progressInterval);
+
+                  const reader = new FileReader();
+                  reader.onload = function(e) {
+                        previewContainer.html(`
+                           <img src="${e.target.result}" alt="Preview">
+                           <div class="mt-1 small text-muted">${file.name}</div>
+                        `);
+                        previewContainer.append(removeBtn);
+                  };
+                  reader.readAsDataURL(file);
+               }
+            }, 80); 
+            removeBtn.on('click', function() {
+               previewContainer.remove();
+               fileInput.val('');
+            });
          });
       });
    });
 </script>
 <script>
-$(document).ready(function() {
-   //Add new row
-   $(document).on('click', '.addChildRow', function() {
-      let newRow = `
-         <tr>
+   $(document).ready(function() {
+      //Add new row
+      $(document).on('click', '.addChildRow', function() {
+         let newRow = `
+            <tr>
                <td><input type="text" name="children_name[]" class="form-control" placeholder="Enter children name"></td>
                <td><input type="text" name="children_age[]" class="form-control" placeholder="Enter age"></td>
                <td>
@@ -402,14 +397,14 @@ $(document).ready(function() {
                      <i class="fas fa-trash"></i>
                   </button>
                </td>
-         </tr>
-      `;
-      $('#childrenTable tbody').append(newRow);
+            </tr>
+         `;
+         $('#childrenTable tbody').append(newRow);
+      });
+      //Remove row
+      $(document).on('click', '.removeChildRow', function() {
+         $(this).closest('tr').remove();
+      });
    });
-   //Remove row
-   $(document).on('click', '.removeChildRow', function() {
-      $(this).closest('tr').remove();
-   });
-});
 </script>
 @endsection

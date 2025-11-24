@@ -49,6 +49,13 @@ class NewsController extends Controller
         return view('admin.latest-news.edit-news', compact('news_detail'));
     }
 
+    //Function for single news page
+    public function single_news($id) {
+        //Get single detail
+        $news_detail = LatestNews::find($id);
+        return view('admin.latest-news.single-news-detail', compact('news_detail'));
+    }
+
     //Function for update news
     public function update_news(Request $request, $id) {
         //Validate input fields

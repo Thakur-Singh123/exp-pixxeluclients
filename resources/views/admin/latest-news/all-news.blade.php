@@ -45,12 +45,12 @@
                                           @php $count = 1; @endphp
                                           @foreach ($all_news as $news)
                                           <tr role="row">
-                                             <td>{{ $count ++ }}.</td>
                                              <td>
                                                 <a href="{{ url('admin/single-news-detail/' . $news->id) }}" style="color: #6B8E23;">
-                                                {{ $news->title ?? '-' }}
+                                                   {{ $count ++ }}.
                                                 </a>
                                              </td>
+                                             <td>{{ $news->title ?? '-' }}</td>
                                              <td>{{ \Carbon\Carbon::parse($news->date)->format('d M, Y') ?? '-' }}</td>
                                              <td>
                                                 <div class="form-button-action">

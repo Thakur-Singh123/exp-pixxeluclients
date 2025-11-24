@@ -6,29 +6,29 @@
             <a href="{{ url('admin/services') }}" class="logo">
                 <img src="{{ asset('public/admin/images/Logo 03.svg') }}" alt="navbar brand" class="navbar-brand" height="20" />
             </a>
-            <!-- <div class="nav-toggle">
-                <button class="btn btn-toggle toggle-sidebar">
-                    <i class="gg-menu-right"></i>
-                </button>
-                <button class="btn btn-toggle sidenav-toggler">
-                    <i class="gg-menu-left"></i>
-                </button>
+            <!--<div class="nav-toggle">
+            <button class="btn btn-toggle toggle-sidebar">
+                <i class="gg-menu-right"></i>
+            </button>
+            <button class="btn btn-toggle sidenav-toggler">
+                <i class="gg-menu-left"></i>
+            </button>
             </div>
             <button class="topbar-toggler more"> 
                 <i class="gg-more-vertical-alt"></i>
-            </button> -->
+            </button>-->
         </div>
     </div>
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
         <div class="sidebar-content">
             <ul class="nav nav-secondary">
                 <!--dashboard section-->
-                <!-- <li class="nav-item">
+                <!--<li class="nav-item">
                 <a href="#">
                     <i class="fas fa-home"></i>
                     <p>Dashboard</p>
                 </a>
-                </li> -->
+                </li>-->
                 <li class="nav-item {{ request()->is('admin/services*') || request()->is('admin/service-create') || request()->is('admin/edit-service*') || request()->is('admin/single-service-detail*') ? 'active' : '' }}">
                     <a data-bs-toggle="collapse" href="#collapseService"
                         class="{{ request()->is('admin/services*') || request()->is('admin/service-create') || request()->is('admin/edit-service*') || request()->is('admin/single-service-detail*') ? '' : 'collapsed' }}"
@@ -113,12 +113,12 @@
                         <ul class="nav nav-collapse">
                             <li class="{{ request()->is('admin/news-create') ? 'active' : '' }}">
                                 <a href="{{ url('admin/news-create') }}">
-                                    <span class="sub-item">Add News</span>
+                                <span class="sub-item">Add News</span>
                                 </a>
                             </li>
                             <li class="{{ request()->is('admin/news') || request()->is('admin/edit-news/*') || request()->is('admin/single-news-detail/*') ? 'active' : '' }}">
                                 <a href="{{ url('admin/news') }}">
-                                    <span class="sub-item">All News</span>
+                                <span class="sub-item">All News</span>
                                 </a>
                             </li>
                         </ul>
