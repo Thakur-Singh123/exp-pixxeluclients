@@ -4,17 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome | VSK CELL Dharamshala</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    <link rel="stylesheet" href="{{ asset('public/admin/assets/css/font-awesome.css')  }}"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script type="text/javascript"
-        src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=HOhHs-Ngi28YhiUJtObUSrxLRPXtuSltBMs8QxVhYWyQB2rboQNj5wL2dZ83b_826CKqYJ-2CnLVjc5HJjwKMw"
-        charset="UTF-8"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <link rel="stylesheet" href="{{ asset('public/admin/assets/css/slider.css')  }}">
+    
 
     <style>
 body{margin:0;padding:0}
@@ -61,7 +55,7 @@ body{margin:0;padding:0}
 p.tagline span {font-size: 19px;}
 .font-16{font-size:16px}
 .main-cll-news-scroll{background:#004000;padding:10px;height: 628px;}
-.news-scroll{height: 628px;;overflow:hidden}
+.news-scroll{height: 577px;;overflow:hidden}
 .newslabel{color:#fff;font-weight:700}
 .preview_pdf{color:#fff;text-decoration:none;cursor:pointer}
 .preview_pdf:hover{text-decoration:underline}
@@ -72,7 +66,7 @@ span.cosa-msg {color: #f19000;font-size: 24px;}
 .hero-sec-image img {height: 536px;object-fit: cover;}
 .hero-slider img {width: 100%;height: 686px;object-fit: cover;}
 .hero-slider {width: 50%;}
-ul.slick-dots {bottom: 0 !important;top: 0;}
+ul.slick-dots {bottom: 0 !important;top: 0;display: none !important;}
 .pdf-toolbar { display:flex; gap:8px; align-items:center; margin-bottom:10px; }
 .pdf-container { width: 100%; max-width: 1100px; margin: 0 auto; background:#f6f6f6; padding:12px; border-radius:8px; }
 canvas {width: 100%;height: 264px;display: block;object-fit: cover;}
@@ -118,10 +112,9 @@ a#download { margin-left:auto; color:#007bff; text-decoration:none; }
                 <ul class="tabs">
                 <li class="tab active"><a href="#">🏠</a></li>
                 <li class="tab"><a href="#">About us</a></li>
-                <li class="tab"><a href="#">Outreach ▼</a></li>
-                <li class="tab"><a href="#">Pension ▼</a></li>
-                <li class="tab"><a href="#">Jobs ▼</a></li>
-                <li class="tab"><a href="{{ url('data-bank-details') }}">Data Bank ▼</a></li>
+                <li class="tab"><a href="#">Outreach</a></li>
+                <li class="tab"><a href="#">Jobs</a></li>
+                <li class="tab"><a href="{{ url('data-bank-details') }}">Data Bank <i class="fa-solid fa-angle-down"></i></a></li>
                 </ul>
             </div>
         </header>
@@ -256,7 +249,11 @@ a#download { margin-left:auto; color:#007bff; text-decoration:none; }
                 </div>
             </div>
         </section>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+
+
+        <script src="{{ asset('public/admin/assets/js/slider-jquery.js')  }}"></script>
+        <script src="{{ asset('public/admin/assets/js/slider-jquery-min.js')  }}"></script>
+        <script src="{{ asset('public/admin/assets/js/pdf.js')  }}"></script>
         <script>
             $(document).ready(function(){
                 $('.hero-slider').slick({
@@ -274,7 +271,7 @@ a#download { margin-left:auto; color:#007bff; text-decoration:none; }
         <script>
             const url = 'public/admin/images/Veteran Veer Nari,Widow Registration form Stn Hq Dsala.pdf';
             // PDF.js worker setup: adjust path if self-hosting worker.
-            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+            pdfjsLib.GlobalWorkerOptions.workerSrc = "{{ asset('public/admin/assets/js/pdf-worker.js')  }}";
             let pdfDoc = null,
                 pageNum = 1,
                 pageIsRendering = false,
