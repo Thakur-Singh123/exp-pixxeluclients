@@ -72,13 +72,14 @@ span.cosa-msg {color: #f19000;font-size: 24px;}
 .hero-sec-image img {height: 536px;object-fit: cover;}
 .hero-slider img {width: 100%;height: 686px;object-fit: cover;}
 .hero-slider {width: 50%;}
-ul.slick-dots {bottom: 0 !important;top: 0;}
+ul.slick-dots {bottom: 0 !important;top: 660px;}
 .pdf-toolbar { display:flex; gap:8px; align-items:center; margin-bottom:10px; }
 .pdf-container { width: 100%; max-width: 1100px; margin: 0 auto; background:#f6f6f6; padding:12px; border-radius:8px; }
 canvas {width: 100%;height: 264px;display: block;object-fit: cover;}
 button { padding:6px 10px; border-radius:6px; border:1px solid #ddd; background:#fff; cursor:pointer; }
 a#download { margin-left:auto; color:#007bff; text-decoration:none; }
 .main-pdf {padding: 0 25px;}
+
 
     </style>
 </head>
