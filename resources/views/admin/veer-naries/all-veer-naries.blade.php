@@ -4,13 +4,13 @@
    <div class="page-inner">
       <div class="row">
          <div class="col-md-12">
-           <!--success message section-->
+            <!--success message section-->
             @include('admin.notification')
             <div class="row">
                <div class="col-md-12">
                   <div class="card">
-                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h4 class="card-title">All Veer Naries</h4>
+                     <div class="card-header text-white">
+                        <h4 class="card-title mb-0">All Veer Naries</h4>
                      </div>
                      <div class="card-body">
                         <div class="table-responsive">
@@ -24,16 +24,12 @@
                                              <th class="sorting_asc" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
                                                 colspan="1" aria-sort="ascending"
-                                                style="width: 242.688px;">Ser.No
+                                                style="width: 242.688px;">Sr.No
                                              </th>
                                              <th class="sorting_asc" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
                                                 colspan="1" aria-sort="ascending"
                                                 style="width: 242.688px;">Army No
-                                             </th>
-                                             <th class="sorting" tabindex="0"
-                                                aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 366.578px;">Rank
                                              </th>
                                              <th class="sorting" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
@@ -43,21 +39,33 @@
                                                 aria-controls="basic-datatables" rowspan="1"
                                                 colspan="1" style="width: 84.5px;">Expose Year
                                              </th>
+                                             <th class="sorting" tabindex="0"
+                                                aria-controls="basic-datatables" rowspan="1"
+                                                colspan="1" style="width: 156.312px;">Action
+                                             </th>
                                           </tr>
                                        </thead>
                                        <tbody>
-                                          <!--Get service records-->
-                                          @foreach ($all_services as $service)
+                                          <!--Get VeerNari records-->
+                                          @php $count = 1; @endphp
+                                          @foreach ($all_veer_naris as $nari)
                                           <tr role="row">
-                                             <td>{{ $service->sr_no ?? '-' }}</td>
+                                             <td>{{ $count ++ }}.</td>
                                              <td>
-                                                <a href="{{ url('admin/single-veer-nari-detail/' . $service->id) }}" style="color: #6B8E23;">
-                                                   {{ $service->army_no ?? '-' }}
+                                                <a href="{{ url('admin/single-veer-nari-detail/' . $nari->id) }}" style="color: #6B8E23;">
+                                                {{ $nari->serviceman_detail->army_no ?? '-' }}
                                                 </a>
                                              </td>
-                                             <td>{{ $service->rank ?? '-' }}</td>
-                                             <td>{{ $service->veer_nari_name ?? '-' }}</td>
-                                             <td>{{ $service->veer_nari_expose_year ?? '-' }}</td>
+                                             <td>{{ $nari->veer_nari_name ?? '-' }}</td>
+                                             <td>{{ $nari->veer_nari_expose_year ?? '-' }}</td>
+                                             <td>
+                                                <div class="form-button-action">
+                                                   <a href="{{ url('admin/edit-veer-nari', $nari->id) }}" class="icon-button edit-btn custom-tooltip" data-tooltip="Edit">
+                                                   <i class="fa fa-edit"></i>
+                                                   </a>
+                                                   <a class="icon-button delete-btn custom-tooltip delete_veer_nari_record" data-veer_nari_id="{{ $nari->id }}" data-tooltip="Delete"><i class="fa fa-trash"></i></a>
+                                                </div>
+                                             </td>
                                           </tr>
                                           @endforeach
                                        </tbody>

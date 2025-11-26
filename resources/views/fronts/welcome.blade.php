@@ -72,14 +72,13 @@ span.cosa-msg {color: #f19000;font-size: 24px;}
 .hero-sec-image img {height: 536px;object-fit: cover;}
 .hero-slider img {width: 100%;height: 686px;object-fit: cover;}
 .hero-slider {width: 50%;}
-ul.slick-dots {bottom: 0 !important;top: 660px;}
+ul.slick-dots {bottom: 0 !important;top: 0;}
 .pdf-toolbar { display:flex; gap:8px; align-items:center; margin-bottom:10px; }
 .pdf-container { width: 100%; max-width: 1100px; margin: 0 auto; background:#f6f6f6; padding:12px; border-radius:8px; }
 canvas {width: 100%;height: 264px;display: block;object-fit: cover;}
 button { padding:6px 10px; border-radius:6px; border:1px solid #ddd; background:#fff; cursor:pointer; }
 a#download { margin-left:auto; color:#007bff; text-decoration:none; }
 .main-pdf {padding: 0 25px;}
-
 
     </style>
 </head>
@@ -89,102 +88,79 @@ a#download { margin-left:auto; color:#007bff; text-decoration:none; }
         <div class="left">
             <span>📞 Family Pensioner Helpline : 01125664100, WhatsApp : 9910964067, E-Mail :
                 diav.vsk[at]gov[dot]in</span>
-        </div>
-
-        <div class="right">
-            <span>📞 Service Pensioner Helpline : 01125664200, Whatsapp : 9910610866, E-mail :
+            </div>
+            <div class="right">
+                <span>📞 Service Pensioner Helpline : 01125664200, Whatsapp : 9910610866, E-mail :
                 veteranscell-army[at]nic[dot]in</span>
+            </div>
         </div>
-    </div>
-
-
-    <header class="main-header">
-
-        <div class="mid-header">
-
-            <div class="container">
-
+        <header class="main-header">
+            <div class="mid-header">
+                <div class="container">
                 <div class="top-section">
-
                     <img src="https://www.indianarmyveterans.gov.in/login_file/imgNew/indianarmylogo.png" alt="Logo"
                         class="side-logo">
-
-
                     <div class="center-content">
                         <img src="https://www.indianarmyveterans.gov.in/login_file/imgNew/logoaz.png"
                             alt="Amrit Mahotsav" class="center-small-logo">
-
                         <img src="https://www.indianarmyveterans.gov.in/login_file/imgNew/logogo.png" alt="G20india"
                             class="center-small-logo-1">
-
                         <h1 class="title">VETERAN SAHAYTA KENDRA</h1>
-
                         <p class="tagline">Military Station <br><span>Station Headquaters Dharamshala</span></p>
-
-
                     </div>
-
                     <img src="https://www.indianarmyveterans.gov.in/login_file/imgNew/Diav_logo_new.png" alt="Logo"
                         class="side-logo">
-
                 </div>
-
+                </div>
             </div>
-
-        </div>
-
-        <nav class="nav-bar">
+            <nav class="nav-bar">
             <div class="container">
                 <ul class="tabs">
-                    <li class="tab active"><a href="#">🏠</a></li>
-                    <li class="tab"><a href="#">About us</a></li>
-                    <li class="tab"><a href="#">Outreach ▼</a></li>
-                    <li class="tab"><a href="#">Pension ▼</a></li>
-                    <li class="tab"><a href="#">Jobs ▼</a></li>
+                <li class="tab active"><a href="#">🏠</a></li>
+                <li class="tab"><a href="#">About us</a></li>
+                <li class="tab"><a href="#">Outreach ▼</a></li>
+                <li class="tab"><a href="#">Pension ▼</a></li>
+                <li class="tab"><a href="#">Jobs ▼</a></li>
+                <li class="tab"><a href="{{ url('data-bank-details') }}">Data Bank ▼</a></li>
                 </ul>
             </div>
-
-    </header>
-
-    <!-- marquee section -->
-
-    <section class="upper-marquee-line">
-        <div class="marquee-line-text">
-            <marquee behavior="scroll" direction="left" scrollamount="6" onmouseover="this.stop();"
+        </header>
+        <!-- marquee section -->
+        <section class="upper-marquee-line">
+            <div class="marquee-line-text">
+                <marquee behavior="scroll" direction="left" scrollamount="6" onmouseover="this.stop();"
                 onmouseout="this.start();">
                 <span style="font-weight: bold; color: #fff;">WELCOME TO VETERAN SAHAYATA KENDRA</span>
-            </marquee>
-        </div>
-    </section>
-
-    <!-- end marquee section -->
-    <!-- hero section -->
-    <section class="hero-line-text">
-        <div class="main-hero-flex">
+                </marquee>
+            </div>
+        </section>
+        <!-- end marquee section -->
+        <!-- hero section -->
+        <section class="hero-line-text">
+            <div class="main-hero-flex">
             <div class="hero-about">
                 <div class="about-image">
-                    <img src="https://indianewsdiary.com/wp-content/uploads/2024/06/1J5A28744AKZ.jpg"
-                        alt="GENERAL MANOJ PANDE, PVSM, AVSM, VSM, ADC">
+                <img src="https://indianewsdiary.com/wp-content/uploads/2024/06/1J5A28744AKZ.jpg"
+                    alt="GENERAL MANOJ PANDE, PVSM, AVSM, VSM, ADC">
                 </div>
                 <h3 class="title mt-0 mb-10 text-uppercase text-center">
-                    <span class="cosa-msg">Brief History</span>
+                <span class="cosa-msg">Brief History</span>
                 </h3>
                 <div class="dis-message">
-                    <p>Under the auth of HQ 21 Sub Area SOP No 2010/A4 dt 24 Mar 17, Veteran Sahayta Kendra (VSK) was est at Stn HQ Dharamsala wef 17 Jul 2017 for registration of veterans and also addressing issues related to welfare of ESM including grievances, pension anomalies and other issues etc. Life certificate will be updated on 1nov to 30nov every year! The dependency of ESM of this HQ is 10815 approx.</p>
+                <p>Under the auth of HQ 21 Sub Area SOP No 2010/A4 dt 24 Mar 17, Veteran Sahayta Kendra (VSK) was est at Stn HQ Dharamsala wef 17 Jul 2017 for registration of veterans and also addressing issues related to welfare of ESM including grievances, pension anomalies and other issues etc. Life certificate will be updated on 1nov to 30nov every year! The dependency of ESM of this HQ is 10815 approx.</p>
                 </div>
                 <div class="main-pdf">
-                  <div class="pdf-toolbar">
-                        <button id="prev">Prev</button>
-                        <button id="next">Next</button>
-                        <span>Page <span id="page-num">1</span> / <span id="page-count">--</span></span>
-                        <button id="zoom-out">−</button>
-                        <button id="zoom-in">+</button>
-                        <a id="download" href="#" download>Download</a>
-                    </div>
-
-                    <div class="pdf-container">
-                        <canvas id="pdf-render"></canvas>
-                    </div>
+                <div class="pdf-toolbar">
+                    <button id="prev">Prev</button>
+                    <button id="next">Next</button>
+                    <span>Page <span id="page-num">1</span> / <span id="page-count">--</span></span>
+                    <button id="zoom-out">−</button>
+                    <button id="zoom-in">+</button>
+                    <a id="download" href="#" download>Download</a>
+                </div>
+                <div class="pdf-container">
+                    <canvas id="pdf-render"></canvas>
+                </div>
                 </div>
             </div>
             <div class="hero-slider">
@@ -193,17 +169,38 @@ a#download { margin-left:auto; color:#007bff; text-decoration:none; }
                 <div><img src="public/admin/images/image3.jpeg" alt=""></div>
                 <div><img src="public/admin/images/image4.jpeg" alt=""></div>
             </div>
-
-
             <div class="latest-news-details">
                 <div class="news-marquee1 mb-0">
                     <h2 class="latest-updates">Latest
-                        News</h2>
+                        News
+                    </h2>
+                    <!-- Top Static Links (Outside Marquee) -->
                     <div class="bg-theme-colored p-10 main-cll-news-scroll">
+                        <ul style="list-style:none; padding-left:0; margin-bottom:15px;">
+                            <li style="margin-bottom:6px;">
+                                <label class="newslabel">*&nbsp;&nbsp;&nbsp;</label>
+                                <a target="_blank" href="{{ url('data-bank-details') }}">
+                                Data Bank Details
+                                </a>
+                            </li>
+                            <li style="margin-bottom:6px;">
+                                <label class="newslabel">*&nbsp;&nbsp;&nbsp;</label>
+                                <a target="_blank" href="{{ route('login') }}">
+                                VSK Login
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- Scrolling Dynamic News -->
                         <marquee class="news-scroll h-200" behavior="scroll" scrollamount="3" direction="up"
                             onmouseover="this.stop();" onmouseout="this.start();">
                             <ul>
-                                
+                                <li><label class="newslabel">*&nbsp;&nbsp;&nbsp;</label>
+                                    <a target="_blank" href="https://sparsh.defencepension.gov.in/?page=home">SPARSH
+                                        Login</a>
+                                </li>
+                                <li><label class="newslabel">*&nbsp;&nbsp;&nbsp;</label>
+                                    <a target="_blank" href="https://indianarmyveterans.gov.in/VSK/login">VSK Login</a>
+                                </li>
                                 <li><label class="newslabel">*&nbsp;&nbsp;&nbsp;</label>
                                     <input type="hidden" id="list3" name="" value="5" wfd-id="id40"> <a
                                         class="preview_pdf"> Discontinuation of Annual Renewal of CSD Smart Cards</a>
@@ -257,113 +254,99 @@ a#download { margin-left:auto; color:#007bff; text-decoration:none; }
                         </marquee>
                     </div>
                 </div>
-
             </div>
-    </section>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
-    <script>
-      $(document).ready(function(){
-          $('.hero-slider').slick({
-              autoplay: true,
-              autoplaySpeed: 2000,
-              speed: 700,
-              dots: true,
-              arrows: false,
-              infinite: true,
-              fade: false,
-              cssEase: 'ease-in-out'
-          });
-      });
-    </script>
-<script>
-const url = 'public/admin/images/Veteran Veer Nari,Widow Registration form Stn Hq Dsala.pdf';
-
-// PDF.js worker setup: adjust path if self-hosting worker.
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
-
-let pdfDoc = null,
-    pageNum = 1,
-    pageIsRendering = false,
-    pageNumIsPending = null,
-    scale = 1.2; // initial zoom
-const canvas = document.getElementById('pdf-render');
-const ctx = canvas.getContext('2d');
-
-// Render the page
-const renderPage = num => {
-  pageIsRendering = true;
-  pdfDoc.getPage(num).then(page => {
-    const viewport = page.getViewport({ scale: scale });
-    canvas.height = viewport.height;
-    canvas.width = viewport.width;
-
-    const renderCtx = {
-      canvasContext: ctx,
-      viewport
-    };
-    page.render(renderCtx).promise.then(() => {
-      pageIsRendering = false;
-      if (pageNumIsPending !== null) {
-        renderPage(pageNumIsPending);
-        pageNumIsPending = null;
-      }
-    });
-  });
-
-  // Update page counters
-  document.getElementById('page-num').textContent = num;
-};
-
-// Queue render if another render is in progress
-const queueRenderPage = num => {
-  if (pageIsRendering) {
-    pageNumIsPending = num;
-  } else {
-    renderPage(num);
-  }
-};
-
-// Show Prev / Next
-document.getElementById('prev').addEventListener('click', () => {
-  if (pageNum <= 1) return;
-  pageNum--;
-  queueRenderPage(pageNum);
-});
-document.getElementById('next').addEventListener('click', () => {
-  if (pageNum >= pdfDoc.numPages) return;
-  pageNum++;
-  queueRenderPage(pageNum);
-});
-
-// Zoom
-document.getElementById('zoom-in').addEventListener('click', () => {
-  scale = Math.min(scale + 0.2, 3);
-  queueRenderPage(pageNum);
-});
-document.getElementById('zoom-out').addEventListener('click', () => {
-  scale = Math.max(scale - 0.2, 0.5);
-  queueRenderPage(pageNum);
-});
-
-// Download link
-const setupDownload = (url) => {
-  const dl = document.getElementById('download');
-  dl.href = url;
-};
-
-// Load the PDF
-pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
-  pdfDoc = pdfDoc_;
-  document.getElementById('page-count').textContent = pdfDoc.numPages;
-  renderPage(pageNum);
-  setupDownload(url);
-}).catch(err => {
-  console.error('Error loading PDF:', err);
-  document.querySelector('.pdf-container').innerHTML = '<p style="color:#c00">Could not load PDF.</p>';
-});
-</script>
-
-</body>
-
+        </section>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('.hero-slider').slick({
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    speed: 700,
+                    dots: true,
+                    arrows: false,
+                    infinite: true,
+                    fade: false,
+                    cssEase: 'ease-in-out'
+                });
+            });
+        </script>
+        <script>
+            const url = 'public/admin/images/Veteran Veer Nari,Widow Registration form Stn Hq Dsala.pdf';
+            // PDF.js worker setup: adjust path if self-hosting worker.
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+            let pdfDoc = null,
+                pageNum = 1,
+                pageIsRendering = false,
+                pageNumIsPending = null,
+                scale = 1.2; // initial zoom
+            const canvas = document.getElementById('pdf-render');
+            const ctx = canvas.getContext('2d');
+            //Render the page
+            const renderPage = num => {
+                pageIsRendering = true;
+                pdfDoc.getPage(num).then(page => {
+                    const viewport = page.getViewport({ scale: scale });
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+                    const renderCtx = {
+                        canvasContext: ctx,
+                        viewport
+                    };
+                    page.render(renderCtx).promise.then(() => {
+                        pageIsRendering = false;
+                        if (pageNumIsPending !== null) {
+                            renderPage(pageNumIsPending);
+                            pageNumIsPending = null;
+                        }
+                    });
+                });
+                //Update page counters
+                document.getElementById('page-num').textContent = num;
+            };
+            //Queue render if another render is in progress
+            const queueRenderPage = num => {
+                if (pageIsRendering) {
+                    pageNumIsPending = num;
+                } else {
+                    renderPage(num);
+                }
+            };
+            //Show Prev / Next
+            document.getElementById('prev').addEventListener('click', () => {
+            if (pageNum <= 1) return;
+                pageNum--;
+                queueRenderPage(pageNum);
+            });
+            document.getElementById('next').addEventListener('click', () => {
+                if (pageNum >= pdfDoc.numPages) return;
+                pageNum++;
+                queueRenderPage(pageNum);
+            });
+            //Zoom
+            document.getElementById('zoom-in').addEventListener('click', () => {
+                scale = Math.min(scale + 0.2, 3);
+                queueRenderPage(pageNum);
+            });
+            document.getElementById('zoom-out').addEventListener('click', () => {
+                scale = Math.max(scale - 0.2, 0.5);
+                queueRenderPage(pageNum);
+            });
+            //Download link
+            const setupDownload = (url) => {
+                const dl = document.getElementById('download');
+                dl.href = url;
+            };
+            //Load the PDF
+            pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
+                pdfDoc = pdfDoc_;
+                document.getElementById('page-count').textContent = pdfDoc.numPages;
+                renderPage(pageNum);
+                setupDownload(url);
+            }).catch(err => {
+                console.error('Error loading PDF:', err);
+                document.querySelector('.pdf-container').innerHTML = '<p style="color:#c00">Could not load PDF.</p>';
+            });
+        </script>
+    </body>
 </html>
