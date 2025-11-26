@@ -77,4 +77,14 @@ class FrontController extends Controller
             'html' => $html
         ]);
     }
+
+    //Function for about us
+    public function about() {
+        return view('fronts.about-us');
+    }
+
+    //Function for outreach
+    public function outreach() {
+        return view('fronts.outreach');
+    }
 }
