@@ -83,6 +83,11 @@ class FrontController extends Controller
         return view('fronts.about-us');
     }
 
+    //Function for job
+    public function jobs() {
+        return view('fronts.job');
+    }
+
     //Function for outreach
     public function outreach() {
         return view('fronts.outreach');
