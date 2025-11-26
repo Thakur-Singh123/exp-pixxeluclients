@@ -110,17 +110,13 @@ a#download { margin-left:auto; color:#007bff; text-decoration:none; }
             <nav class="nav-bar">
             <div class="container">
                 <ul class="tabs">
-                <li class="tab active"><a href="#">🏠</a></li>
-<<<<<<< HEAD
+                <li class="tab active">🏠</li>
+
                 <li class="tab"><a href="{{ url('about-us') }}">About us</a></li>
-                <li class="tab"><a href="{{ url('outreach') }}">Outreach ▼</a></li>
-                <li class="tab"><a href="{{ url('data-bank-details') }}">Data Bank ▼</a></li>
-=======
-                <li class="tab"><a href="#">About us</a></li>
-                <li class="tab"><a href="#">Outreach</a></li>
-                <li class="tab"><a href="#">Jobs</a></li>
+                <li class="tab"><a href="{{ url('outreach') }}">Outreach</a></li>
+                <li class="tab"><a href="{{ url('jobs') }}">Jobs</a></li>
                 <li class="tab"><a href="{{ url('data-bank-details') }}">Data Bank <i class="fa-solid fa-angle-down"></i></a></li>
->>>>>>> 3680f6a9ba317639c5d7b7dab9eaadf5fd2f99c8
+
                 </ul>
             </div>
         </header>
