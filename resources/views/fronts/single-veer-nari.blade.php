@@ -158,11 +158,11 @@
         <span class="close-btn" onclick="document.getElementById('detailModal').style.display='none'">&times;</span>
         <!--Tabs-->
         <div class="tabs">
-            <div class="tab active" data-tab="w_profile">Veer Nari Profile</div>
+            <div class="tab active" data-tab="n_profile">Veer Nari Profile</div>
             <div class="tab" data-tab="spouse">Spouse</div>
         </div>
         <!--Spouse-->
-        <div id="w_profile" class="tab-content active">
+        <div id="n_profile" class="tab-content active">
             <div class="card-body">
                 <!--<h5>Spouse Details</h5>-->
                 <div class="detail-row">
