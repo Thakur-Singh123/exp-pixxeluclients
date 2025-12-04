@@ -16,12 +16,21 @@ body {
   background: #3C4D03;
   padding: 30px;
 }
+body:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #0000003d;
+}
 
 .container {
   position: relative;
   max-width: 400px;
   width: 100%;
-  background: #828961;
+  background: #17181b;
   padding: 40px 30px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   perspective: 2700px;
@@ -107,7 +116,7 @@ body {
 .container .forms {
   height: 100%;
   width: 100%;
-  background: #828961;
+  background: #82896100;
 }
 
 /* .container .form-content {
@@ -197,7 +206,7 @@ body {
 
 .forms .form-content .button input {
   color: #fff;
-  background: #6B8E23;
+  background: #6b8e235e;
   border: 0;
   border-radius: 6px;
   padding: 0;
@@ -206,9 +215,13 @@ body {
 }
 
 .forms .form-content .button input:hover {
-  background: #556B2F;
+  background: #556b2f70;
 }
-
+.container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
 .forms .form-content label {
   color: #5b13b9;
   cursor: pointer;
