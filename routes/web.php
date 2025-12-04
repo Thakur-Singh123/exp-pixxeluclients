@@ -12,8 +12,11 @@ Route::get('single-service-detail/{id}', [App\Http\Controllers\FrontController::
 Route::get('single-window-detail/{id}', [App\Http\Controllers\FrontController::class, 'window_detail']);
 Route::get('single-veer-nari-detail/{id}', [App\Http\Controllers\FrontController::class, 'veer_nari_detail']);
 Route::get('about-us', [App\Http\Controllers\FrontController::class, 'about']);
-Route::get('jobs', [App\Http\Controllers\FrontController::class, 'jobs']);
+Route::get('forms', [App\Http\Controllers\FrontController::class, 'jobs']);
 Route::get('outreach', [App\Http\Controllers\FrontController::class, 'outreach']);
+Route::get('doc', [App\Http\Controllers\FrontController::class, 'doc']);
+Route::get('Baatcheet', [App\Http\Controllers\FrontController::class, 'Baatcheet']);
+
 //Middlewares
 Route::group(['middleware' => 'auth'], function() { 
     //Admin middleware

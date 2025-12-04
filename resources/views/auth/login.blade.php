@@ -8,6 +8,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <style>
+        body {
+            background: url("{{ asset('public/admin/images/logo122.jpg') }}") no-repeat center !important;
+        }
         span.invalid-feedback {
             color: red;
             font-size: 12px;

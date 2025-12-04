@@ -31,7 +31,7 @@
          }
          .name-data-bank-1.active {
             background: #6B8E23 !important;
-            color: #000;
+            color: #FFF;
             border: 0 !important;
             border-radius: 8px;
          }
@@ -49,12 +49,11 @@
             text-transform: uppercase;
             text-decoration: underline;
          }
-         .content.active .dt-layout-cell.dt-layout-full {
-            overflow-x: scroll;
-            white-space: nowrap;
-         }
+         .dt-length label {
+    text-transform: capitalize;
+}
          .main-tabs {
-            background: #4B5320;
+            background: linear-gradient(to bottom, #4B5320, #1E2F14);
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -206,6 +205,7 @@
             text-decoration: none;
             transition: 0.3s ease;
          }
+         
       </style>
    </head>
    <body>
