@@ -83,6 +83,14 @@
                         @endif
                      </div>
                      <div class="col-md-4 services2">
+                        <strong>Joint Photograph:</strong><br><br>
+                        @if($widow_detail->serviceman_detail->joint_image)
+                           <img src="{{ asset('public/uploads/ex-images/'.$widow_detail->serviceman_detail->joint_image) }}" class="img-thumbnail shadow-sm" width="80">
+                        @else 
+                           - 
+                        @endif
+                     </div>
+                     <div class="col-md-4 services2">
                         <strong>Aadhar Card:</strong><br><br>
                         @if($widow_detail->serviceman_detail->aadhar_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$widow_detail->serviceman_detail->aadhar_image) }}" class="img-thumbnail shadow-sm" width="80">
@@ -99,9 +107,17 @@
                         @endif
                      </div>
                      <div class="col-md-4 services2">
-                        <strong>Joint Photograph:</strong><br><br>
-                        @if($widow_detail->serviceman_detail->joint_image)
-                           <img src="{{ asset('public/uploads/ex-images/'.$widow_detail->serviceman_detail->joint_image) }}" class="img-thumbnail shadow-sm" width="80">
+                        <strong>ECHS Card</strong><br><br>
+                        @if($widow_detail->serviceman_detail->echs_image)
+                           <img src="{{ asset('public/uploads/ex-images/'.$widow_detail->serviceman_detail->echs_image) }}" class="img-thumbnail shadow-sm" width="80">
+                        @else 
+                           - 
+                        @endif
+                     </div>
+                     <div class="col-md-4 services2">
+                        <strong>CSD Card :</strong><br><br>
+                        @if($widow_detail->serviceman_detail->csd_image)
+                           <img src="{{ asset('public/uploads/ex-images/'.$widow_detail->serviceman_detail->csd_image) }}" class="img-thumbnail shadow-sm" width="80">
                         @else 
                            - 
                         @endif
@@ -118,6 +134,14 @@
                         <strong>PPO:</strong><br><br>
                         @if($widow_detail->serviceman_detail->ppo_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$widow_detail->serviceman_detail->ppo_image) }}" class="img-thumbnail shadow-sm" width="80">
+                        @else 
+                           - 
+                        @endif
+                     </div>
+                     <div class="col-md-4 services2">
+                        <strong>Bank Account:</strong><br><br>
+                        @if($widow_detail->serviceman_detail->bank_image)
+                           <img src="{{ asset('public/uploads/ex-images/'.$widow_detail->serviceman_detail->bank_image) }}" class="img-thumbnail shadow-sm" width="80">
                         @else 
                            - 
                         @endif
