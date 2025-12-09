@@ -64,7 +64,7 @@
     </li>
 
     <li class="tab {{ request()->is('data-bank-details') ? 'active' : '' }}">
-        <a href="{{ url('data-bank-details') }}">Data Bank</a>
+        <a href="{{ url('data-bank-details') }}">Data Bansk</a>
     </li>
 
     <!-- VSK Login — now same design as others -->
