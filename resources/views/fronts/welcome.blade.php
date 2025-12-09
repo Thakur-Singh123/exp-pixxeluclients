@@ -121,7 +121,7 @@ li.login-btn-11 a {
                     <li class="tab"><a href="{{ url('about-us') }}">About us</a></li>
                     <li class="tab"><a href="{{ url('outreach') }}">Outreach</a></li>
                     <li class="tab"><a href="{{ url('forms') }}">Forms</a></li>
-                    <li class="tab"><a href="{{ url('doc') }}">Document</a></li>
+                    <!-- <li class="tab"><a href="{{ url('doc') }}">Document</a></li> -->
                     <li class="tab"><a href="{{ url('Baatcheet') }}">Baatcheet</a></li>
                     <li class="tab"><a href="{{ url('data-bank-details') }}">Data Bank</a></li>
                     <li class="login-btn-11">
