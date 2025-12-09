@@ -237,6 +237,14 @@
                         @endif
                     </div>
                     <div>
+                        <strong>Joint Photograph:</strong><br>
+                        @if($veer_detail->serviceman_detail->joint_image)
+                            <img src="{{ asset('public/uploads/ex-images/'.$veer_detail->serviceman_detail->joint_image) }}" class="img-thumbnail">
+                        @else 
+                            -
+                        @endif
+                    </div>
+                    <div>
                         <strong>Aadhar Card:</strong><br>
                         @if($veer_detail->serviceman_detail->aadhar_image)
                             <img src="{{ asset('public/uploads/ex-images/'.$veer_detail->serviceman_detail->aadhar_image) }}" class="img-thumbnail">
@@ -253,9 +261,17 @@
                         @endif
                     </div>
                     <div>
-                        <strong>Joint Photograph:</strong><br>
-                        @if($veer_detail->serviceman_detail->joint_image)
-                            <img src="{{ asset('public/uploads/ex-images/'.$veer_detail->serviceman_detail->joint_image) }}" class="img-thumbnail">
+                        <strong>ECHS Card:</strong><br>
+                        @if($veer_detail->serviceman_detail->echs_image)
+                            <img src="{{ asset('public/uploads/ex-images/'.$veer_detail->serviceman_detail->echs_image) }}" class="img-thumbnail">
+                        @else 
+                            -
+                        @endif
+                    </div>
+                    <div>
+                        <strong>CSD Card:</strong><br>
+                        @if($veer_detail->serviceman_detail->csd_image)
+                            <img src="{{ asset('public/uploads/ex-images/'.$veer_detail->serviceman_detail->csd_image) }}" class="img-thumbnail">
                         @else 
                             -
                         @endif
@@ -272,6 +288,14 @@
                         <strong>PPO:</strong><br>
                         @if($veer_detail->serviceman_detail->ppo_image)
                             <img src="{{ asset('public/uploads/ex-images/'.$veer_detail->serviceman_detail->ppo_image) }}" class="img-thumbnail">
+                        @else 
+                            -
+                        @endif
+                    </div>
+                    <div>
+                        <strong>Bank Account:</strong><br>
+                        @if($veer_detail->serviceman_detail->bank_image)
+                            <img src="{{ asset('public/uploads/ex-images/'.$veer_detail->serviceman_detail->bank_image) }}" class="img-thumbnail">
                         @else 
                             -
                         @endif

@@ -73,46 +73,45 @@
                      <div class="step-content" id="step-1">
                         <h5 class="step-heading mb-3 fw-bold">Profile Details</h5>
                         <div class="row">
-                        <div class="col-md-4 mb-3">
-                           <label class="form-label">Army No *</label>
-                           <input type="text" class="form-control" value="{{ old('army_no', $service_detail->army_no) }}" disabled>
-                           <input type="hidden" name="army_no" value="{{ old('army_no', $service_detail->army_no) }}">
-                        </div>
                            <div class="col-md-4 mb-3">
-                              <label class="form-label">Rank *</label>
-                              <input type="text" name="rank" class="form-control" value="{{ old('rank',$service_detail->rank) }}" placeholder="Enter rank">
+                              <label class="form-label">Army No *</label>
+                              <input type="text" class="form-control" value="{{ old('army_no', $service_detail->army_no) }}" disabled>
+                              <input type="hidden" name="army_no" value="{{ old('army_no', $service_detail->army_no) }}">
+                           </div>
+                              <div class="col-md-4 mb-3">
+                                 <label class="form-label">Rank *</label>
+                                 <input type="text" name="rank" class="form-control" value="{{ old('rank',$service_detail->rank) }}" placeholder="Enter rank">
+                              </div>
+                              <div class="col-md-4 mb-3">
+                                 <label class="form-label">Name</label>
+                                 <input type="text" name="name" class="form-control" value="{{ old('name',$service_detail->name) }}" placeholder="Enter name">
+                              </div>
+                              <div class="col-md-4 mb-3">
+                                 <label class="form-label">Date of Birth</label>
+                                 <input type="date" name="dob" class="form-control" value="{{ old('dob',$service_detail->dob) }}">
+                              </div>
+                              <div class="col-md-4 mb-3">
+                                 <label class="form-label">Date of Enrollment</label>
+                                 <input type="date" name="doe" class="form-control" value="{{ old('doe',$service_detail->doe) }}">
+                              </div>
+                              <div class="col-md-4 mb-3">
+                                 <label class="form-label">Date of Retirement</label>
+                                 <input type="date" name="dor" class="form-control" value="{{ old('dor',$service_detail->dor) }}">
+                              </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">ECHS Card Number</label>
+                              <input type="text" name="echs_card_no" class="form-control" value="{{ old('echs_card_no',$service_detail->echs_card_no) }}" placeholder="Enter echs card numer">
                            </div>
                            <div class="col-md-4 mb-3">
-                              <label class="form-label">Name</label>
-                              <input type="text" name="name" class="form-control" value="{{ old('name',$service_detail->name) }}" placeholder="Enter name">
+                              <label class="form-label">CSD Card Number</label>
+                              <input type="text" name="csd_card_no" class="form-control" value="{{ old('csd_card_no',$service_detail->csd_card_no) }}" placeholder="Enter csd card numer">
                            </div>
                            <div class="col-md-4 mb-3">
-                              <label class="form-label">Date of Birth</label>
-                              <input type="date" name="dob" class="form-control" value="{{ old('dob',$service_detail->dob) }}">
+                              <label class="form-label">Regiment / Corps</label>
+                              <input type="text" name="regiment_corps" class="form-control" value="{{ old('regiment_corps',$service_detail->regiment_corps) }}" placeholder="Enter regiment / corps">
                            </div>
-                           <div class="col-md-4 mb-3">
-                              <label class="form-label">Date of Enrollment</label>
-                              <input type="date" name="doe" class="form-control" value="{{ old('doe',$service_detail->doe) }}">
-                           </div>
-                           <div class="col-md-4 mb-3">
-                              <label class="form-label">Date of Retirement</label>
-                              <input type="date" name="dor" class="form-control" value="{{ old('dor',$service_detail->dor) }}">
-                           </div>
-                          <div class="col-md-4 mb-3">
-                           <label class="form-label">ECHS Card Number</label>
-                           <input type="text" name="echs_card_no" class="form-control" value="{{ old('echs_card_no',$service_detail->echs_card_no) }}" placeholder="Enter echs card numer">
                         </div>
-                        <div class="col-md-4 mb-3">
-                           <label class="form-label">CSD Card Number</label>
-                           <input type="text" name="csd_card_no" class="form-control" value="{{ old('csd_card_no',$service_detail->csd_card_no) }}" placeholder="Enter csd card numer">
-                        </div>
-                        <div class="col-md-4 mb-3">
-                           <label class="form-label">Regiment / Corps</label>
-                           <input type="text" name="regiment_corps" class="form-control" value="{{ old('regiment_corps',$service_detail->regiment_corps) }}" placeholder="Enter regiment / corps">
-                        </div>
-
-                        </div>
-                         <!--Photograph Section-->
+                        <!--Photograph Section-->
                         <div class="row upload-section">
                            <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
                               <div class="upload-field">
@@ -130,13 +129,13 @@
                            </div>
                            <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
                               <div class="upload-field">
-                                 <label>Aadhar Card</label>
-                                 <input type="file" name="aadhar_image" class="form-control upload-input">
+                                 <label>ECHS Card</label>
+                                 <input type="file" name="echs_image" class="form-control upload-input">
                               </div>
                               <div class="preview-box">
-                                 <label class="preview-label">Uploaded Aadhar Card</label>
-                                 @if ($service_detail->aadhar_image)
-                                    <img src="{{ asset('public/uploads/ex-images/'.$service_detail->aadhar_image) }}" class="preview-img">
+                                 <label class="preview-label">Uploaded ECHS Card</label>
+                                 @if ($service_detail->echs_image)
+                                    <img src="{{ asset('public/uploads/ex-images/'.$service_detail->echs_image) }}" class="preview-img">
                                  @else
                                     <span class="no-image-text">No image found</span>
                                  @endif
@@ -144,55 +143,13 @@
                            </div>
                            <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
                               <div class="upload-field">
-                                 <label>PAN Card</label>
-                                 <input type="file" name="pan_image" class="form-control upload-input">
+                                 <label>CSD Card</label>
+                                 <input type="file" name="csd_image" class="form-control upload-input">
                               </div>
                               <div class="preview-box">
-                                 <label class="preview-label">Uploaded PAN Card</label>
-                                 @if ($service_detail->pan_image)
-                                    <img src="{{ asset('public/uploads/ex-images/'.$service_detail->pan_image) }}" class="preview-img">
-                                 @else
-                                    <span class="no-image-text">No image found</span>
-                                 @endif
-                              </div>
-                           </div>
-                           <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
-                              <div class="upload-field">
-                                 <label>Joint Photograph</label>
-                                 <input type="file" name="joint_image" class="form-control upload-input">
-                              </div>
-                              <div class="preview-box">
-                                 <label class="preview-label">Uploaded Joint Photograph</label>
-                                 @if ($service_detail->joint_image)
-                                    <img src="{{ asset('public/uploads/ex-images/'.$service_detail->joint_image) }}" class="preview-img">
-                                 @else
-                                    <span class="no-image-text">No image found</span>
-                                 @endif
-                              </div>
-                           </div>
-                           <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
-                              <div class="upload-field">
-                                 <label>Discharge Book</label>
-                                 <input type="file" name="discharge_image" class="form-control upload-input">
-                              </div>
-                              <div class="preview-box">
-                                 <label class="preview-label">Uploaded Discharge Book</label>
-                                 @if ($service_detail->discharge_image)
-                                    <img src="{{ asset('public/uploads/ex-images/'.$service_detail->discharge_image) }}" class="preview-img">
-                                 @else
-                                    <span class="no-image-text">No image found</span>
-                                 @endif
-                              </div>
-                           </div>
-                           <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
-                              <div class="upload-field">
-                                 <label>PPO</label>
-                                 <input type="file" name="ppo_image" class="form-control upload-input">
-                              </div>
-                              <div class="preview-box">
-                                 <label class="preview-label">Uploaded PPO</label>
-                                 @if ($service_detail->ppo_image)
-                                    <img src="{{ asset('public/uploads/ex-images/'.$service_detail->ppo_image) }}" class="preview-img">
+                                 <label class="preview-label">Uploaded CSD Card</label>
+                                 @if ($service_detail->csd_image)
+                                    <img src="{{ asset('public/uploads/ex-images/'.$service_detail->csd_image) }}" class="preview-img">
                                  @else
                                     <span class="no-image-text">No image found</span>
                                  @endif
@@ -258,6 +215,94 @@
                            <input type="text" name="micr_code" class="form-control" value="{{ old('micr_code',$service_detail->micr_code) }}" placeholder="Enter micr code">
                         </div>
                      </div>
+                     <!--Photograph Section-->
+                     <div class="row upload-section">
+                        <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
+                           <div class="upload-field">
+                              <label>Joint Photograph</label>
+                              <input type="file" name="joint_image" class="form-control upload-input">
+                           </div>
+                           <div class="preview-box">
+                              <label class="preview-label">Uploaded Joint Photograph</label>
+                              @if ($service_detail->joint_image)
+                                 <img src="{{ asset('public/uploads/ex-images/'.$service_detail->joint_image) }}" class="preview-img">
+                              @else
+                                 <span class="no-image-text">No image found</span>
+                              @endif
+                           </div>
+                        </div>
+                        <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
+                           <div class="upload-field">
+                              <label>Aadhar Card</label>
+                              <input type="file" name="aadhar_image" class="form-control upload-input">
+                           </div>
+                           <div class="preview-box">
+                              <label class="preview-label">Uploaded Aadhar Card</label>
+                              @if ($service_detail->aadhar_image)
+                                 <img src="{{ asset('public/uploads/ex-images/'.$service_detail->aadhar_image) }}" class="preview-img">
+                              @else
+                                 <span class="no-image-text">No image found</span>
+                              @endif
+                           </div>
+                        </div>
+                        <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
+                           <div class="upload-field">
+                              <label>PAN Card</label>
+                              <input type="file" name="pan_image" class="form-control upload-input">
+                           </div>
+                           <div class="preview-box">
+                              <label class="preview-label">Uploaded PAN Card</label>
+                              @if ($service_detail->pan_image)
+                                 <img src="{{ asset('public/uploads/ex-images/'.$service_detail->pan_image) }}" class="preview-img">
+                              @else
+                                 <span class="no-image-text">No image found</span>
+                              @endif
+                           </div>
+                        </div>
+                        <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
+                           <div class="upload-field">
+                              <label>Discharge Book</label>
+                              <input type="file" name="discharge_image" class="form-control upload-input">
+                           </div>
+                           <div class="preview-box">
+                              <label class="preview-label">Uploaded Discharge Book</label>
+                              @if ($service_detail->discharge_image)
+                                 <img src="{{ asset('public/uploads/ex-images/'.$service_detail->discharge_image) }}" class="preview-img">
+                              @else
+                                 <span class="no-image-text">No image found</span>
+                              @endif
+                           </div>
+                        </div>
+                        <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
+                           <div class="upload-field">
+                              <label>PPO</label>
+                              <input type="file" name="ppo_image" class="form-control upload-input">
+                           </div>
+                           <div class="preview-box">
+                              <label class="preview-label">Uploaded PPO</label>
+                              @if ($service_detail->ppo_image)
+                                 <img src="{{ asset('public/uploads/ex-images/'.$service_detail->ppo_image) }}" class="preview-img">
+                              @else
+                                 <span class="no-image-text">No image found</span>
+                              @endif
+                           </div>
+                        </div>
+                        <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
+                           <div class="upload-field">
+                              <label>Bank Account</label>
+                              <input type="file" name="bank_image" class="form-control upload-input">
+                           </div>
+                           <div class="preview-box">
+                              <label class="preview-label">Uploaded Bank Account</label>
+                              @if ($service_detail->bank_image)
+                                 <img src="{{ asset('public/uploads/ex-images/'.$service_detail->bank_image) }}" class="preview-img">
+                              @else
+                                 <span class="no-image-text">No image found</span>
+                              @endif
+                           </div>
+                        </div>
+                     </div>
+                     <!--end photograph section-->
                   </div>
                      <!--Spouse Details-->
                      <div class="step-content d-none" id="step-3">
@@ -330,6 +375,20 @@
                            </div>
                            <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
                               <div class="upload-field">
+                                 <label>Joint Photograph</label>
+                                 <input type="file" name="spouse_joint_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box">
+                                 <label class="preview-label">Uploaded Joint Photograph</label>
+                                 @if ($service_detail->spouse_joint_image)
+                                    <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_joint_image) }}" class="preview-img">
+                                 @else 
+                                    <span class="no-image-text">No image found</span>
+                                 @endif
+                              </div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
+                              <div class="upload-field">
                                  <label>Aadhar Card</label>
                                  <input type="file" name="spouse_aadhar_image" class="form-control upload-input">
                               </div>
@@ -356,9 +415,50 @@
                                  @endif
                               </div>
                            </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
+                              <div class="upload-field">
+                                 <label>ECHS Card</label>
+                                 <input type="file" name="spouse_echs_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box">
+                                 <label class="preview-label">Uploaded ECHS Card</label>
+                                 @if ($service_detail->spouse_echs_image)
+                                    <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_echs_image) }}" class="preview-img">
+                                 @else
+                                    <span class="no-image-text">No image found</span>
+                                 @endif
+                              </div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
+                              <div class="upload-field">
+                                 <label>CSD Card</label>
+                                 <input type="file" name="spouse_csd_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box">
+                                 <label class="preview-label">Uploaded CSD Card</label>
+                                 @if ($service_detail->spouse_csd_image)
+                                    <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_csd_image) }}" class="preview-img">
+                                 @else
+                                    <span class="no-image-text">No image found</span>
+                                 @endif
+                              </div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
+                              <div class="upload-field">
+                                 <label>Bank Account</label>
+                                 <input type="file" name="spouse_bank_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box">
+                                 <label class="preview-label">Uploaded Bank Account</label>
+                                 @if ($service_detail->spouse_bank_image)
+                                    <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_bank_image) }}" class="preview-img">
+                                 @else
+                                    <span class="no-image-text">No image found</span>
+                                 @endif
+                              </div>
+                           </div>
                         </div>
                         <!--end photograph section-->
-
                        <table class="table table-bordered" id="childrenTable">
                            <thead class="table-light">
                               <tr>
