@@ -70,37 +70,16 @@
                               <div class="preview-box"></div>
                            </div>
                            <div class="col-md-12 mb-3 d-flex align-items-start">
-                              <div class="me-3" style="width: 31%;">
-                                 <label>Aadhar Card</label>
-                                 <input type="file" name="aadhar_image" class="form-control upload-input">
+                              <div class="me-3" style="width:31%;">
+                                 <label>ECHS Card</label>
+                                 <input type="file" name="echs_image" class="form-control upload-input">
                               </div>
                               <div class="preview-box"></div>
                            </div>
                            <div class="col-md-12 mb-3 d-flex align-items-start">
                               <div class="me-3" style="width:31%;">
-                                 <label>PAN Card</label>
-                                 <input type="file" name="pan_image" class="form-control upload-input">
-                              </div>
-                              <div class="preview-box"></div>
-                           </div>
-                           <div class="col-md-12 mb-3 d-flex align-items-start">
-                              <div class="me-3" style="width:31%;">
-                                 <label>Joint Photograph</label>
-                                 <input type="file" name="joint_image" class="form-control upload-input">
-                              </div>
-                              <div class="preview-box"></div>
-                           </div>
-                           <div class="col-md-12 mb-3 d-flex align-items-start">
-                              <div class="me-3" style="width:31%;">
-                                 <label>Discharge Book</label>
-                                 <input type="file" name="discharge_image" class="form-control upload-input">
-                              </div>
-                              <div class="preview-box"></div>
-                           </div>
-                           <div class="col-md-12 mb-3 d-flex align-items-start">
-                              <div class="me-3" style="width:31%;">
-                                 <label>PPO</label>
-                                 <input type="file" name="ppo_image" class="form-control upload-input">
+                                 <label>CSD Card</label>
+                                 <input type="file" name="csd_image" class="form-control upload-input">
                               </div>
                               <div class="preview-box"></div>
                            </div>
@@ -164,6 +143,52 @@
                               <input type="text" name="micr_code" class="form-control" value="{{ old('micr_code') }}" placeholder="Enter micr code">
                            </div>
                         </div>
+                         <!--Photograph section-->
+                        <div class="row">
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                              <div class="me-3" style="width:31%;">
+                                 <label>Joint Photograph</label>
+                                 <input type="file" name="joint_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                              <div class="me-3" style="width: 31%;">
+                                 <label>Aadhar Card</label>
+                                 <input type="file" name="aadhar_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                              <div class="me-3" style="width:31%;">
+                                 <label>PAN Card</label>
+                                 <input type="file" name="pan_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                              <div class="me-3" style="width:31%;">
+                                 <label>Discharge Book</label>
+                                 <input type="file" name="discharge_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                              <div class="me-3" style="width:31%;">
+                                 <label>PPO</label>
+                                 <input type="file" name="ppo_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                              <div class="me-3" style="width:31%;">
+                                 <label>Bank Account </label>
+                                 <input type="file" name="bank_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
+                           </div>
+                        </div>
+                        <!--End photograph section-->
                      </div>
                      <!--Spouse Details-->
                      <div class="step-content d-none" id="step-3">
@@ -228,6 +253,13 @@
                               <div class="preview-box"></div>
                            </div>
                            <div class="col-md-12 mb-3 d-flex align-items-start">
+                              <div class="me-3" style="width:31%;">
+                                 <label>Joint Photograph</label>
+                                 <input type="file" name="spouse_joint_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
                               <div class="me-3" style="width: 31%;">
                                  <label>Aadhar Card</label>
                                  <input type="file" name="spouse_aadhar_image" class="form-control upload-input">
@@ -238,6 +270,27 @@
                               <div class="me-3" style="width:31%;">
                                  <label>PAN Card</label>
                                  <input type="file" name="spouse_pan_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                              <div class="me-3" style="width:31%;">
+                                 <label>ECHS Card</label>
+                                 <input type="file" name="spouse_echs_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                              <div class="me-3" style="width:31%;">
+                                 <label>CSD Card</label>
+                                 <input type="file" name="spouse_csd_image" class="form-control upload-input">
+                              </div>
+                              <div class="preview-box"></div>
+                           </div>
+                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                              <div class="me-3" style="width:31%;">
+                                 <label>Bank Account</label>
+                                 <input type="file" name="spouse_bank_image" class="form-control upload-input">
                               </div>
                               <div class="preview-box"></div>
                            </div>

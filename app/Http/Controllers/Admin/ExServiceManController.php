@@ -78,6 +78,27 @@ class ExServiceManController extends Controller
             $person_ppo = time() . '_person_ppo_image.' . $file->getClientOriginalExtension();
             $file->move($folder, $person_ppo);
         }
+        //person echs image
+        $person_echs = "";
+        if ($request->hasFile('echs_image')) {
+            $file = $request->file('echs_image');
+            $person_echs = time() . '_person_echs_image.' . $file->getClientOriginalExtension();
+            $file->move($folder, $person_echs);
+        }
+        //person csd image
+        $person_csd = "";
+        if ($request->hasFile('csd_image')) {
+            $file = $request->file('csd_image');
+            $person_csd = time() . '_person_csd_image.' . $file->getClientOriginalExtension();
+            $file->move($folder, $person_csd);
+        }
+        //person babk mage
+        $person_bank = "";
+        if ($request->hasFile('bank_image')) {
+            $file = $request->file('bank_image');
+            $person_bank = time() . '_person_bank_image.' . $file->getClientOriginalExtension();
+            $file->move($folder, $person_bank);
+        }
         //spouse image
         $spouse_image = "";
         if ($request->hasFile('spouse_image')) {
@@ -99,26 +120,33 @@ class ExServiceManController extends Controller
             $spouse_pan = time() . '_spouse_pan_image.' . $file->getClientOriginalExtension();
             $file->move($folder, $spouse_pan);
         }
-        //window image
-        $window_image = "";
-        if ($request->hasFile('window_image')) {
-            $file = $request->file('window_image');
-            $window_image = time() . '_window.' . $file->getClientOriginalExtension();
-            $file->move($folder, $window_image);
+        //spouse joint
+        $spouse_joint = "";
+        if ($request->hasFile('spouse_joint_image')) {
+            $file = $request->file('spouse_joint_image');
+            $spouse_joint = time() . '_spouse_joint_image.' . $file->getClientOriginalExtension();
+            $file->move($folder, $spouse_joint);
         }
-        //window aadhar
-        $window_aadhar = "";
-        if ($request->hasFile('window_aadhar_image')) {
-            $file = $request->file('window_aadhar_image');
-            $window_aadhar = time() . '_window_aadhar_image.' . $file->getClientOriginalExtension();
-            $file->move($folder, $window_aadhar);
+        //spouse echs
+        $spouse_echs = "";
+        if ($request->hasFile('spouse_echs_image')) {
+            $file = $request->file('spouse_echs_image');
+            $spouse_echs = time() . '_spouse_echs_image.' . $file->getClientOriginalExtension();
+            $file->move($folder, $spouse_echs);
         }
-        //window pan
-        $window_pan = "";
-        if ($request->hasFile('window_pan_image')) {
-            $file = $request->file('window_pan_image');
-            $window_pan = time() . '_window_pan_image.' . $file->getClientOriginalExtension();
-            $file->move($folder, $window_pan);
+        //spouse csd
+        $spouse_csd = "";
+        if ($request->hasFile('spouse_csd_image')) {
+            $file = $request->file('spouse_csd_image');
+            $spouse_csd = time() . '_spouse_csd_image.' . $file->getClientOriginalExtension();
+            $file->move($folder, $spouse_csd);
+        }
+        //spouse bank
+        $spouse_bank = "";
+        if ($request->hasFile('spouse_bank_image')) {
+            $file = $request->file('spouse_bank_image');
+            $spouse_bank = time() . '_spouse_bank_image.' . $file->getClientOriginalExtension();
+            $file->move($folder, $spouse_bank);
         }
         //create record
         $is_create_record = ExServiceMan::create([
@@ -158,12 +186,6 @@ class ExServiceManController extends Controller
             'spouse_bank_name' => $request->spouse_bank_name,
             'spouse_ifsc_code' => $request->spouse_ifsc_code,
             'spouse_micr_code' => $request->spouse_micr_code,
-            //window 
-            'window_name' => $request->window_name,
-            'date_of_death' => $request->date_of_death,
-            //veer nari 
-            'veer_nari_name' => $request->veer_nari_name,
-            'veer_nari_expose_year' => $request->veer_nari_expose_year,
             //images
             'image' => $image,
             'aadhar_image' => $person_aadhar,
@@ -171,13 +193,17 @@ class ExServiceManController extends Controller
             'joint_image' => $person_joint,
             'discharge_image' => $person_discharge,
             'ppo_image' => $person_ppo,
+            'echs_image' => $person_echs,
+            'csd_image' => $person_csd,
+            'bank_image' => $person_bank,
 
             'spouse_image' => $spouse_image,
             'spouse_aadhar_image' => $spouse_aadhar,
             'spouse_pan_image' => $spouse_pan,
-            'window_image' => $window_image,
-            'window_aadhar_image' => $window_aadhar,
-            'window_pan_image' => $window_pan,
+            'spouse_joint_image' => $spouse_joint,
+            'spouse_echs_image' => $spouse_echs,
+            'spouse_csd_image' => $spouse_csd,
+            'spouse_bank_image' => $spouse_bank,
             'status' => 'Pending',
         ]);
         //Check if record created or not
@@ -242,13 +268,18 @@ class ExServiceManController extends Controller
         $person_discharge = handleImage($request, 'discharge_image', $service->discharge_image, 'person_discharge_image', $folder);
         $person_ppo = handleImage($request, 'ppo_image', $service->ppo_image, 'person_ppo_image', $folder);
 
+        $person_echs = handleImage($request, 'echs_image', $service->echs_image, 'person_echs_image', $folder);
+        $person_csd = handleImage($request, 'csd_image', $service->csd_image, 'person_csd_image', $folder);
+        $person_bank = handleImage($request, 'bank_image', $service->bank_image, 'person_bank_image', $folder);
+
         $spouse_image = handleImage($request, 'spouse_image', $service->spouse_image, 'spouse', $folder);
         $spouse_aadhar = handleImage($request, 'spouse_aadhar_image', $service->spouse_aadhar_image, 'spouse_aadhar_image', $folder);
         $spouse_pan = handleImage($request, 'spouse_pan_image', $service->spouse_pan_image, 'spouse_pan_image', $folder);
 
-        $window_image = handleImage($request, 'window_image', $service->window_image, 'window', $folder);
-        $window_aadhar = handleImage($request, 'window_aadhar_image', $service->window_aadhar_image, 'window_aadhar_image', $folder);
-        $window_pan = handleImage($request, 'window_pan_image', $service->window_pan_image, 'window_pan_image', $folder);
+        $spouse_joint = handleImage($request, 'spouse_joint_image', $service->spouse_joint_image, 'spouse_joint_image', $folder);
+        $spouse_echs = handleImage($request, 'spouse_echs_image', $service->spouse_echs_image, 'spouse', $folder);
+        $spouse_csd = handleImage($request, 'spouse_csd_image', $service->spouse_csd_image, 'spouse_csd_image', $folder);
+        $spouse_bank = handleImage($request, 'spouse_bank_image', $service->spouse_bank_image, 'spouse_bank_image', $folder);
 
         //Update Service
         $is_update_record = $service->update([
@@ -295,9 +326,17 @@ class ExServiceManController extends Controller
             'joint_image' => $person_joint,
             'discharge_image' => $person_discharge,
             'ppo_image' => $person_ppo,
+            'echs_image' => $person_echs,
+            'csd_image' => $person_csd,
+            'bank_image' => $person_bank,
+
             'spouse_image' => $spouse_image,
             'spouse_aadhar_image' => $spouse_aadhar,
             'spouse_pan_image' => $spouse_pan,
+            'spouse_joint_image' => $spouse_joint,
+            'spouse_echs_image' => $spouse_echs,
+            'spouse_csd_image' => $spouse_csd,
+            'spouse_bank_image' => $spouse_bank,
             'status' => 'Active',
         ]);
         // Update children

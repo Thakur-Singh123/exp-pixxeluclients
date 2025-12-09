@@ -188,41 +188,17 @@
                         @endif
                     </div>
                     <div>
-                        <strong>Aadhar Card:</strong><br>
-                        @if($service_detail->aadhar_image)
-                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->aadhar_image) }}" class="img-thumbnail">
+                        <strong>ECHS Card:</strong><br>
+                        @if($service_detail->echs_image)
+                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->echs_image) }}" class="img-thumbnail">
                         @else
                             -
                         @endif
                     </div>
                     <div>
-                        <strong>Pan Card:</strong><br>
-                        @if($service_detail->pan_image)
-                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->pan_image) }}" class="img-thumbnail">
-                        @else 
-                            -
-                        @endif
-                    </div>
-                    <div>
-                        <strong>Joint Photograph:</strong><br>
-                        @if($service_detail->joint_image)
-                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->joint_image) }}" class="img-thumbnail">
-                        @else 
-                            -
-                        @endif
-                    </div>
-                    <div>
-                        <strong>Discharge Book:</strong><br>
-                        @if($service_detail->discharge_image)
-                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->discharge_image) }}" class="img-thumbnail">
-                        @else 
-                            -
-                        @endif
-                    </div>
-                    <div>
-                        <strong>PPO:</strong><br>
-                        @if($service_detail->ppo_image)
-                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->ppo_image) }}" class="img-thumbnail">
+                        <strong>CSD Card:</strong><br>
+                        @if($service_detail->csd_image)
+                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->csd_image) }}" class="img-thumbnail">
                         @else 
                             -
                         @endif
@@ -248,6 +224,56 @@
                     <div class="detail-item"><strong>Bank Name:</strong> {{ $service_detail->bank_name ?? '-' }}</div>
                     <div class="detail-item"><strong>IFSC Code:</strong> {{ $service_detail->ifsc_code ?? '-' }}</div>
                     <div class="detail-item"><strong>MICR Code:</strong> {{ $service_detail->micr_code ?? '-' }}</div>
+                </div>
+                 <div class="mt-4 d-flex">
+                    <div>
+                        <strong>Joint Photograph:</strong><br>
+                        @if($service_detail->joint_image)
+                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->joint_image) }}" class="img-thumbnail">
+                        @else
+                            -
+                        @endif
+                    </div>
+                    <div>
+                        <strong>Aadhar Card:</strong><br>
+                        @if($service_detail->aadhar_image)
+                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->aadhar_image) }}" class="img-thumbnail">
+                        @else
+                            -
+                        @endif
+                    </div>
+                    <div>
+                        <strong>Pan Card:</strong><br>
+                        @if($service_detail->pan_image)
+                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->pan_image) }}" class="img-thumbnail">
+                        @else 
+                            -
+                        @endif
+                    </div>
+                    <div>
+                        <strong>Discharge Book:</strong><br>
+                        @if($service_detail->discharge_image)
+                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->discharge_image) }}" class="img-thumbnail">
+                        @else 
+                            -
+                        @endif
+                    </div>
+                    <div>
+                        <strong>PPO:</strong><br>
+                        @if($service_detail->ppo_image)
+                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->ppo_image) }}" class="img-thumbnail">
+                        @else 
+                            -
+                        @endif
+                    </div>
+                    <div>
+                        <strong>Bank Account:</strong><br>
+                        @if($service_detail->bank_image)
+                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->bank_image) }}" class="img-thumbnail">
+                        @else 
+                            -
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
@@ -280,6 +306,14 @@
                         @endif
                     </div>
                     <div>
+                        <strong>Joint Photograph:</strong><br>
+                        @if($service_detail->spouse_joint_image)
+                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_joint_image) }}" class="img-thumbnail">
+                        @else
+                            -
+                        @endif
+                    </div>
+                    <div>
                         <strong>Aadhar Card:</strong><br>
                         @if($service_detail->spouse_aadhar_image)
                             <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_aadhar_image) }}" class="img-thumbnail">
@@ -291,6 +325,30 @@
                         <strong>Pan Card:</strong><br>
                         @if($service_detail->spouse_pan_image)
                             <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_pan_image) }}" class="img-thumbnail">
+                        @else 
+                            -
+                        @endif
+                    </div>
+                    <div>
+                        <strong>ECHS Card:</strong><br>
+                        @if($service_detail->spouse_echs_image)
+                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_echs_image) }}" class="img-thumbnail">
+                        @else 
+                            -
+                        @endif
+                    </div>
+                    <div>
+                        <strong>CSD Card:</strong><br>
+                        @if($service_detail->spouse_csd_image)
+                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_csd_image) }}" class="img-thumbnail">
+                        @else 
+                            -
+                        @endif
+                    </div>
+                    <div>
+                        <strong>Bank Account:</strong><br>
+                        @if($service_detail->spouse_bank_image)
+                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_bank_image) }}" class="img-thumbnail">
                         @else 
                             -
                         @endif
