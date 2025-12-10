@@ -3,7 +3,7 @@
 <div class="container">
     <div class="hero-about">
         <div class="about-image">
-            <img src="https://indianewsdiary.com/wp-content/uploads/2024/06/1J5A28744AKZ.jpg"
+            <img src="public/admin/images/award.jpg"
                 alt="GENERAL MANOJ PANDE, PVSM, AVSM, VSM, ADC">
         </div>
         <h3 class="title mt-0 mb-10 text-uppercase text-center">
@@ -16,9 +16,6 @@
                 1st Nov to 30th Nov every year! The dependency of ESM of this HQ is 10815 approx.</p>
         </div>
 
-    </div>
-    <div class="back-btn">
-        <a href="{{ url('/') }}">Back</a>
     </div>
 </div>
 

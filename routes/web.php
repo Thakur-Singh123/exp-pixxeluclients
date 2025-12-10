@@ -16,6 +16,11 @@ Route::get('forms', [App\Http\Controllers\FrontController::class, 'jobs']);
 Route::get('outreach', [App\Http\Controllers\FrontController::class, 'outreach']);
 Route::get('doc', [App\Http\Controllers\FrontController::class, 'doc']);
 Route::get('Baatcheet', [App\Http\Controllers\FrontController::class, 'Baatcheet']);
+Route::get('funeral', [App\Http\Controllers\FrontController::class, 'funeral']);
+Route::get('echs', [App\Http\Controllers\FrontController::class, 'echs']);
+Route::get('canteen', [App\Http\Controllers\FrontController::class, 'canteen']);
+Route::get('awpo', [App\Http\Controllers\FrontController::class, 'awpo']);
+Route::get('rallies', [App\Http\Controllers\FrontController::class, 'rallies']);
 
 //Middlewares
 Route::group(['middleware' => 'auth'], function() { 
