@@ -122,12 +122,6 @@ class FrontController extends Controller
         return view('fronts.awpo');
     }
 
-    //Function for rallies
-    public function rallies()
-    {
-        return view('fronts.rallies');
-    }
-
     //Function for Baatcheet
     public function baatcheet()
     {

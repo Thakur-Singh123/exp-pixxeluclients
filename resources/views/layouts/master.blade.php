@@ -9,6 +9,7 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('public/admin/assets/css/slider.css')  }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -69,12 +70,7 @@
                 </li>
 
                 <li class="tab {{ request()->is('awpo') ? 'active' : '' }}">
-                    <a href="{{ url('awpo') }}">AWPO Bulletin</a>
-                </li>
-
-
-                <li class="tab {{ request()->is('rallies') ? 'active' : '' }}">
-                    <a href="{{ url('rallies') }}">ESM Rallies</a>
+                    <a href="{{ url('awpo') }}">AWPO Bulletin/ESM Rally</a>
                 </li>
 
                 <li class="tab {{ request()->is('Baatcheet') ? 'active' : '' }}">
@@ -107,6 +103,7 @@
     </section>
     @yield('content')
     <!-- end marquee section -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('public/admin/assets/js/slider-jquery.js')  }}"></script>
     <script src="{{ asset('public/admin/assets/js/slider-jquery-min.js')  }}"></script>
     <script src="{{ asset('public/admin/assets/js/pdf.js')  }}"></script>
