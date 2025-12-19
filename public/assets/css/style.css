@@ -120,6 +120,20 @@
     background: #e7ffe7;
 }
 
+.rally-card img {
+    transition: transform 0.3s ease;
+}
+.rally-card img:hover {
+    transform: scale(1.05);
+}
+
+.rally-card img {
+    height: 160px;
+    object-fit: cover;
+    width: 100%;
+}
+
+
 
 /* outreach page css */
 

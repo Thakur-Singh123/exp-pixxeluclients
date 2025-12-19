@@ -30,6 +30,46 @@
                 <strong>5 December 2025</strong>. The Job Rally was successfully conducted in Jammu on 05 December 2025. Eligible candidates from various districts participated in the recruitment process.
             </p>
         </div>
+
+
+        <!-- RALLY IMAGES -->
+            <div class="row g-3 mt-3">
+
+                <div class="col-6 col-md-3">
+                    <img src="public/admin/images/rally-1.jpeg" class="img-fluid rounded" alt="Rally image 1">
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <img src="public/admin/images/rally-2.jpeg" class="img-fluid rounded" alt="Rally image 2">
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <img src="public/admin/images/rally-3.jpeg" class="img-fluid rounded" alt="Rally image 3">
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <img src="public/admin/images/rally-4.jpeg" class="img-fluid rounded" alt="Rally image 4">
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <img src="public/admin/images/rally-5.jpeg" class="img-fluid rounded" alt="Rally image 5">
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <img src="public/admin/images/rally-6.jpeg" class="img-fluid rounded" alt="Rally image 6">
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <img src="public/admin/images/rally-7.jpeg" class="img-fluid rounded" alt="Rally image 7">
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <img src="public/admin/images/rally-8.jpeg" class="img-fluid rounded" alt="Rally image 8">
+                </div>
+
+            </div>
+            <!-- END IMAGES -->
+
     </div>
 </div>
 
