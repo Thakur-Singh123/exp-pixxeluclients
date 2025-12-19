@@ -1,76 +1,160 @@
 @extends('layouts.master')
 @section('content')
+<style>
+.card-1 {
+    width: 50%;
+    margin: 0 auto;
+}
+</style>
 
+<ul class="nav nav-tabs" id="pdfTabs" role="tablist">
 
-<!-- ECHS Title -->
-<div class="container">
-    <h1 style="font-size:70px; font-weight:900; color:#cc0000;">ECHS</h1>
+    <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab1"
+            data-pdf="public/admin/images/cont emp.pdf">
+            Contractual EMP
+        </button>
+    </li>
 
-    <!-- ONLINE FACILITIES SECTION -->
-    <div class="text-center mt-5">
-        <div class="online-circle">Online<br>Facilities</div>
-    </div>
+    <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab2"
+            data-pdf="public/admin/images/Medicine In Polyclinic.pdf">
+            Medicine In Polyclinic
+        </button>
+    </li>
 
-    <div class="facility-line mt-3"></div>
+    <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab3"
+            data-pdf="public/admin/images/advisory.pdf">
+            Advisory
+        </button>
+    </li>
 
-    <div class="d-flex justify-content-between text-center facility-wrap mt-2">
-        <div class="facility-box">Change Polyclinic</div>
-        <div class="facility-box">Change in Mob No of Dependents</div>
-        <div class="facility-box">Data Amendment</div>
-        <div class="facility-box">Card Management</div>
-        <div class="facility-box">Claim Processing</div>
-    </div>
+    <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab4"
+            data-pdf="public/admin/images/empaneled.pdf">
+            Empaneled Hospitals
+        </button>
+    </li>
 
-    <!-- RECENT INITIATIVES -->
-    <h4 class="mt-5"><b>Recent Initiatives</b></h4>
+</ul>
 
-    <ul style="line-height: 30px; font-size: 17px;">
-        <li>23 New Polyclinics have been sanctioned and 50 upgraded in 2024.</li>
-        <li>Enhanced Common Drug List implemented to ensure availability of medicines.</li>
-        <li>AIIMS Bhopal, Raipur, Allahabad, Hyderabad, Gorakhpur empanelled last year.</li>
-        <li>Upgraded Mobile App designed and developed by ECHS launched.</li>
-        <li>E-SeHAT software being developed for telemedicine consultation.</li>
-        <li>Medicine delivery through Authorised Local Chemist (ALC) under process.</li>
-    </ul>
+<div class="tab-content mt-4">
 
-    <!-- TREATMENT PROCEDURE SECTION -->
-    <div class="text-center mt-5">
-        <h3 class="fw-bold">TREATMENT PROCEDURE</h3>
-    </div>
+    @for ($i = 1; $i <= 4; $i++) <div class="tab-pane fade {{ $i == 1 ? 'show active' : '' }}" id="tab{{ $i }}">
+        <div class="card-1 p-3">
 
-    <div class="procedure-container">
+            <div class="d-flex gap-2 mb-2">
+                <button class="btn btn-sm btn-secondary prev">Prev</button>
+                <button class="btn btn-sm btn-secondary next">Next</button>
 
-        <!-- 01 -->
-        <div class="circle-box">
-            <div class="circle circle-red">01</div>
-            <h5 class="mt-2">Routine</h5>
-            <p>Treatment at Polyclinic</p>
+                <span class="align-self-center">
+                    Page <span class="page-num">1</span> /
+                    <span class="page-count">--</span>
+                </span>
+
+                <button class="btn btn-sm btn-secondary zoom-out">−</button>
+                <button class="btn btn-sm btn-secondary zoom-in">+</button>
+
+                <a class="btn btn-sm btn-primary download" download>Download</a>
+            </div>
+
+            <div class="text-center">
+                <canvas class="pdf-canvas"></canvas>
+            </div>
+
         </div>
+</div>
+@endfor
 
-        <!-- 02 -->
-        <div class="circle-box">
-            <div class="circle circle-blue">02</div>
-            <h5 class="mt-2">Specialist Treatment</h5>
-            <p>Service / Empanelled Hospital after referral from PC</p>
-            <small class="text-primary d-block">Referral exempted above 70 yrs</small>
-        </div>
-
-        <!-- 03 -->
-        <div class="circle-box">
-            <div class="circle circle-orange">03</div>
-            <h5 class="mt-2">Emergency Treatment</h5>
-            <p>At Empanelled Hospital — no payment</p>
-        </div>
-
-        <!-- 04 -->
-        <div class="circle-box">
-            <div class="circle circle-green">04</div>
-            <h5 class="mt-2">Emergency Treatment</h5>
-            <p>At Non-Empanelled Hospital — pay & reimburse</p>
-        </div>
-
-    </div>
 </div>
 
+<script src="{{ asset('public/admin/assets/js/pdf.js') }}"></script>
+<script src="{{ asset('public/admin/assets/js/pdf-worker.js') }}"></script>
+
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+    "{{ asset('public/admin/assets/js/pdf-worker.js') }}";
+
+let pdfDoc = null;
+let pageNum = 1;
+let scale = 1.2;
+let currentCanvas, currentTab;
+
+function renderPage() {
+    pdfDoc.getPage(pageNum).then(page => {
+        const viewport = page.getViewport({
+            scale
+        });
+        const ctx = currentCanvas.getContext('2d');
+
+        currentCanvas.width = viewport.width;
+        currentCanvas.height = viewport.height;
+
+        page.render({
+            canvasContext: ctx,
+            viewport
+        });
+        currentTab.querySelector('.page-num').textContent = pageNum;
+    });
+}
+
+function loadPDF(tab, url) {
+    currentTab = tab;
+    currentCanvas = tab.querySelector('.pdf-canvas');
+    pageNum = 1;
+    scale = 1.2;
+
+    pdfjsLib.getDocument(url).promise.then(pdf => {
+        pdfDoc = pdf;
+        tab.querySelector('.page-count').textContent = pdf.numPages;
+        tab.querySelector('.download').href = url;
+        renderPage();
+    });
+}
+
+// Toolbar actions
+document.querySelectorAll('.tab-pane').forEach(tab => {
+
+    tab.querySelector('.prev').onclick = () => {
+        if (pageNum > 1) {
+            pageNum--;
+            renderPage();
+        }
+    };
+
+    tab.querySelector('.next').onclick = () => {
+        if (pageNum < pdfDoc.numPages) {
+            pageNum++;
+            renderPage();
+        }
+    };
+
+    tab.querySelector('.zoom-in').onclick = () => {
+        scale += 0.2;
+        renderPage();
+    };
+
+    tab.querySelector('.zoom-out').onclick = () => {
+        scale = Math.max(scale - 0.2, 0.5);
+        renderPage();
+    };
+
+});
+
+// Tab change event
+document.querySelectorAll('[data-bs-toggle="tab"]').forEach(tabBtn => {
+    tabBtn.addEventListener('shown.bs.tab', function() {
+        const target = document.querySelector(this.dataset.bsTarget);
+        loadPDF(target, this.getAttribute('data-pdf'));
+    });
+});
+
+// Load first tab by default
+loadPDF(
+    document.querySelector('.tab-pane.show.active'),
+    document.querySelector('.nav-link.active').getAttribute('data-pdf')
+);
+</script>
 
 @endsection
