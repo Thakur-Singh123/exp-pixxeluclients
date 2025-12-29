@@ -36,6 +36,17 @@
 
     <!-- ADLRS TAB -->
     <div class="tab-pane fade show active" id="adlrs" role="tabpanel" aria-labelledby="adlrs-tab">
+        <div class="main-adlrs">
+            <span class="adlrs-content">
+                As per Army Headquarter letter number B/45322/AG/ADLRS/R&W-4 dated 8 july 2016. On behalf of (COAS)
+                ADLRs
+                ceremony is being organised and RS; 10000 is being paid to NOK on death of EMS. The following document
+                to be
+                produced are grant of ADLRs: Copy of discharge Book 2. Copy of PPO 3. Copy of Death certificate 4. Copy
+                of
+                Addhar card 5. Copy of bankers details of NOK 6. copy of CSD cards both (Liq and Gross)
+            </span>
+        </div>
         <!-- TABLE SECTION -->
         <div class="table-box">
 
@@ -59,7 +70,7 @@
                 <thead>
                     <tr>
                         <th>Sr.No</th>
-                        <th>Financial year</th>
+                        <th>Current year</th>
                         <th>NOK</th>
                         <th>Number of Amount</th>
                     </tr>
@@ -80,6 +91,14 @@
 
     <!-- DEMISE TAB -->
     <div class="tab-pane fade" id="demise" role="tabpanel" aria-labelledby="demise-tab">
+
+        <div class="main-adlrs">
+            <span class="adlrs-content">
+                The following document are required for payment of demised Grant: 1. Personal Application 2.Copy of
+                discharge Book 3. Copy of PPO 4. Copy of Death certificate 5. Copy of Addhar card 6. Copy of bankers
+                details of NOK.
+            </span>
+        </div>
         <!-- TABLE SECTION -->
         <div class="table-box">
 
@@ -114,7 +133,7 @@
                         <td>1.</td>
                         <td>2025-26</td>
                         <td>207</td>
-                        <td>14,49,000</td>
+                        <td>14,28,000</td>
                     </tr>
                 </tbody>
             </table>

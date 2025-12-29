@@ -186,6 +186,19 @@
   outline-offset: 2px;
 }
 
+.main-adlrs {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 22px;
+}
+span.outreach-content {
+    font-size: 22px;
+}
+
+.main-outreach{
+    margin-top: 40px;
+}
 
 
 /* outreach page css */
