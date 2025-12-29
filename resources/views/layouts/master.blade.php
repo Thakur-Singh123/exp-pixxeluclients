@@ -9,7 +9,7 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('public/admin/assets/css/slider.css')  }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('public/assets/css/bootstrap.min.css')  }}" rel="stylesheet">
 </head>
 
 <body>
@@ -91,6 +91,12 @@
             </ul>
 
         </nav>
+
+        <div class="text-size-controls">
+            <button id="font-small" aria-label="Decrease text size">A−</button>
+            <button id="font-normal" aria-label="Reset text size">A</button>
+            <button id="font-large" aria-label="Increase text size">A+</button>
+        </div>
     </header>
     <!-- marquee section -->
     <section class="upper-marquee-line">
@@ -103,11 +109,49 @@
     </section>
     @yield('content')
     <!-- end marquee section -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('public/assets/js/bootstrap.min.js')  }}"></script>
     <script src="{{ asset('public/admin/assets/js/slider-jquery.js')  }}"></script>
     <script src="{{ asset('public/admin/assets/js/slider-jquery-min.js')  }}"></script>
     <script src="{{ asset('public/admin/assets/js/pdf.js')  }}"></script>
     <script src="{{ asset('public/assets/js/custom.js')  }}"></script>
+
+
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    const root = document.documentElement;
+
+    let fontSize = localStorage.getItem('fontSize')
+        ? parseInt(localStorage.getItem('fontSize'))
+        : 16;
+
+    root.style.fontSize = fontSize + 'px';
+
+    document.getElementById('font-small').addEventListener('click', function () {
+        if (fontSize > 14) {
+            fontSize -= 2;
+            root.style.fontSize = fontSize + 'px';
+            localStorage.setItem('fontSize', fontSize);
+        }
+    });
+
+    document.getElementById('font-large').addEventListener('click', function () {
+        if (fontSize < 26) {
+            fontSize += 2;
+            root.style.fontSize = fontSize + 'px';
+            localStorage.setItem('fontSize', fontSize);
+        }
+    });
+
+    document.getElementById('font-normal').addEventListener('click', function () {
+        fontSize = 16;
+        root.style.fontSize = fontSize + 'px';
+        localStorage.setItem('fontSize', fontSize);
+    });
+
+});
+</script>
+
 </body>
 
 </html>

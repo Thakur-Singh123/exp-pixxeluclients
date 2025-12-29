@@ -356,6 +356,7 @@
                 </div>
             </div>
             <div class="table-responsive">
+                <h2>CHILDREN DETAILS</h2>
                 <table class="table table-bordered" id="childrenTable">
                     <thead class="table-light">
                         <tr>
