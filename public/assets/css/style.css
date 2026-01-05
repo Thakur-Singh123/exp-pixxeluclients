@@ -200,6 +200,80 @@ span.outreach-content {
     margin-top: 40px;
 }
 
+.org-chart {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    border: 1px solid #000;
+    border-radius: 9px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+button.view-pdf-01 {
+    background: #f39c12;
+    border: 1px solid #f39c12;
+}
+
+.org-box-1 {
+    text-align: left;
+    width: 50%;
+}
+.org-main-heading h2 {
+    text-decoration: none;
+    font-size: 45px;
+    padding-bottom: 25px;
+}
+
+.org-box {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 1px solid #000;
+    margin: 6px 0;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.org-sub {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.arrow {
+    font-size: 18px;
+    margin: 4px 0;
+}
+
+.split {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    margin: 10px 0;
+}
+
+.org-box-1 h4 {
+    text-align: center;
+    font-weight: 600;
+}
+
+.content-detail {
+    border: 1px solid #000;
+    border-radius: 9px;
+    padding: 40px;
+    margin: 0 0 30px;
+}
+h2.content-heading {
+    font-size: 35px;
+    margin: 0 0 35px;
+}
+.location-details p {
+    font-size: 19px;
+}
+.location-details p strong {
+    font-size: 22px;
+}
+.location-details p a {
+    color: #000;
+}
 
 /* outreach page css */
 
