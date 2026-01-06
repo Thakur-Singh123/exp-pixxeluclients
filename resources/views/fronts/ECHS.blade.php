@@ -67,7 +67,10 @@
 </div>
 @endfor
 
+
+
 </div>
+
 
 <script src="{{ asset('public/admin/assets/js/pdf.js') }}"></script>
 <script src="{{ asset('public/admin/assets/js/pdf-worker.js') }}"></script>
