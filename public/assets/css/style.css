@@ -11,6 +11,7 @@
             .center-small-logo{width:120px}
             .center-small-logo-1{width:120px}
             .title{font-size:22px;font-weight:700;margin:5px 0;text-align: center;}
+            .title-1{font-size:22px;font-weight:700;margin:5px 0;text-align: center;}
             .tagline{font-size:17px;margin-top:-4px;letter-spacing:.4px;text-transform: uppercase;}
             .nav-bar{background:#fff}
             .nav-bar ul{list-style:none;margin:0;padding:0;display:flex;justify-content:center;align-items: center;gap: 14px;}
@@ -26,10 +27,21 @@
             .center-content img.center-small-logo-1{position:absolute;right:16%}
             .marquee-line-text{background:#004000}
             .marquee-line-text marquee{padding:5px 0 0}
-            .about-image {max-width: 95px;margin: 5px auto;height: 115px;}
-            .about-image img {width: 130px;position: relative;right: 18px;}
+            .about-image {max-width: 40%;margin: 20px auto;height: 100%;}
+           .about-image-1 {
+    max-width: 165px;
+    margin: 5px auto;
+    height: 185px;
+}
+            .about-image img {width: 100%;}
+            .about-image-1 img {
+    width: 210px;
+    position: relative;
+    right: 18px;
+}
             .main-hero-flex {display: flex;max-height: 1px;}
-            .hero-about {width: 31% !important;}
+            .hero-about {width: 100% !important;}
+            .hero-about-1 {width: 31% !important;}
             .hero-sec-image {width: 50%;}
             .hero-sec-image img {width: 100%;}
             .search-box {width: 280px;display: flex;align-items: center;background: #fff;border: 1px solid #ccc;overflow: hidden;margin: 7px 14px;}
@@ -43,17 +55,20 @@
             .m-0{margin:0}
             p.tagline span {font-size: 19px;}
             .font-16{font-size:16px}
-            .main-cll-news-scroll{background:#004000;padding:10px;height: 628px;}
+            .main-cll-news-scroll{background:#004000;padding:10px;height: 654px;}
             .news-scroll{height: 630px;;overflow:hidden}
             .newslabel{color:#fff;font-weight:700}
             .preview_pdf{color:#fff;text-decoration:none;cursor:pointer}
             .preview_pdf:hover{text-decoration:underline}
             .main-cll-news-scroll ul{list-style:none;margin:0;padding:0}
             .main-cll-news-scroll ul li{margin-bottom:10px}
-            .dis-message p {line-height: 25px;font-size: 16px;font-family: sans-serif;padding: 0 25px;text-align: center;}
-            span.cosa-msg {color: #f19000;font-size: 24px;}
+            .dis-message p {line-height: 29px;font-size: 24px;font-family: sans-serif;padding: 0 25px;text-align: center;}
+            .dis-message-1 p {line-height: 25px;font-size: 16px;font-family: sans-serif;padding: 0 25px;text-align: center;}
+            span.cosa-msg {color: #f19000;font-size: 39px;}
+            span.cosa-msg-1 {color: #f19000;font-size: 24px;}
             .hero-sec-image img {height: 536px;object-fit: cover;}
-            .hero-slider img {width: 100%;height: 686px;}
+            .hero-slider img {width: 100%;height: 694px;}
+            table.popamij {width: 90%;margin: 15px auto 0;}
             .hero-slider {width: 35%;}
             ul.slick-dots {bottom: 0 !important;top: 0;display: none !important;}
             .pdf-toolbar { display:flex; gap:8px; align-items:center; margin-bottom:10px; }
@@ -77,7 +92,23 @@
     text-decoration: none;
     padding: 6px 12px;
     display: block;
+    font-size: 20px;
+    font-weight: 700;
 }
+.font-controls button {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.font-controls button:hover {
+    background: #333;
+}
+
 
 /* ACTIVE TAB = SAME ORANGE AS VSK LOGIN ( #f39c12 ) */
 .tabs .tab.active a {
@@ -97,3 +128,210 @@
 .vsk-login a:hover {
     background: #e7ffe7;
 }
+
+.rally-card img {
+    transition: transform 0.3s ease;
+}
+.rally-card img:hover {
+    transform: scale(1.05);
+}
+
+.rally-card img {
+    height: 160px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.funeral-gallery img {
+    filter: grayscale(20%);
+    border-radius: 6px;
+}
+
+.funeral-gallery {
+    width: 95%;
+    margin: 48px auto;
+}
+
+.funeral-gallery img.img-fluid {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.text-size-controls {
+    display: flex;
+    gap: 6px;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+
+.text-size-controls button {
+  border: 1px solid #cfcfcf;
+  background: #ffffff;
+  color: #222;
+  padding: 4px 8px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.text-size-controls button:hover {
+  background: #f2f2f2;
+}
+
+.text-size-controls button:focus {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
+}
+
+.main-adlrs {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 22px;
+}
+span.outreach-content {
+    font-size: 22px;
+}
+
+.main-outreach{
+    margin-top: 40px;
+}
+
+.org-chart {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    border: 1px solid #000;
+    border-radius: 9px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+button.view-pdf-01 {
+    background: #f39c12;
+    border: 1px solid #f39c12;
+}
+
+.org-box-1 {
+    text-align: left;
+    width: 50%;
+}
+.org-main-heading h2 {
+    text-decoration: none;
+    font-size: 45px;
+    padding-bottom: 25px;
+}
+
+.org-box {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 1px solid #000;
+    margin: 6px 0;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.org-sub {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.arrow {
+    font-size: 18px;
+    margin: 4px 0;
+}
+
+.split {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    margin: 10px 0;
+}
+
+.org-box-1 h4 {
+    text-align: center;
+    font-weight: 600;
+}
+
+.content-detail {
+    border: 1px solid #000;
+    border-radius: 9px;
+    padding: 40px;
+    margin: 0 0 30px;
+}
+h2.content-heading {
+    font-size: 35px;
+    margin: 0 0 35px;
+}
+.location-details p {
+    font-size: 19px;
+}
+.location-details p strong {
+    font-size: 22px;
+}
+.location-details p a {
+    color: #000;
+}
+
+/* outreach page css */
+
+.my-gallery {display: grid;grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));gap: 1.5rem;padding: 20px;}
+.gallery-item {overflow: hidden;border-radius: 12px;}
+.gallery-item img {width: 100%;height: 100%;object-fit: cover;transition: 0.3s ease;cursor: pointer;}
+.gallery-item img:hover {transform: scale(1.08);}
+
+
+
+.top-right{position:absolute;right:30px;top:18px;display:flex;gap:20px}
+.top-right a{color:#fff;font-size:15px;text-decoration:none}h2{text-align:center;margin-top:40px;font-size:32px;letter-spacing:1px;text-decoration:underline;font-weight:700;color:#111}
+.table-box{width:95%;margin:30px auto;background:#fff;padding:20px;border:1px solid #ccc;border-radius:8px}
+.table-controls{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}select,input{padding:6px 10px;border:1px solid #ccc;border-radius:5px}table{width:100%;border-collapse:collapse;margin-top:15px;text-align:left;font-size:15px}th{background:#4d5a23;color:#fff;padding:12px}td{background:#f7f7f7;padding:12px;border-bottom:1px solid #ddd}
+.action-btn{font-size:20px;color:#0048ff;cursor:pointer}
+.custom-tabs{display:flex;gap:20px;border-bottom:2px solid #e0e0e0;margin:20px 0;padding:0}
+.custom-tabs .tab-item{list-style:none;padding-bottom:10px}
+.custom-tabs .tab-item a{text-decoration:none;font-weight:600;color:#555;padding:10px 0;display:inline-block}
+.custom-tabs .tab-item.active{border-bottom:3px solid #2c5be3}
+.custom-tabs .tab-item.active a{color:#2c5be3}
+.custom-tabs .tab-item a:hover{color:#2c5be3}
+.nav-tabs .nav-link {font-weight: 600;color: #444;}
+.nav-tabs .nav-link.active {color: #0d6efd;border-color: #0d6efd #0d6efd #fff;}
+
+.section-box{background:#fff;padding:25px;border-radius:10px;margin-bottom:25px;border:1px solid #e4e4e4}
+.section-title{font-size:22px;font-weight:700;margin-bottom:15px;color:#2c3e50;border-left:5px solid #4CAF50;padding-left:10px}
+.sub-title{font-weight:600;color:#c0392b;margin-top:20px;text-decoration:underline}
+table{width:100%}
+td{padding:8px}
+.afd-table td{border-bottom:1px solid #e8e8e8}
+.canteen {width: 50%;}
+.main-section-box {display: flex;gap: 25px;}
+
+/* from page css */
+
+
+.pdf-toolbar { display:flex; gap:8px; align-items:center; margin:30px; }
+.pdf-container { width: 100%; max-width: 1100px; margin: 0 auto; background:#f6f6f6; padding:12px; border-radius:8px; }
+canvas {width: 100%;height: fit-content;display: block;object-fit: cover;}
+button { padding:6px 10px; border-radius:6px; border:1px solid #ddd; background:#fff; cursor:pointer; }
+a#download { margin-left:auto; color:#007bff; text-decoration:none; }
+.main-pdf {padding: 0 25px;}
+.back-btn {text-align: center;margin-top: 25px;}
+.back-btn a {color: #333;text-decoration: none;font-size: 23px;background: #f19000;padding: 10px 30px;border-radius: 10px;}
+
+.section-box-1{background:#fff;padding:25px;border-radius:10px;margin-bottom:25px;border:1px solid #e5e5e5}
+.section-title-1{font-size:24px;font-weight:700;color:#1a3c6e;margin-bottom:20px;border-left:5px solid #4CAF50;padding-left:12px}
+.rally-date-badge{background:#4CAF50;color:#fff;padding:6px 15px;border-radius:30px;font-weight:600;font-size:14px;display:inline-block;margin-bottom:15px}.rally-card{background:#fafcff;padding:20px;border-radius:10px;border:1px solid #e0e6f1;margin-bottom:20px}
+.rally-heading{font-size:18px;font-weight:700;color:#2c3e50;margin-bottom:5px}
+.rally-info{font-size:15px;color:#555;line-height:1.6}
+.online-circle{width:120px;height:120px;background:#ffb100;border-radius:50%;display:flex;justify-content:center;align-items:center;text-align:center;font-weight:700;font-size:18px;color:#fff;margin:auto}
+.facility-line{width:100%;height:3px;background:#d88c00}
+.facility-wrap{padding:0 30px}
+.facility-box{background:#ffe666;padding:10px 16px;border-radius:8px;font-weight:600;border:1px solid #d4b000}
+.procedure-container{display:flex;justify-content:space-around;flex-wrap:wrap;margin-top:40px}
+.circle-box{width:22%;background:#fff;padding:10px;text-align:center}
+.circle{width:75px;height:75px;border-radius:50%;font-size:24px;color:#fff;display:flex;justify-content:center;align-items:center;margin:auto;font-weight:700}
+.circle-red{background:#d62828}
+.circle-blue{background:#0077c8}
+.circle-orange{background:#ff8800}
+.circle-green{background:#3cb043}

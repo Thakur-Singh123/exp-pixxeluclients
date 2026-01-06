@@ -3,22 +3,70 @@
 <div class="container">
     <div class="hero-about">
         <div class="about-image">
-            <img src="https://indianewsdiary.com/wp-content/uploads/2024/06/1J5A28744AKZ.jpg"
-                alt="GENERAL MANOJ PANDE, PVSM, AVSM, VSM, ADC">
+            <img src="public/admin/images/award.jpg" alt="GENERAL MANOJ PANDE, PVSM, AVSM, VSM, ADC">
         </div>
         <h3 class="title mt-0 mb-10 text-uppercase text-center">
-            <span class="cosa-msg">Brief History</span>
+            <span class="cosa-msg">History</span>
         </h3>
         <div class="dis-message">
-            <p>Under the auth of HQ 21 Sub Area SOP No 2010/A4 dt 24 Mar 17, Veteran Sahayta Kendra (VSK) was est at Stn
-                HQ Dharamsala wef 17 Jul 2017 for registration of veterans and also addressing issues related to welfare
-                of ESM including grievances, pension anomalies and other issues etc. Life certificate will be updated on
-                1st Nov to 30th Nov every year! The dependency of ESM of this HQ is 10815 approx.</p>
+            <p>Under the authority of headquarter 21 sub area SOP no. 2010/A4 date 24 March2017, Veteran Sahayta Kendra
+                was established at station headquarters Dharamshala with effect from 17July2017, for registration of
+                veteran and also addressing issues related to welfare of ESM/Widow/Virnari including girvensiros,
+                pension anomalies and other issues!</p>
         </div>
 
-    </div>
-    <div class="back-btn">
-        <a href="{{ url('/') }}">Back</a>
+
+        <div class="org-chart">
+
+            <div class="org-main-heading">
+                <h2>Organization</h2>
+            </div>
+            <div class="org-box">Station Commander</div>
+            <div class="arrow">↓</div>
+
+            <div class="org-box">Adam Commended</div>
+            <div class="arrow">↓</div>
+
+            <div class="org-box">
+                HQ Section <br>
+                <span class="org-sub">(OIC ECHS Cell – SSO)</span>
+            </div>
+
+            <div class="arrow">↓</div>
+            <div class="split">
+                <div>
+                    <div class="arrow">↓</div>
+                    <div class="org-box">ECHS Cell</div>
+                </div>
+
+                <div>
+                    <div class="arrow">↓</div>
+                    <div class="org-box">VSK Cell</div>
+                </div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <div class="org-box">Q Section</div>
+            <div class="arrow">↓</div>
+
+            <div class="org-box">Accounts Section</div>
+            <div class="arrow">↓</div>
+
+            <div class="org-box">Store Section</div>
+
+        </div>
+
+        <div class="content-detail">
+            <h2 class="content-heading">Content Us</h2>
+
+            <div class="location-details">
+                <p><strong>Location:</strong> Veteran Sahayta Kendra, Station Headquarters, Dharamshala, HP-176215</p>
+                <p><strong>Helpline No:</strong> 01892-224330 (OIC VSK)</p>
+                <p><strong>Landline No:</strong> 01892-224330 (OIC VSK)</p>
+                <p><strong>Email ID:</strong> <a href="mailto:echscelldharamshala@gmail.com">echscelldharamshala@gmail.com</a></p>
+            </div>
+        </div>
     </div>
 </div>
 
