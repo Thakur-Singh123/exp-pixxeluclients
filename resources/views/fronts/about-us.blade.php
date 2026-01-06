@@ -16,24 +16,48 @@
         </div>
 
 
+        {{-- ORGANIZATION CHART --}}
         <div class="org-chart">
 
             <div class="org-main-heading">
                 <h2>Organization</h2>
             </div>
+
             <div class="org-box">Station Commander</div>
             <div class="arrow">↓</div>
 
             <div class="org-box">Adam Commended</div>
             <div class="arrow">↓</div>
 
-            <div class="org-box">
-                HQ Section <br>
-                <span class="org-sub">(OIC ECHS Cell – SSO)</span>
+            {{-- HQ FLOW --}}
+            <div class="split">
+                <div>
+                    <div class="arrow">↓</div>
+                    <div class="org-box">HQ Section</div>
+                </div>
+
+                <div>
+                    <div class="arrow">↓</div>
+                    <div class="org-box">Q Section</div>
+                </div>
+                <div>
+                    <div class="arrow">↓</div>
+                    <div class="org-box">Accounts Section</div>
+                </div>
+
+                <div>
+                    <div class="arrow">↓</div>
+                    <div class="org-box">Store Section</div>
+                </div>
             </div>
 
+            {{-- OIC --}}
             <div class="arrow">↓</div>
-            <div class="split">
+            <div class="org-box">OIC ECHS Cell – SSO</div>
+            <div class="arrow">↓</div>
+
+            {{-- SPLIT CELLS --}}
+            <div class="split-1">
                 <div>
                     <div class="arrow">↓</div>
                     <div class="org-box">ECHS Cell</div>
@@ -44,16 +68,6 @@
                     <div class="org-box">VSK Cell</div>
                 </div>
             </div>
-
-            <div class="arrow">↓</div>
-
-            <div class="org-box">Q Section</div>
-            <div class="arrow">↓</div>
-
-            <div class="org-box">Accounts Section</div>
-            <div class="arrow">↓</div>
-
-            <div class="org-box">Store Section</div>
 
         </div>
 

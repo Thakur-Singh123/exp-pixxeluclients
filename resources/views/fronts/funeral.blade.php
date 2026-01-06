@@ -91,56 +91,7 @@
 
         </div>
 
-        <div class="container">
-            <div class="org-chart">
-
-                <div class="org-main-heading">
-                    <h2>Organization</h2>
-                </div>
-                <div class="org-box">Station Commander</div>
-                <div class="arrow">↓</div>
-
-                <div class="org-box">Canteen manager</div>
-                <div class="arrow">↓</div>
-
-                <div class="org-box">
-                    Wellfare officer
-                </div>
-                <div class="arrow">↓</div>
-
-                <div class="org-box">field officer(not depended on Veteran pollution) </div>
-                <div class="arrow">↓</div>
-
-                <div class="org-box">document required for the grant adlrs is as under</div>
-                <div class="arrow">↓</div>
-                <div class="split">
-                    
-            <div class="org-box org-box-1">
-                <p><strong>ESM ISSUES TO BE DISCUSSED DURING INTERACTION</strong></p>
-
-                <a href="{{ url('public/admin/images/Issues_to_be_Discussed_Form.pdf') }}"
-                   target="_blank">
-                    <button type="button" class="btn btn-primary view-pdf-01">
-                        View / Download PDF
-                    </button>
-                </a>
-            </div>
-
-            <div class="org-box org-box-1">
-                <p><strong>FORM FOR GRIEVANCE / COMPLAINT BY ESM OR DEPENDENT OF ESM</strong></p>
-
-                <a href="{{ url('public/admin/images/Grievance_Complaint_Form.pdf') }}"
-                   target="_blank">
-                    <button type="button" class="btn btn-primary view-pdf-01">
-                        View / Download PDF
-                    </button>
-                </a>
-            </div>
-
-                </div>
-
-            </div>
-        </div>
+        
 
 
     </div>
@@ -148,7 +99,7 @@
     <!-- DEMISE TAB -->
     <div class="tab-pane fade" id="demise" role="tabpanel" aria-labelledby="demise-tab">
 
-    <h2>Demise Grant</h2>
+        <h2>Demise Grant</h2>
 
         <div class="main-adlrs">
             <span class="adlrs-content">
@@ -205,21 +156,60 @@
     <div class="funeral-gallery">
         <div class="tab-pane fade" id="military" role="tabpanel" aria-labelledby="military-tab">
             <h2>Military Funeral</h2>
-            <div class="row g-3">
-                <div class="col-md-4 col-6"><img src="public/admin/images/funeral-1.jpeg" class="img-fluid rounded">
+            <div class="container">
+            <div class="org-chart">
+
+                <div class="org-main-heading">
+                    <h2>Organization</h2>
                 </div>
-                <div class="col-md-4 col-6"><img src="public/admin/images/funeral-2.jpeg" class="img-fluid rounded">
+                <div class="org-box">Station Commander</div>
+                <div class="arrow">↓</div>
+
+                <div class="org-box">Canteen manager</div>
+                <div class="arrow">↓</div>
+
+                <div class="org-box">
+                    Wellfare officer
                 </div>
-                <div class="col-md-4 col-6"><img src="public/admin/images/funeral-3.jpeg" class="img-fluid rounded">
+                <div class="arrow">↓</div>
+
+                <div class="org-box">field officer(not depended on Veteran pollution) </div>
+                <div class="arrow">↓</div>
+
+                <div class="org-box">document required for the grant adlrs is as under</div>
+                <div class="arrow">↓</div>
+                <div class="split-3">
+                    <div>
+                        <div class="arrow">↓</div>
+                        <div class="org-box org-box-1">
+                            <p><strong>ESM ISSUES TO BE DISCUSSED DURING INTERACTION</strong></p>
+
+                            <a href="{{ url('public/admin/images/Issues_to_be_Discussed_Form.pdf') }}" target="_blank">
+                                <button type="button" class="btn btn-primary view-pdf-01">
+                                    View / Download PDF
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <div class="arrow">↓</div>
+                        <div class="org-box org-box-1">
+                            <p><strong>FORM FOR GRIEVANCE / COMPLAINT BY ESM OR DEPENDENT OF ESM</strong></p>
+
+                            <a href="{{ url('public/admin/images/Grievance_Complaint_Form.pdf') }}" target="_blank">
+                                <button type="button" class="btn btn-primary view-pdf-01">
+                                    View / Download PDF
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="col-md-4 col-6"><img src="public/admin/images/funeral-4.jpeg" class="img-fluid rounded">
-                </div>
-                <div class="col-md-4 col-6"><img src="public/admin/images/funeral-5.jpeg" class="img-fluid rounded">
-                </div>
-                <div class="col-md-4 col-6"><img src="public/admin/images/funeral-6.jpeg" class="img-fluid rounded">
-                </div>
             </div>
+        </div>
 
         </div>
     </div>

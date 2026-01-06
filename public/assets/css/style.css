@@ -246,7 +246,6 @@ button.view-pdf-01 {
 .split {
     display: flex;
     justify-content: center;
-    gap: 120px;
     margin: 10px 0;
 }
 
@@ -274,6 +273,120 @@ h2.content-heading {
 .location-details p a {
     color: #000;
 }
+
+.org-chart {
+    text-align: center;
+    padding: 40px 20px;
+    /* background: #1e1e1e; */
+    /* color: #fff; */
+    position: relative;
+}
+
+/* Heading */
+.org-main-heading h2 {
+    margin-bottom: 30px;
+    color: #000000;
+}
+
+/* Box styling */
+.org-box {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    margin: 8px auto;
+    font-size: 19px;
+    background: transparent;
+    min-width: 180px;
+}
+
+.org-box-1 p strong {
+    font-size: 15px;
+}
+/* Arrow */
+.arrow {
+    font-size: 18px;
+    line-height: 18px;
+}
+
+/* Horizontal split */
+.split {
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+    align-items: flex-start;
+    margin: auto;
+    max-width: 900px;
+    position: relative;
+}
+.split-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: auto;
+    max-width: 900px;
+    position: relative;
+}
+
+/* Horizontal connector line */
+.split::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 98px;
+    height: 1px;
+    width: 78%;
+    background: #000000;
+}
+.split-1::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 89px;
+    height: 1px;
+    width: 80%;
+    background: #000000;
+}
+.split-3::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 190px;
+    height: 1px;
+    width: 52%;
+    background: #000000;
+}
+.org-box-1 {
+    width: 100%;
+}
+
+.split-3 {
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+    align-items: flex-start;
+    margin: auto;
+    max-width: 900px;
+    position: relative;
+}
+
+/* Each column */
+.split > div {
+    flex: 1;
+    position: relative;
+}
+
+/* Vertical connector from horizontal line */
+.split > div::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 1px;
+    height: 20px;
+    background: #fff;
+}
+
 
 /* outreach page css */
 
