@@ -57,8 +57,8 @@
                     <a href="{{ url('funeral') }}">ADLRS/Demise Grant And Military Funeral</a>
                 </li>
 
-                <li class="tab {{ request()->is('echs') ? 'active' : '' }}">
-                    <a href="{{ url('echs') }}">ECHS</a>
+                <li class="tab {{ request()->is('echs-page') ? 'active' : '' }}">
+                    <a href="{{ url('echs-page') }}">ECHS</a>
                 </li>
 
                 <li class="tab {{ request()->is('canteen') ? 'active' : '' }}">
@@ -103,7 +103,7 @@
         <div class="marquee-line-text">
             <marquee behavior="scroll" direction="left" scrollamount="6" onmouseover="this.stop();"
                 onmouseout="this.start();">
-                <span style="font-weight: bold; color: #fff;">WELCOME TO VETERAN SAHAYATA KENDRA</span>
+                <span style="font-weight: bold; color: #fff;">WELCOME TO VETERAN SAHAYATA KENDRA, MILITARY STATION, STATION HEADQUATER DHARAMDHALA</span>
             </marquee>
         </div>
     </section>

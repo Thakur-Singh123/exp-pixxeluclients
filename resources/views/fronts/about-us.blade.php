@@ -76,8 +76,8 @@
 
             <div class="location-details">
                 <p><strong>Location:</strong> Veteran Sahayta Kendra, Station Headquarters, Dharamshala, HP-176215</p>
-                <p><strong>Helpline No:</strong> 01892-224330 (OIC VSK)</p>
-                <p><strong>Landline No:</strong> 01892-224330 (OIC VSK)</p>
+                <p><strong>Helpline No:</strong> 7834023404 </p>
+                <p><strong>Landline No:</strong> 01892-220216 </p>
                 <p><strong>Email ID:</strong> <a href="mailto:echscelldharamshala@gmail.com">echscelldharamshala@gmail.com</a></p>
             </div>
         </div>
