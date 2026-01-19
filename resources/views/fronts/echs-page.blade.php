@@ -1,13 +1,30 @@
 @extends('layouts.master')
 @section('content')
 <style>
-.card-1 {
-    width: 50%;
-    margin: 0 auto;
+.pdf-card {
+    border: 2px solid #000;
+    border-radius: 6px;
+    padding: 25px;
+    max-width: 420px;
+}
+
+.pdf-btn {
+    background-color: #c9973f;
+    color: #fff;
+    font-weight: 500;
+}
+
+.pdf-btn:hover {
+    background-color: #b88934;
+    color: #fff;
+}
+.amin-pdf-section {
+    margin: 48px auto !important;
+    width: fit-content !important;
 }
 </style>
 
-<ul class="nav nav-tabs" id="pdfTabs" role="tablist">
+<!-- <ul class="nav nav-tabs" id="pdfTabs" role="tablist">
 
     <li class="nav-item">
         <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab1"
@@ -69,10 +86,22 @@
 
 
 
+</div> -->
+
+<div class="container my-5 amin-pdf-section">
+    <div class="pdf-card">
+        <h6 class="fw-bold text-uppercase mb-4">
+            Introduction of ECHS Shahpur
+        </h6>
+
+        <a href="public/admin/images/ECHS_Shahpur.pdf" target="_blank" class="btn pdf-btn px-4 py-2">
+            View / Download PDF
+        </a>
+    </div>
 </div>
 
 
-<script src="{{ asset('public/admin/assets/js/pdf.js') }}"></script>
+<!-- <script src="{{ asset('public/admin/assets/js/pdf.js') }}"></script>
 <script src="{{ asset('public/admin/assets/js/pdf-worker.js') }}"></script>
 
 <script>
@@ -158,6 +187,6 @@ loadPDF(
     document.querySelector('.tab-pane.show.active'),
     document.querySelector('.nav-link.active').getAttribute('data-pdf')
 );
-</script>
+</script> -->
 
 @endsection

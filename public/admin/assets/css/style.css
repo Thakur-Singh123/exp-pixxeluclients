@@ -245,6 +245,7 @@ body:before {
 }
 
 
+
 @media (max-width: 730px) {
   .container .cover {
     display: none;

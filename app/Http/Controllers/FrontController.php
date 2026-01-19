@@ -105,9 +105,9 @@ class FrontController extends Controller
     }
 
     //Function for ECHS
-    public function ECHS()
+    public function echspage()
     {
-        return view('fronts.ECHS');
+        return view('fronts.echs-page');
     }
 
     //Function for canteen
