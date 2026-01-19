@@ -15,13 +15,13 @@
 <body>
     <div class="top-bar">
         <div class="left">
-            <span>📞 Family Pensioner Helpline : 01125664100, WhatsApp : 9910964067, E-Mail :
-                diav.vsk@gov.in</span>
+            <span>📞 Helpline : 7834023404, Landline No : 01892-220216, E-Mail :
+                echscelldharamshala@gmail.com</span>
         </div>
-        <div class="right">
-            <span>📞 Service Pensioner Helpline : 01125664200, Whatsapp : 9910610866, E-mail :
-                veteranscell-armyn@ic.in</span>
-        </div>
+        <!-- <div class="right">
+            <span>📞 Helpline : 01125664200, Landline No : 01892-220216, E-mail :
+                echscelldharamshala@gmail.com</span>
+        </div> -->
     </div>
     <header class="main-header">
         <div class="mid-header">
@@ -64,10 +64,10 @@
                 <li class="tab {{ request()->is('canteen') ? 'active' : '' }}">
                     <a href="{{ url('canteen') }}">ESM Canteen</a>
                 </li>
-
+<!-- 
                 <li class="tab {{ request()->is('forms') ? 'active' : '' }}">
                     <a href="{{ url('forms') }}">Forms</a>
-                </li>
+                </li> -->
 
                 <li class="tab {{ request()->is('awpo') ? 'active' : '' }}">
                     <a href="{{ url('awpo') }}">AWPO Bulletin/ESM Rally</a>

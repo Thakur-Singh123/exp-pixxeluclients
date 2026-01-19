@@ -9,9 +9,9 @@
             <span class="cosa-msg">History</span>
         </h3>
         <div class="dis-message">
-            <p>Under the authority of headquarter 21 sub area SOP no. 2010/A4 date 24 March2017, Veteran Sahayta Kendra
-                was established at station headquarters Dharamshala with effect from 17July2017, for registration of
-                veteran and also addressing issues related to welfare of ESM/Widow/Virnari including girvensiros,
+            <p>Under the authority of HQ 21 Sub Area SOP No. 2010/A4 date 24 March 2017, Veteran Sahayta Kendra
+                was established at Station HQ Dharamshala with effect from 17 July2017, for registration of
+                veteran and also addressing issues related to welfare of ESM/Widows/Veer Naris including grievances,
                 pension anomalies and other issues!</p>
         </div>
 
@@ -26,7 +26,7 @@
             <div class="org-box">Station Commander</div>
             <div class="arrow">↓</div>
 
-            <div class="org-box">Adam Commended</div>
+            <div class="org-box">Adm Comdt</div>
             <div class="arrow">↓</div>
 
             {{-- HQ FLOW --}}
@@ -72,7 +72,7 @@
         </div>
 
         <div class="content-detail">
-            <h2 class="content-heading">Content Us</h2>
+            <h2 class="content-heading">Contact Us</h2>
 
             <div class="location-details">
                 <p><strong>Location:</strong> Veteran Sahayta Kendra, Station Headquarters, Dharamshala, HP-176215</p>

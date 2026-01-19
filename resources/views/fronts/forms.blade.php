@@ -18,6 +18,7 @@
 
 
 
+
 <script src="{{ asset('public/admin/assets/js/pdf.js')  }}"></script>
 <script>
     const url = 'public/admin/images/Veteran Veer Nari,Widow Registration form Stn Hq Dsala.pdf';
