@@ -39,14 +39,14 @@
         <h2>ADLRS</h2>
         <div class="main-adlrs">
             <span class="adlrs-content">
-                As per Army Headquarter letter number B/45322/AG/ADLRS/R&W-4 dated 8 july 2016. On behalf of (COAS)
-                ADLRs
-                ceremony is being organised and RS; 10000 is being paid to NOK on death of EMS. The following document
-                the detailed is as under. to be
-                produced are grant of ADLRs: <strong> <br> 1. Copy of discharge Book <br> 2. Copy of PPO <br> 3. Copy of
-                    Death certificate <br> 4. Copy
+                As per Army HQ letter No B/45322/AG/ADLRS/R&W-4 dated 8 July 2016. On behalf of (COAS)
+                ADLRS
+                ceremony is being organised and RS 10,000/- is being paid to NOK on death of ESM. The following documents are required for
+                grant of ADLRS. The details is as under:- <strong> <br> 1. Personal Application <br>2. Copy of Discharge Book <br> 3. Copy of PPO <br> 4. Copy of
+                    Death Certificate <br> 5. Copy
                     of
-                    Addhar card <br> 5. Copy of bankers details of NOK <br> 6. copy of CSD cards both (Liq and Gross)
+                    Aadhar Card of NOK <br> 6. Copy of Bankers details of NOK <br> 7. Copy of CSD Cards both (Liq and Grocery)<br>
+                    
                 </strong>
             </span>
         </div>
@@ -103,9 +103,9 @@
 
         <div class="main-adlrs">
             <span class="adlrs-content">
-                The following document are required for payment of demised Grant: <strong> <br> 1. Personal Application
+                The following documents are required for payment of Demise Grant: <strong> <br> 1. Personal Application
                     <br> 2.Copy of
-                    discharge Book <br> 3. Copy of PPO <br> 4. Copy of Death certificate <br> 5. Copy of Addhar card
+                    Discharge Book <br> 3. Copy of PPO <br> 4. Copy of Death Certificate <br> 5. Copy of Aadhar Card of NOK
                     <br> 6. Copy of bankers
                     details of NOK. </strong>
             </span>
@@ -156,6 +156,7 @@
     <div class="funeral-gallery">
         <div class="tab-pane fade" id="military" role="tabpanel" aria-labelledby="military-tab">
             <h2>Military Funeral</h2>
+            <p>Military Funeral is beaing carried out on demise on ESM by the following team:-</p>
             <div class="container">
             <div class="org-chart">
 
@@ -173,12 +174,12 @@
                 </div>
                 <div class="arrow">↓</div>
 
-                <div class="org-box">field officer(not depended on Veteran pollution) </div>
-                <div class="arrow">↓</div>
+                <div class="org-box">field officer(not depended on Veteran population) </div>
+                <!-- <div class="arrow">↓</div> -->
 
-                <div class="org-box">document required for the grant adlrs is as under</div>
-                <div class="arrow">↓</div>
-                <div class="split-3">
+                <!-- <div class="org-box">Document required for the grant adlrs is as under</div>
+                <div class="arrow">↓</div> -->
+                <!-- <div class="split-3">
                     <div>
                         <div class="arrow">↓</div>
                         <div class="org-box org-box-1">
@@ -207,12 +208,21 @@
                     </div>
 
                 </div>
+ -->
+
+
+
 
             </div>
         </div>
 
         </div>
     </div>
+
+
+
+
+    
 
 </div>
 
