@@ -6,8 +6,15 @@
 <ul class="nav nav-tabs" id="mainTabs" role="tablist">
 
     <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="adlrs-tab" data-bs-toggle="tab" data-bs-target="#adlrs" type="button"
-            role="tab" aria-controls="adlrs" aria-selected="true">
+        <button class="nav-link active" id="military-tab" data-bs-toggle="tab" data-bs-target="#military" type="button"
+            role="tab" aria-controls="military" aria-selected="true">
+            Military Funeral
+        </button>
+    </li>
+
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="adlrs-tab" data-bs-toggle="tab" data-bs-target="#adlrs" type="button" role="tab"
+            aria-controls="adlrs" aria-selected="false">
             ADLRS
         </button>
     </li>
@@ -16,13 +23,6 @@
         <button class="nav-link" id="demise-tab" data-bs-toggle="tab" data-bs-target="#demise" type="button" role="tab"
             aria-controls="demise" aria-selected="false">
             Demise Grant
-        </button>
-    </li>
-
-    <li class="nav-item" role="presentation">
-        <button class="nav-link" id="military-tab" data-bs-toggle="tab" data-bs-target="#military" type="button"
-            role="tab" aria-controls="military" aria-selected="false">
-            Military Funeral
         </button>
     </li>
 
@@ -35,18 +35,21 @@
 <div class="tab-content mt-4" id="mainTabsContent">
 
     <!-- ADLRS TAB -->
-    <div class="tab-pane fade show active" id="adlrs" role="tabpanel" aria-labelledby="adlrs-tab">
+    <div class="tab-pane fade" id="adlrs" role="tabpanel" aria-labelledby="adlrs-tab">
         <h2>ADLRS</h2>
         <div class="main-adlrs">
             <span class="adlrs-content">
                 As per Army HQ letter No B/45322/AG/ADLRS/R&W-4 dated 8 July 2016. On behalf of (COAS)
                 ADLRS
-                ceremony is being organised and RS 10,000/- is being paid to NOK on death of ESM. The following documents are required for
-                grant of ADLRS. The details is as under:- <strong> <br> 1. Personal Application <br>2. Copy of Discharge Book <br> 3. Copy of PPO <br> 4. Copy of
+                ceremony is being organised and RS 10,000/- is being paid to NOK on death of ESM. The following
+                documents are required for
+                grant of ADLRS. The details is as under:- <strong> <br> 1. Personal Application <br>2. Copy of Discharge
+                    Book <br> 3. Copy of PPO <br> 4. Copy of
                     Death Certificate <br> 5. Copy
                     of
-                    Aadhar Card of NOK <br> 6. Copy of Bankers details of NOK <br> 7. Copy of CSD Cards both (Liq and Grocery)<br>
-                    
+                    Aadhar Card of NOK <br> 6. Copy of Bankers details of NOK <br> 7. Copy of CSD Cards both (Liq and
+                    Grocery)<br>
+
                 </strong>
             </span>
         </div>
@@ -91,7 +94,7 @@
 
         </div>
 
-        
+
 
 
     </div>
@@ -105,7 +108,8 @@
             <span class="adlrs-content">
                 The following documents are required for payment of Demise Grant: <strong> <br> 1. Personal Application
                     <br> 2.Copy of
-                    Discharge Book <br> 3. Copy of PPO <br> 4. Copy of Death Certificate <br> 5. Copy of Aadhar Card of NOK
+                    Discharge Book <br> 3. Copy of PPO <br> 4. Copy of Death Certificate <br> 5. Copy of Aadhar Card of
+                    NOK
                     <br> 6. Copy of bankers
                     details of NOK. </strong>
             </span>
@@ -154,32 +158,33 @@
 
     <!-- MILITARY TAB -->
     <div class="funeral-gallery">
-        <div class="tab-pane fade" id="military" role="tabpanel" aria-labelledby="military-tab">
+        <div class="tab-pane fade show active" id="military" role="tabpanel" aria-labelledby="military-tab">
             <h2>Military Funeral</h2>
-            <p>Military Funeral is beaing carried out on demise on ESM by the following team:-</p>
+            <p class="text-center fs-4">Military Funeral is being carried out on demise on ESM by the following team:-
+            </p>
             <div class="container">
-            <div class="org-chart">
+                <div class="org-chart">
 
-                <div class="org-main-heading">
-                    <h2>Organization</h2>
-                </div>
-                <div class="org-box">Station Commander</div>
-                <div class="arrow">↓</div>
+                    <div class="org-main-heading">
+                        <h2 class="underline">Organization</h2>
+                    </div>
+                    <div class="org-box">Station Commander</div>
+                    <div class="arrow">↓</div>
 
-                <div class="org-box">Canteen manager</div>
-                <div class="arrow">↓</div>
+                    <div class="org-box">Canteen manager</div>
+                    <div class="arrow">↓</div>
 
-                <div class="org-box">
-                    Wellfare officer
-                </div>
-                <div class="arrow">↓</div>
+                    <div class="org-box">
+                        Wellfare officer
+                    </div>
+                    <div class="arrow">↓</div>
 
-                <div class="org-box">field officer(not depended on Veteran population) </div>
-                <!-- <div class="arrow">↓</div> -->
+                    <div class="org-box">field officer(not depended on Veteran population) </div>
+                    <!-- <div class="arrow">↓</div> -->
 
-                <!-- <div class="org-box">Document required for the grant adlrs is as under</div>
+                    <!-- <div class="org-box">Document required for the grant adlrs is as under</div>
                 <div class="arrow">↓</div> -->
-                <!-- <div class="split-3">
+                    <!-- <div class="split-3">
                     <div>
                         <div class="arrow">↓</div>
                         <div class="org-box org-box-1">
@@ -213,8 +218,8 @@
 
 
 
+                </div>
             </div>
-        </div>
 
         </div>
     </div>
@@ -222,7 +227,7 @@
 
 
 
-    
+
 
 </div>
 

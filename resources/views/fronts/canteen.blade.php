@@ -40,9 +40,9 @@
 
             <p class="sub-title">Timings</p>
             <p>
-                0900 to 1600 Hr <br>
-                <strong>Lunch Time:</strong> 1300 to 1400 hr <br>
-                1600 to 1700 hr <br>
+                09:00 to 16:00 Hr <br>
+                <strong>Lunch Time:</strong> 13:00 to 14:00 hr <br>
+                16:00 to 17:00 hr <br>
                 Lay out of store Next Day
             </p>
         </div>
