@@ -41,19 +41,23 @@
                                              </th>
                                              <th class="sorting" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 156.312px;">Dob
+                                                colspan="1" style="width: 156.312px;">DOB
                                              </th>
                                              <th class="sorting" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 156.312px;">Doe
+                                                colspan="1" style="width: 156.312px;">DOE
                                              </th>
                                              <th class="sorting" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 156.312px;">Dor
+                                                colspan="1" style="width: 156.312px;">DOR
                                              </th>
                                              <th class="sorting" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
-                                                colspan="1" style="width: 156.312px;">Regiment / Corps
+                                                colspan="1" style="width: 156.312px;">Documents
+                                             </th>
+                                             <th class="sorting" tabindex="0"
+                                                aria-controls="basic-datatables" rowspan="1"
+                                                colspan="1" style="width: 156.312px;">Regt / Corps
                                              </th>
                                              <th class="sorting" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
@@ -77,6 +81,17 @@
                                              <td>{{ \Carbon\Carbon::parse($service->dob)->format('d M, Y') ?? '-' }}</td>
                                              <td>{{ \Carbon\Carbon::parse($service->doe)->format('d M, Y') ?? '-' }}</td>
                                              <td>{{ \Carbon\Carbon::parse($service->dor)->format('d M, Y') ?? '-' }}</td>
+                                             <td class="text-center">
+                                             @if(!empty($service->ex_documents))
+                                                <a href="{{ asset('public/uploads/documents/'.$service->ex_documents) }}"
+                                                   target="_blank"
+                                                   style="color:#4135dfc7; font-weight:600;">
+                                                   View Documents
+                                                </a>
+                                             @else
+                                                -
+                                             @endif
+                                             </td>
                                              <td>{{ $service->regiment_corps ?? '-' }}</td>
                                              <td>
                                                 <div class="form-button-action">

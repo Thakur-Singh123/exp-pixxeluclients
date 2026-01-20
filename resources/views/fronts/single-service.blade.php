@@ -152,6 +152,13 @@
     .detail-item strong {
         font-size: 16px;
     }
+    .no-image-text {
+        color: red;
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: inline-block;
+        margin-top: 5px;
+    }
 </style>
 <div class="modal" id="detailModal">
     <div class="modal-content">
@@ -180,14 +187,18 @@
                 <br>
                 <div class="mt-4 d-flex">
                     <div>
-                        <strong>Photograph:</strong><br>
-                        @if($service_detail->image)
-                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->image) }}" class="img-thumbnail">
-                        @else
-                            -
+                        <strong>View Uploaded Documents:</strong><br>
+                        @if (!empty($service_detail->ex_documents))
+                            <a href="{{ asset('public/uploads/documents/'.$service_detail->ex_documents) }}"
+                            target="_blank"
+                            class="btn btn-sm btn-outline-primary mt-1">
+                            View Documents
+                            </a>
+                            @else 
+                            <span class="no-image-text">No Documents found</span>
                         @endif
                     </div>
-                    <div>
+                    <!-- <div>
                         <strong>ECHS Card:</strong><br>
                         @if($service_detail->echs_image)
                             <img src="{{ asset('public/uploads/ex-images/'.$service_detail->echs_image) }}" class="img-thumbnail">
@@ -202,7 +213,7 @@
                         @else 
                             -
                         @endif
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -225,7 +236,7 @@
                     <div class="detail-item"><strong>IFSC Code:</strong> {{ $service_detail->ifsc_code ?? '-' }}</div>
                     <div class="detail-item"><strong>MICR Code:</strong> {{ $service_detail->micr_code ?? '-' }}</div>
                 </div>
-                 <div class="mt-4 d-flex">
+                <!-- <div class="mt-4 d-flex">
                     <div>
                         <strong>Joint Photograph:</strong><br>
                         @if($service_detail->joint_image)
@@ -274,7 +285,7 @@
                             -
                         @endif
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <!--Spouse-->
@@ -287,25 +298,28 @@
                     <div class="detail-item"><strong>Date of Birth:</strong>{{ \Carbon\Carbon::parse($service_detail->spouse_dob)->format('d M, Y') ?? '-' }}</div>
                     <div class="detail-item"><strong>Mobile Number:</strong> {{ $service_detail->spouse_mobile ?? '-' }}</div>
                     <div class="detail-item"><strong>Aadhar Card Number:</strong>{{ $service_detail->spouse_aadhar_card ?? '-' }}</div>
-                    <div class="detail-item"><strong>PAN Card Number:</strong> {{ $service_detail->spouse_pan_card ?? '-' }}</div>
+                    <!--<div class="detail-item"><strong>PAN Card Number:</strong> {{ $service_detail->spouse_pan_card ?? '-' }}</div>
                     <div class="detail-item"><strong>ECHS Card Number:</strong> {{ $service_detail->spouse_echs_card ?? '-' }}</div>
                     <div class="detail-item"><strong>CSD Card Number:</strong> {{ $service_detail->spouse_csd_card ?? '-' }}</div>
                     <div class="detail-item"><strong>Bank Account Number:</strong> {{ $service_detail->spouse_bank_acc_no ?? '-' }}</div>
                     <div class="detail-item"><strong>Bank Name:</strong> {{ $service_detail->spouse_bank_name ?? '-' }}</div>
                     <div class="detail-item"><strong>IFSC Code:</strong> {{ $service_detail->spouse_ifsc_code ?? '-' }}</div>
-                    <div class="detail-item"><strong>MICR Code:</strong> {{ $service_detail->spouse_micr_code ?? '-' }}</div>
+                    <div class="detail-item"><strong>MICR Code:</strong> {{ $service_detail->spouse_micr_code ?? '-' }}</div> -->
                 </div>
                 <br>
                 <div class="mt-4 d-flex">
                     <div>
-                        <strong>Photograph:</strong><br>
-                        @if($service_detail->spouse_image)
-                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_image) }}" class="img-thumbnail">
-                        @else
-                            -
+                        <strong>View Uploaded Documents:</strong><br>
+                        @if ($service_detail->spo_documents)
+                            <a href="{{ asset('public/uploads/documents/'.$service_detail->spo_documents) }}" target="_blank"
+                                class="btn btn-sm btn-outline-primary mt-1">
+                                View Documents
+                            </a>
+                        @else 
+                            <span class="no-image-text">No Documents found</span>
                         @endif
                     </div>
-                    <div>
+                    <!-- <div>
                         <strong>Joint Photograph:</strong><br>
                         @if($service_detail->spouse_joint_image)
                             <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_joint_image) }}" class="img-thumbnail">
@@ -352,7 +366,7 @@
                         @else 
                             -
                         @endif
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="table-responsive">

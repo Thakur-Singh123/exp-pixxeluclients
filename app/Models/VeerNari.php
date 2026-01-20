@@ -8,7 +8,7 @@ class VeerNari extends Model
 {
     //call migration
     protected $table = 'veer_naris';
-    protected $fillable = ['ex_service_man_id','veer_nari_name','veer_nari_expose_year','veer_image','veer_aadhar_image','veer_pan_image','status'];
+    protected $fillable = ['ex_service_man_id','veer_nari_name','veer_nari_expose_year','veer_documents','veer_image','veer_aadhar_image','veer_pan_image','status'];
 
     //Function for serviceman detail
     public function serviceman_detail() {

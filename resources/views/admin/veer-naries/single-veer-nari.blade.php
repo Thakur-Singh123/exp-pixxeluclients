@@ -15,19 +15,24 @@
                <div class="step-content d-none" id="step-1">
                   <h5 class="fw-bold text-primary border-bottom pb-2 mb-3">Veer Nari Details</h5>
                   <div class="row">
-                     <div class="col-md-6 mb-3"><strong>Name:</strong> {{ $veerNari_detail->veer_nari_name ?? '-' }}</div>
-                     <div class="col-md-6 mb-3"><strong>Date of Death:</strong> {{ $veerNari_detail->veer_nari_expose_year ?? '-' }}</div>
+                     <div class="col-md-4 mb-3"><strong>Army No:</strong> {{ $veerNari_detail->serviceman_detail->army_no ?? '-' }}</div>
+                     <div class="col-md-4 mb-3"><strong>Name:</strong> {{ $veerNari_detail->veer_nari_name ?? '-' }}</div>
+                     <div class="col-md-4 mb-3"><strong>Date of Death:</strong> {{ $veerNari_detail->veer_nari_expose_year ?? '-' }}</div>
                   </div>
-                  <div class="row mt-4">
-                     <div class="col-md-4">
-                        <strong>Photograph:</strong><br>
-                        @if($veerNari_detail->veer_image)
-                           <img src="{{ asset('public/uploads/ex-images/'.$veerNari_detail->veer_image) }}" class="img-thumbnail shadow-sm" width="80">
-                        @else 
-                           - 
+                  <div class="mt-4 services001">
+                     <div class="col-md-2 services2">
+                        <strong>View Uploaded Documents:</strong><br><br>
+                        @if (!empty($veerNari_detail->veer_documents))
+                           <a href="{{ asset('public/uploads/documents/'.$veerNari_detail->veer_documents) }}"
+                              target="_blank"
+                              class="btn btn-sm btn-outline-primary mt-1">
+                              View Documents
+                           </a>
+                           @else 
+                           <span class="no-image-text">No Documents found</span>
                         @endif
                      </div>
-                     <div class="col-md-4">
+                     <!-- <div class="col-md-4">
                         <strong>Aadhar Card:</strong><br>
                         @if($veerNari_detail->veer_aadhar_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$veerNari_detail->veer_aadhar_image) }}" class="img-thumbnail shadow-sm" width="80">
@@ -42,7 +47,7 @@
                         @else 
                            - 
                         @endif
-                     </div>
+                     </div> -->
                   </div>
                </div>
                <!--Ex-ServiceMan Details-->  
@@ -75,14 +80,18 @@
                   <!-- Images -->
                   <div class="mt-4 services001">
                      <div class="col-md-4 services2">
-                        <strong>Photograph:</strong><br><br>
-                        @if($veerNari_detail->serviceman_detail->image)
-                           <img src="{{ asset('public/uploads/ex-images/'.$veerNari_detail->serviceman_detail->image) }}" class="img-thumbnail shadow-sm img-thumbnail1" width="80">
-                        @else 
-                           - 
+                        <strong>View Uploaded Documents:</strong><br><br>
+                        @if (!empty($veerNari_detail->serviceman_detail->ex_documents))
+                           <a href="{{ asset('public/uploads/documents/'.$veerNari_detail->serviceman_detail->ex_documents) }}"
+                              target="_blank"
+                              class="btn btn-sm btn-outline-primary mt-1">
+                              View Documents
+                           </a>
+                           @else 
+                           <span class="no-image-text">No Documents found</span>
                         @endif
                      </div>
-                     <div class="col-md-4 services2">
+                     <!-- <div class="col-md-4 services2">
                         <strong>Joint Photograph:</strong><br><br>
                         @if($veerNari_detail->serviceman_detail->joint_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$veerNari_detail->serviceman_detail->joint_image) }}" class="img-thumbnail shadow-sm" width="80">
@@ -145,7 +154,7 @@
                         @else 
                            - 
                         @endif
-                     </div>
+                     </div> -->
                   </div>
                </div>
             </div>

@@ -56,7 +56,7 @@
                               <input type="text" name="csd_card_no" class="form-control" value="{{ old('csd_card_no') }}" placeholder="Enter csd card numer">
                            </div>
                            <div class="col-md-4 mb-3">
-                              <label class="form-label">Regiment / Corps</label>
+                              <label class="form-label">Regt / Corps</label>
                               <input type="text" name="regiment_corps" class="form-control" value="{{ old('regiment_corps') }}" placeholder="Enter regiment / corps">
                            </div>
                         </div>
@@ -64,25 +64,25 @@
                         <div class="row">
                            <div class="col-md-12 mb-3 d-flex align-items-start">
                               <div class="me-3" style="width:31%;">
-                                 <label>Photograph</label>
-                                 <input type="file" name="image" class="form-control upload-input">
+                                 <label>Upload Documents (PDF only)</label>
+                                 <input type="file" name="ex_documents" class="form-control upload-input" accept="application/pdf">
                               </div>
                               <div class="preview-box"></div>
                            </div>
-                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                           <!--<div class="col-md-12 mb-3 d-flex align-items-start">
                               <div class="me-3" style="width:31%;">
                                  <label>ECHS Card</label>
                                  <input type="file" name="echs_image" class="form-control upload-input">
                               </div>
                               <div class="preview-box"></div>
-                           </div>
-                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                              </div>
+                              <div class="col-md-12 mb-3 d-flex align-items-start">
                               <div class="me-3" style="width:31%;">
                                  <label>CSD Card</label>
                                  <input type="file" name="csd_image" class="form-control upload-input">
                               </div>
                               <div class="preview-box"></div>
-                           </div>
+                           </div> -->
                         </div>
                         <!--End photograph section-->
                      </div>
@@ -143,8 +143,8 @@
                               <input type="text" name="micr_code" class="form-control" value="{{ old('micr_code') }}" placeholder="Enter micr code">
                            </div>
                         </div>
-                         <!--Photograph section-->
-                        <div class="row">
+                        <!--Photograph section-->
+                        <!-- <div class="row">
                            <div class="col-md-12 mb-3 d-flex align-items-start">
                               <div class="me-3" style="width:31%;">
                                  <label>Joint Photograph</label>
@@ -187,7 +187,7 @@
                               </div>
                               <div class="preview-box"></div>
                            </div>
-                        </div>
+                           </div> -->
                         <!--End photograph section-->
                      </div>
                      <!--Spouse Details-->
@@ -214,45 +214,45 @@
                               <label class="form-label">Aadhar Card Number</label>
                               <input type="text" name="spouse_aadhar_card" class="form-control" value="{{ old('spouse_aadhar_card') }}" placeholder="Enter aadhar card number">
                            </div>
-                           <div class="col-md-4 mb-3">
+                           <!-- <div class="col-md-4 mb-3">
                               <label class="form-label">Pan Card Number</label>
                               <input type="text" name="spouse_pan_card" class="form-control" value="{{ old('spouse_pan_card') }}" placeholder="Enter pan card number">
-                           </div>
-                           <div class="col-md-4 mb-3">
+                              </div>
+                              <div class="col-md-4 mb-3">
                               <label class="form-label">ECHS Card Number</label>
                               <input type="text" name="spouse_echs_card" class="form-control" value="{{ old('spouse_echs_card') }}" placeholder="Enter echs card number">
-                           </div>
-                           <div class="col-md-4 mb-3">
+                              </div>
+                              <div class="col-md-4 mb-3">
                               <label class="form-label">CSD Card Number</label>
                               <input type="text" name="spouse_csd_card" class="form-control" value="{{ old('spouse_csd_card') }}" placeholder="Enter csd card number">
-                           </div>
-                           <div class="col-md-4 mb-3">
+                              </div>
+                              <div class="col-md-4 mb-3">
                               <label class="form-label">Bank Account Number</label>
                               <input type="text" name="spouse_bank_acc_no" class="form-control" value="{{ old('spouse_bank_acc_no') }}" placeholder="Enter bank account number">
-                           </div>
-                           <div class="col-md-4 mb-3">
+                              </div>
+                              <div class="col-md-4 mb-3">
                               <label class="form-label">Bank Name</label>
                               <input type="text" name="spouse_bank_name" class="form-control" value="{{ old('spouse_bank_name') }}" placeholder="Enter bank name">
-                           </div>
-                           <div class="col-md-4 mb-3"> 
+                              </div>
+                              <div class="col-md-4 mb-3"> 
                               <label class="form-label">IFSC Code</label>
                               <input type="text" name="spouse_ifsc_code" class="form-control" value="{{ old('spouse_ifsc_code') }}" placeholder="Enter ifsc code">
-                           </div>
-                           <div class="col-md-4 mb-3"> 
+                              </div>
+                              <div class="col-md-4 mb-3"> 
                               <label class="form-label">MICR Code</label>
                               <input type="text" name="spouse_micr_code" class="form-control" value="{{ old('spouse_micr_code') }}" placeholder="Enter micr code">
-                           </div>
+                              </div> -->
                         </div>
                         <!--Photograph section-->
                         <div class="row">
                            <div class="col-md-12 mb-3 d-flex align-items-start">
                               <div class="me-3" style="width:31%;">
-                                 <label>Photograph</label>
-                                 <input type="file" name="spouse_image" class="form-control upload-input">
+                                 <label>Upload Documents (PDF only)</label>
+                                 <input type="file" name="spo_documents" class="form-control upload-input" accept="application/pdf">
                               </div>
                               <div class="preview-box"></div>
                            </div>
-                           <div class="col-md-12 mb-3 d-flex align-items-start">
+                           <!-- <div class="col-md-12 mb-3 d-flex align-items-start">
                               <div class="me-3" style="width:31%;">
                                  <label>Joint Photograph</label>
                                  <input type="file" name="spouse_joint_image" class="form-control upload-input">
@@ -293,7 +293,7 @@
                                  <input type="file" name="spouse_bank_image" class="form-control upload-input">
                               </div>
                               <div class="preview-box"></div>
-                           </div>
+                           </div> -->
                         </div>
                         <!--End photograph section-->
                         <table class="table table-bordered" id="childrenTable">
@@ -331,10 +331,15 @@
                         </table>
                      </div>
                      <!--Navigation Buttons -->
-                     <div class="d-flex justify-content-between mt-4">
-                        <button type="button" class="btn btn-secondary" id="prevBtn">Prev</button>
-                        <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
-                        <button type="submit" class="btn btn-success d-none" id="submitBtn">Submit</button>
+                     <div class="step-navigation mt-4">
+                        <div class="nav-left">
+                           <button type="reset" class="btn btn-danger d-none" id="cancelBtn">Cancel</button>
+                           <button type="button" class="btn btn-secondary d-none" id="prevBtn">Prev</button>
+                        </div>
+                        <div class="nav-right">
+                           <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+                           <button type="submit" class="btn btn-success d-none" id="submitBtn">Submit</button>
+                        </div>
                      </div>
                   </form>
                </div>
@@ -346,83 +351,91 @@
 <script src="{{ asset('public/admin/assets/js/jquery-3.6.0.min.js') }}"></script>
 <script>
    let currentStep = 1;
+   const totalSteps = $('.step-btn').length;
    function showStep(step) {
       $('.step-content').addClass('d-none');
       $('#step-' + step).removeClass('d-none');
-   
       $('.step-btn').removeClass('active');
       $('.step-btn[data-step="' + step + '"]').addClass('active');
-   
-      $('#prevBtn').toggle(step > 1);
-      if (step === $('.step-btn').length) {
+      $('#cancelBtn, #prevBtn, #submitBtn').addClass('d-none');
+      $('#nextBtn').show();
+      if (step === 1) {
+         $('#cancelBtn').removeClass('d-none');
+      }
+      else if (step === totalSteps) {
+         $('#prevBtn').removeClass('d-none');
          $('#nextBtn').hide();
          $('#submitBtn').removeClass('d-none');
-      } else {
-         $('#nextBtn').show();
-         $('#submitBtn').addClass('d-none');
+      }
+      else {
+         $('#prevBtn').removeClass('d-none');
       }
    }
-   
-   $('#nextBtn').on('click', function () {
-      if (currentStep < $('.step-btn').length) {
+   $('#nextBtn').click(function () {
+      if (currentStep < totalSteps) {
          currentStep++;
          showStep(currentStep);
       }
    });
-   
-   $('#prevBtn').on('click', function () {
+   $('#prevBtn').click(function () {
       if (currentStep > 1) {
          currentStep--;
          showStep(currentStep);
       }
    });
-   
-   $('.step-btn').on('click', function () {
+   $('.step-btn').click(function () {
       currentStep = parseInt($(this).data('step'));
       showStep(currentStep);
    });
-   
    $(document).ready(function () {
       showStep(currentStep);
    });
 </script>
 <script>
-   $(document).ready(function() {
-      $('input[type="file"]').each(function() {
+   $(document).ready(function () {
+      $('input[type="file"]').each(function () {
          let fileInput = $(this);
-         fileInput.on('change', function(e) {
+         fileInput.on('change', function (e) {
             const file = e.target.files[0];
             if (!file) return;
             fileInput.next('.upload-preview').remove();
             const previewContainer = $('<div class="upload-preview"></div>');
             const progress = $('<div class="progress"><div class="progress-bar"></div></div>');
-            const removeBtn = $('<button type="button" class="remove-btn">&times;</button>');
-
             fileInput.after(previewContainer);
             previewContainer.html(progress);
-
+   
             let progressVal = 0;
             const progressInterval = setInterval(() => {
                progressVal += 5;
                progress.find('.progress-bar').css('width', progressVal + '%');
+   
                if (progressVal >= 100) {
                   clearInterval(progressInterval);
-
+                  if (file.type === 'application/pdf') {
+                     previewContainer.html(`
+                        <div class="mt-1 small text-muted">${file.name}</div>
+                     `);
+                     return;
+                  }
                   const reader = new FileReader();
-                  reader.onload = function(e) {
-                        previewContainer.html(`
-                           <img src="${e.target.result}" alt="Preview">
-                           <div class="mt-1 small text-muted">${file.name}</div>
-                        `);
-                        previewContainer.append(removeBtn);
+                  reader.onload = function (e) {
+                     const removeBtn = $('<button type="button" class="remove-btn">&times;</button>');
+   
+                     previewContainer.html(`
+                        <img src="${e.target.result}" alt="Preview">
+                        <div class="mt-1 small text-muted">${file.name}</div>
+                     `);
+   
+                     previewContainer.append(removeBtn);
+   
+                     removeBtn.on('click', function () {
+                        previewContainer.remove();
+                        fileInput.val('');
+                     });
                   };
                   reader.readAsDataURL(file);
                }
-            }, 80); 
-            removeBtn.on('click', function() {
-               previewContainer.remove();
-               fileInput.val('');
-            });
+            }, 80);
          });
       });
    });

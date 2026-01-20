@@ -238,7 +238,7 @@
                   <th>DOB</th>
                   <th>DOE</th>
                   <th>DOR</th>
-                  <th>Regiment / Corps</th>
+                  <th>Regt / Corps</th>
                   <th>Action</th>
                </tr>
             </thead>

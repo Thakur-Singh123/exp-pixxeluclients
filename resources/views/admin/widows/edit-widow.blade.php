@@ -65,12 +65,13 @@
                      <div class="row">
                         <div class="col-md-4 mb-3">
                            <label class="form-label">Select Army No *</label>
-                           <select name="army_no" class="form-control">
+                           <select name="army_no" class="form-control" disabled>
                               <option value="">-- Select Army No --</option>
                               @foreach ($army_numbers as $number)
-                              <option value="{{ $number->army_no }}" @if($widow_detail->army_no = $number->army_no) selected @endif>
-                                 {{ $number->army_no }}
-                              </option>
+                                 <option value="{{ $number->army_no }}"
+                                    {{ optional($widow_detail->serviceman_detail)->army_no == $number->army_no ? 'selected' : '' }}>
+                                    {{ $number->army_no }}
+                                 </option>
                               @endforeach
                            </select>
                            @error('army_no')
@@ -94,7 +95,7 @@
                      </div>
                      <!--Photograph section-->
                      <div class="row upload-section">
-                        <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
+                        <!-- <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
                            <div class="upload-field">
                               <label>Photograph</label>
                               <input type="file" name="window_image" class="form-control upload-input">
@@ -107,8 +108,8 @@
                                  <span class="no-image-text">No image found</span>
                               @endif
                            </div>
-                        </div>
-                        <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
+                        </div> -->
+                        <!-- <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
                            <div class="upload-field">
                               <label>Aadhar Card</label>
                               <input type="file" name="window_aadhar_image" class="form-control upload-input">
@@ -121,18 +122,22 @@
                                  <span class="no-image-text">No image found</span>
                               @endif
                            </div>
-                        </div>
+                        </div> -->
                         <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
                            <div class="upload-field">
-                              <label>PAN Card</label>
-                              <input type="file" name="window_pan_image" class="form-control upload-input">
+                              <label>Upload Documents (PDF only)</label>
+                              <input type="file" name="wd_documents" class="form-control upload-input" accept="application/pdf">
                            </div>
                            <div class="preview-box">
-                              <label class="preview-label">Uploaded PAN Card</label>
-                              @if ($widow_detail->window_pan_image)
-                                 <img src="{{ asset('public/uploads/ex-images/'.$widow_detail->window_pan_image) }}" class="preview-img">
-                              @else
-                                 <span class="no-image-text">No image found</span>
+                              <label class="preview-label">View Uploaded Documents</label>
+                              @if (!empty($widow_detail->wd_documents))
+                              <a href="{{ asset('public/uploads/documents/'.$widow_detail->wd_documents) }}"
+                                 target="_blank"
+                                 class="btn btn-sm btn-outline-primary mt-1">
+                              View Documents
+                              </a>
+                              @else 
+                                 <span class="no-image-text">No Documents found</span>
                               @endif
                            </div>
                         </div>
@@ -150,41 +155,50 @@
 </div>
 <script src="{{ asset('public/admin/assets/js/jquery-3.6.0.min.js') }}"></script>
 <script>
-   $(document).ready(function() {
-      $('input[type="file"]').each(function() {
+   $(document).ready(function () {
+      $('input[type="file"]').each(function () {
          let fileInput = $(this);
-         fileInput.on('change', function(e) {
+         fileInput.on('change', function (e) {
             const file = e.target.files[0];
             if (!file) return;
             fileInput.next('.upload-preview').remove();
             const previewContainer = $('<div class="upload-preview"></div>');
             const progress = $('<div class="progress"><div class="progress-bar"></div></div>');
-            const removeBtn = $('<button type="button" class="remove-btn">&times;</button>');
-
             fileInput.after(previewContainer);
             previewContainer.html(progress);
-
+   
             let progressVal = 0;
             const progressInterval = setInterval(() => {
                progressVal += 5;
                progress.find('.progress-bar').css('width', progressVal + '%');
+   
                if (progressVal >= 100) {
                   clearInterval(progressInterval);
+                  if (file.type === 'application/pdf') {
+                     previewContainer.html(`
+                        <div class="mt-1 small text-muted">${file.name}</div>
+                     `);
+                     return;
+                  }
                   const reader = new FileReader();
-                  reader.onload = function(e) {
+                  reader.onload = function (e) {
+                     const removeBtn = $('<button type="button" class="remove-btn">&times;</button>');
+   
                      previewContainer.html(`
                         <img src="${e.target.result}" alt="Preview">
                         <div class="mt-1 small text-muted">${file.name}</div>
                      `);
+   
                      previewContainer.append(removeBtn);
+   
+                     removeBtn.on('click', function () {
+                        previewContainer.remove();
+                        fileInput.val('');
+                     });
                   };
                   reader.readAsDataURL(file);
                }
-            }, 80); 
-            removeBtn.on('click', function() {
-               previewContainer.remove();
-               fileInput.val('');
-            });
+            }, 80);
          });
       });
    });

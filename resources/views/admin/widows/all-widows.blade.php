@@ -41,6 +41,10 @@
                                              </th>
                                              <th class="sorting" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
+                                                colspan="1" style="width: 156.312px;">Documents
+                                             </th>
+                                             <th class="sorting" tabindex="0"
+                                                aria-controls="basic-datatables" rowspan="1"
                                                 colspan="1" style="width: 156.312px;">Action
                                              </th>
                                           </tr>
@@ -58,6 +62,17 @@
                                              </td>
                                              <td>{{ $widow->window_name ?? '-' }}</td>
                                              <td>{{ \Carbon\Carbon::parse($widow->date_of_death)->format('d M, Y') ?? '-' }}</td>
+                                             <td class="text-center">
+                                             @if(!empty($widow->wd_documents))
+                                                <a href="{{ asset('public/uploads/documents/'.$widow->wd_documents) }}"
+                                                   target="_blank"
+                                                   style="color:#4135dfc7; font-weight:600;">
+                                                   View Documents
+                                                </a>
+                                             @else
+                                                -
+                                             @endif
+                                             </td>
                                              <td>
                                                 <div class="form-button-action">
                                                    <a href="{{ url('admin/edit-widow', $widow->id) }}" class="icon-button edit-btn custom-tooltip" data-tooltip="Edit">
