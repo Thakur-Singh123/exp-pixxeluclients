@@ -29,14 +29,18 @@
                   <!--Images-->
                   <div class="mt-4 services001">
                      <div class="col-md-4 services2">
-                        <strong>Photograph:</strong><br><br>
-                        @if($service_detail->image)
-                           <img src="{{ asset('public/uploads/ex-images/'.$service_detail->image) }}" class="img-thumbnail shadow-sm img-thumbnail1" width="80">
-                        @else 
-                           - 
+                        <strong>View Uploaded Documents:</strong><br><br>
+                        @if (!empty($service_detail->ex_documents))
+                           <a href="{{ asset('public/uploads/documents/'.$service_detail->ex_documents) }}"
+                              target="_blank"
+                              class="btn btn-sm btn-outline-primary mt-1">
+                              View Documents
+                           </a>
+                           @else 
+                           <span class="no-image-text">No Documents found</span>
                         @endif
                      </div>
-                     <div class="col-md-4 services2">
+                     <!-- <div class="col-md-4 services2">
                         <strong>ECHS Card:</strong><br><br>
                         @if($service_detail->echs_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$service_detail->echs_image) }}" class="img-thumbnail shadow-sm" width="80">
@@ -51,7 +55,7 @@
                         @else 
                            - 
                         @endif
-                     </div>
+                     </div> -->
                   </div>
                   <!--End image-->
                </div>
@@ -74,7 +78,7 @@
                      <div class="col-md-4 mb-3 services1"><strong>MICR Code:</strong> {{ $service_detail->micr_code ?? '-' }}</div>
                   </div>
                    <!--Images-->
-                  <div class="mt-4 services001">
+                  <!-- <div class="mt-4 services001">
                      <div class="col-md-4 services2">
                         <strong>Joint Photograph:</strong><br><br>
                         @if($service_detail->joint_image)
@@ -123,7 +127,7 @@
                            - 
                         @endif
                      </div>
-                  </div>
+                  </div> -->
                   <!--End image-->
                </div>
                <!--Spouse Details-->
@@ -135,71 +139,75 @@
                      <div class="col-md-4 mb-3"><strong>Date of Birth:</strong> {{ \Carbon\Carbon::parse($service_detail->spouse_dob)->format('d M, Y') ?? '-' }}</div>
                      <div class="col-md-4 mb-3"><strong>Mobile Number:</strong> {{ $service_detail->spouse_mobile ?? '-' }}</div>
                      <div class="col-md-4 mb-3"><strong>Aadhar Card Number:</strong> {{ $service_detail->spouse_aadhar_card ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>PAN Card Number:</strong> {{ $service_detail->spouse_pan_card ?? '-' }}</div>
+                     <!-- <div class="col-md-4 mb-3"><strong>PAN Card Number:</strong> {{ $service_detail->spouse_pan_card ?? '-' }}</div>
                      <div class="col-md-4 mb-3"><strong>ECHS Card Number:</strong> {{ $service_detail->spouse_echs_card ?? '-' }}</div>
                      <div class="col-md-4 mb-3"><strong>CSD Card Number:</strong> {{ $service_detail->spouse_csd_card ?? '-' }}</div>
                      <div class="col-md-4 mb-3"><strong>Bank Account Number:</strong> {{ $service_detail->spouse_bank_acc_no ?? '-' }}</div>
                      <div class="col-md-4 mb-3"><strong>Bank Name:</strong> {{ $service_detail->spouse_bank_name ?? '-' }}</div>
                      <div class="col-md-4 mb-3"><strong>IFSC Code:</strong> {{ $service_detail->spouse_ifsc_code ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>MICR Code:</strong> {{ $service_detail->spouse_micr_code ?? '-' }}</div>
+                     <div class="col-md-4 mb-3"><strong>MICR Code:</strong> {{ $service_detail->spouse_micr_code ?? '-' }}</div> -->
                   </div>
-                  <div class="row mt-4">
-                     <div class="col-md-4">
-                        <strong>Photograph:</strong><br>
-                        @if($service_detail->spouse_image)
-                           <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_image) }}" class="img-thumbnail shadow-sm" width="80">
-                        @else 
-                           - 
+                  <div class="mt-4 services001">
+                     <div class="col-md-4 services2">
+                        <strong>View Uploaded Documents:</strong><br><br>
+                        @if (!empty($service_detail->ex_documents))
+                           <a href="{{ asset('public/uploads/documents/'.$service_detail->ex_documents) }}"
+                              target="_blank"
+                              class="btn btn-sm btn-outline-primary mt-1">
+                              View Documents
+                           </a>
+                           @else 
+                           <span class="no-image-text">No Documents found</span>
                         @endif
                      </div>
-                     <div class="col-md-4">
-                        <strong>Joint Photograph:</strong><br>
-                        @if($service_detail->spouse_joint_image)
-                           <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_joint_image) }}" class="img-thumbnail shadow-sm" width="80">
-                        @else 
-                           - 
-                        @endif
-                     </div>
-                     <div class="col-md-4">
-                        <strong>Aadhar Card:</strong><br>
-                        @if($service_detail->spouse_aadhar_image)
-                           <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_aadhar_image) }}" class="img-thumbnail shadow-sm" width="80">
-                        @else 
-                           - 
-                        @endif
-                     </div>
-                     <div class="col-md-4">
-                        <strong>Pan Card:</strong><br>
-                        @if($service_detail->spouse_pan_image)
-                           <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_pan_image) }}" class="img-thumbnail shadow-sm" width="80">
-                        @else 
-                           - 
-                        @endif
-                     </div>
-                     <div class="col-md-4">
-                        <strong>ECHS Card:</strong><br>
-                        @if($service_detail->spouse_echs_image)
-                           <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_echs_image) }}" class="img-thumbnail shadow-sm" width="80">
-                        @else 
-                           - 
-                        @endif
-                     </div>
-                     <div class="col-md-4">
-                        <strong>CSD Card:</strong><br>
-                        @if($service_detail->spouse_csd_image)
-                           <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_csd_image) }}" class="img-thumbnail shadow-sm" width="80">
-                        @else 
-                           - 
-                        @endif
-                     </div>
-                     <div class="col-md-4">
-                        <strong>Bank Account:</strong><br>
-                        @if($service_detail->spouse_bank_image)
-                           <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_bank_image) }}" class="img-thumbnail shadow-sm" width="80">
-                        @else 
-                           - 
-                        @endif
-                     </div>
+                     <!-- <div class="col-md-4">
+                     <strong>Joint Photograph:</strong><br>
+                     @if($service_detail->spouse_joint_image)
+                        <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_joint_image) }}" class="img-thumbnail shadow-sm" width="80">
+                     @else 
+                        - 
+                     @endif
+                  </div>
+                  <div class="col-md-4">
+                     <strong>Aadhar Card:</strong><br>
+                     @if($service_detail->spouse_aadhar_image)
+                        <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_aadhar_image) }}" class="img-thumbnail shadow-sm" width="80">
+                     @else 
+                        - 
+                     @endif
+                  </div>
+                  <div class="col-md-4">
+                     <strong>Pan Card:</strong><br>
+                     @if($service_detail->spouse_pan_image)
+                        <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_pan_image) }}" class="img-thumbnail shadow-sm" width="80">
+                     @else 
+                        - 
+                     @endif
+                  </div>
+                  <div class="col-md-4">
+                     <strong>ECHS Card:</strong><br>
+                     @if($service_detail->spouse_echs_image)
+                        <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_echs_image) }}" class="img-thumbnail shadow-sm" width="80">
+                     @else 
+                        - 
+                     @endif
+                  </div>
+                  <div class="col-md-4">
+                     <strong>CSD Card:</strong><br>
+                     @if($service_detail->spouse_csd_image)
+                        <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_csd_image) }}" class="img-thumbnail shadow-sm" width="80">
+                     @else 
+                        - 
+                     @endif
+                  </div>
+                  <div class="col-md-4">
+                     <strong>Bank Account:</strong><br>
+                     @if($service_detail->spouse_bank_image)
+                        <img src="{{ asset('public/uploads/ex-images/'.$service_detail->spouse_bank_image) }}" class="img-thumbnail shadow-sm" width="80">
+                     @else 
+                        - 
+                     @endif
+                  </div> -->
                   </div><br>
                    <div class="table-responsive">
                      <table class="table table-bordered" id="childrenTable">

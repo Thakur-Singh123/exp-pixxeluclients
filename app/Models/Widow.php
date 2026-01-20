@@ -8,7 +8,7 @@ class Widow extends Model
 {
     //call migration
     protected $table = 'widows';
-    protected $fillable = ['ex_service_man_id','window_name','date_of_death','window_image','window_aadhar_image','window_pan_image','status'];
+    protected $fillable = ['ex_service_man_id','window_name','date_of_death','wd_documents','window_image','window_aadhar_image','window_pan_image','status'];
 
     //Function for serviceman detail
     public function serviceman_detail() {

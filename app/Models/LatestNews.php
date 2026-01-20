@@ -8,5 +8,5 @@ class LatestNews extends Model
 {
     //call migration
     protected $table = 'latest_news';
-    protected $fillable = ['title','date','status'];
+    protected $fillable = ['title','date', 'document', 'status'];
 }

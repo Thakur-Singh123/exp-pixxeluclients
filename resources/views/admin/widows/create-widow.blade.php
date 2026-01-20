@@ -46,12 +46,12 @@
                      <div class="row">
                         <div class="col-md-12 mb-3 d-flex align-items-start">
                            <div class="me-3" style="width:31%;">
-                              <label>Photograph</label>
-                              <input type="file" name="window_image" class="form-control upload-input">
+                              <label>Upload Documents (PDF only)</label>
+                              <input type="file" name="wd_documents" class="form-control upload-input" accept="application/pdf">
                            </div>
                            <div class="preview-box"></div>
                         </div>
-                        <div class="col-md-12 mb-3 d-flex align-items-start">
+                        <!-- <div class="col-md-12 mb-3 d-flex align-items-start">
                            <div class="me-3" style="width: 31%;">
                               <label>Aadhar Card</label>
                               <input type="file" name="window_aadhar_image" class="form-control upload-input">
@@ -64,7 +64,7 @@
                               <input type="file" name="window_pan_image" class="form-control upload-input">
                            </div>
                            <div class="preview-box"></div>
-                        </div>
+                        </div> -->
                      </div>
                      <!--End photograph section-->
                      <div class="form-submit-left">
@@ -79,39 +79,50 @@
 </div>
 <script src="{{ asset('public/admin/assets/js/jquery-3.6.0.min.js') }}"></script>
 <script>
-   $(document).ready(function() {
-      $('input[type="file"]').each(function() {
+   $(document).ready(function () {
+      $('input[type="file"]').each(function () {
          let fileInput = $(this);
-         fileInput.on('change', function(e) {
+         fileInput.on('change', function (e) {
             const file = e.target.files[0];
             if (!file) return;
             fileInput.next('.upload-preview').remove();
             const previewContainer = $('<div class="upload-preview"></div>');
             const progress = $('<div class="progress"><div class="progress-bar"></div></div>');
-            const removeBtn = $('<button type="button" class="remove-btn">&times;</button>');
             fileInput.after(previewContainer);
             previewContainer.html(progress);
+   
             let progressVal = 0;
             const progressInterval = setInterval(() => {
                progressVal += 5;
                progress.find('.progress-bar').css('width', progressVal + '%');
+   
                if (progressVal >= 100) {
                   clearInterval(progressInterval);
+                  if (file.type === 'application/pdf') {
+                     previewContainer.html(`
+                        <div class="mt-1 small text-muted">${file.name}</div>
+                     `);
+                     return;
+                  }
                   const reader = new FileReader();
-                  reader.onload = function(e) {
-                        previewContainer.html(`
-                           <img src="${e.target.result}" alt="Preview">
-                           <div class="mt-1 small text-muted">${file.name}</div>
-                        `);
-                        previewContainer.append(removeBtn);
+                  reader.onload = function (e) {
+                     const removeBtn = $('<button type="button" class="remove-btn">&times;</button>');
+   
+                     previewContainer.html(`
+                        <img src="${e.target.result}" alt="Preview">
+                        <div class="mt-1 small text-muted">${file.name}</div>
+                     `);
+   
+                     previewContainer.append(removeBtn);
+   
+                     removeBtn.on('click', function () {
+                        previewContainer.remove();
+                        fileInput.val('');
+                     });
                   };
                   reader.readAsDataURL(file);
                }
-            }, 80); 
-            removeBtn.on('click', function() {
-               previewContainer.remove();
-               fileInput.val('');
-            });
+            }, 80);
          });
       });
    });

@@ -36,6 +36,10 @@
                                              </th>
                                              <th class="sorting" tabindex="0"
                                                 aria-controls="basic-datatables" rowspan="1"
+                                                colspan="1" style="width: 156.312px;">Documents
+                                             </th>
+                                             <th class="sorting" tabindex="0"
+                                                aria-controls="basic-datatables" rowspan="1"
                                                 colspan="1" style="width: 156.312px;">Action
                                              </th>
                                           </tr>
@@ -52,6 +56,17 @@
                                              </td>
                                              <td>{{ $news->title ?? '-' }}</td>
                                              <td>{{ \Carbon\Carbon::parse($news->date)->format('d M, Y') ?? '-' }}</td>
+                                             <td class="text-center">
+                                             @if(!empty($news->document))
+                                                <a href="{{ asset('public/uploads/news/'.$news->document) }}"
+                                                   target="_blank"
+                                                   style="color:#4135dfc7; font-weight:600;">
+                                                   View Pdf
+                                                </a>
+                                             @else
+                                                -
+                                             @endif
+                                             </td>
                                              <td>
                                                 <div class="form-button-action">
                                                    <a href="{{ url('admin/edit-news', $news->id) }}" class="icon-button edit-btn custom-tooltip" data-tooltip="Edit"><i class="fa fa-edit"></i></a>

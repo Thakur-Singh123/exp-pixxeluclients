@@ -1139,5 +1139,76 @@ h1 {
     margin-bottom: 20px;
     text-transform: uppercase;
 }
+.step-navigation {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding-top: 20px;
+   margin-top: 20px;
+   border-top: 1px solid #e6e6e6;
+}
+.step-navigation .nav-left,
+.step-navigation .nav-right {
+   flex: 1;
+   display: flex;
+   align-items: center;
+}
+.step-navigation .nav-left {
+   justify-content: flex-start;
+}
 
+.step-navigation .nav-right {
+   justify-content: flex-end;
+}
+.step-navigation button {
+   min-width: 80px;       
+   padding: 8px 20px;      
+   font-size: 14px;
+   font-weight: 500;
+   border-radius: 6px;
+   transition: all 0.2s ease-in-out;
+}
+.btn-primary,
+.btn-success {
+   background-color: #6B8E23 !important;
+   border-color: #6B8E23 !important;
+   color: #ffffff !important;
+}
+.btn-danger {
+   background-color: #f25961 !important;
+   border-color: #f25961 !important;
+   color: #ffffff !important;
+}
+.step-navigation .nav-left button {
+   margin-left: 30px;
+}
+.step-navigation .nav-right button {
+   margin-right: 30px;
+}
+.step-navigation button:hover {
+   opacity: 0.9;
+   transform: translateY(-1px);
+}
+@media (max-width: 576px) {
+   .step-navigation {
+      flex-direction: column;
+      gap: 12px;
+   }
+   .step-navigation .nav-left,
+   .step-navigation .nav-right {
+      justify-content: center;
+   }
+   .step-navigation .nav-left button,
+   .step-navigation .nav-right button {
+      margin: 0;
+      width: 100%;
+   }
+}
+.no-image-text {
+    color: red;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-top: 5px;
+}
 

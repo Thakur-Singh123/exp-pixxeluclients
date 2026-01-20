@@ -28,10 +28,19 @@ class NewsController extends Controller
             'title' => 'required',
             'date'  => 'required',
         ]);
+        //Check if document is exit or not
+        $document = "";
+        if($request->hasFile('document')) {
+            $file = $request->file('document');
+            $extension = $file->getClientOriginalExtension();
+            $document = time() . '.' . $extension;
+            $file->move(public_path('uploads/news'), $document);
+        }
         //Create news
         $is_create_news = LatestNews::create([
             'title' => $request->title,
             'date' => $request->date,
+            'document' => $document,
             'status' => 'Active',
         ]);
         //Check if news created or not

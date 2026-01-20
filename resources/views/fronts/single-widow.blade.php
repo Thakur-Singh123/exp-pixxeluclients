@@ -152,6 +152,13 @@
     .detail-item strong {
         font-size: 16px;
     }
+    .no-image-text {
+        color: red;
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: inline-block;
+        margin-top: 5px;
+    }
 </style>
 <div class="modal" id="detailModal">
     <div class="modal-content">
@@ -172,14 +179,18 @@
                 <br>
                 <div class="mt-4 d-flex">
                     <div>
-                        <strong>Photograph:</strong><br>
-                        @if($widow_detail->window_image)
-                            <img src="{{ asset('public/uploads/ex-images/'.$widow_detail->window_image) }}" class="img-thumbnail">
-                        @else
-                            -
+                        <strong>View Uploaded Documents:</strong><br>
+                        @if (!empty($widow_detail->wd_documents))
+                            <a href="{{ asset('public/uploads/documents/'.$widow_detail->wd_documents) }}"
+                                target="_blank"
+                                class="btn btn-sm btn-outline-primary mt-1">
+                                View Documents
+                            </a>
+                        @else 
+                            <span class="no-image-text">No Documents found</span>
                         @endif
                     </div>
-                    <div>
+                    <!-- <div>
                         <strong>Aadhar Card:</strong><br>
                         @if($widow_detail->window_aadhar_image)
                             <img src="{{ asset('public/uploads/ex-images/'.$widow_detail->window_aadhar_image) }}" class="img-thumbnail">
@@ -194,7 +205,7 @@
                         @else 
                             -
                         @endif
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -229,22 +240,26 @@
                 <br>
                 <div class="mt-4 d-flex">
                     <div>
-                        <strong>Photograph:</strong><br>
-                        @if($widow_detail->serviceman_detail->image)
-                            <img src="{{ asset('public/uploads/ex-images/'.$widow_detail->serviceman_detail->image) }}" class="img-thumbnail">
-                        @else
-                            -
+                        <strong>View Uploaded Documents:</strong><br>
+                        @if (!empty($widow_detail->serviceman_detail->ex_documents))
+                            <a href="{{ asset('public/uploads/documents/'.$widow_detail->serviceman_detail->ex_documents) }}"
+                                target="_blank"
+                                class="btn btn-sm btn-outline-primary mt-1">
+                                View Documents
+                            </a>
+                            @else 
+                            <span class="no-image-text">No Documents found</span>
                         @endif
                     </div>
-                    <div>
+                    <!-- <div>
                         <strong>Joint Photograph:</strong><br>
                         @if($widow_detail->serviceman_detail->joint_image)
                             <img src="{{ asset('public/uploads/ex-images/'.$widow_detail->serviceman_detail->joint_image) }}" class="img-thumbnail">
                         @else 
                             -
                         @endif
-                    </div>
-                    <div>
+                    </div> -->
+                    <!-- <div>
                         <strong>Aadhar Card:</strong><br>
                         @if($widow_detail->serviceman_detail->aadhar_image)
                             <img src="{{ asset('public/uploads/ex-images/'.$widow_detail->serviceman_detail->aadhar_image) }}" class="img-thumbnail">
@@ -299,7 +314,7 @@
                         @else 
                             -
                         @endif
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

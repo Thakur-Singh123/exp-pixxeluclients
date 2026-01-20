@@ -33,41 +33,41 @@ class VeerNariController extends Controller
         ]);
 
         //image folder
-        $folder = public_path('uploads/ex-images');
+        $folder = public_path('uploads/documents');
         //Check if folder exists or not
         if (!file_exists($folder)) {
             mkdir($folder, 0777, true);
         }
-        //veer nari image
-        $veer_image = "";
-        if ($request->hasFile('veer_image')) {
-            $file = $request->file('veer_image');
-            $veer_image = time() . '_veer_nari.' . $file->getClientOriginalExtension();
-            $file->move($folder, $veer_image);
+        //veer nari documents
+        $veer_documents = "";
+        if ($request->hasFile('veer_documents')) {
+            $file = $request->file('veer_documents');
+            $veer_documents = time() . '_veer_documents.' . $file->getClientOriginalExtension();
+            $file->move($folder, $veer_documents);
         }
         //veer nari aadhar
-        $veer_aadhar_image = "";
-        if ($request->hasFile('veer_aadhar_image')) {
-            $file = $request->file('veer_aadhar_image');
-            $veer_aadhar_image = time() . '_veer-nari_aadhar_image.' . $file->getClientOriginalExtension();
-            $file->move($folder, $veer_aadhar_image);
-        }
+        // $veer_aadhar_image = "";
+        // if ($request->hasFile('veer_aadhar_image')) {
+        //     $file = $request->file('veer_aadhar_image');
+        //     $veer_aadhar_image = time() . '_veer-nari_aadhar_image.' . $file->getClientOriginalExtension();
+        //     $file->move($folder, $veer_aadhar_image);
+        // }
         //veer nari pan
-        $veer_pan_image = "";
-        if ($request->hasFile('veer_pan_image')) {
-            $file = $request->file('veer_pan_image');
-            $veer_pan_image = time() . '_veer_nari_pan_image.' . $file->getClientOriginalExtension();
-            $file->move($folder, $veer_pan_image);
-        }
+        // $veer_pan_image = "";
+        // if ($request->hasFile('veer_pan_image')) {
+        //     $file = $request->file('veer_pan_image');
+        //     $veer_pan_image = time() . '_veer_nari_pan_image.' . $file->getClientOriginalExtension();
+        //     $file->move($folder, $veer_pan_image);
+        // }
         //create record
         $is_create_veer_nari = VeerNari::create([
             'ex_service_man_id' => $request->army_no,
             'veer_nari_name' => $request->veer_nari_name,
             'veer_nari_expose_year' => $request->veer_nari_expose_year,
             //images
-            'veer_image' => $veer_image,
-            'veer_aadhar_image' => $veer_aadhar_image,
-            'veer_pan_image' => $veer_pan_image,
+            'veer_documents' => $veer_documents,
+            // 'veer_aadhar_image' => $veer_aadhar_image,
+            // 'veer_pan_image' => $veer_pan_image,
             'status' => 'Active',
         ]);
         //Check if record created or not
@@ -92,7 +92,7 @@ class VeerNariController extends Controller
         //Get veer nari detail
         $veer_nari  = VeerNari::findOrFail($id);
         //Check folder exists or not
-        $folder = public_path('uploads/ex-images');
+        $folder = public_path('uploads/documents');
         if (!file_exists($folder)) {
             mkdir($folder, 0777, true);
         }
@@ -108,9 +108,9 @@ class VeerNariController extends Controller
             return $oldImageName;
         }
 
-        $veer_image = handleImage($request, 'veer_image', $veer_nari->veer_image, 'veer_image', $folder);
-        $veer_aadhar_image = handleImage($request, 'veer_aadhar_image', $veer_nari->veer_aadhar_image, 'veer_aadhar_image', $folder);
-        $veer_pan_image = handleImage($request, 'veer_pan_image', $veer_nari->veer_pan_image, 'veer_pan_image', $folder);
+        $veer_documents = handleImage($request, 'veer_documents', $veer_nari->veer_documents, 'veer_documents', $folder);
+        // $veer_aadhar_image = handleImage($request, 'veer_aadhar_image', $veer_nari->veer_aadhar_image, 'veer_aadhar_image', $folder);
+        // $veer_pan_image = handleImage($request, 'veer_pan_image', $veer_nari->veer_pan_image, 'veer_pan_image', $folder);
 
         //Update veer nari
         $is_update_veer_nari = $veer_nari->update([
@@ -119,9 +119,9 @@ class VeerNariController extends Controller
             'veer_nari_name' => $request->veer_nari_name,
             'veer_nari_expose_year' => $request->veer_nari_expose_year,
             //images
-            'veer_image' => $veer_image,
-            'veer_aadhar_image' => $veer_aadhar_image,
-            'veer_pan_image' => $veer_pan_image,
+            'veer_documents' => $veer_documents,
+            // 'veer_aadhar_image' => $veer_aadhar_image,
+            // 'veer_pan_image' => $veer_pan_image,
             'status' => 'Active',
         ]);
         //Check if veer nari updated or not

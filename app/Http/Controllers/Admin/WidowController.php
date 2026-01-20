@@ -33,41 +33,42 @@ class WidowController extends Controller
         ]);
 
         //image folder
-        $folder = public_path('uploads/ex-images');
+        $folder = public_path('uploads/documents');
         //Check if folder exists or not
         if (!file_exists($folder)) {
             mkdir($folder, 0777, true);
         }
-        //window image
-        $window_image = "";
-        if ($request->hasFile('window_image')) {
-            $file = $request->file('window_image');
-            $window_image = time() . '_window.' . $file->getClientOriginalExtension();
-            $file->move($folder, $window_image);
+        //window documents
+        $wd_documents = "";
+        if ($request->hasFile('wd_documents')) {
+            $file = $request->file('wd_documents');
+            $wd_documents = time() . '_window.' . $file->getClientOriginalExtension();
+            $file->move($folder, $wd_documents);
         }
-        //window aadhar
-        $window_aadhar = "";
-        if ($request->hasFile('window_aadhar_image')) {
-            $file = $request->file('window_aadhar_image');
-            $window_aadhar = time() . '_window_aadhar_image.' . $file->getClientOriginalExtension();
-            $file->move($folder, $window_aadhar);
-        }
-        //window pan
-        $window_pan = "";
-        if ($request->hasFile('window_pan_image')) {
-            $file = $request->file('window_pan_image');
-            $window_pan = time() . '_window_pan_image.' . $file->getClientOriginalExtension();
-            $file->move($folder, $window_pan);
-        }
+        // //window aadhar
+        // $window_aadhar = "";
+        // if ($request->hasFile('window_aadhar_image')) {
+        //     $file = $request->file('window_aadhar_image');
+        //     $window_aadhar = time() . '_window_aadhar_image.' . $file->getClientOriginalExtension();
+        //     $file->move($folder, $window_aadhar);
+        // }
+        // //window pan
+        // $window_pan = "";
+        // if ($request->hasFile('window_pan_image')) {
+        //     $file = $request->file('window_pan_image');
+        //     $window_pan = time() . '_window_pan_image.' . $file->getClientOriginalExtension();
+        //     $file->move($folder, $window_pan);
+        // }
         //create record
         $is_create_widow = Widow::create([
             'ex_service_man_id' => $request->army_no,
             'window_name' => $request->window_name,
             'date_of_death' => $request->date_of_death,
             //images
-            'window_image' => $window_image,
-            'window_aadhar_image' => $window_aadhar,
-            'window_pan_image' => $window_pan,
+            'wd_documents' => $wd_documents,
+            // 'window_image' => $window_image,
+            // 'window_aadhar_image' => $window_aadhar,
+            // 'window_pan_image' => $window_pan,
             'status' => 'Active',
         ]);
         //Check if record created or not
@@ -92,7 +93,7 @@ class WidowController extends Controller
         //Get widow detail
         $widow = Widow::findOrFail($id);
         //Check folder exists or not
-        $folder = public_path('uploads/ex-images');
+        $folder = public_path('uploads/documents');
         if (!file_exists($folder)) {
             mkdir($folder, 0777, true);
         }
@@ -107,10 +108,12 @@ class WidowController extends Controller
             }
             return $oldImageName;
         }
+        
+        $wd_documents = handleImage($request, 'wd_documents', $widow->wd_documents, 'wd_documents', $folder);
 
-        $window_image = handleImage($request, 'window_image', $widow->window_image, 'window', $folder);
-        $window_aadhar = handleImage($request, 'window_aadhar_image', $widow->window_aadhar_image, 'window_aadhar_image', $folder);
-        $window_pan = handleImage($request, 'window_pan_image', $widow->window_pan_image, 'window_pan_image', $folder);
+        // $window_image = handleImage($request, 'window_image', $widow->window_image, 'window', $folder);
+        // $window_aadhar = handleImage($request, 'window_aadhar_image', $widow->window_aadhar_image, 'window_aadhar_image', $folder);
+        // $window_pan = handleImage($request, 'window_pan_image', $widow->window_pan_image, 'window_pan_image', $folder);
 
         //Update widow
         $is_update_widow = $widow->update([
@@ -119,9 +122,10 @@ class WidowController extends Controller
             'window_name' => $request->window_name,
             'date_of_death' => $request->date_of_death,
             //images
-            'window_image' => $window_image,
-            'window_aadhar_image' => $window_aadhar,
-            'window_pan_image' => $window_pan,
+            'wd_documents' => $wd_documents,
+            // 'window_image' => $window_image,
+            // 'window_aadhar_image' => $window_aadhar,
+            // 'window_pan_image' => $window_pan,
             'status' => 'Active',
         ]);
         //Check if widow updated or not
