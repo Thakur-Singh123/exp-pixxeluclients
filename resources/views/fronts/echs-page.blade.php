@@ -415,7 +415,7 @@
                     <h6 class="fw-bold text-decoration-underline mb-2 fs-4">
                         PHYSIOTHERAPY
                     </h6>
-                    <p class="small">
+                    <p class="small fs-6">
                         Physiotherapy is an integral part of healthcare focusing on pain relief,
                         rehabilitation, and functional improvement using various therapeutic modalities.
                     </p>
@@ -613,7 +613,7 @@
                     </h6>
 
                     <!-- LIST -->
-                    <ul class="small fs- fs-36">
+                    <ul class="small fs-6">
                         <li>Root canal treatment (anterior / posterior)</li>
                         <li>Restoration of decayed teeth</li>
                         <li>Extraction of grossly carious teeth</li>
