@@ -12,30 +12,24 @@
             <p>Under the authority of HQ 21 Sub Area SOP No. 2010/A4 date 24 March 2017, Veteran Sahayta Kendra
                 was established at Station HQ Dharamshala with effect from 17 July2017, for registration of
                 veteran and also addressing issues related to welfare of ESM/Widows/Veer Naris including grievances,
-                pension anomalies and other issues!</p>
+                pension anomalies and other issues!
+            </p>
         </div>
-
-
         {{-- ORGANIZATION CHART --}}
         <div class="org-chart">
-
             <div class="org-main-heading">
                 <h2>Organization</h2>
             </div>
-
             <div class="org-box">Station Commander</div>
             <div class="arrow">↓</div>
-
             <div class="org-box">Adm Comdt</div>
             <div class="arrow">↓</div>
-
-            {{-- HQ FLOW --}}
+            {{--HQ FLOW--}}
             <div class="split">
                 <div>
                     <div class="arrow">↓</div>
                     <div class="org-box">HQ Section</div>
                 </div>
-
                 <div>
                     <div class="arrow">↓</div>
                     <div class="org-box">Q Section</div>
@@ -44,61 +38,49 @@
                     <div class="arrow">↓</div>
                     <div class="org-box">Accounts Section</div>
                 </div>
-
                 <div>
                     <div class="arrow">↓</div>
                     <div class="org-box">Store Section</div>
                 </div>
             </div>
-
-            {{-- OIC --}}
+            {{--OIC--}}
             <div class="arrow">↓</div>
             <div class="org-box">OIC ECHS Cell – SSO</div>
             <div class="arrow">↓</div>
-
-            {{-- SPLIT CELLS --}}
+            {{--SPLIT CELLS--}}
             <div class="split-1">
                 <div>
                     <div class="arrow">↓</div>
                     <div class="org-box">ECHS Cell</div>
                 </div>
-
                 <div>
                     <div class="arrow">↓</div>
                     <div class="org-box">VSK Cell</div>
                 </div>
             </div>
-
         </div>
-
         <div class="container my-4">
             <div class="row justify-content-center">
                 <div class="col-lg-12 col-md-11 col-10 bg-white border p-4">
-
-                    <!-- TITLE -->
+                    <!--TITLE-->
                     <h5 class="text-center fw-bold text-uppercase mb-3 fs-2">
                         Area of STN HQ Dharamsala
                     </h5>
-
-                    <!-- SUB TITLE -->
+                    <!--SUB TITLE-->
                     <p class="text-center small fw-semibold mb-4 fs-4">
                         Kangra Tehsil Map
                     </p>
-
-                    <!-- MAP IMAGE -->
+                    <!--MAP IMAGE-->
                     <div class="text-center mb-4">
-                        <img src="{{ asset('public/admin/images/kangra_map.jpeg') }}"
-                            alt="Area of STN HQ Dharamsala Map" class="img-fluid border">
+                        <img src="{{ asset('public/admin/images/kangra_map.jpeg') }}" alt="Area of STN HQ Dharamsala Map" class="img-fluid border">
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="container my-4">
             <div class="row justify-content-center">
                 <div class="col-lg-12 col-md-10 col-8 bg-white border p-4">
-
-                    <!-- TITLE -->
+                    <!--TITLE -->
                     <h6 class="text-center fw-bold text-uppercase mb-1 fs-2">
                         Dependency State: STN HQ Dharamsala
                     </h6>
@@ -182,10 +164,8 @@
                 </div>
             </div>
         </div>
-
         <div class="content-detail">
             <h2 class="content-heading">Contact Us</h2>
-
             <div class="location-details">
                 <p><strong>Location:</strong> Veteran Sahayta Kendra, Station Headquarters, Dharamshala, HP-176215</p>
                 <p><strong>Helpline No:</strong> 7834023404 </p>
