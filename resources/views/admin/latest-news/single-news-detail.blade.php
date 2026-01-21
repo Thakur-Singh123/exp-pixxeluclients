@@ -41,7 +41,7 @@
       letter-spacing: .5px;
    }
    .back-btn {
-   background: #6B8E23;
+      background: #6B8E23;
       color: #2c3e50 !important;
       font-weight: 600;
       border-radius: 8px;
@@ -69,16 +69,32 @@
                <div class="card-body">
                   <div class="news-box">
                      <div class="row">
-                        <div class="col-md-6 mb-4">
+                        <div class="col-md-10 mb-4">
                            <span class="news-label">Title</span>
                            <div class="news-value">
                               {{ $news_detail->title ?? 'N/A' }}
                            </div>
                         </div>
-                        <div class="col-md-6 mb-4">
+                        <div class="col-md-2 mb-4">
                            <span class="news-label">Created Date</span>
                            <div class="news-date">
                               {{ date('d M Y', strtotime($news_detail->date ?? now())) }}
+                           </div>
+                        </div>
+                        <div class="row upload-section">
+                           <div class="col-md-12 mb-3 d-flex align-items-start upload-row">
+                              <div class="preview-box">
+                                 <label class="preview-label">View Uploaded Pdf</label><br><br>
+                                 @if (!empty($news_detail->document))
+                                 <a href="{{ asset('public/uploads/news/'.$news_detail->document) }}"
+                                    target="_blank"
+                                    class="btn btn-sm btn-outline-primary mt-1">
+                                    View Pdf
+                                 </a>
+                                 @else 
+                                    <span class="no-image-text">No Documents found</span>
+                                 @endif
+                              </div>
                            </div>
                         </div>
                      </div>

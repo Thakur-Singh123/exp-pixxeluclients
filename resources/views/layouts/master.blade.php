@@ -131,7 +131,7 @@
             <marquee behavior="scroll" direction="left" scrollamount="6" onmouseover="this.stop();"
                 onmouseout="this.start();">
                 <span style="font-weight: bold; color: #fff;">WELCOME TO VETERAN SAHAYATA KENDRA, MILITARY STATION,
-                    STATION HEADQUATER DHARAMDHALA</span>
+                    STATION HEADQUATER DHARAMSHALA</span>
             </marquee>
         </div>
     </section>

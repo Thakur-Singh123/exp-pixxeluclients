@@ -151,7 +151,7 @@ body {
                 <div class="card">
                     <div class="card-header text-center">
                         <h4 class="card-title mb-0">
-                            Import Data
+                            Import ESM Data
                         </h4>
                     </div>
                     <div class="card-body text-center">
@@ -162,13 +162,13 @@ body {
                                 <label for="fileUpload" class="file-upload-input">
                                     Click here to choose Excel/CSV file
                                 </label>
-                                <input type="file" id="fileUpload" name="image" class="d-none" accept=".xlsx,.xls,.csv">
+                                <input type="file" id="fileUpload" name="file" class="d-none" accept=".xlsx,.xls,.csv">
                                 <div class="progress-bar-container">
                                     <div class="progress-bar-fill"></div>
                                 </div>
                                 <div class="file-name-display"></div>
                                 <button type="button" class="remove-btn">&times;</button>
-                                @error('image')
+                                @error('file')
                                     <small class="text-danger d-block mt-2">{{ $message }}</small>
                                 @enderror
                             </div>

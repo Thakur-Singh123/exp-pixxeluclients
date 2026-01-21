@@ -187,10 +187,20 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="org-box org-box-1">
+                        <p><strong>ECHS APPLICATION FORM</strong></p>
 
+                        <a href="{{ url('public/admin/images/echs-application.pdf') }}" target="_blank">
+                            <button type="button" class="btn btn-primary view-pdf-01">
+                                View / Download PDF
+                            </button>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
+
+
     </div>
 
     <!-- ECHS POLYCLINIC TAB -->
@@ -392,6 +402,15 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <div class="org-box org-box-1">
+                            <p><strong>ECHS FORM FOR REIMBURSEMENT OF MEDICAL CLAIMS OF ECHS BENEFICIARIES</strong></p>
+
+                            <a href="{{ url('public/admin/images/echs-reimbursement.pdf') }}" target="_blank">
+                                <button type="button" class="btn btn-primary view-pdf-01">
+                                    View / Download PDF
+                                </button>
+                            </a>
+                        </div>
                     </div>
 
                 </div>
@@ -508,6 +527,16 @@
                         <strong class="fs-5">Conclusion:</strong>
                         Proper use of physiotherapy modalities enhances recovery and functional independence.
                     </p>
+
+                    <div class="org-box org-box-1">
+                        <p><strong>FIXED MEDICAL ALLOWANCE</strong></p>
+
+                        <a href="{{ url('public/admin/images/fixed-medical.pdf') }}" target="_blank">
+                            <button type="button" class="btn btn-primary view-pdf-01">
+                                View / Download PDF
+                            </button>
+                        </a>
+                    </div>
 
                 </div>
             </div>
@@ -651,7 +680,8 @@
                     </p>
 
                     <ul class="small fs-6">
-                        <li>Pension Payment Order (PPO) of Primary Beneficiary i.e. Ex Service Man (ESM) if he is alive
+                        <li>Pension Payment Order (PPO) of Primary Beneficiary i.e. Ex Service Man (ESM) if he is
+                            alive
                             or his Wife, if ESM is not alive</li>
                         <li>Old ECHS Card (front side only) / Temporary Slip of Primary Beneficiary</li>
                         <li>Photo of Primary Beneficiary (Passport size colour photo in white background)</li>
@@ -669,7 +699,8 @@
                     </p>
 
                     <ul class="small fs-6">
-                        <li>DPDO / Bank certificate, certifying that FMA (Fixed Medical Allowance) has been stopped</li>
+                        <li>DPDO / Bank certificate, certifying that FMA (Fixed Medical Allowance) has been stopped
+                        </li>
                         <li>MRO receipt for ECHS membership fee, for those retired from 1996 to 2002</li>
                     </ul>
 
@@ -784,8 +815,10 @@
                             Make Payment by Clicking “MAKE PAYMENT” and giving other details asked.
                         </li>
                         <li>
-                            Take Print out of Application Form, Payment Receipt and Temporary Slip, by logging in, after
-                            Payment of Fee. Note down Phone Number, Password, Mother’s Name and Place of Birth at the
+                            Take Print out of Application Form, Payment Receipt and Temporary Slip, by logging in,
+                            after
+                            Payment of Fee. Note down Phone Number, Password, Mother’s Name and Place of Birth at
+                            the
                             end
                             of Application printed, for future reference.
                         </li>
@@ -799,7 +832,8 @@
                             application is
                             verified by Record Office concerned. Sort out the observations by suitable actions and
                             change your
-                            details by Editing your application, if necessary. Save details once again after editing the
+                            details by Editing your application, if necessary. Save details once again after editing
+                            the
                             application.
                         </li>
                         <li>

@@ -17,19 +17,21 @@
                            <label class="form-label">Title</label>
                            <textarea type="text" name="title" class="form-control" value="{{ old('title') }}" placeholder="Enter title">{{ old('title') }}</textarea>
                            @error('title')
-                              <small class="text-danger">
-                                 {{ $message }}
-                              </small>
+                           <small class="text-danger">
+                              {{ $message }}
+                           </small>
                            @enderror
                         </div>
                         <div class="col-md-6 mb-3">
                            <label class="form-label">Created Date *</label>
                            <input type="date"
-                                 name="date"
-                                 class="form-control"
-                                 value="{{ old('date', date('Y-m-d')) }}">
+                              name="date"
+                              class="form-control"
+                              value="{{ old('date', date('Y-m-d')) }}">
                            @error('date')
-                              <small class="text-danger">{{ $message }}</small>
+                           <small class="text-danger">
+                              {{ $message }}
+                           </small>
                            @enderror
                         </div>
                      </div>
@@ -39,6 +41,11 @@
                            <div class="me-3" style="width:31%;">
                               <label>Upload Documents (PDF only)</label>
                               <input type="file" name="document" class="form-control upload-input" accept="application/pdf">
+                              @error('document')
+                              <small class="text-danger">
+                                 {{ $message }}
+                              </small>
+                              @enderror
                            </div>
                            <div class="preview-box"></div>
                         </div>

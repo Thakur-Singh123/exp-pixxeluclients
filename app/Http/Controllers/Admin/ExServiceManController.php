@@ -12,10 +12,33 @@ use App\Models\VeerNari;
 class ExServiceManController extends Controller
 {
     //Function for all services
-    public function all_services() {
+    public function all_services(Request $request) {
+        //Get query
+        $query = ExServiceMan::query();
+        //Army no filter
+        if ($request->filled('army_no')) {
+            $query->where('army_no', $request->army_no);
+        }
+        //Tehsil filter
+        if ($request->filled('tehsil')) {
+            $query->where('tehsil', $request->tehsil);
+        }
         //Get services
-        $all_services = ExServiceMan::OrderBy('ID', 'DESC')->get();
-        return view('admin.services.index', compact('all_services'));
+        $all_services = $query->orderBy('id', 'desc')->get();
+        //Get army no
+        $armyNumbers = ExServiceMan::select('army_no')
+        ->whereNotNull('army_no')
+        ->distinct()
+        ->orderBy('army_no', 'asc')
+        ->get();
+        //Get tehsils
+        $tehsils = ExServiceman::select('tehsil')
+            ->whereNotNull('tehsil')
+            ->distinct()
+            ->orderBy('tehsil','asc')
+            ->get();
+            
+        return view('admin.services.index', compact('all_services','armyNumbers','tehsils'));
     }
 
     //Function for add service
