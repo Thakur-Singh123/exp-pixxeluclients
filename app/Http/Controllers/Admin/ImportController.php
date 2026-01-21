@@ -19,10 +19,10 @@ class ImportController extends Controller
     public function submi_import(Request $request) {
         //Validate input fileds
         $request->validate([
-            'image' => 'required|mimes:xlsx,xls,csv'
+            'file' => 'required|mimes:xlsx,xls,csv'
         ]);
         //Import call
-        Excel::import(new ExServiceManImport, $request->file('image'));
+        Excel::import(new ExServiceManImport, $request->file('file'));
         return back()->with('success', 'Data Imported Successfully!');
     }
 }

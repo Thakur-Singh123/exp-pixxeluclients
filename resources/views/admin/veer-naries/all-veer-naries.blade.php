@@ -67,7 +67,7 @@
                                                 <a href="{{ asset('public/uploads/documents/'.$nari->veer_documents) }}"
                                                    target="_blank"
                                                    style="color:#4135dfc7; font-weight:600;">
-                                                   View Documents
+                                                   View
                                                 </a>
                                              @else
                                                 -

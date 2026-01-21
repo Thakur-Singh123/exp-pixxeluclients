@@ -27,6 +27,7 @@ class NewsController extends Controller
         $request->validate([
             'title' => 'required',
             'date'  => 'required',
+            'document'  => 'required',
         ]);
         //Check if document is exit or not
         $document = "";
@@ -67,17 +68,33 @@ class NewsController extends Controller
 
     //Function for update news
     public function update_news(Request $request, $id) {
-        //Validate input fields
+       //Validate input fields
         $request->validate([
             'title' => 'required',
             'date'  => 'required',
         ]);
-        //Update news
-        $is_update_news = LatestNews::where('id', $id)->update([
-            'title' => $request->title,
-            'date' => $request->date,
-            'status' => 'Active',
-        ]);
+        //Check if document is exit or not
+        $document = "";
+        if ($request->hasFile('document')) {
+            $file = $request->file('document');
+            $extension = $file->getClientOriginalExtension();
+            $document = time() . '.' . $extension;
+            $file->move(public_path('uploads/news'), $document);
+            //Update news
+            $is_update_news = LatestNews::where('id', $id)->update([
+                'title' => $request->title,
+                'date' => $request->date,
+                'document' => $document,
+                'status' => 'Active',
+            ]);
+        } else {
+            //Update news
+            $is_update_news = LatestNews::where('id', $id)->update([
+                'title' => $request->title,
+                'date' => $request->date,
+                'status' => 'Active',
+            ]);
+        }
         //Check if news updated or not
         if($is_update_news) {
             return redirect()->route('admin.news')->with('success', 'News updated successfully.');
