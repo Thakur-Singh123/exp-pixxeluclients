@@ -31,7 +31,11 @@ class WidowController extends Controller
             'window_name' => 'required',
             'date_of_death' => 'required',
         ]);
-
+        //Check if serial number already exists
+        $exists = Widow::where('ex_service_man_id', $request->army_no)->exists();
+        if ($exists) {
+            return back()->with('unsuccess', 'This Army No already exists, please try a new army No.');
+        }
         //image folder
         $folder = public_path('uploads/documents');
         //Check if folder exists or not

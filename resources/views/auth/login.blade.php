@@ -51,24 +51,41 @@
             margin-bottom: 5px;
             color: #444;
         }
+        .back-home-btn {
+            position: fixed;
+            top: -40px;
+            right: 6px;
+            background: #ff6a00;
+            color: #fff;
+            padding: 4px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+            z-index: 9999;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
     </style>
     <body>
-        <div class="container">
+    <div class="container">
+        <a href="{{ url('/') }}" class="back-home-btn">
+            <i class="fas fa-arrow-left">    Back</i>
+        </a>
         <input type="checkbox" id="flip" {{ session('openSignup') ? 'checked' : '' }}>
         <!--<div class="cover">
-            <div class="front">
-            <img src="{{ asset('public/admin/images/frontImg.jpg') }}" alt="">
-            <div class="text">
-            <span class="text-1">Every new friend is a <br> new adventure</span>
-            <span class="text-2">Let's get connected</span>
-            </div>
+                <div class="front">
+                    <img src="{{ asset('public/admin/images/frontImg.jpg') }}" alt="">
+                    <div class="text">
+                    <span class="text-1">Every new friend is a <br> new adventure</span>
+                    <span class="text-2">Let's get connected</span>
+                </div>
             </div>
             <div class="back">
-            <img class="backImg" src="{{ asset('public/admin/images/backImg.jpg') }}" alt="">
-            <div class="text">
-            <span class="text-1">Complete miles of journey <br> with one step</span>
-            <span class="text-2">Let's get started</span>
-            </div>
+                <img class="backImg" src="{{ asset('public/admin/images/backImg.jpg') }}" alt="">
+                <div class="text">
+                    <span class="text-1">Complete miles of journey <br> with one step</span>
+                    <span class="text-2">Let's get started</span>
+                </div>
             </div>
         </div>-->
         <div class="forms">

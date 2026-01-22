@@ -39,7 +39,7 @@
 </div>
 @endif
 <!--end success message-->
-<!-- start error message-->
+<!--start error message-->
 @if (Session::has('unsuccess'))
 <div class="notification-box notification-error" id="notifBox">
     <strong></strong> {{ Session::get('unsuccess') }}
@@ -48,8 +48,8 @@
     </span>
 </div>
 @endif
-<!-- end error message-->
-<!-- start js message-->
+<!--end error message-->
+<!--start js message-->
 <script>
 window.onload = function() {
     let countdownElement = document.getElementById('countdown');

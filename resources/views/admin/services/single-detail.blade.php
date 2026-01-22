@@ -150,12 +150,12 @@
                   <div class="mt-4 services001">
                      <div class="col-md-4 services2">
                         <strong>View Uploaded Documents:</strong><br><br>
-                        @if (!empty($service_detail->ex_documents))
-                           <a href="{{ asset('public/uploads/documents/'.$service_detail->ex_documents) }}"
+                        @if (!empty($service_detail->spo_documents))
+                           <a href="{{ asset('public/uploads/documents/'.$service_detail->spo_documents) }}"
                               target="_blank"
                               class="btn btn-sm btn-outline-primary mt-1">
                               View Documents
-                           </a>
+                           </a> 
                            @else 
                            <span class="no-image-text">No Documents found</span>
                         @endif

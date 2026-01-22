@@ -1099,8 +1099,8 @@ img.img-thumbnail {
 
 .services2 strong {
     position: relative;
+    font-size: 14px;
 }
-
 .services2 strong:before {
     content: '⬇';
     position: absolute;
@@ -1110,7 +1110,7 @@ img.img-thumbnail {
 }
 .services001 {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /*grid-template-columns: repeat(3, 1fr);*/
     gap: 20px;
     border: 1px solid #ddd;
     border-radius: 12px;
