@@ -144,7 +144,7 @@
                            </div>
                         </div>
                         <!--Photograph section-->
-                        <!-- <div class="row">
+                        <!--<div class="row">
                            <div class="col-md-12 mb-3 d-flex align-items-start">
                               <div class="me-3" style="width:31%;">
                                  <label>Joint Photograph</label>
@@ -214,34 +214,34 @@
                               <label class="form-label">Aadhar Card Number</label>
                               <input type="text" name="spouse_aadhar_card" class="form-control" value="{{ old('spouse_aadhar_card') }}" placeholder="Enter aadhar card number">
                            </div>
-                           <!-- <div class="col-md-4 mb-3">
-                              <label class="form-label">Pan Card Number</label>
-                              <input type="text" name="spouse_pan_card" class="form-control" value="{{ old('spouse_pan_card') }}" placeholder="Enter pan card number">
+                           <!--<div class="col-md-4 mb-3">
+                                 <label class="form-label">Pan Card Number</label>
+                                 <input type="text" name="spouse_pan_card" class="form-control" value="{{ old('spouse_pan_card') }}" placeholder="Enter pan card number">
                               </div>
                               <div class="col-md-4 mb-3">
-                              <label class="form-label">ECHS Card Number</label>
-                              <input type="text" name="spouse_echs_card" class="form-control" value="{{ old('spouse_echs_card') }}" placeholder="Enter echs card number">
+                                 <label class="form-label">ECHS Card Number</label>
+                                 <input type="text" name="spouse_echs_card" class="form-control" value="{{ old('spouse_echs_card') }}" placeholder="Enter echs card number">
                               </div>
                               <div class="col-md-4 mb-3">
-                              <label class="form-label">CSD Card Number</label>
-                              <input type="text" name="spouse_csd_card" class="form-control" value="{{ old('spouse_csd_card') }}" placeholder="Enter csd card number">
+                                 <label class="form-label">CSD Card Number</label>
+                                 <input type="text" name="spouse_csd_card" class="form-control" value="{{ old('spouse_csd_card') }}" placeholder="Enter csd card number">
                               </div>
                               <div class="col-md-4 mb-3">
-                              <label class="form-label">Bank Account Number</label>
-                              <input type="text" name="spouse_bank_acc_no" class="form-control" value="{{ old('spouse_bank_acc_no') }}" placeholder="Enter bank account number">
+                                 <label class="form-label">Bank Account Number</label>
+                                 <input type="text" name="spouse_bank_acc_no" class="form-control" value="{{ old('spouse_bank_acc_no') }}" placeholder="Enter bank account number">
                               </div>
                               <div class="col-md-4 mb-3">
-                              <label class="form-label">Bank Name</label>
-                              <input type="text" name="spouse_bank_name" class="form-control" value="{{ old('spouse_bank_name') }}" placeholder="Enter bank name">
+                                 <label class="form-label">Bank Name</label>
+                                 <input type="text" name="spouse_bank_name" class="form-control" value="{{ old('spouse_bank_name') }}" placeholder="Enter bank name">
                               </div>
                               <div class="col-md-4 mb-3"> 
-                              <label class="form-label">IFSC Code</label>
-                              <input type="text" name="spouse_ifsc_code" class="form-control" value="{{ old('spouse_ifsc_code') }}" placeholder="Enter ifsc code">
+                                 <label class="form-label">IFSC Code</label>
+                                 <input type="text" name="spouse_ifsc_code" class="form-control" value="{{ old('spouse_ifsc_code') }}" placeholder="Enter ifsc code">
                               </div>
                               <div class="col-md-4 mb-3"> 
-                              <label class="form-label">MICR Code</label>
-                              <input type="text" name="spouse_micr_code" class="form-control" value="{{ old('spouse_micr_code') }}" placeholder="Enter micr code">
-                              </div> -->
+                                 <label class="form-label">MICR Code</label>
+                                 <input type="text" name="spouse_micr_code" class="form-control" value="{{ old('spouse_micr_code') }}" placeholder="Enter micr code">
+                              </div>-->
                         </div>
                         <!--Photograph section-->
                         <div class="row">
@@ -323,7 +323,7 @@
                                  <td><input type="text" name="children_occupation[]" class="form-control" placeholder="Enter occupation"></td>
                                  <td class="text-center">
                                     <button type="button" class="btn btn-success btn-sm addChildRow">
-                                    <i class="fas fa-plus"></i> Add
+                                       <i class="fas fa-plus"></i> Add
                                     </button>
                                  </td>
                               </tr>

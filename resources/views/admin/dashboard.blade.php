@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
   <div class="page-inner">
-    <!-- Dashboard Summary Boxes -->
+    <!--Dashboard Summary Boxes -->
     <div class="dashboard-summary">
       <div class="summary-card" style="background-image: url('{{ asset('public/admin/images/bg.png') }}');">
         <div class="summary-icon">

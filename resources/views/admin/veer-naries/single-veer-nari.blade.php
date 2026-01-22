@@ -91,7 +91,7 @@
                            <span class="no-image-text">No Documents found</span>
                         @endif
                      </div>
-                     <!-- <div class="col-md-4 services2">
+                     <!--<div class="col-md-4 services2">
                         <strong>Joint Photograph:</strong><br><br>
                         @if($veerNari_detail->serviceman_detail->joint_image)
                            <img src="{{ asset('public/uploads/ex-images/'.$veerNari_detail->serviceman_detail->joint_image) }}" class="img-thumbnail shadow-sm" width="80">
@@ -154,7 +154,7 @@
                         @else 
                            - 
                         @endif
-                     </div> -->
+                     </div>-->
                   </div>
                </div>
             </div>

@@ -147,11 +147,11 @@
                            </div>
                         </div>
                      </div>
-                  </div>
                   <!--End photograph section-->
                   <div class="form-submit-left">
                      <button type="submit" class="btn btn-primary">Update</button>
                   </div>
+               </div>
                </form>
             </div>
          </div>

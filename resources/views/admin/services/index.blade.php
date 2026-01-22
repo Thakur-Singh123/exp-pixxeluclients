@@ -30,19 +30,7 @@
                      </div>
                      <div class="card-body">
                         <form method="GET" action="{{ route('admin.index') }}" class="tehsil-filter" id="tehsilForm">
-                           <!-- Army No Select -->
-                           <select name="army_no"
-                              class="form-control"
-                              style="width:200px;"
-                              onchange="handleArmyChange(this.value)">
-                              <option value="" disabled {{ request('army_no') ? '' : 'selected' }}>-- Army No --</option>
-                              <option value="all">All</option>
-                              @foreach($armyNumbers as $a)
-                              <option value="{{ $a->army_no }}" {{ request('army_no') == $a->army_no ? 'selected' : '' }}>
-                                 {{ $a->army_no }}
-                              </option>
-                              @endforeach
-                           </select>
+                           <!--Tehsil Select-->
                            <select name="tehsil"
                               class="form-control"
                               style="width:200px;"
@@ -173,15 +161,6 @@
 </div>
 <script>
    function handleTehsilChange(value) {
-      if (value === 'all') {
-         window.location.href = "{{ route('admin.index') }}";
-      } else {
-         document.getElementById('tehsilForm').submit();
-      }
-   }
-</script>
-<script>
-   function handleArmyChange(value) {
       if (value === 'all') {
          window.location.href = "{{ route('admin.index') }}";
       } else {

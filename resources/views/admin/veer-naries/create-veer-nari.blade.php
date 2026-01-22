@@ -64,7 +64,7 @@
                            </div>
                            <div class="preview-box"></div>
                         </div>
-                        <!-- <div class="col-md-12 mb-3 d-flex align-items-start">
+                        <!--<div class="col-md-12 mb-3 d-flex align-items-start">
                            <div class="me-3" style="width: 31%;">
                               <label>Aadhar Card</label>
                               <input type="file" name="veer_aadhar_image" class="form-control upload-input">
@@ -77,7 +77,7 @@
                               <input type="file" name="veer_pan_image" class="form-control upload-input">
                            </div>
                            <div class="preview-box"></div>
-                        </div> -->
+                        </div>-->
                      </div>
                      <!--End photograph section-->
                      <div class="form-submit-left">

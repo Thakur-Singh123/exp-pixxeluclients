@@ -93,7 +93,7 @@
                             <a href="{{ route('export.download') }}" class="btn-custom btn-confirm">
                                 <i class="fas fa-download"></i> Yes, Download File
                             </a>
-                            <a href="{{ url()->previous() }}" class="btn-custom btn-cancel">
+                            <a href="{{ url('admin/export-service') }}" class="btn-custom btn-cancel">
                                 <i class="fas fa-times"></i> Cancel
                             </a>
                         </div>

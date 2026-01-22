@@ -11,7 +11,7 @@ class FrontController extends Controller
     //Function for welcome page
     public function welcome() {
         //Get latest news
-        $latestNews = LatestNews::orderBy('id', 'DESC')->take(10)->get();
+        $latestNews = LatestNews::latest()->limit(20)->get();
         return view('fronts.welcome', compact('latestNews'));
     }
 

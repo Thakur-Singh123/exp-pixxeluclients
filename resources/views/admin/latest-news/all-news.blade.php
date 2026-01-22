@@ -57,15 +57,15 @@
                                              <td>{{ $news->title ?? '-' }}</td>
                                              <td>{{ \Carbon\Carbon::parse($news->date)->format('d M, Y') ?? '-' }}</td>
                                              <td class="text-center">
-                                             @if(!empty($news->document))
-                                                <a href="{{ asset('public/uploads/news/'.$news->document) }}"
-                                                   target="_blank"
-                                                   style="color:#4135dfc7; font-weight:600;">
-                                                   View
-                                                </a>
-                                             @else
-                                                -
-                                             @endif
+                                                @if(!empty($news->document))
+                                                   <a href="{{ asset('public/uploads/news/'.$news->document) }}"
+                                                      target="_blank"
+                                                      style="color:#4135dfc7; font-weight:600;">
+                                                      View
+                                                   </a>
+                                                @else
+                                                   -
+                                                @endif
                                              </td>
                                              <td>
                                                 <div class="form-button-action">

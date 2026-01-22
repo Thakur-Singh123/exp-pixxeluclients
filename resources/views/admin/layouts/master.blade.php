@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>VSK Cell Portal</title>
@@ -15,7 +14,7 @@
     <link rel="stylesheet" href="{{ asset('public/admin/assets/select2/css/select2.css') }}" />
     <link rel="stylesheet" href="{{ asset('public/admin/assets/select2/css/select2.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('public/admin/assets/css/bootstrap.min.css') }}" />
-    <!-- <link rel="stylesheet" href="{{ asset('public/admin/assets/css/plugins.min.css') }}" /> -->
+    <!--<link rel="stylesheet" href="{{ asset('public/admin/assets/css/plugins.min.css') }}" />-->
     <link rel="stylesheet" href="{{ asset('public/admin/assets/css/kaiadmin.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('public/admin/assets/css/fonts.css') }}" />
     <link rel="stylesheet" href="{{ asset('public/admin/assets/css/demo.css') }}" />
@@ -47,7 +46,7 @@
                 <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
                     <div class="container-fluid">
                         <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
-                            <!-- <li class="nav-item topbar-icon dropdown hidden-caret submenu">
+                            <!--<li class="nav-item topbar-icon dropdown hidden-caret submenu">
                                 <a class="nav-link dropdown-toggle" href="#" id="notifDropdown"
                                     role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                     <i class="fa fa-bell"></i>
@@ -173,8 +172,8 @@
             <footer class="footer">
                 <div class="container-fluid d-flex justify-content-between">
                     <!--<div class="copyright">
-                    ©2025 Food Machine. All rights reserved<i class="fa fa-heart heart text-danger"></i> by
-                     <a href="{{ url('/') }}">Food-Machine.com</a>
+                        ©2025 Food Machine. All rights reserved<i class="fa fa-heart heart text-danger"></i> by
+                        <a href="{{ url('/') }}">Food-Machine.com</a>
                     </div>-->
                 </div>
             </footer>
@@ -183,7 +182,7 @@
     <script>
         var base_url = '{{ url('/') }}';
     </script>
-    <!-- FullCalendar JS -->
+    <!--FullCalendar JS-->
     <script src="{{ asset('public/assets/js/index.global.min.js') }}"></script>
     <script src="{{ asset('public/admin/assets/js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('public/admin/assets/datatables/js/dataTables.min.js') }}"></script>
