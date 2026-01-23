@@ -189,7 +189,7 @@
     <script>
         $(document).ready(function () {
             $('#serviceTable').DataTable({
-                pageLength: 50,
+                pageLength: 10,
                 lengthMenu: [10, 25, 50, 100]
             });
         });
@@ -212,5 +212,5 @@
             });
         });
     </script>
-</body>
+</body> 
 </html>
