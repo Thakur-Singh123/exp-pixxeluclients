@@ -239,6 +239,7 @@
                   <th>DOE</th>
                   <th>DOR</th>
                   <th>Regt / Corps</th>
+                  <th>Force Types</th>
                   <th>Action</th>
                </tr>
             </thead>
@@ -251,10 +252,11 @@
                   <td>{{ $service->army_no ?? '-' }}</td>
                   <td>{{ $service->rank ?? '-' }}</td>
                   <td>{{ $service->name ?? '-' }}</td>
-                  <td>{{ \Carbon\Carbon::parse($service->dob)->format('d M, Y') ?? '-' }}</td>
-                  <td>{{ \Carbon\Carbon::parse($service->doe)->format('d M, Y') ?? '-' }}</td>
-                  <td>{{ \Carbon\Carbon::parse($service->dor)->format('d M, Y') ?? '-' }}</td>
+                  <td>{{ $service->dob ? \Carbon\Carbon::parse($service->dob)->format('d M, Y') : '-' }}</td>
+                  <td>{{ $service->doe ? \Carbon\Carbon::parse($service->doe)->format('d M, Y') : '-' }}</td>
+                  <td>{{ $service->dor ? \Carbon\Carbon::parse($service->dor)->format('d M, Y') : '-' }}</td>
                   <td>{{ $service->regiment_corps ?? '-' }}</td>
+                  <td>{{ $service->force_type ?? '-' }}</td>
                   <td><i class="fa-solid fa-eye view-icon" data-type="exman" data-id="{{ $service->id }}"></i></td>
                </tr>
                @endforeach
@@ -282,7 +284,7 @@
                   <td>{{ $count ++ }}.</td>
                   <td>{{ $widow->serviceman_detail->army_no ?? '-' }}</td>
                   <td>{{ $widow->window_name ?? '-' }}</td>
-                  <td>{{ \Carbon\Carbon::parse($widow->date_of_death)->format('d M, Y') ?? '-' }}</td>
+                  <td>{{ $widow->date_of_death ? \Carbon\Carbon::parse($widow->date_of_death)->format('d M, Y') : '-' }}</td>
                   <td><i class="fa-solid fa-eye view-icon" data-type="widow" data-id="{{ $widow->id }}"></i></td>
                </tr>
                @endforeach

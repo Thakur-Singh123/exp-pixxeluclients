@@ -20,7 +20,7 @@ class ExServiceManController extends Controller
             $query->where('tehsil', $request->tehsil);
         }
         //Get services
-        $all_services = $query->orderBy('id','desc')->get();
+        $all_services = $query->orderBy('id','asc')->get();
         //Get army no
         $armyNumbers = ExServiceMan::select('army_no')
             ->whereNotNull('army_no')
@@ -186,9 +186,11 @@ class ExServiceManController extends Controller
             'pin_code' => $request->pin_code,
             'mobile_no' => $request->mobile_no,
             'regiment_corps' => $request->regiment_corps,
+            'force_type' => $request->force_type,
             'dob' => $request->dob,
             'doe' => $request->doe,
             'dor' => $request->dor,
+            'ppo_no' => $request->ppo_no,
             'bank_acc_no' => $request->bank_acc_no,
             'bank_name' => $request->bank_name,
             'ifsc_code' => $request->ifsc_code,
@@ -204,6 +206,7 @@ class ExServiceManController extends Controller
             'spouse_education' => $request->spouse_education,
             'spouse_mobile' => $request->spouse_mobile,
             'spouse_aadhar_card' => $request->spouse_aadhar_card,
+            'canteen_card' => $request->canteen_card,
             // 'spouse_pan_card' => $request->spouse_pan_card,
             // 'spouse_echs_card' => $request->spouse_echs_card,
             // 'spouse_csd_card' => $request->spouse_csd_card,
@@ -323,9 +326,11 @@ class ExServiceManController extends Controller
             'pin_code' => $request->pin_code,
             'mobile_no' => $request->mobile_no,
             'regiment_corps' => $request->regiment_corps,
+            'force_type' => $request->force_type,
             'dob' => $request->dob,
             'doe' => $request->doe,
             'dor' => $request->dor,
+            'ppo_no' => $request->ppo_no,
             'bank_acc_no' => $request->bank_acc_no,
             'bank_name' => $request->bank_name,
             'ifsc_code' => $request->ifsc_code,
@@ -341,6 +346,7 @@ class ExServiceManController extends Controller
             'spouse_education' => $request->spouse_education,
             'spouse_mobile' => $request->spouse_mobile,
             'spouse_aadhar_card' => $request->spouse_aadhar_card,
+            'canteen_card' => $request->canteen_card, 
             // 'spouse_pan_card' => $request->spouse_pan_card,
             // 'spouse_echs_card' => $request->spouse_echs_card,
             // 'spouse_csd_card' => $request->spouse_csd_card,
@@ -349,7 +355,7 @@ class ExServiceManController extends Controller
             // 'spouse_ifsc_code' => $request->spouse_ifsc_code,
             // 'spouse_micr_code' => $request->spouse_micr_code,
             //images
-            // 'image' => $image,
+            // 'image' => $image, 
             // 'aadhar_image' => $person_aadhar,
             // 'pan_image' => $person_pan,
             // 'joint_image' => $person_joint,

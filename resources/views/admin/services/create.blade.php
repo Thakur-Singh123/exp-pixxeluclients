@@ -59,14 +59,18 @@
                               <label class="form-label">Regt / Corps</label>
                               <input type="text" name="regiment_corps" class="form-control" value="{{ old('regiment_corps') }}" placeholder="Enter regiment / corps">
                            </div>
-                        </div>
-                        <!--Photograph section-->
-                        <div class="row">
-                           <div class="col-md-12 mb-3 d-flex align-items-start">
-                              <div class="me-3" style="width:31%;">
-                                 <label>Upload Documents (PDF only)</label>
-                                 <input type="file" name="ex_documents" class="form-control upload-input" accept="application/pdf">
-                              </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">Force Type</label>
+                              <select name="force_type" class="form-control">
+                                 <option value="" disabled selected>Select Force</option>
+                                 <option value="ARMY">Army</option>
+                                 <option value="Navy">Navy</option>
+                                 <option value="Air Force">Air Force</option>
+                              </select>
+                           </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">Upload Documents (PDF only)</label>
+                              <input type="file" name="ex_documents" class="form-control upload-input" accept="application/pdf">
                               <div class="preview-box"></div>
                            </div>
                            <!--<div class="col-md-12 mb-3 d-flex align-items-start">
@@ -125,6 +129,10 @@
                            <div class="col-md-4 mb-3">
                               <label class="form-label">Pan Card Number</label>
                               <input type="text" name="pan_card_no" class="form-control" value="{{ old('pan_card_no') }}" placeholder="Enter pan card number">
+                           </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">PPO Number</label>
+                              <input type="text" name="ppo_no" class="form-control" value="{{ old('ppo_no') }}" placeholder="Enter ppo number">
                            </div>
                            <div class="col-md-4 mb-3">
                               <label class="form-label">Bank Account Number</label>
@@ -213,6 +221,10 @@
                            <div class="col-md-4 mb-3">
                               <label class="form-label">Aadhar Card Number</label>
                               <input type="text" name="spouse_aadhar_card" class="form-control" value="{{ old('spouse_aadhar_card') }}" placeholder="Enter aadhar card number">
+                           </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">Canteen Card Number</label>
+                              <input type="text" name="canteen_card" class="form-control" value="{{ old('canteen_card') }}" placeholder="Enter canteen card number">
                            </div>
                            <!--<div class="col-md-4 mb-3">
                                  <label class="form-label">Pan Card Number</label>

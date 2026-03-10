@@ -176,13 +176,15 @@
                 <div class="detail-row">
                     <div class="detail-item"><strong>Army No:</strong> {{ $service_detail->army_no ?? '-' }}</div>
                     <div class="detail-item"><strong>Rank:</strong> {{ $service_detail->rank ?? '-' }}</div>
-                    <div class="detail-item"><strong>Name:</strong> {{ $service_detail->name ?? '-' }}</div>
-                    <div class="detail-item"><strong>Date of Birth:</strong>{{ \Carbon\Carbon::parse($service_detail->dob)->format('d M, Y') ?? '-' }}</div>
-                    <div class="detail-item"><strong>Date of Enrollment:</strong>{{ \Carbon\Carbon::parse($service_detail->doe)->format('d M, Y') ?? '-' }}</div>
-                    <div class="detail-item"><strong>Date of Retirement:</strong>{{ \Carbon\Carbon::parse($service_detail->dor)->format('d M, Y') ?? '-' }}</div>
+                    <div class="detail-item"><strong>Name:</strong> {{ $service_detail->name ?? '-' }}</div> 
+                    <div class="detail-item"><strong>Date of Birth:</strong>{{ $service_detail->dob ? \Carbon\Carbon::parse($service_detail->dob)->format('d M, Y') : '-' }}</div>
+                    <div class="detail-item"><strong>Date of Enrollment:</strong>{{ $service_detail->doe ? \Carbon\Carbon::parse($service_detail->doe)->format('d M, Y') : '-' }}</div>
+                    <div class="detail-item"><strong>Date of Retirement:</strong>{{ $service_detail->dor ? \Carbon\Carbon::parse($service_detail->dor)->format('d M, Y') : '-' }}</div>
                     <div class="detail-item"><strong>ECHS Card Number:</strong> {{ $service_detail->echs_card_no ?? '-' }}</div>
-                    <div class="detail-item"><strong>CSD Card Numbe:</strong> {{ $service_detail->csd_card_no ?? '-' }}</div>
+                    <div class="detail-item"><strong>CSD Card Number:</strong> {{ $service_detail->csd_card_no ?? '-' }}</div>
+                    <div class="detail-item"><strong>PPO Number:</strong> {{ $service_detail->ppo_no ?? '-' }}</div>
                     <div class="detail-item"><strong>Regiment / Corps:</strong>{{ $service_detail->regiment_corps ?? '-' }}</div>
+                    <div class="detail-item"><strong>Force Type:</strong>{{ $service_detail->force_type ?? '-' }}</div>
                 </div>
                 <br>
                 <div class="mt-4 d-flex">
@@ -295,9 +297,10 @@
                 <div class="detail-row">
                     <div class="detail-item"><strong>Name:</strong> {{ $service_detail->spouse_name ?? '-' }}</div>
                     <div class="detail-item"><strong>Address:</strong> {{ $service_detail->spouse_address ?? '-' }}</div>
-                    <div class="detail-item"><strong>Date of Birth:</strong>{{ \Carbon\Carbon::parse($service_detail->spouse_dob)->format('d M, Y') ?? '-' }}</div>
+                    <div class="detail-item"><strong>Date of Birth:</strong> {{ $service_detail->spouse_dob ? \Carbon\Carbon::parse($service_detail->spouse_dob)->format('d M, Y') : '-' }}</div>
                     <div class="detail-item"><strong>Mobile Number:</strong> {{ $service_detail->spouse_mobile ?? '-' }}</div>
                     <div class="detail-item"><strong>Aadhar Card Number:</strong>{{ $service_detail->spouse_aadhar_card ?? '-' }}</div>
+                    <div class="detail-item"><strong>Canteen Card Number:</strong>{{ $service_detail->canteen_card ?? '-' }}</div>
                     <!--<div class="detail-item"><strong>PAN Card Number:</strong> {{ $service_detail->spouse_pan_card ?? '-' }}</div>
                     <div class="detail-item"><strong>ECHS Card Number:</strong> {{ $service_detail->spouse_echs_card ?? '-' }}</div>
                     <div class="detail-item"><strong>CSD Card Number:</strong> {{ $service_detail->spouse_csd_card ?? '-' }}</div>

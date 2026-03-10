@@ -17,7 +17,7 @@
                   <div class="row">
                      <div class="col-md-4 mb-3"><strong>Army No:</strong> {{ $veerNari_detail->serviceman_detail->army_no ?? '-' }}</div>
                      <div class="col-md-4 mb-3"><strong>Name:</strong> {{ $veerNari_detail->veer_nari_name ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>Date of Death:</strong> {{ $veerNari_detail->veer_nari_expose_year ?? '-' }}</div>
+                     <div class="col-md-4 mb-3"><strong>Expose Year:</strong> {{ $veerNari_detail->veer_nari_expose_year ?? '-' }}</div>
                   </div>
                   <div class="mt-4 services001">
                      <div class="col-md-2 services2">
@@ -68,14 +68,17 @@
                      <div class="col-md-4 mb-3 services1"><strong>PAN Card Number:</strong> {{ $veerNari_detail->serviceman_detail->pan_card_no ?? '-' }}</div>
                      <div class="col-md-4 mb-3 services1"><strong>ECHS Card Number:</strong> {{ $veerNari_detail->serviceman_detail->echs_card_no ?? '-' }}</div>
                      <div class="col-md-4 mb-3 services1"><strong>CSD Card Number:</strong> {{ $veerNari_detail->serviceman_detail->csd_card_no ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>PPO Number:</strong> {{ $veerNari_detail->serviceman_detail->ppo_no ?? '-' }}</div>
                      <div class="col-md-4 mb-3 services1"><strong>Regiment / Corps:</strong> {{ $veerNari_detail->serviceman_detail->regiment_corps ?? '-' }}</div>
-                     <div class="col-md-4 mb-3 services1"><strong>Date of Birth:</strong> {{ \Carbon\Carbon::parse($veerNari_detail->serviceman_detail->dob)->format('d M, Y') ?? '-' }}</div>
-                     <div class="col-md-4 mb-3 services1"><strong>Date of Enrollment:</strong> {{ \Carbon\Carbon::parse($veerNari_detail->serviceman_detail->doe)->format('d M, Y') ?? '-' }}</div>
-                     <div class="col-md-4 mb-3 services1"><strong>Date of Retirement:</strong> {{ \Carbon\Carbon::parse($veerNari_detail->serviceman_detail->dor)->format('d M, Y') ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Force Type:</strong>{{ $veerNari_detail->serviceman_detail->force_type ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Date of Birth:</strong>{{ $veerNari_detail->serviceman_detail->dob ? \Carbon\Carbon::parse($veerNari_detail->serviceman_detail->dob)->format('d M, Y') : '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Date of Enrollment:</strong>{{ $veerNari_detail->serviceman_detail->doe ? \Carbon\Carbon::parse($veerNari_detail->serviceman_detail->doe)->format('d M, Y') : '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Date of Retirement:</strong>{{ $veerNari_detail->serviceman_detail->dor ? \Carbon\Carbon::parse($veerNari_detail->serviceman_detail->dor)->format('d M, Y') : '-' }}</div>
                      <div class="col-md-4 mb-3 services1"><strong>Bank Account Number:</strong> {{ $veerNari_detail->serviceman_detail->bank_acc_no ?? '-' }}</div>
                      <div class="col-md-4 mb-3 services1"><strong>Bank Name:</strong> {{ $veerNari_detail->serviceman_detail->bank_name ?? '-' }}</div>
                      <div class="col-md-4 mb-3 services1"><strong>IFSC Code:</strong> {{ $veerNari_detail->serviceman_detail->ifsc_code ?? '-' }}</div>
                      <div class="col-md-4 mb-3 services1"><strong>MICR Code:</strong> {{ $veerNari_detail->serviceman_detail->micr_code ?? '-' }}</div>
+                      <div class="col-md-4 mb-3 services1"><strong>Canteen Card Number:</strong>{{ $veerNari_detail->serviceman_detail->canteen_card ?? '-' }}</div>
                   </div>
                   <!-- Images -->
                   <div class="mt-4 services001">
