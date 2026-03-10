@@ -17,7 +17,7 @@ class ExServiceManExport implements FromCollection, WithHeadings, WithEvents
     //Function for collection
     public function collection() {
         //Get services
-        $services = ExServiceMan::orderBy('id', 'ASC')->get();
+        $services = ExServiceMan::orderBy('id', 'desc')->get();
         //Data
         $data = [];
         foreach ($services as $service) {

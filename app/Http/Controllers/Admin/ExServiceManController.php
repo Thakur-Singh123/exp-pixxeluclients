@@ -20,7 +20,7 @@ class ExServiceManController extends Controller
             $query->where('tehsil', $request->tehsil);
         }
         //Get services
-        $all_services = $query->orderBy('id','asc')->get();
+        $all_services = $query->orderBy('id','desc')->get();
         //Get army no
         $armyNumbers = ExServiceMan::select('army_no')
             ->whereNotNull('army_no')
