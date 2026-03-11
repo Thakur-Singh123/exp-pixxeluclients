@@ -61,7 +61,7 @@
                                                 </a>
                                              </td>
                                              <td>{{ $widow->window_name ?? '-' }}</td>
-                                             <td>{{ \Carbon\Carbon::parse($widow->date_of_death)->format('d M, Y') ?? '-' }}</td>
+                                             <td>{{ $widow->date_of_death ? \Carbon\Carbon::parse($widow->date_of_death)->format('d M, Y') : '-' }}</td>
                                              <td class="text-center">
                                              @if(!empty($widow->wd_documents))
                                                 <a href="{{ asset('public/uploads/documents/'.$widow->wd_documents) }}"

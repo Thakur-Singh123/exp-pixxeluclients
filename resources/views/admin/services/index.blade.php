@@ -3,17 +3,15 @@
 <style>
 .tehsil-filter{
    position: absolute;
-   right: 220px;   
-   top: 0;
-   z-index: 5;
+   right: 120px;
+   top: 85px;
+   z-index: 10;
 }
-.tehsil-filter select {
-   margin: 100px 50px 0px -40px;
-   padding: 6px 18px;
-   font-size: 14px;
-   width: 35px;
-   display: inline-block;
-   gap: 16px;
+
+.tehsil-filter select{
+   padding:6px 12px;
+   font-size:14px;
+   width:180px;
 }
 </style>
 <div class="container">
@@ -33,10 +31,9 @@
                            <!--Tehsil Select-->
                            <select name="tehsil"
                               class="form-control"
-                              style="width:200px;"
+                              style="margin: 16px 150px 7px 3px;"
                               onchange="handleTehsilChange(this.value)">
                               <option value="" disabled {{ request('tehsil') ? '' : 'selected' }}>-- Select Tehsil --</option>
-                              <option value="all">All</option>
                               @foreach($tehsils as $t)
                               <option value="{{ $t->tehsil }}" {{ request('tehsil') == $t->tehsil ? 'selected' : '' }}>
                                  {{ $t->tehsil }}
@@ -99,6 +96,10 @@
                                           </th>
                                           <th class="sorting" tabindex="0"
                                              aria-controls="basic-datatables" rowspan="1"
+                                             colspan="1" style="width: 156.312px;">Force Type
+                                          </th>
+                                          <th class="sorting" tabindex="0"
+                                             aria-controls="basic-datatables" rowspan="1"
                                              colspan="1" style="width: 156.312px;">Action
                                           </th>
                                        </tr>
@@ -116,9 +117,15 @@
                                           </td>
                                           <td>{{ $service->rank ?? '-' }}</td>
                                           <td>{{ $service->name ?? '-' }}</td>
-                                          <td>{{ \Carbon\Carbon::parse($service->dob)->format('d M, Y') ?? '-' }}</td>
-                                          <td>{{ \Carbon\Carbon::parse($service->doe)->format('d M, Y') ?? '-' }}</td>
-                                          <td>{{ \Carbon\Carbon::parse($service->dor)->format('d M, Y') ?? '-' }}</td>
+                                          <td>
+                                             {{ $service->dob ? \Carbon\Carbon::parse($service->dob)->format('d M, Y') : '-' }}
+                                          </td>
+                                          <td>
+                                             {{ $service->doe ? \Carbon\Carbon::parse($service->doe)->format('d M, Y') : '-' }}
+                                          </td>
+                                          <td>
+                                             {{ $service->dor ? \Carbon\Carbon::parse($service->dor)->format('d M, Y') : '-' }}
+                                          </td>
                                           <td>{{ $service->district ?? '-' }}</td>
                                           <td>{{ $service->tehsil ?? '-' }}</td>
                                           <td class="text-center">
@@ -133,6 +140,7 @@
                                              @endif
                                           </td>
                                           <td>{{ $service->regiment_corps ?? '-' }}</td>
+                                          <td>{{ $service->force_type ?? '-' }}</td>
                                           <td>
                                              <div class="form-button-action">
                                                 <a href="{{ url('admin/edit-service', $service->id) }}" class="icon-button edit-btn custom-tooltip" data-tooltip="Edit">
@@ -160,6 +168,15 @@
 </div>
 </div>
 <script>
+   $(document).ready(function(){
+
+    var table = $('#serviceTable').DataTable();
+
+    $(".dataTables_filter").prepend($("#tehsilForm"));
+
+});
+</script>
+<script>
    function handleTehsilChange(value) {
       if (value === 'all') {
          window.location.href = "{{ route('admin.index') }}";
@@ -168,4 +185,5 @@
       }
    }
 </script>
+
 @endsection

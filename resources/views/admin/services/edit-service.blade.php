@@ -151,6 +151,15 @@ td.text-center {
                               <label class="form-label">Regt / Corps</label>
                               <input type="text" name="regiment_corps" class="form-control" value="{{ old('regiment_corps',$service_detail->regiment_corps) }}" placeholder="Enter regiment / corps">
                            </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">Force Type</label>
+                              <select name="force_type" class="form-control">
+                                 <option value="" disabled selected>Select Force</option>
+                                 <option value="ARMY" @if($service_detail->force_type == 'ARMY') selected @endif>Army</option>
+                                 <option value="Navy" @if($service_detail->force_type == 'Navy') selected @endif>Navy</option>
+                                 <option value="Air Force" @if($service_detail->force_type == 'Air Force') selected @endif>Air Force</option>
+                              </select>
+                           </div>
                         </div>
                         <!--Photograph Section-->
                         <div class="row upload-section">
@@ -242,6 +251,10 @@ td.text-center {
                            <div class="col-md-4 mb-3">
                               <label class="form-label">Pan Card Number</label>
                               <input type="text" name="pan_card_no" class="form-control" value="{{ old('pan_card_no',$service_detail->pan_card_no) }}" placeholder="Enter pan card number">
+                           </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">PPO Number</label>
+                              <input type="text" name="ppo_no" class="form-control" value="{{ old('ppo_no',$service_detail->ppo_no) }}" placeholder="Enter ppo number">
                            </div>
                            <div class="col-md-4 mb-3">
                               <label class="form-label">Bank Account Number</label>
@@ -372,6 +385,10 @@ td.text-center {
                            <div class="col-md-4 mb-3">
                               <label class="form-label">Aadhar Card Number</label>
                               <input type="text" name="spouse_aadhar_card" class="form-control" value="{{ old('spouse_aadhar_card',$service_detail->spouse_aadhar_card) }}" placeholder="Enter aadhar card number">
+                           </div>
+                           <div class="col-md-4 mb-3">
+                              <label class="form-label">Canteen Card Number</label>
+                              <input type="text" name="canteen_card" class="form-control" value="{{ old('canteen_card',$service_detail->canteen_card) }}" placeholder="Enter canteen card number">
                            </div>
                            <!-- <div class="col-md-4 mb-3">
                               <label class="form-label">Pan Card Number</label>

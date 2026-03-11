@@ -14,68 +14,70 @@ use PhpOffice\PhpSpreadsheet\Style\Fill;
 
 class ExServiceManExport implements FromCollection, WithHeadings, WithEvents
 {
-    //Function for collection data
+    //Function for collection
     public function collection() {
         //Get services
-        $all_services = ExServiceMan::orderBy('id', 'DESC')->get();
-        //Get data
+        $services = ExServiceMan::orderBy('id', 'desc')->get();
+        //Data
         $data = [];
-        //Geta all services
-        foreach ($all_services as $service) {
+        foreach ($services as $service) {
             $data[] = [
-                'Army No' => $service->army_no ?? '',
-                'Rank' => $service->rank ?? '',
-                'Name' => $service->name ?? '',
-                'Village' => $service->village ?? '',
-                'Post Office' => $service->post_office ?? '',
-                'Tehsil' => $service->tehsil ?? '',
-                'District' => $service->district ?? '',
-                'State' => $service->state ?? '',
-                'Pin Code' => $service->pin_code ?? '',
-                'Mobile No' => $service->mobile_no ?? '',
-                'Regiment / Corps' => $service->regiment_corps ?? '',
-                'Date of Birth' => $service->dob ? Carbon::parse($service->dob)->format('d M, Y') : '',
-                'Date of Enrolment' => $service->doe ? Carbon::parse($service->doe)->format('d M, Y') : '',
-                'Date of Retirement' => $service->dor ? Carbon::parse($service->dor)->format('d M, Y') : '',
-                'Bank Account Number' => $service->bank_acc_no ?? '',
-                'Bank Name' => $service->bank_name ?? '',
-                'IFSC Code' => $service->ifsc_code ?? '',
-                'MICR Code' => $service->micr_code ?? '',
-                'Aadhar Card Number' => $service->aadhar_card_no ?? '',
-                'Pan Card Number' => $service->pan_card_no ?? '',
-                'ECHS Card Number' => $service->echs_card_no ?? '',
-                'CSD Card Number' => $service->csd_card_no ?? '',
-                'ESM Documents' => $service->ex_documents ?? '',
-                'Spouse Name' => $service->spouse_name ?? '',
-                'Spouse Address' => $service->spouse_address ?? '',
-                'Spouse Date of Birth' => $service->spouse_dob ? Carbon::parse($service->spouse_dob)->format('d M, Y') : '',
-                'Spouse Mobile' => $service->spouse_mobile ?? '',
-                'Spouse Aadhar Card Number' => $service->spouse_aadhar_card ?? '',
-                'Spouse Documents' => $service->spo_documents ?? '',
+                'NO' => $service->army_no ?? '-',
+                'RANK' => $service->rank ?? '-',
+                'NAME' => $service->name ?? '-',
+                'VILL' => $service->village ?? '-',
+                'PO' => $service->post_office ?? '-',
+                'TEHSIL' => $service->tehsil ?? '-',
+                'DIST' => $service->district ?? '-',
+                'ARMS SERVICE' => $service->regiment_corps ?? '-',
+                'FORCES TYPE' => $service->force_type ?? '-',
+                'DOB' => $service->dob ? Carbon::parse($service->dob)->format('d M Y') : '-',
+                'DOE' => $service->doe ? Carbon::parse($service->doe)->format('d M Y') : '-',
+                'DOR' => $service->dor ? Carbon::parse($service->dor)->format('d M Y') : '-',
+                'PPO NO' => $service->ppo_no ?? '-',
+                'AADHAR CARD NO' => $service->aadhar_card_no ?? '-',
+                'NAME OF DEPENDENT' => $service->spouse_name ?? '-',
+                'RELATIONSHIP WITH ESM' => 'SPOUSE',
+                'CANTEEN CARD NO' => $service->canteen_card ?? '-',
             ];
         }
-        //Return data
+
         return collect($data);
     }
 
-    //Function for excel heading
+    //Function for heading
     public function headings(): array {
         return [
-            'Army No', 'Rank', 'Name', 'Village', 'Post Office', 'Tehsil', 'District', 'State',
-            'Pin Code', 'Mobile Number', 'Regiment / Corps', 'Date of Birth', 'Date of Enrolment',
-            'Date of Retirement','Bank Account Number','Bank Name', 'IFSC Code', 'MICR Code', 'Aadhar Card Number', 'Pan Card Number', 'ECHS Card Number',
-            'CSD Card Number','ESM Documents','Spouse Name','Spouse Address', 'Spouse Date of Birth', 'Spouse Mobile',
-            'Spouse Aadhar Card Number', 'Spouse Documents'
+            'NO',
+            'RANK',
+            'NAME',
+            'VILL',
+            'PO',
+            'TEHSIL',
+            'DIST',
+            'ARMS SERVICE',
+            'FORCES TYPE',
+            'DOB',
+            'DOE',
+            'DOR',
+            'PPO NO',
+            'AADHAR CARD NO',
+            'NAME OF DEPENDENT',
+            'RELATIONSHIP WITH ESM',
+            'CANTEEN CARD NO'
         ];
     }
 
-    //Function for register events
+    //Function for register
     public function registerEvents(): array {
         return [
             AfterSheet::class => function (AfterSheet $event) {
                 $sheet = $event->sheet->getDelegate();
-                $sheet->getStyle('A1:AC1')->applyFromArray([
-                    'font' => ['bold' => true, 'size' => 11],
+                $sheet->getStyle('A1:AE1')->applyFromArray([
+                    'font' => [
+                        'bold' => true,
+                        'size' => 11
+                    ],
                     'alignment' => [
                         'horizontal' => Alignment::HORIZONTAL_CENTER,
                         'vertical' => Alignment::VERTICAL_CENTER,
@@ -88,14 +90,17 @@ class ExServiceManExport implements FromCollection, WithHeadings, WithEvents
                     ],
                     'fill' => [
                         'fillType' => Fill::FILL_SOLID,
-                        'startColor' => ['rgb' => 'E2EFDA'],
+                        'startColor' => [
+                            'rgb' => 'E2EFDA'
+                        ],
                     ],
+
                 ]);
-                foreach (range('A', 'AC') as $col) {
+                foreach (range('A', 'AR') as $col) {
                     $sheet->getColumnDimension($col)->setAutoSize(true);
                 }
                 $sheet->freezePane('A2');
-            },
+            }
         ];
     }
 }

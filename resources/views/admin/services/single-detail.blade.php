@@ -19,12 +19,14 @@
                      <div class="col-md-4 mb-3 services1"><strong>Army No:</strong> {{ $service_detail->army_no ?? '-' }}</div>
                      <div class="col-md-4 mb-3 services1"><strong>Rank:</strong> {{ $service_detail->rank ?? '-' }}</div>
                      <div class="col-md-4 mb-3 services1"><strong>Name:</strong> {{ $service_detail->name ?? '-' }}</div>
-                     <div class="col-md-4 mb-3 services1"><strong>Date of Birth:</strong> {{ \Carbon\Carbon::parse($service_detail->dob)->format('d M, Y') ?? '-' }}</div>
-                     <div class="col-md-4 mb-3 services1"><strong>Date of Enrollment:</strong> {{ \Carbon\Carbon::parse($service_detail->doe)->format('d M, Y') ?? '-' }}</div>
-                     <div class="col-md-4 mb-3 services1"><strong>Date of Retirement:</strong> {{ \Carbon\Carbon::parse($service_detail->dor)->format('d M, Y') ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Date of Birth:</strong> {{ $service_detail->dob ? \Carbon\Carbon::parse($service_detail->dob)->format('d M, Y') : '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Date of Enrollment:</strong> {{ $service_detail->doe ? \Carbon\Carbon::parse($service_detail->doe)->format('d M, Y') : '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Date of Retirement:</strong> {{ $service_detail->dor ? \Carbon\Carbon::parse($service_detail->dor)->format('d M, Y') : '-' }}</div>
                      <div class="col-md-4 mb-3 services1"><strong>ECHS Card Number</strong> {{ $service_detail->echs_card_no ?? '-' }}</div>
                      <div class="col-md-4 mb-3 services1"><strong>CSD Card Number</strong> {{ $service_detail->csd_card_no ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>PPO Number:</strong> {{ $service_detail->ppo_no ?? '-' }}</div>
                      <div class="col-md-4 mb-3 services1"><strong>Regiment / Corps:</strong> {{ $service_detail->regiment_corps ?? '-' }}</div>
+                     <div class="col-md-4 mb-3 services1"><strong>Force Type:</strong> {{ $service_detail->force_type ?? '-' }}</div>
                   </div>
                   <!--Images-->
                   <div class="mt-4 services001">
@@ -136,9 +138,10 @@
                   <div class="row">
                      <div class="col-md-4 mb-3"><strong>Name:</strong> {{ $service_detail->spouse_name ?? '-' }}</div>
                      <div class="col-md-4 mb-3"><strong>Address:</strong> {{ $service_detail->spouse_address ?? '-' }}</div>
-                     <div class="col-md-4 mb-3"><strong>Date of Birth:</strong> {{ \Carbon\Carbon::parse($service_detail->spouse_dob)->format('d M, Y') ?? '-' }}</div>
+                     <div class="col-md-4 mb-3"><strong>Date of Birth:</strong> {{ $service_detail->spouse_dob ? \Carbon\Carbon::parse($service_detail->spouse_dob)->format('d M, Y') : '-' }}</div>
                      <div class="col-md-4 mb-3"><strong>Mobile Number:</strong> {{ $service_detail->spouse_mobile ?? '-' }}</div>
                      <div class="col-md-4 mb-3"><strong>Aadhar Card Number:</strong> {{ $service_detail->spouse_aadhar_card ?? '-' }}</div>
+                     <div class="col-md-4 mb-3"><strong>Canteen Card Number:</strong> {{ $service_detail->canteen_card ?? '-' }}</div>
                      <!-- <div class="col-md-4 mb-3"><strong>PAN Card Number:</strong> {{ $service_detail->spouse_pan_card ?? '-' }}</div>
                      <div class="col-md-4 mb-3"><strong>ECHS Card Number:</strong> {{ $service_detail->spouse_echs_card ?? '-' }}</div>
                      <div class="col-md-4 mb-3"><strong>CSD Card Number:</strong> {{ $service_detail->spouse_csd_card ?? '-' }}</div>

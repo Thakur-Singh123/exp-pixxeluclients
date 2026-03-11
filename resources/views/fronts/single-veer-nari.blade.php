@@ -174,7 +174,7 @@
                 <!--<h5>Spouse Details</h5>-->
                 <div class="detail-row">
                     <div class="detail-item"><strong>Name:</strong> {{ $veer_detail->veer_nari_name ?? '-' }}</div>
-                    <div class="detail-item"><strong>Date of Death:</strong> {{ $veer_detail->veer_nari_expose_year ?? '-' }}</div>
+                    <div class="detail-item"><strong>Expose Year:</strong> {{ $veer_detail->veer_nari_expose_year ?? '-' }}</div>
                 </div>
                 <br>
                 <div class="mt-4 d-flex">
@@ -228,14 +228,17 @@
                 <div class="detail-item"><strong>PAN Card Number:</strong> {{ $veer_detail->serviceman_detail->pan_card_no ?? '-' }}</div>
                 <div class="detail-item"><strong>ECHS Card Number:</strong> {{ $veer_detail->serviceman_detail->echs_card_no ?? '-' }}</div>
                 <div class="detail-item"><strong>CSD Card Number:</strong> {{ $veer_detail->serviceman_detail->csd_card_no ?? '-' }}</div>
+                <div class="detail-item"><strong>PPO Number:</strong> {{ $veer_detail->serviceman_detail->ppo_no ?? '-' }}</div>
                 <div class="detail-item"><strong>Regiment / Corps:</strong> {{ $veer_detail->serviceman_detail->regiment_corps ?? '-' }}</div>
-                <div class="detail-item"><strong>Date of Birth:</strong>{{ \Carbon\Carbon::parse($veer_detail->serviceman_detail->dob)->format('d M, Y') ?? '-' }}</div>
-                <div class="detail-item"><strong>Date of Enrollment:</strong>{{ \Carbon\Carbon::parse($veer_detail->serviceman_detail->doe)->format('d M, Y') ?? '-' }}</div>
-                <div class="detail-item"><strong>Date of Retirement:</strong>{{ \Carbon\Carbon::parse($veer_detail->serviceman_detail->dor)->format('d M, Y') ?? '-' }}</div>
+                <div class="detail-item"><strong>Force Type:</strong>{{ $veer_detail->serviceman_detail->force_type ?? '-' }}</div>
+                <div class="detail-item"><strong>Date of Birth:</strong>{{ $veer_detail->serviceman_detail->dob ? \Carbon\Carbon::parse($veer_detail->serviceman_detail->dob)->format('d M, Y') : '-' }}</div>
+                <div class="detail-item"><strong>Date of Enrollment:</strong>{{ $veer_detail->serviceman_detail->doe ? \Carbon\Carbon::parse($veer_detail->serviceman_detail->doe)->format('d M, Y') : '-' }}</div>
+                <div class="detail-item"><strong>Date of Retirement:</strong>{{ $veer_detail->serviceman_detail->dor ? \Carbon\Carbon::parse($veer_detail->serviceman_detail->dor)->format('d M, Y') : '-' }}</div>
                 <div class="detail-item"><strong>Bank Account Number:</strong>{{ $veer_detail->serviceman_detail->bank_acc_no ?? '-' }}</div>
                 <div class="detail-item"><strong>Bank Name:</strong> {{ $veer_detail->serviceman_detail->bank_name ?? '-' }}</div>
                 <div class="detail-item"><strong>IFSC Code:</strong>{{ $veer_detail->serviceman_detail->ifsc_code ?? '-' }}</div>
                 <div class="detail-item"><strong>MICR Code:</strong>{{ $veer_detail->serviceman_detail->micr_code ?? '-' }}</div>
+                <div class="detail-item"><strong>Canteen Card Number:</strong>{{ $veer_detail->serviceman_detail->canteen_card ?? '-' }}</div>
                 </div>
                 <br>
                 <div class="mt-4 d-flex">

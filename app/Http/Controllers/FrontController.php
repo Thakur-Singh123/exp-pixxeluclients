@@ -18,9 +18,9 @@ class FrontController extends Controller
     //Function for next page
     public function next() {
         //Get services
-        $all_services = ExServiceMan::with('children')->OrderBy('ID', 'DESC')->get();
-        $all_widows   = Widow::with('serviceman_detail')->OrderBy('ID', 'DESC')->get();
-        $all_veers    = VeerNari::with('serviceman_detail')->OrderBy('ID', 'DESC')->get();
+        $all_services = ExServiceMan::with('children')->OrderBy('ID', 'ASC')->get();
+        $all_widows   = Widow::with('serviceman_detail')->OrderBy('ID', 'ASC')->get();
+        $all_veers    = VeerNari::with('serviceman_detail')->OrderBy('ID', 'ASC')->get();
         return view('fronts.next', compact('all_services', 'all_widows', 'all_veers'));
     }
 
